@@ -56,7 +56,7 @@ public class PlanesFragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
         recyclerView = (RecyclerView)view.findViewById(R.id.card_recycler_view);
         recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
         return view;
@@ -66,7 +66,7 @@ public class PlanesFragment extends Fragment {
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://localhost")
+                .baseUrl("http://192.168.0.17")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApi request = retrofit.create(DatosApi.class);
@@ -86,9 +86,7 @@ public class PlanesFragment extends Fragment {
                 Log.d("Error",t.getMessage());
             }
         });
+
     }
 
-    public Context getApplicationContext() {
-        return null;
-    }
 }

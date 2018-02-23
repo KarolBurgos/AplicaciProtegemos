@@ -15,7 +15,9 @@ import retrofit2.http.GET;
 public interface DatosApi {
 /*    @GET("planes")
     Call<JSONResponse> getData();*/
-    @GET("obtener_metas")
+
+
+    @GET("obtener_metas.php")
     Call<JSONResponse> getJSON();
 /*Call<ArrayList<Planes>> obtenerListaPlanes();*/
 }

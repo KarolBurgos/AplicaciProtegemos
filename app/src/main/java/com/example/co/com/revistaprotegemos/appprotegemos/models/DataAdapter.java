@@ -1,5 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.models;
 
+import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -18,35 +19,47 @@ import java.util.ArrayList;
 
 public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
     private ArrayList<Planes> android;
-    public DataAdapter(ArrayList<Planes> data) {
+    private Context context;
+    public DataAdapter(ArrayList<Planes> android) {
         this.android = android;
     }
+
     @Override
-    public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.card_row, parent, false);
+    public DataAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
-        viewHolder.tv_titulo.setText(android.get(i).getTitulo());
-        viewHolder.tv_descripcion.setText(android.get(i).getDescripcion());
-        viewHolder.tv_img.setImageDrawable(Drawable.createFromPath(android.get(i).getImg()));
+
+        viewHolder.tv_name.setText(android.get(i).getTitulo());
+        viewHolder.tv_version.setText(android.get(i).getDescripcion());
+
+        /*Glide.with(context)
+                .load("" +"" +".png")
+                .centerCrop()
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy,All)
+                .into(viewHolder.tv_api_level1);*/
+        //viewHolder.tv_api_level.setText(android.get(i).getTitulo());
     }
 
     @Override
     public int getItemCount() {
         return android.size();
     }
+
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tv_titulo,tv_descripcion;
-        private ImageView tv_img;
+        private TextView tv_name,tv_version,tv_api_level;
+        private  ImageView tv_api_level1;
         public ViewHolder(View view) {
             super(view);
 
-            tv_titulo = (TextView)view.findViewById(R.id.ed_titulo);
-            tv_descripcion= (TextView)view.findViewById(R.id.ed_descr);
-            tv_img = (ImageView) view.findViewById(R.id.ed_img);
+            tv_name = (TextView)view.findViewById(R.id.tv_name);
+            tv_version = (TextView)view.findViewById(R.id.tv_version);
+            //tv_api_level = (TextView)view.findViewById(R.id.tv_api_level);
+            tv_api_level1 = (ImageView)view.findViewById(R.id.imageView);
 
         }
     }

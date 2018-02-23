@@ -6,20 +6,14 @@ package com.example.co.com.revistaprotegemos.appprotegemos.models;
 
 public class Planes {
 
-
-    private String titulo;
+   private String titulo;
     private String descripcion;
     private String img;
 
-    public Planes() {
-    }
-
-
-    public Planes(String titulo, String descripcion, String img) {
+    public Planes(String titulo, String descripcion) {
         super();
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.img = img;
     }
 
 
@@ -46,7 +40,21 @@ public class Planes {
     public void setImg(String img) {
         this.img = img;
     }
+  /*private String ver;
+    private String name;
+    private String api;
 
+    public String getVer() {
+        return ver;
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getApi() {
+        return api;
+    }
+*/
 }
 

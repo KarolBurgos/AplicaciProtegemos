@@ -87,7 +87,7 @@ public class PrincipalFragment extends Fragment {
 
             switch (position) {
                 case 0:
-                    return new PlanesFragment();
+                    return new NuestraEmpresaFragment();
                 case 1:
                     return new contactenosFragment();
                 case 2:

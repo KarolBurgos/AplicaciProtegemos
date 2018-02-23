@@ -7,7 +7,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.models;
 public class JSONResponse {
     private Planes[] android;
 
-    public Planes[] getAndroid() {
+  public Planes[] getAndroid() {
         return android;
     }
 }
