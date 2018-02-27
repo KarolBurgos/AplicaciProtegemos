@@ -1,8 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
-import android.annotation.SuppressLint;
-import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,16 +9,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.api.DatosApi;
-import com.example.co.com.revistaprotegemos.appprotegemos.models.DataAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.models.JSONResponse;
-import com.example.co.com.revistaprotegemos.appprotegemos.models.Planes;
-import com.google.gson.FieldNamingPolicy;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.DatosApi;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.JSONResponse;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
 
 import java.util.ArrayList;
 import java.util.Arrays;
