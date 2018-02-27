@@ -17,6 +17,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PrincipalFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity
             e.printStackTrace();
         }
         FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
     }
 
     @Override
@@ -117,6 +120,22 @@ public class MainActivity extends AppCompatActivity
                 }
             });
         }
+        else if (id == R.id.horario) {
+            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
+            View aView2 = getLayoutInflater().inflate(R.layout.fragment_horas_atencion, null);
+            uBuilder2.setView(aView2);
+            final AlertDialog dialog2 = uBuilder2.create();
+            dialog2.show();
+            Button close = (Button) aView2.findViewById(R.id.close);
+
+            close.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog2.cancel();
+                }
+            });
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -147,7 +166,8 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_ediciones) {
 
         } else if (id == R.id.nav_planes) {
-            fragmentClass=PlanesFragment.class;
+            fragmentClass=PrincipalFragment.class;
+
         } else if (id == R.id.nav_susc) {
 
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
@@ -191,7 +211,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().replace(R.id.flContent,fragment).commit();
+        fragmentManager.beginTransaction().replace(R.id.flContentt,fragment).commit();
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

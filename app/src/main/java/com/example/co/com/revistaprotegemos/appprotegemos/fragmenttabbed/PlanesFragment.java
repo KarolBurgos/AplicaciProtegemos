@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.annotation.SuppressLint;
@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.api.DatosApi;
 import com.example.co.com.revistaprotegemos.appprotegemos.models.DataAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.models.JSONResponse;
@@ -54,7 +55,7 @@ public class PlanesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
-        recyclerView = (RecyclerView)view.findViewById(R.id.card_recycler_view);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);

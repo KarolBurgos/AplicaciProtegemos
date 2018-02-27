@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.SplashScreen">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.inicioapp.SplashScreen">
 
     android:background="#050505"
     tools:showIn="@android:color/holo_green_light">

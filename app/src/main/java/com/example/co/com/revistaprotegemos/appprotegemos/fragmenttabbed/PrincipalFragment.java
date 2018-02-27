@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.annotation.SuppressLint;
@@ -9,11 +9,15 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
 
 
 /**
@@ -24,8 +28,9 @@ public class PrincipalFragment extends Fragment {
     private AppBarLayout appBar;
     private TabLayout tabs;
     private ViewPager viewPager;
+    private ViewPagerAdapter adapter;
     private ImageView logo;
-
+    private FragmentTabHost tabHost;
     public PrincipalFragment() {
         // Required empty public constructor
     }
@@ -39,18 +44,18 @@ public class PrincipalFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
         View contenedor = (View) container.getParent();
-        appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
-        appBar.setBackgroundColor(Color.parseColor("#FF37D97C"));
+      appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
+        appBar.setBackgroundColor(Color.parseColor("#94d3fd"));
         tabs = new TabLayout(getActivity());
         tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
         appBar.addView(tabs);
-
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getFragmentManager());
+
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
 
-        int icons[] = {R.drawable.bus, R.drawable.inicio, R.drawable.inicio};
+        int icons[] = {R.drawable.ic_icons8_casa_50, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
@@ -59,6 +64,7 @@ public class PrincipalFragment extends Fragment {
         //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
+
 
     @Override
     public void onDestroyView() {
@@ -89,7 +95,7 @@ public class PrincipalFragment extends Fragment {
                 case 0:
                     return new NuestraEmpresaFragment();
                 case 1:
-                    return new contactenosFragment();
+                    return new PlanesFragment();
                 case 2:
                     return new NuestraEmpresaFragment();
 
@@ -117,17 +123,7 @@ public class PrincipalFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
 
-            switch (position) {
-                case 0:
-                    //tabs.addTab(tabs.newTab().setIcon(R.drawable.inicio));
-                    // tabs.addTab(tabs.getTabAt(0).setIcon(R.drawable.inicio));
-                    return "inicio";
-                case 1:
-                    return "inicio";
-                case 2:
-                    return "inicio";
-            }
-            return null;
+   return null;
 
         }
         // return tirulotabs[position];
@@ -135,5 +131,8 @@ public class PrincipalFragment extends Fragment {
     }
 
 
+    }
 
-}
+
+
+

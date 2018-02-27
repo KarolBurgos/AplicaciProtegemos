@@ -35,7 +35,6 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
 
         viewHolder.tv_name.setText(android.get(i).getTitulo());
         viewHolder.tv_version.setText(android.get(i).getDescripcion());
-
         /*Glide.with(context)
                 .load("" +"" +".png")
                 .centerCrop()
@@ -51,7 +50,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView tv_name,tv_version,tv_api_level;
+        private TextView tv_name,tv_version,tv_api_level,titulo;
         private  ImageView tv_api_level1;
         public ViewHolder(View view) {
             super(view);
@@ -60,7 +59,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder>{
             tv_version = (TextView)view.findViewById(R.id.tv_version);
             //tv_api_level = (TextView)view.findViewById(R.id.tv_api_level);
             tv_api_level1 = (ImageView)view.findViewById(R.id.imageView);
-
+            titulo = (TextView) view.findViewById(R.id.textView16);
         }
     }
 }

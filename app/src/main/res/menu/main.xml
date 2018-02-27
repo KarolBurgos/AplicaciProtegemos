@@ -11,4 +11,10 @@
         android:orderInCategory="100"
         android:title="contactenos"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/horario"
+        android:orderInCategory="100"
+        android:title="Horario de atención"
+        app:showAsAction="never" />
 </menu>

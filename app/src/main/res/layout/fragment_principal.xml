@@ -1,10 +1,12 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment">
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PrincipalFragment">
+
 
     <!-- TODO: Update blank fragment layout -->
+
     <view
         android:id="@+id/pager"
         class="android.support.v4.view.ViewPager"
