@@ -15,8 +15,22 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+            android:background="?attr/colorPrimary" />
+
+<!--
+        <com.miguelcatalan.materialsearchview.MaterialSearchView
+            android:id="@+id/searchview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            app:searchBackIcon="@android:integer/config_longAnimTime"
+            app:searchBackground="@color/colorPrimary"
+            app:searchCloseIcon="@android:integer/config_longAnimTime"
+            app:searchSuggestionBackground="@color/colorPrimary"
+            app:searchSuggestionIcon="@android:integer/config_longAnimTime">
+
+        </com.miguelcatalan.materialsearchview.MaterialSearchView>
+-->
 
     </android.support.design.widget.AppBarLayout>
 

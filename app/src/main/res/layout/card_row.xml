@@ -8,7 +8,8 @@
     android:orientation="horizontal"
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardUseCompatPadding="true"
+    app:ignore="NamespaceTypo">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -16,72 +17,49 @@
         app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <AbsoluteLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
 
-            <TextView
-                android:id="@+id/titulo"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:layout_x="91dp"
-                android:layout_y="5dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textSize="18sp" />
+            <ImageView
+                android:id="@+id/fotico"
+                android:layout_width="259dp"
+                android:layout_height="182dp"
+                android:layout_x="50dp"
+                android:layout_y="9dp"
+                card_view:srcCompat="@drawable/bus" />
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="373dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_x="4dp"
-                android:layout_y="37dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:layout_x="138dp"
+                android:layout_y="195dp"
+                android:text="TextView" />
 
             <TextView
                 android:id="@+id/tv_version"
-                android:layout_width="372dp"
-                android:layout_height="wrap_content"
-                android:layout_x="0dp"
-                android:layout_y="74dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:layout_width="254dp"
+                android:layout_height="87dp"
+                android:layout_x="56dp"
+                android:layout_y="236dp"
+                android:text="TextView" />
 
             <TextView
-                android:id="@+id/tv_versio"
-                android:layout_width="213dp"
+                android:id="@+id/leermas1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_x="4dp"
-                android:layout_y="104dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <TextView
-                android:id="@+id/ed_oficial"
-                android:layout_width="135dp"
-                android:layout_height="wrap_content"
-                android:layout_x="73dp"
-                android:layout_y="102dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+                android:layout_x="252dp"
+                android:layout_y="329dp"
+                android:text="Leer mas" />
 
             <TextView
                 android:id="@+id/ed_particular"
-                android:layout_width="146dp"
-                android:layout_height="wrap_content"
-                android:layout_x="73dp"
-                android:layout_y="132dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
-
-            <TextView
-                android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_x="249dp"
-                android:layout_y="129dp"
-                android:autoLink="email"
-                android:backgroundTint="@color/colorPrimaryDark"
-                android:text="Leer Mas"
-                app:layout_editor_absoluteX="252dp"
-                app:layout_editor_absoluteY="130dp" />
-
+                android:layout_x="48dp"
+                android:layout_y="353dp" />
         </AbsoluteLayout>
     </android.support.v4.widget.NestedScrollView>
 </android.support.v7.widget.CardView>

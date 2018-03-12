@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.insertar">
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context="com.example.karolb.protegemosapp.contactenosFragment">
+
+
+            <!-- TODO: Update blank fragment layout -->
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorAccent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        card_view:cardCornerRadius="10dp"
+                        card_view:cardElevation="10dp"
+                        card_view:cardUseCompatPadding="true">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView25"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Contáctenos" />
+
+                            <TextView
+                                android:id="@+id/textView26"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Necesitas un servicio, tiene alguna inquietud o simplemente deseas saludar... Contáctanos!!!" />
+
+                            <EditText
+                                android:id="@+id/ednom"
+                                android:layout_width="320dp"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Nombre"
+                                android:inputType="textPersonName" />
+
+                            <EditText
+                                android:id="@+id/edcorreo"
+                                android:layout_width="320dp"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Correo Electronico"
+                                android:inputType="textPersonName" />
+
+                            <EditText
+                                android:id="@+id/edcelular"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Numero de celular"
+                                android:inputType="textPersonName" />
+
+                            <EditText
+                                android:id="@+id/edmensaje"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Mensaje"
+                                android:inputType="textPersonName" />
+
+                            <TextView
+                                android:id="@+id/textView4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
+                                android:text="Al enviar esta solicitud, acepto la politica de privacidad y manejo de datos de Protegemos G.C." />
+
+                            <Button
+                                android:id="@+id/envia"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:onClick="saveInfo"
+                                android:text="Enviar" />
+
+                            <TextView
+                                android:id="@+id/textView27"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Nuestra Ubicación" />
+
+                            <TextView
+                                android:id="@+id/textView28"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Carrera 36 Nº 19-93 Barrio Palermo - Teléfono: 731 3100 - Celular: 315 411 4537" />
+
+                            <Button
+                                android:id="@+id/close"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Ubicación" />
+
+                            <TextView
+                                android:id="@+id/textView36"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+
+                        </LinearLayout>
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+
+            </ScrollView>
+
+        </FrameLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

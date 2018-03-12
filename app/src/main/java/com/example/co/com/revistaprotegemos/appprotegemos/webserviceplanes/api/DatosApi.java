@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  */
 
 public interface DatosApi {
-    @GET("/webservice_planes/obtener_metas.php")
+    @GET("/webser.php")
     Call<JSONResponse> getJSON();
 }

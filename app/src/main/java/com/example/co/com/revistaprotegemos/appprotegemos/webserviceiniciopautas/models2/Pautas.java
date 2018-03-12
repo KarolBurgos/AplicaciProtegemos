@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciojornadas.models2;
+package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2;
 
 /**
  * Created by ASPIRE VX15 on 27/02/2018.
@@ -7,6 +7,7 @@ public class Pautas {
 
     private String lugar;
     private String descripcion;
+    private String img;
 
     /**
      * No args constructor for use in serialization
@@ -20,10 +21,11 @@ public class Pautas {
      * @param lugar
      * @param descripcion
      */
-    public Pautas(String lugar, String descripcion) {
+    public Pautas(String lugar, String descripcion,String img) {
         super();
         this.lugar = lugar;
         this.descripcion = descripcion;
+        this.img=img;
     }
 
     public String getLugar() {
@@ -40,6 +42,15 @@ public class Pautas {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+    public String getImg() {
+        return img;
+    }
+
+
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
 

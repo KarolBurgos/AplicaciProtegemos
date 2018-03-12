@@ -1,0 +1,69 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="?attr/actionModeSplitBackground"
+    android:orientation="horizontal"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="10dp"
+    card_view:cardUseCompatPadding="true">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
+
+        <AbsoluteLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimaryDark"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="118dp"
+                android:layout_height="99dp"
+                android:layout_x="21dp"
+                android:layout_y="10dp"
+                card_view:srcCompat="@drawable/bus" />
+
+            <TextView
+                android:id="@+id/tv_namee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="5dp"
+                android:layout_y="133dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/tv_versionn"
+                android:layout_width="144dp"
+                android:layout_height="214dp"
+                android:layout_x="7dp"
+                android:layout_y="188dp"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textColor="@color/cardview_light_background" />
+
+            <TextView
+                android:id="@+id/ed_particularr"
+                android:layout_width="146dp"
+                android:layout_height="wrap_content"
+                android:layout_x="3dp"
+                android:layout_y="406dp"
+                android:text="Leer mas"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="12dp"
+                android:layout_y="426dp" />
+
+        </AbsoluteLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.v7.widget.CardView>
+

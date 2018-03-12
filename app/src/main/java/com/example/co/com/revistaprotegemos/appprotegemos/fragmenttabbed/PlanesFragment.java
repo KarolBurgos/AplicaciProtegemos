@@ -9,7 +9,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.DatosApi;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
@@ -31,7 +34,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class PlanesFragment extends Fragment {
 
-    public static final String TAG="DATOS COLOMBIA";
     private Retrofit retrofit;
     //private DataAdapter planes;
    // private RecyclerView recyclerView;
@@ -54,6 +56,15 @@ public class PlanesFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
+
+/*        ImageView img = (ImageView)view.findViewById(R.id.fotico1);
+        String url="http://192.168.0.17/fotos/1.png";
+        Glide.with(this)
+                .load(url)
+                .centerCrop()
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(img);*/
         return view;
 
     }
@@ -72,7 +83,7 @@ public class PlanesFragment extends Fragment {
 
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapter(data);
+                adapter = new DataAdapter(data, getContext());
                 recyclerView.setAdapter(adapter);
             }
 

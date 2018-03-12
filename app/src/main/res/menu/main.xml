@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/search"
+        android:icon="@android:drawable/ic_menu_search"
+        android:title="buscar"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />
     <item
         android:id="@+id/nuest"
         android:orderInCategory="100"
@@ -17,4 +23,6 @@
         android:orderInCategory="100"
         android:title="Horario de atención"
         app:showAsAction="never" />
+
+
 </menu>

@@ -1,5 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,19 +16,25 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.SearchView;
+import android.widget.Toast;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
+
+    MaterialSearchView searchView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -58,6 +65,7 @@ public class MainActivity extends AppCompatActivity
         }
         FragmentManager fragmentManager=getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+        setSearchView();
     }
 
     @Override
@@ -73,8 +81,15 @@ public class MainActivity extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
+/*        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main, menu);
+        searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.search));
+        searchView.setOnQueryTextListener((SearchView.OnQueryTextListener) this);
+        return super.onCreateOptionsMenu(menu);*/
         getMenuInflater().inflate(R.menu.main, menu);
-        return true;
+        MenuItem item=menu.findItem(R.id.search);
+        searchView.setMenuItem(item);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -95,14 +110,7 @@ public class MainActivity extends AppCompatActivity
             uBuilder2.setView(aView2);
             final AlertDialog dialog2 = uBuilder2.create();
             dialog2.show();
-            Button close = (Button) aView2.findViewById(R.id.close);
 
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog2.cancel();
-                }
-            });
         }
 
         else if (id == R.id.nuest) {
@@ -163,8 +171,6 @@ public class MainActivity extends AppCompatActivity
                 }
             });
             // Handle the camera action
-        } else if (id == R.id.nav_ediciones) {
-
         } else if (id == R.id.nav_planes) {
             fragmentClass=PrincipalFragment.class;
 
@@ -186,19 +192,8 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_cont) {
 
-            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
-            View aView2 = getLayoutInflater().inflate(R.layout.fragment_contactenos, null);
-            uBuilder2.setView(aView2);
-            final AlertDialog dialog2 = uBuilder2.create();
-            dialog2.show();
-            Button close = (Button) aView2.findViewById(R.id.close);
-
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog2.cancel();
-                }
-            });
+            Intent intent=new Intent(this,insertar.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_nuemp) {
             fragmentClass=NuestraEmpresaFragment.class;
@@ -218,4 +213,43 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
+    @Override
+    public boolean onQueryTextSubmit(String s) {
+        return false;
+    }
+
+    @Override
+    public boolean onQueryTextChange(String s) {
+        return false;
+    }
+
+    public void setSearchView()
+    {
+        searchView=(MaterialSearchView)findViewById(R.id.searchview);
+        searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
+        searchView.setEllipsize(true);
+        searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(getApplicationContext(),query,Toast.LENGTH_SHORT).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
+            @Override
+            public void onSearchViewShown() {
+
+            }
+
+            @Override
+            public void onSearchViewClosed() {
+
+            }
+        });
+    }
 }

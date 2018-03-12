@@ -1,19 +1,22 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models;
 
+import android.util.Log;
+
 /**
  * Created by ASPIRE VX15 on 20/02/2018.
  */
 
 public class Planes {
-
+    private int number;
    private String titulo;
     private String descripcion;
     private String img;
 
-    public Planes(String titulo, String descripcion) {
+    public Planes(String titulo, String descripcion, String img) {
         super();
         this.titulo = titulo;
         this.descripcion = descripcion;
+        this.img=img;
     }
 
 
@@ -37,24 +40,12 @@ public class Planes {
         return img;
     }
 
+
+
     public void setImg(String img) {
         this.img = img;
     }
-  /*private String ver;
-    private String name;
-    private String api;
 
-    public String getVer() {
-        return ver;
-    }
 
-    public String getName() {
-        return name;
-    }
-
-    public String getApi() {
-        return api;
-    }
-*/
 }
 

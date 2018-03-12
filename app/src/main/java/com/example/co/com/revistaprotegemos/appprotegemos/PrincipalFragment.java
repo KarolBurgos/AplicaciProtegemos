@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
+package com.example.co.com.revistaprotegemos.appprotegemos;
 
 
 import android.annotation.SuppressLint;
@@ -10,14 +10,19 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 
 
 /**
@@ -26,11 +31,13 @@ import com.example.co.com.revistaprotegemos.appprotegemos.R;
 public class PrincipalFragment extends Fragment {
 
     private AppBarLayout appBar;
+    FragmentManager fragMan;
     private TabLayout tabs;
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
     private ImageView logo;
     private FragmentTabHost tabHost;
+    private Button mib;
     public PrincipalFragment() {
         // Required empty public constructor
     }
@@ -45,7 +52,7 @@ public class PrincipalFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
         View contenedor = (View) container.getParent();
       appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
-        appBar.setBackgroundColor(Color.parseColor("#94d3fd"));
+        appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
         tabs = new TabLayout(getActivity());
         tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
         appBar.addView(tabs);
@@ -97,7 +104,7 @@ public class PrincipalFragment extends Fragment {
                 case 1:
                     return new PlanesFragment();
                 case 2:
-                    return new NuestraEmpresaFragment();
+                    return new ServiciosVentajasFragment();
 
             }
             return null;

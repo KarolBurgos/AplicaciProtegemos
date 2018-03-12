@@ -6,28 +6,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/inicio"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_icons8_casa"
             android:title="Inicio" />
 
         <item
             android:id="@+id/suscriptores"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_icons8_contactos_filled_50"
             android:title="Suscritos" />
         <item
             android:id="@+id/revistpro"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/ic_icons8_agregar_regla_filled_50"
             android:title="Revista Protegemos" />
         <item
             android:id="@+id/nav_susc"
-            android:icon="@drawable/ic_menu_manage"
+            android:icon="@drawable/ic_icons8_a_adir_contacto_a_empresa_filled_50"
             android:title="Suscribete" />
         <item
-            android:id="@+id/nav_ediciones"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="Ediciones" />
-        <item
             android:id="@+id/nav_planes"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ic_icons8_acuerdo_filled_50_1_"
             android:title="Planes" />
     </group>
 
@@ -35,11 +31,11 @@
         <menu>
             <item
                 android:id="@+id/nav_cont"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/ic_icons8_tel_fono_con_altavoz_filled_50"
                 android:title="Contáctenos" />
             <item
                 android:id="@+id/nav_nuemp"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/ic_icons8_noticias_filled_50"
                 android:title="Nuestra Empresa" />
 
         </menu>

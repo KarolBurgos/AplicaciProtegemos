@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciojornadas.models2;
+package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2;
 
 /**
  * Created by ASPIRE VX15 on 27/02/2018.
