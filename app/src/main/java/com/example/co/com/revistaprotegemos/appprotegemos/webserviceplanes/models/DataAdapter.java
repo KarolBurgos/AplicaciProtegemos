@@ -1,19 +1,12 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -21,9 +14,8 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.ServiciosVentajasFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
@@ -49,6 +41,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
+
         return new ViewHolder(view);
     }
 
@@ -79,24 +72,29 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(viewHolder.img);
 
+
+
     }
-    public DataAdapter(Context context)
+    public DataAdapter(PlanesFragment planesFragment, Context context)
     {
         this.context=context;
         android=new ArrayList<>();
     }
 
-
+    public void onClick(View v) {
+        Toast toast1 =Toast.makeText(context,"Completar campos vacios", Toast.LENGTH_SHORT);
+        toast1.show();
+    }
     @Override
     public int getItemCount() {
         return android.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
-        private TextView nombre,desc,tv_api_level,titulo,edPart;
+        private TextView nombre,desc,tv_api_level,titulo,edPart,leer;
         private Button butonserivicios;
         private  ImageView img;
-        TextView leer;
+
         public ViewHolder(View view) {
             super(view);
             img = (ImageView)view.findViewById(R.id.fotico);
@@ -105,6 +103,15 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
             leer = (TextView) view.findViewById(R.id.leermas1);
             edPart = (TextView) view.findViewById(R.id.ed_particular);
 
+
+            leer.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                   Toast toast1 =Toast.makeText(context,"Completar campos vacios", Toast.LENGTH_SHORT);
+                    toast1.show();
+
+
+                }
+            });
         }
     }
 }

@@ -1,6 +1,11 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,7 +26,9 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
@@ -39,10 +46,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:032-731-3100"));
+                startActivity(intent);
             }
         });
 
@@ -172,31 +181,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             });
             // Handle the camera action
         } else if (id == R.id.nav_planes) {
-            fragmentClass=PrincipalFragment.class;
+            //fragmentClass=PrincipalFragment.class;
+            PrincipalFragment.ViewPagerAdapter principalFragment= new PrincipalFragment.ViewPagerAdapter(getSupportFragmentManager());
+            principalFragment.getItem(2);
 
         } else if (id == R.id.nav_susc) {
 
-            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
-            View aView2 = getLayoutInflater().inflate(R.layout.fragment_suscribirse, null);
-            uBuilder2.setView(aView2);
-            final AlertDialog dialog2 = uBuilder2.create();
-            dialog2.show();
-            Button close = (Button) aView2.findViewById(R.id.close);
-
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog2.cancel();
-                }
-            });
+         fragmentClass=SuscribirseFragment.class;
 
         } else if (id == R.id.nav_cont) {
 
-            Intent intent=new Intent(this,insertar.class);
-            startActivity(intent);
+    /*        Intent intent=new Intent(this,insertar.class);
+            startActivity(intent);*/
 
-        } else if (id == R.id.nav_nuemp) {
-            fragmentClass=NuestraEmpresaFragment.class;
+            fragmentClass=ContactenosFragment.class;
         }
         try{
             fragment =(Fragment)fragmentClass.newInstance();
@@ -252,4 +250,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
+/*    public static boolean compruebaConexion(Context context) {
+
+        boolean connected = false;
+
+        ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        // Recupera todas las redes (tanto móviles como wifi)
+        NetworkInfo[] redes = connec.getAllNetworkInfo();
+
+        for (int i = 0; i < redes.length; i++) {
+            // Si alguna red tiene conexión, se devuelve true
+            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
+                connected = true;
+            }
+        }
+        return connected;
+    }
+    */
+
 }

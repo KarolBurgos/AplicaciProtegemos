@@ -1,187 +1,177 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <!-- TODO: Update blank fragment layout -->
+
     <ScrollView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:orientation="vertical">
 
 
-            <TextView
-                android:id="@+id/textView16"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="1dp"
-                android:gravity="center"
-                android:inputType="textMultiLine"
-                android:textStyle="italic" />
-
-            <ImageView
+            <!--            <ImageView
                 android:id="@+id/img1"
                 android:layout_width="match_parent"
                 android:layout_height="89dp"
-                android:src="@drawable/pro" />
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:inputType="textMultiLine"
-                android:text="Zona de Jornadas"
-                android:textColor="@color/colorPrimaryDark"
-                android:textColorLink="@color/colorPrimaryDark"
-                android:textStyle="italic" />
-
-            <android.support.v7.widget.RecyclerView
-                android:id='@+id/recyclerVieew'
-                android:layout_width="365dp"
-                android:layout_height="403dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/txt_titulo"
-                android:layout_marginTop="5dp"
-                tools:layout_editor_absoluteX="50dp"
-                tools:layout_editor_absoluteY="50dp" />
-
+                android:src="@drawable/pro" />-->
 
             <!-- TODO: Update blank fragment layout -->
-
-
-            <LinearLayout
+            <AdapterViewFlipper
+                android:id="@+id/IVF"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="150dp"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp">
 
-                <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    card_view:cardCornerRadius="10dp"
-                    card_view:cardElevation="10dp"
-                    card_view:cardUseCompatPadding="true">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+            </AdapterViewFlipper>
+            <!--
+                        <WebView
+                            android:id="@+id/wv_home"
+                            android:layout_width="match_parent"
+                            android:layout_height="162dp" />-->
 
                         <LinearLayout
-                            android:layout_width="124dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:orientation="vertical">
 
-                            <ImageView
-                                android:id="@+id/imageView7"
-                                android:layout_width="114dp"
-                                android:layout_height="81dp"
-                                android:src="@drawable/imgd" />
-
-                            <TextView
-                                android:id="@+id/textView22"
-                                android:layout_width="match_parent"
+                            <android.support.v7.widget.CardView
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Nuestros Planes" />
+                                android:orientation="horizontal"
+                                card_view:cardCornerRadius="10dp"
+                                card_view:cardElevation="10dp"
+                                card_view:cardUseCompatPadding="true">
 
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <LinearLayout
+                                        android:layout_width="124dp"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <TextView
+                                            android:id="@+id/textView39"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+
+                                        <pl.droidsonroids.gif.GifImageView
+                                            android:id="@+id/iges1"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="113dp"
+                                            android:src="@color/colorAccent" />
+
+                                        <TextView
+                                            android:id="@+id/textView22"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Nuestros Planes" />
+
+                                        <TextView
+                                            android:id="@+id/textView37"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="116dp"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <pl.droidsonroids.gif.GifImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="113dp"
+                                            android:src="@drawable/picincio" />
+
+                                        <TextView
+                                            android:id="@+id/textView38"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Quiero Suscribirme" />
+
+                                    </LinearLayout>
+
+                                    <LinearLayout
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:orientation="vertical">
+
+                                        <pl.droidsonroids.gif.GifImageView
+                                            android:id="@+id/iges2"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="113dp"
+                                            android:src="@drawable/bus" />
+
+                                        <TextView
+                                            android:id="@+id/txquienes"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content"
+                                            android:text="Quienes Somos" />
+
+                                    </LinearLayout>
+                                </LinearLayout>
+
+
+                            </android.support.v7.widget.CardView>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/textView41"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Visite la Zona de Suscriptores"
+                                    android:textColor="@android:color/black"
+                                    android:textColorHint="@color/colorPrimary"
+                                    android:textStyle="bold" />
+
+                                <TextView
+                                    android:id="@+id/txtvisita"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="@string/mi_mensaje" />
+
+                            </LinearLayout>
                         </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="116dp"
+                        <TextView
+                            android:id="@+id/textVie"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/imageView4"
-                                android:layout_width="match_parent"
-                                android:layout_height="63dp"
-                                android:src="@drawable/imgensurscribirme" />
-
-                            <TextView
-                                android:id="@+id/textView38"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Quiero Suscribirme" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <ImageView
-                                android:id="@+id/imageView5"
-                                android:layout_width="match_parent"
-                                android:layout_height="88dp"
-                                android:src="@drawable/imgquienessomos" />
-
-                            <TextView
-                                android:id="@+id/txquienes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Quienes Somos" />
-
-                        </LinearLayout>
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView41"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="Visite la Zona de Suscriptores"
-                        android:textColor="@android:color/black"
-                        android:textColorHint="@color/colorPrimary"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/txtvisita"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="@string/mi_mensaje" />
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <TextView
-                android:id="@+id/textVie"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:gravity="center"
-                android:inputType="textMultiLine"
-                android:text="Zona de Pautas"
-                android:textColor="@android:color/black"
-                android:textStyle="normal|bold" />
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:text="Zona de Pautas"
+                            android:textColor="@android:color/black"
+                            android:textStyle="normal|bold" />
 
 
             <android.support.v7.widget.RecyclerView
                 android:id='@+id/recyclerVieww'
-                android:layout_width="365dp"
-                android:layout_height="613dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_alignParentLeft="false"
                 android:layout_alignParentStart="false"
                 android:layout_below="@+id/txt_titulo"
@@ -189,52 +179,74 @@
                 tools:layout_editor_absoluteX="50dp"
                 tools:layout_editor_absoluteY="50dp" />
 
-
             <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView44"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Esta listo para ser parte de nuestra prestigiosa empresa?" />
+
+                            <TextView
+                                android:id="@+id/textView43"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Suscribirme" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView45"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Visite la Zona de Suscriptores" />
+
+                            <TextView
+                                android:id="@+id/textView46"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Encontrara muchos beneficios para usted  Click Aqui para ingresar" />
+
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:inputType="textMultiLine"
+                            android:text="Zona de Jornadas"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textColorLink="@color/colorPrimaryDark"
+                            android:textStyle="italic" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id='@+id/recyclerVieew'
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txt_titulo"
+                android:layout_marginTop="5dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="50dp" />
 
-                <TextView
-                    android:id="@+id/textView44"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Esta listo para ser parte de nuestra prestigiosa empresa?" />
-
-                <TextView
-                    android:id="@+id/textView43"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Suscribirme" />
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView45"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Visite la Zona de Suscriptores" />
-
-                <TextView
-                    android:id="@+id/textView46"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="Encontrara muchos beneficios para usted  Click Aqui para ingresar" />
-
-            </LinearLayout>
-
-        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
 
 
-    </ScrollView>
-
-
-</FrameLayout>
+            </FrameLayout>

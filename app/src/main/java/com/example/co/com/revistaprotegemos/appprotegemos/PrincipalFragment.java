@@ -10,7 +10,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTabHost;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,11 +17,9 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos;
 
 
 /**
@@ -51,7 +48,7 @@ public class PrincipalFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
         View contenedor = (View) container.getParent();
-      appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
+        appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
         appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
         tabs = new TabLayout(getActivity());
         tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
@@ -67,6 +64,8 @@ public class PrincipalFragment extends Fragment {
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
 
+
+
         //    ImageView logo= (ImageView)view.findViewById(R.id,i);
         //  logo.setImageResource(R.drawable.inicio);
         return view;
@@ -79,7 +78,7 @@ public class PrincipalFragment extends Fragment {
         appBar.removeView(tabs);
     }
 
-    public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+    public static class ViewPagerAdapter extends FragmentStatePagerAdapter {
         public ViewPagerAdapter(FragmentManager fragmentManager) {
             super(fragmentManager);
         }
@@ -104,7 +103,7 @@ public class PrincipalFragment extends Fragment {
                 case 1:
                     return new PlanesFragment();
                 case 2:
-                    return new ServiciosVentajasFragment();
+                    return new RevistaProtegemos();
 
             }
             return null;

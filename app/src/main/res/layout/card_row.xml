@@ -24,34 +24,34 @@
 
             <ImageView
                 android:id="@+id/fotico"
-                android:layout_width="259dp"
-                android:layout_height="182dp"
-                android:layout_x="50dp"
-                android:layout_y="9dp"
+                android:layout_width="287dp"
+                android:layout_height="178dp"
+                android:layout_x="23dp"
+                android:layout_y="63dp"
                 card_view:srcCompat="@drawable/bus" />
 
             <TextView
                 android:id="@+id/tv_name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_x="138dp"
-                android:layout_y="195dp"
+                android:layout_width="307dp"
+                android:layout_height="36dp"
+                android:layout_x="21dp"
+                android:layout_y="19dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/tv_version"
-                android:layout_width="254dp"
-                android:layout_height="87dp"
-                android:layout_x="56dp"
-                android:layout_y="236dp"
+                android:layout_width="271dp"
+                android:layout_height="37dp"
+                android:layout_x="29dp"
+                android:layout_y="250dp"
                 android:text="TextView" />
 
             <TextView
                 android:id="@+id/leermas1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_x="252dp"
-                android:layout_y="329dp"
+                android:layout_x="242dp"
+                android:layout_y="299dp"
                 android:text="Leer mas" />
 
             <TextView

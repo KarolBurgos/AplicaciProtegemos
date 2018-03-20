@@ -1,15 +1,21 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -42,8 +48,19 @@ public class PlanesFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Planes> data;
     private DataAdapter adapter;
+    private FragmentActivity myContext;
+    private TextView t1;
+
+
+
     public PlanesFragment() {
         // Required empty public constructor
+    }
+
+    @Override
+    public void onAttach(Context activity) {
+        myContext=(FragmentActivity) activity;
+        super.onAttach(activity);
     }
 
     @Override
@@ -51,11 +68,15 @@ public class PlanesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
+
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
+
+
+
 
 /*        ImageView img = (ImageView)view.findViewById(R.id.fotico1);
         String url="http://192.168.0.17/fotos/1.png";
@@ -69,6 +90,11 @@ public class PlanesFragment extends Fragment {
 
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+    }
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()

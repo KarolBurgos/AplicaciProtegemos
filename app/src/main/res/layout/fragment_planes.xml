@@ -1,19 +1,26 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment">
 
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="none" />
+
     <android.support.v7.widget.RecyclerView
         android:id='@+id/recyclerView'
-        android:layout_width="365dp"
-        android:layout_height="360dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txt_titulo"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="35dp"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="50dp" />
 
@@ -21,18 +28,10 @@
         android:id="@+id/textView16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="10dp"
         android:gravity="center"
         android:inputType="textMultiLine"
         android:text="Planes Y Servicios"
         android:textStyle="italic" />
-
-    <TextView
-        android:id="@+id/textView17"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="95dp"
-        android:autoLink="none"
-        android:text="La Tarjeta Protegemos es un valor agregado a la Revista PROTEGEMOS que los anunciantes ofrecen al suscriptor y su grupo familiar mediante BENEFICIOS Y DESCUENTOS" />
 
 </FrameLayout>

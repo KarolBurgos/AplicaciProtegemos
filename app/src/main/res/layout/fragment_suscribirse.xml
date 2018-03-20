@@ -51,7 +51,7 @@
                 android:orientation="vertical">
 
                 <EditText
-                    android:id="@+id/editText"
+                    android:id="@+id/nom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -65,7 +65,7 @@
                     android:textSize="18sp" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/iden"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -75,7 +75,7 @@
                     android:inputType="textPersonName" />
 
                 <EditText
-                    android:id="@+id/editText3"
+                    android:id="@+id/ciu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -85,7 +85,7 @@
                     android:inputType="textPersonName" />
 
                 <EditText
-                    android:id="@+id/editText4"
+                    android:id="@+id/bar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -96,7 +96,7 @@
 
 
                 <EditText
-                    android:id="@+id/editText5"
+                    android:id="@+id/dire"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -107,7 +107,7 @@
 
 
                 <EditText
-                    android:id="@+id/editText6"
+                    android:id="@+id/tel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -118,7 +118,7 @@
 
 
                 <EditText
-                    android:id="@+id/editText7"
+                    android:id="@+id/corre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -136,7 +136,7 @@
                     android:text="Al enviar esta solicitud, acepto la politica de privacidad y manejo de datos de Protegemos G.C." />
 
                 <Button
-                    android:id="@+id/close"
+                    android:id="@+id/env2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -151,6 +151,11 @@
 
 
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/textView49"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
 
         </LinearLayout>
