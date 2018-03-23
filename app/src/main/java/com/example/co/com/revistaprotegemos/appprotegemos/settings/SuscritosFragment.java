@@ -2,7 +2,9 @@ package com.example.co.com.revistaprotegemos.appprotegemos.settings;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,18 +12,42 @@ import android.view.ViewGroup;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
 import android.widget.Toast;
 
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.JsonRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.User;
+import com.example.co.com.revistaprotegemos.appprotegemos.sesion;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.net.URLEncoder;
+import java.util.ArrayList;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SuscritosFragment extends Fragment {
+public class SuscritosFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener{
 
-    Spinner spinner;
+    RequestQueue rq;
+    JsonRequest jrq;
+    private Spinner spinner;
+    EditText contrato,contraseña;
+    Button btnconsultar;
+
     String[] items;
     private boolean isFirstTime=true;
     public SuscritosFragment() {
@@ -34,37 +60,71 @@ public class SuscritosFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_suscritos, container, false);
+        contrato=(EditText)view.findViewById(R.id.contrato);
+        contraseña=(EditText)view.findViewById(R.id.contraseña);
+        btnconsultar=(Button) view.findViewById(R.id.iniciar);
+        rq= Volley.newRequestQueue(getContext());
 
-        spinner = (Spinner)view.findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter=ArrayAdapter.createFromResource(getActivity().getBaseContext(),R.array.opciones,android.R.layout.simple_spinner_item);
+
+        spinner = (Spinner) view.findViewById(R.id.spinner);
+        String []opciones={"Pasto","Neiva"};
+        ArrayAdapter <String>adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, opciones);
         spinner.setAdapter(adapter);
-
-       /* items=getResources().getStringArray(R.array.opciones);
-        //String[] valores = {"uno","dos","tres","cuatro","cinco","seis", "siete", "ocho"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity().getBaseContext(),android.R.layout.simple_spinner_item,items);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-
-                if (isFirstTime)
-                {
-                    isFirstTime=false;
-                }
-                else
-                {
-                    Toast.makeText(getActivity().getApplicationContext(),items[i],Toast.LENGTH_LONG).show();
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> adapterView) {
-
-            }
-        });*/
         return view;
 
     }
 
+    @Override
+    public void onErrorResponse(VolleyError error) {
+        Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onResponse(JSONObject response) {
+        User usuario=new User();
+        Toast.makeText(getContext(),"Se ha encontrado el usuario"+contrato.getText().toString(),Toast.LENGTH_SHORT).show();
+        JSONArray jsonArray=response.optJSONArray("datos");
+        JSONObject jsonObject=null;
+
+        try {
+            jsonObject =jsonArray.getJSONObject(0);
+            usuario.setNames(jsonObject.optString("names"));
+            usuario.setUser(jsonObject.optString("user"));
+            usuario.setPwd(jsonObject.optString("pwd"));
+            usuario.setEdad(jsonObject.optString("edad"));
+            usuario.setSemestre(jsonObject.optString("semestre"));
+            usuario.setDeudas(jsonObject.optString("deudas"));
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Intent intent=new Intent(getContext(),sesion.class);
+        intent.putExtra(sesion.names,usuario.getNames());
+        intent.putExtra(sesion.edad,usuario.getEdad());
+        intent.putExtra(sesion.semestre,usuario.getSemestre());
+        intent.putExtra(sesion.deudas,usuario.getDeudas());
+        intent.putExtra(sesion.user,usuario.getUser());
+
+        startActivity(intent);
+
+
+    }
+
+    private void iniciarsesion()
+    {
+        String url="http://192.168.0.17/sesion/sesion.php?user="+contrato.getText().toString()+
+                "&pwd="+contraseña.getText().toString();
+        jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
+        rq.add(jrq);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        btnconsultar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iniciarsesion();
+            }
+        });
+    }
 }

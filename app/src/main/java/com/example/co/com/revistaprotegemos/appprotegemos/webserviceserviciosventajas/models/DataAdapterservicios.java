@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
@@ -24,8 +26,9 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
     private Context context;
     private ImageLoader imageLoader;
     private ImageView img2;
-    public DataAdapterservicios(ArrayList<Servicios> android) {
+    public DataAdapterservicios(ArrayList<Servicios> android, Context context) {
         this.android = android;
+        this.context = context;
     }
 
     @Override
@@ -38,6 +41,12 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.nombre.setText(android.get(position).getTitulo());
         holder.desc.setText(android.get(position).getDescripcion());
+        Glide.with(context)
+                .load(android.get(position).getImg())
+                .centerCrop()
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(holder.img);
     }
 
     public DataAdapterservicios(Context context)
@@ -60,6 +69,7 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
 
             nombre = (TextView)view.findViewById(R.id.titservc);
             desc = (TextView)view.findViewById(R.id.tvdes);
+            img=(ImageView)view.findViewById(R.id.fotoopro);
         }
     }
 }

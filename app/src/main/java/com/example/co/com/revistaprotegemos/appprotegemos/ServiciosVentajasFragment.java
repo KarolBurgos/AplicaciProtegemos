@@ -81,7 +81,7 @@ public class ServiciosVentajasFragment extends Fragment {
 
                 JSONResponseServicios jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapterservicios(data);
+                adapter = new DataAdapterservicios(data,getContext());
                 recyclerView.setAdapter(adapter);
             }
 

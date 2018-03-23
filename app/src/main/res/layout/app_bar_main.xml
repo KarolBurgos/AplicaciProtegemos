@@ -35,7 +35,9 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <include layout="@layout/contex" />
+    <include
+        android:id="@+id/include"
+        layout="@layout/contex" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -46,4 +48,14 @@
         app:srcCompat="@drawable/ic_icons8_tel_fono_50"
         tools:ignore="VectorDrawableCompat" />
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fabchat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        app:layout_anchor="@+id/include"
+        app:layout_anchorGravity="bottom|center"
+        app:srcCompat="@drawable/ic_icons8_tel_fono_50"
+        tools:ignore="VectorDrawableCompat" />
 </android.support.design.widget.CoordinatorLayout>

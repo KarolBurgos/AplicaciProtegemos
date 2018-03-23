@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.sesion">
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <view
+        class="android.support.design.widget.TabLayout"
+        android:layout_width="401dp"
+        android:layout_height="4dp"
+        android:background="#000000" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+        <TextView
+            android:id="@+id/textView56"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Nombre" />
+
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Edad" />
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Semestre" />
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Deudas" />
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+
+        <TextView
+            android:id="@+id/textView60"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Usuario" />
+
+        <view
+            class="android.support.design.widget.TabLayout"
+            android:layout_width="2dp"
+            android:layout_height="wrap_content"
+            android:background="#000000"/>
+    </TableRow>
+
+
+
+<!--    <view
+        android:layout_width="396dp"
+        android:layout_height="2dp"
+        android:background="#000000" />-->
+    <view
+        class="android.support.design.widget.TabLayout"
+        android:layout_width="401dp"
+        android:layout_height="4dp"
+        android:background="#000000" />
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/edad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/seme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/deu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="TextView" />
+    </TableRow>
+    <view
+        class="android.support.design.widget.TabLayout"
+        android:layout_width="401dp"
+        android:layout_height="4dp"
+        android:background="#000000" />
+</LinearLayout>

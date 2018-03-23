@@ -5,6 +5,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopauta
  */
 public class Pautas {
 
+    private String id_zona_pautas;
     private String lugar;
     private String descripcion;
     private String img;
@@ -21,11 +22,12 @@ public class Pautas {
      * @param lugar
      * @param descripcion
      */
-    public Pautas(String lugar, String descripcion,String img) {
+    public Pautas(String lugar, String descripcion,String img, String id_zona_pautas) {
         super();
         this.lugar = lugar;
         this.descripcion = descripcion;
         this.img=img;
+        this.id_zona_pautas=id_zona_pautas;
     }
 
     public String getLugar() {
@@ -53,5 +55,11 @@ public class Pautas {
         this.img = img;
     }
 
+    public String getId_zona_pautas() {
+        return id_zona_pautas;
+    }
 
+    public void setId_zona_pautas(String id_zona_pautas) {
+        this.id_zona_pautas = id_zona_pautas;
+    }
 }

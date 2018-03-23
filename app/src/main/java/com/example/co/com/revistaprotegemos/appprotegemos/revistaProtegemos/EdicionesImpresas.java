@@ -16,6 +16,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.WebViewActivity;
 
@@ -27,6 +28,7 @@ public class EdicionesImpresas extends Fragment {
 
     private Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14;
     private FragmentActivity myContext;
+    private Button regresar;
     public EdicionesImpresas() {
         // Required empty public constructor
     }
@@ -180,6 +182,11 @@ public class EdicionesImpresas extends Fragment {
         b13=(Button)view.findViewById(R.id.trb11);
         b14=(Button)view.findViewById(R.id.trb12);
 
+         regresar = (Button) view.findViewById(R.id.regre);
+
+
+
+
         return view;
     }
 
@@ -294,7 +301,25 @@ public class EdicionesImpresas extends Fragment {
 
             }
         });
+        regresar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //  Log.e("fdgfdfgfgfgfh--->","SI");
+                //getActivity().finish();
+                Fragment fragment = null;
 
+                Class fragmentClass= PrincipalFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+
+            }
+        });
 
     }
 

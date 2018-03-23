@@ -16,11 +16,11 @@
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/close"
+                android:id="@+id/regre"
                 android:layout_width="55dp"
                 android:layout_height="wrap_content"
-                android:onClick="salir"
                 android:background="?android:attr/homeAsUpIndicator"
+                android:onClick="salir"
                 tools:ignore="OnClick" />
 
             <TextView

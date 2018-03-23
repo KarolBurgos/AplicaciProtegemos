@@ -29,6 +29,7 @@ import android.widget.Toast;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
@@ -54,6 +55,18 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 startActivity(intent);
             }
         });
+
+        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fabchat);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @SuppressLint("MissingPermission")
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_CALL);
+                intent.setData(Uri.parse("tel:032-731-3100"));
+                startActivity(intent);
+            }
+        });
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -166,20 +179,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Class fragmentClass=PrincipalFragment.class;
 
         if (id == R.id.suscriptores) {
-            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
-            View aView2 = getLayoutInflater().inflate(R.layout.fragment_suscritos, null);
-            uBuilder2.setView(aView2);
-            final AlertDialog dialog2 = uBuilder2.create();
-            dialog2.show();
-            Button close = (Button) aView2.findViewById(R.id.close);
-
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog2.cancel();
-                }
-            });
-            // Handle the camera action
+            fragmentClass=SuscritosFragment.class;
         } else if (id == R.id.nav_planes) {
             //fragmentClass=PrincipalFragment.class;
             PrincipalFragment.ViewPagerAdapter principalFragment= new PrincipalFragment.ViewPagerAdapter(getSupportFragmentManager());

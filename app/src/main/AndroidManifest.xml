@@ -7,7 +7,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_INTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="Android.permission.CALL_PHONE"/>
+    <uses-permission android:name="Android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -28,8 +28,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".insertar" />
-        <activity android:name=".WebViewActivity"></activity>
-
+        <activity android:name=".WebViewActivity" />
+        <activity android:name=".sesion" />
     </application>
 
 </manifest>

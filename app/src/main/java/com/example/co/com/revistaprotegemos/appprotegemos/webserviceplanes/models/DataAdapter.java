@@ -106,7 +106,7 @@ public class DataAdapter extends RecyclerView.Adapter<DataAdapter.ViewHolder> {
 
             leer.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                   Toast toast1 =Toast.makeText(context,"Completar campos vacios", Toast.LENGTH_SHORT);
+                   Toast toast1 =Toast.makeText(context," campos vacios", Toast.LENGTH_SHORT);
                     toast1.show();
 
 
