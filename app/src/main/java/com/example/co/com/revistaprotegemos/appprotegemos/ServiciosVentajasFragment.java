@@ -70,7 +70,7 @@ public class ServiciosVentajasFragment extends Fragment {
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://192.168.43.73")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatossApii request = retrofit.create(DatossApii.class);

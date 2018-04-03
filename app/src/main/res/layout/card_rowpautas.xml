@@ -8,7 +8,8 @@
     android:orientation="horizontal"
     card_view:cardCornerRadius="10dp"
     card_view:cardElevation="10dp"
-    card_view:cardUseCompatPadding="true">
+    card_view:cardUseCompatPadding="true"
+    app:ignore="NamespaceTypo">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -26,8 +27,8 @@
                 android:id="@+id/textView52"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_x="102dp"
-                android:layout_y="283dp"
+                android:layout_x="106dp"
+                android:layout_y="115dp"
                 android:text="TextView" />
 
             <ImageView
@@ -56,7 +57,7 @@
                 android:textColor="@color/cardview_light_background" />
 
             <TextView
-                android:id="@+id/ed_particularr"
+                android:id="@+id/leerpautas"
                 android:layout_width="146dp"
                 android:layout_height="wrap_content"
                 android:layout_x="194dp"

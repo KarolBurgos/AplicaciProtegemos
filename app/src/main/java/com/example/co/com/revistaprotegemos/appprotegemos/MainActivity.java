@@ -1,14 +1,20 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.Manifest;
 import android.annotation.SuppressLint;
+import android.app.SearchManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
@@ -23,16 +29,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.RadioButton;
 import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,SearchView.OnQueryTextListener {
+import java.net.Socket;
+
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
     MaterialSearchView searchView;
 
@@ -50,14 +60,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:032-731-3100"));
-                startActivity(intent);
+                Fragment fragment = null;
+
+                Class fragmentClass = PrincipalFragment.class;
+                try {
+                    fragment = (Fragment) fragmentClass.newInstance();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
             }
         });
 
-        FloatingActionButton fab2 = (FloatingActionButton) findViewById(R.id.fabchat);
-        fab2.setOnClickListener(new View.OnClickListener() {
+/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
@@ -65,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 intent.setData(Uri.parse("tel:032-731-3100"));
                 startActivity(intent);
             }
-        });
+        });*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -79,16 +96,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         Fragment fragment = null;
 
-        Class fragmentClass= PrincipalFragment.class;
-        try{
+        Class fragmentClass = PrincipalFragment.class;
+        try {
             fragment = (Fragment) fragmentClass.newInstance();
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
-        FragmentManager fragmentManager=getSupportFragmentManager();
+        FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
         setSearchView();
+
     }
+
 
     @Override
     public void onBackPressed() {
@@ -109,9 +129,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         searchView.setOnQueryTextListener((SearchView.OnQueryTextListener) this);
         return super.onCreateOptionsMenu(menu);*/
         getMenuInflater().inflate(R.menu.main, menu);
-        MenuItem item=menu.findItem(R.id.search);
+        MenuItem item = menu.findItem(R.id.search);
         searchView.setMenuItem(item);
+
+
         return super.onCreateOptionsMenu(menu);
+
     }
 
     @Override
@@ -133,8 +156,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             final AlertDialog dialog2 = uBuilder2.create();
             dialog2.show();
 
-        }
+        } else if (id == R.id.llamar) {
+            Intent intent = new Intent(Intent.ACTION_CALL);
+            intent.setData(Uri.parse("tel:032-731-3100"));
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
 
+            }
+            startActivity(intent);
+        }
         else if (id == R.id.nuest) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_nuestra_empresa, null);
@@ -250,24 +286,5 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
-
-/*    public static boolean compruebaConexion(Context context) {
-
-        boolean connected = false;
-
-        ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        // Recupera todas las redes (tanto móviles como wifi)
-        NetworkInfo[] redes = connec.getAllNetworkInfo();
-
-        for (int i = 0; i < redes.length; i++) {
-            // Si alguna red tiene conexión, se devuelve true
-            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
-                connected = true;
-            }
-        }
-        return connected;
-    }
-    */
 
 }

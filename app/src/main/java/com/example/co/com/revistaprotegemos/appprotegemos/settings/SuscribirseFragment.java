@@ -160,7 +160,7 @@ public class SuscribirseFragment extends Fragment {
         @Override
         protected String doInBackground(String... params) {
             String type=params[0];
-            String regis_url="http://192.168.0.17/registrosuscribirse.php";
+            String regis_url="http://192.168.43.73/registrosuscribirse.php";
             if(type.equals("registro"))
             {
                 try{

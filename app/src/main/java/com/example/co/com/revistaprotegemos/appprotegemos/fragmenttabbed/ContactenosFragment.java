@@ -167,7 +167,7 @@ public class ContactenosFragment extends Fragment {
         @Override
         protected String doInBackground(String... params) {
             String type=params[0];
-            String regis_url="http://192.168.0.17/registro.php";
+            String regis_url="192.168.43.73/registro.php";
             if(type.equals("registro"))
             {
                 try{

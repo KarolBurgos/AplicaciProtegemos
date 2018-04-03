@@ -16,8 +16,11 @@
 
     <com.miguelcatalan.materialsearchview.MaterialSearchView
         android:id="@+id/searchview"
+        android:hint="Buscar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
+
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"

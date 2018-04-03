@@ -7,16 +7,17 @@ import android.util.Log;
  */
 
 public class Planes {
-    private int number;
+    private int id;
    private String titulo;
     private String descripcion;
     private String img;
 
-    public Planes(String titulo, String descripcion, String img) {
+    public Planes(int id, String titulo, String descripcion, String img) {
         super();
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.img=img;
+        this.id=id;
     }
 
 
@@ -46,6 +47,16 @@ public class Planes {
         this.img = img;
     }
 
+    public int getId() {
+        return id;
+    }
 
+    public  String getidString(){
+        return Integer.toString(id);
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 }
 

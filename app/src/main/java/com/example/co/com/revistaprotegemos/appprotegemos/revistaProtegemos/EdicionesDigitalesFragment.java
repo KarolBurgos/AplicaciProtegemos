@@ -37,7 +37,7 @@ public class EdicionesDigitalesFragment extends Fragment {
         View view= inflater.inflate(R.layout.fragment_ediciones_digitales, container, false);
 
         ImageView img = (ImageView)view.findViewById(R.id.imd1);
-        String url="http://192.168.0.17/fotos/EdicionPapa1.png";
+        String url="http://192.168.43.73/fotos/EdicionPapa1.png";
         Glide.with(this)
                 .load(url)
                 .centerCrop()
@@ -45,7 +45,7 @@ public class EdicionesDigitalesFragment extends Fragment {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(img);
         ImageView img2 = (ImageView)view.findViewById(R.id.imd2);
-        String url2="http://192.168.0.17/fotos/EdicionPapa2.png";
+        String url2="http://192.168.43.73/fotos/EdicionPapa2.png";
         Glide.with(this)
                 .load(url2)
                 .centerCrop()
@@ -54,7 +54,7 @@ public class EdicionesDigitalesFragment extends Fragment {
                 .into(img2);
 
         ImageView img3 = (ImageView)view.findViewById(R.id.imd3);
-        String url3="http://192.168.0.17/fotos/EdicionPapa3.png";
+        String url3="http://192.168.43.73/fotos/EdicionPapa3.png";
         Glide.with(this)
                 .load(url3)
                 .centerCrop()
@@ -63,7 +63,7 @@ public class EdicionesDigitalesFragment extends Fragment {
                 .into(img3);
 
         ImageView img4 = (ImageView)view.findViewById(R.id.imd4);
-        String url4="http://192.168.0.17/fotos/EdicionManualidades1.png";
+        String url4="http://192.168.43.73/fotos/EdicionManualidades1.png";
         Glide.with(this)
                 .load(url4)
                 .centerCrop()
@@ -71,7 +71,7 @@ public class EdicionesDigitalesFragment extends Fragment {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(img4);
         ImageView img5 = (ImageView)view.findViewById(R.id.imd5);
-        String url5="http://192.168.0.17/fotos/EdicionManualidades2.png";
+        String url5="http://192.168.43.73/fotos/EdicionManualidades2.png";
         Glide.with(this)
                 .load(url5)
                 .centerCrop()
@@ -80,7 +80,7 @@ public class EdicionesDigitalesFragment extends Fragment {
                 .into(img5);
 
         ImageView img6 = (ImageView)view.findViewById(R.id.imd6);
-        String url6="http://192.168.0.17/fotos/EdicionManualidades3.png";
+        String url6="http://192.168.43.73/fotos/EdicionManualidades3.png";
         Glide.with(this)
                 .load(url6)
                 .centerCrop()

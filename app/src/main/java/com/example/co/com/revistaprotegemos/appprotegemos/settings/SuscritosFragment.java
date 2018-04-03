@@ -76,42 +76,51 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
 
     @Override
     public void onErrorResponse(VolleyError error) {
-        Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
+
+            Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
+
+
     }
 
     @Override
     public void onResponse(JSONObject response) {
-        User usuario=new User();
-        Toast.makeText(getContext(),"Se ha encontrado el usuario"+contrato.getText().toString(),Toast.LENGTH_SHORT).show();
-        JSONArray jsonArray=response.optJSONArray("datos");
-        JSONObject jsonObject=null;
 
-        try {
-            jsonObject =jsonArray.getJSONObject(0);
-            usuario.setNames(jsonObject.optString("names"));
-            usuario.setUser(jsonObject.optString("user"));
-            usuario.setPwd(jsonObject.optString("pwd"));
-            usuario.setEdad(jsonObject.optString("edad"));
-            usuario.setSemestre(jsonObject.optString("semestre"));
-            usuario.setDeudas(jsonObject.optString("deudas"));
-        } catch (JSONException e) {
-            e.printStackTrace();
+        if(contrato.equals("")&&contraseña.equals(""))
+        {
+            Toast.makeText(getContext(),"Ingrese un usuario",Toast.LENGTH_SHORT).show();
         }
-        Intent intent=new Intent(getContext(),sesion.class);
-        intent.putExtra(sesion.names,usuario.getNames());
-        intent.putExtra(sesion.edad,usuario.getEdad());
-        intent.putExtra(sesion.semestre,usuario.getSemestre());
-        intent.putExtra(sesion.deudas,usuario.getDeudas());
-        intent.putExtra(sesion.user,usuario.getUser());
+        else {
+            User usuario = new User();
+            Toast.makeText(getContext(), "Se ha encontrado el usuario" + contrato.getText().toString(), Toast.LENGTH_SHORT).show();
+            JSONArray jsonArray = response.optJSONArray("datos");
+            JSONObject jsonObject = null;
 
-        startActivity(intent);
+            try {
+                jsonObject = jsonArray.getJSONObject(0);
+                usuario.setNames(jsonObject.optString("names"));
+                usuario.setUser(jsonObject.optString("user"));
+                usuario.setPwd(jsonObject.optString("pwd"));
+                usuario.setEdad(jsonObject.optString("edad"));
+                usuario.setSemestre(jsonObject.optString("semestre"));
+                usuario.setDeudas(jsonObject.optString("deudas"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            Intent intent = new Intent(getContext(), sesion.class);
+            intent.putExtra(sesion.names, usuario.getNames());
+            intent.putExtra(sesion.edad, usuario.getEdad());
+            intent.putExtra(sesion.semestre, usuario.getSemestre());
+            intent.putExtra(sesion.deudas, usuario.getDeudas());
+            intent.putExtra(sesion.user, usuario.getUser());
 
+            startActivity(intent);
+        }
 
     }
 
     private void iniciarsesion()
     {
-        String url="http://192.168.0.17/sesion/sesion.php?user="+contrato.getText().toString()+
+        String url="http://192.168.43.73/sesion/sesion.php?user="+contrato.getText().toString()+
                 "&pwd="+contraseña.getText().toString();
         jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);

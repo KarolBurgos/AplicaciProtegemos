@@ -35,7 +35,9 @@ import com.bumptech.glide.load.resource.gifbitmap.ImageVideoGifDrawableLoadProvi
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesDigitalesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.DatosApii;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
@@ -70,11 +72,11 @@ public class InicioFragment extends Fragment {
     private ImageView imagen1,img2;
     private TextView t1,t2;
     private FragmentActivity myContext;
-    private Button b1;
+    private Button bsuscr;
     private AdapterViewFlipper IVF;
     private String url;
     private TextView quienes_somos;
-
+    private TextView tg1,nuestrosplanes;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -112,40 +114,25 @@ public class InicioFragment extends Fragment {
             int images[] = {R.drawable.premia, R.drawable.drogueria, R.drawable.ips};
             String names[] = {"imagen1", "imagen2", "imagen3"};
 
-            IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
-        if (!compruebaConexion(getContext())) {
-            //Toast.makeText(getActivity().getBaseContext(), "Necesaria conexión a internet ", Toast.LENGTH_SHORT).show();
-
-            String url="http://192.168.0.17/webser.php";
-            WebView view2=(WebView) view.findViewById(R.id.wv_home);
-            view2.getSettings().setJavaScriptEnabled(true);
-            view2.setWebViewClient(new WebViewClient());// Agregamos un WebViewCliente, esto permite que se sigan ejecutando los links dentro de este WebView
-            view2.loadUrl(url);
-        }
-        else {
-            CustomAdapter custom = new CustomAdapter(myContext.getApplicationContext(), names, images);
-            IVF.setAdapter(custom);
-            IVF.setFlipInterval(2000);
-            IVF.setAutoStart(true);
+        bsuscr=(Button)view.findViewById(R.id.btonsuscribirme);
 
 
-/*        ImageView img2 = (ImageView)view.findViewById(R.id.iges);
-        String url2="http://192.168.0.17/fotos/pic01.jpg";
-        Glide.with(this)
-                .load(url2)
-                .centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(img2);*/
-            String url2="http://192.168.0.17/fotos/tarjetas.gif";
-            GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
-            Glide.with(getContext()).load("http://192.168.0.17/fotos/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
+        IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
+        CustomAdapter custom = new CustomAdapter(myContext.getApplicationContext(), names, images);
+        IVF.setAdapter(custom);
+        IVF.setFlipInterval(2000);
+        //IVF.setAutoStart(true);
 
-            GifImageView givImageView2 = (GifImageView) view.findViewById(R.id.iges2);
-            Glide.with(getContext()).load("http://192.168.0.17/fotos/logos.gif").into(new GlideDrawableImageViewTarget(givImageView2));
-        }
+        GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
+        Glide.with(getContext()).load("http://192.168.43.73/fotos/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
+
+
+
+        GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
+        Glide.with(getContext()).load("http://192.168.43.73/fotos/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
-
+        tg1=(TextView)view.findViewById(R.id.textView38);
+        nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
         return view;
     }
     public void inter() {
@@ -177,19 +164,33 @@ public class InicioFragment extends Fragment {
         t1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(InicioFragment.super.getContext());
-                View aView2 = getLayoutInflater().inflate(R.layout.fragment_suscritos, null);
-                uBuilder2.setView(aView2);
-                final AlertDialog dialog2 = uBuilder2.create();
-                dialog2.show();
-                Button close = (Button) aView2.findViewById(R.id.close);
+                Fragment fragment = null;
+                Class fragmentClass= SuscritosFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
-                close.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog2.cancel();
-                    }
-                });
+
+            }
+        });
+
+        bsuscr.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Fragment fragment = null;
+                Class fragmentClass= SuscribirseFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
 
             }
         });
@@ -215,11 +216,42 @@ public class InicioFragment extends Fragment {
             }
         });
 
+        tg1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Fragment fragment = null;
+                Class fragmentClass= SuscribirseFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+            }
+        });
+        nuestrosplanes.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                Fragment fragment = null;
+                Class fragmentClass= PlanesFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+            }
+        });
+
     }
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://192.168.43.73")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApii request = retrofit.create(DatosApii.class);
@@ -244,7 +276,7 @@ public class InicioFragment extends Fragment {
 
     private void loadJSONn(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://192.168.43.73")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApiii request = retrofit.create(DatosApiii.class);

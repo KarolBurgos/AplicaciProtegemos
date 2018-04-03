@@ -37,7 +37,7 @@ public class BackgroundWorker extends AsyncTask<String, Void, String> {
     @Override
     protected String doInBackground(String... params) {
         String type=params[0];
-        String register_url="http://192.168.0.42/registro.php";
+        String register_url="http://192.168.43.73/registro.php";
         if(type.equals("registro"))
         {
             try

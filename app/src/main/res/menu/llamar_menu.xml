@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-    <item android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_menu_search"
-        android:title="buscar"
+    <item android:id="@+id/llamar"
+        android:icon="@android:drawable/ic_menu_call"
+        android:title="llamar"
         android:orderInCategory="2"
         app:showAsAction="ifRoom|collapseActionView" />
 
