@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopauta
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -41,6 +42,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
     private ArrayList<Pautas> android;
     private Context context;
+    private FragmentActivity mycontext;
     private AdapterView.OnItemClickListener escucha;
 
     public DataAdapterr(ArrayList<Pautas> android, Context context) {
@@ -122,6 +124,8 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
             intent.putExtra(PautasLeerActivity.lugar, pautasVariables.getLugar());
 
             context.startActivity(intent);
+
+
         }
 
         private void iniciarsesion() {

@@ -130,6 +130,12 @@
                                 android:text="Carrera 36 Nº 19-93 Barrio Palermo - Teléfono: 731 3100 - Celular: 315 411 4537" />
 
                             <Button
+                                android:id="@+id/buttonubi"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Button" />
+
+                            <Button
                                 android:id="@+id/close"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"

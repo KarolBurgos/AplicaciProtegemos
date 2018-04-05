@@ -109,7 +109,7 @@ public class PlanesFragment extends Fragment {
 
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapter(data, getContext());
+                adapter = new DataAdapter(data, getContext(),myContext);
                 recyclerView.setAdapter(adapter);
             }
 

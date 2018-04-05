@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     /*        Intent intent=new Intent(this,insertar.class);
             startActivity(intent);*/
 
-            fragmentClass=ContactenosFragment.class;
+            fragmentClass=ServiciosVentajasFragment.class;
         }
         try{
             fragment =(Fragment)fragmentClass.newInstance();

@@ -3,6 +3,8 @@ package com.example.co.com.revistaprotegemos.appprotegemos.settings;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -19,6 +21,8 @@ import android.widget.Spinner;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
@@ -46,7 +50,10 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
     JsonRequest jrq;
     private Spinner spinner;
     EditText contrato,contraseña;
+    TextView inicio,senior;
     Button btnconsultar;
+    private Typeface Abril;
+    private Typeface April,Senior;
 
     String[] items;
     private boolean isFirstTime=true;
@@ -60,8 +67,11 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_suscritos, container, false);
+
+
         contrato=(EditText)view.findViewById(R.id.contrato);
         contraseña=(EditText)view.findViewById(R.id.contraseña);
+
         btnconsultar=(Button) view.findViewById(R.id.iniciar);
         rq= Volley.newRequestQueue(getContext());
 
@@ -70,6 +80,22 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         String []opciones={"Pasto","Neiva"};
         ArrayAdapter <String>adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, opciones);
         spinner.setAdapter(adapter);
+
+        //Fuentes
+        String fuente1 ="fuentes/April.ttf";
+        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente1);
+
+        String fuente2 ="fuentes/Abril.otf";
+        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente2);
+
+        String fuente3 ="fuentes/Senior.ttf";
+        this.Senior =Typeface.createFromAsset(getContext().getAssets(),fuente3);
+
+        senior=(TextView)view.findViewById(R.id.senior);
+        senior.setTypeface(Senior);
+
+        inicio=(TextView)view.findViewById(R.id.in);
+        inicio.setTypeface(April);
         return view;
 
     }
@@ -136,4 +162,5 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
             }
         });
     }
+
 }

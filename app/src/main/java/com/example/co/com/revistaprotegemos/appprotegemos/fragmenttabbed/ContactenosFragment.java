@@ -10,6 +10,8 @@ import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -23,6 +25,7 @@ import android.widget.Toast;
 import com.example.co.com.revistaprotegemos.appprotegemos.BackgroundWorker;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.insertar;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -59,8 +62,9 @@ public class ContactenosFragment extends Fragment {
 
     private EditText nombre, correo, celular, mensaje;
     private String nomb,corre,celu,mens;
-    private Button b1;
+    private Button b1,ubi;
     private String correo2, contraseña;
+    private FragmentActivity myContext;
     private Session session;
     public ContactenosFragment() {
         // Required empty public constructor
@@ -76,6 +80,7 @@ public class ContactenosFragment extends Fragment {
         correo = (EditText) view.findViewById(R.id.edcorreoo);
         celular = (EditText) view.findViewById(R.id.edcelularr);
         mensaje = (EditText) view.findViewById(R.id.edmensajee);
+        ubi=(Button)view.findViewById(R.id.buttonubi);
         b1=(Button)view.findViewById(R.id.buttenvia);
         correo2="karburgos@umariana.edu.co";
         contraseña="narvaezburgos";
@@ -98,6 +103,15 @@ public class ContactenosFragment extends Fragment {
 
             }
         });
+        ubi.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+                saveInfo();
+
+            }
+        });
+
+
     }
 
     public void saveInfo() {
