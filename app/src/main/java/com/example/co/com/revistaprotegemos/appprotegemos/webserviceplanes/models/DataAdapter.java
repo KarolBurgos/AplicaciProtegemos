@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -93,6 +94,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         public ImageView img;
         RequestQueue rq;
         JsonRequest jrq;
+        Button b1;
         private Typeface Ofaly,Color;
         TextView titu;
         public ViewHolder(View view) {
@@ -101,13 +103,14 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
             tit = (TextView) view.findViewById(R.id.txt2);
             descr = (TextView) view.findViewById(R.id.tv_version);
             id = (TextView) view.findViewById(R.id.idpla);
-            leer = (TextView) view.findViewById(R.id.leer);
+            //leer = (TextView) view.findViewById(R.id.leer);
+            b1=(Button)view.findViewById(R.id.button2);
             rq = Volley.newRequestQueue(context);
 
 /*            linearLayoutDetails = (ViewGroup) view.findViewById(R.id.linearLayoutDetails);
             imageViewExpand = (ImageView) view.findViewById(R.id.imageViewExpand);*/
 
-            leer.setOnClickListener(new View.OnClickListener() {
+            b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
                     Fragment fragment = null;

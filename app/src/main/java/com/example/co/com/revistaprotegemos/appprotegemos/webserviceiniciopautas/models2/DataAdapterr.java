@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -74,6 +75,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener {
         public TextView tit, descr, id, leer;
         public ImageView img;
+        Button b1;
         RequestQueue rq;
         JsonRequest jrq;
 
@@ -83,10 +85,11 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
             tit = (TextView) view.findViewById(R.id.tv_namee);
             descr = (TextView) view.findViewById(R.id.tv_versionn);
             id = (TextView) view.findViewById(R.id.textView52);
-            leer = (TextView) view.findViewById(R.id.leerpautas);
+            //leer = (TextView) view.findViewById(R.id.leerpautas);
+            b1=(Button)view.findViewById(R.id.button4);
             rq = Volley.newRequestQueue(context);
             view.setOnClickListener((View.OnClickListener) this);
-            leer.setOnClickListener(new View.OnClickListener() {
+            b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
                     iniciarsesion();
