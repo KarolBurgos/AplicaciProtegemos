@@ -41,18 +41,21 @@ import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFrag
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.net.Socket;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
     MaterialSearchView searchView;
-
+    String[] list;
+    //List<DataItem> lstData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        list = new String[]{"Clipcodes","Android"};
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -232,6 +235,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             fragmentClass=ServiciosVentajasFragment.class;
         }
+        else if (id == R.id.nav_nuemp) {
+
+    /*        Intent intent=new Intent(this,insertar.class);
+            startActivity(intent);*/
+
+            fragmentClass=NuestraEmpresaFragment.class;
+        }
+        else if (id == R.id.ubic) {
+
+    /*        Intent intent=new Intent(this,insertar.class);
+            startActivity(intent);*/
+
+            fragmentClass=MapsActivity.class;
+        }
         try{
             fragment =(Fragment)fragmentClass.newInstance();
         }
@@ -260,13 +277,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setSearchView()
     {
         searchView=(MaterialSearchView)findViewById(R.id.searchview);
-        searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
+        //searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
+        searchView.closeSearch();
+        searchView.setSuggestions(list);
         searchView.setEllipsize(true);
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                Toast.makeText(getApplicationContext(),query,Toast.LENGTH_SHORT).show();
-                return false;
+                //Toast.makeText(getApplicationContext(),query,Toast.LENGTH_SHORT).show();
+                return true;
             }
 
             @Override
@@ -286,5 +305,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
+
 
 }

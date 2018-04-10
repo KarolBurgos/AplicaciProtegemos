@@ -3,6 +3,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 import android.content.Context;
 import android.content.res.Resources;
+import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.TransitionDrawable;
@@ -76,7 +77,8 @@ public class InicioFragment extends Fragment {
     private AdapterViewFlipper IVF;
     private String url;
     private TextView quienes_somos;
-    private TextView tg1,nuestrosplanes;
+    private TextView tg1,nuestrosplanes,susc,somo,estaslisto;
+    private Typeface Nuestrosplanes,Aurella;
 
     public InicioFragment() {
         // Required empty public constructor
@@ -133,6 +135,25 @@ public class InicioFragment extends Fragment {
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
         tg1=(TextView)view.findViewById(R.id.textView38);
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
+
+
+        String fuente1 ="fuentes/Nuestrosplanes.ttf";
+        this.Nuestrosplanes =Typeface.createFromAsset(getContext().getAssets(),fuente1);
+
+        nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
+        nuestrosplanes.setTypeface(Nuestrosplanes);
+
+        susc=(TextView)view.findViewById(R.id.textView38);
+        susc.setTypeface(Nuestrosplanes);
+
+        somo=(TextView)view.findViewById(R.id.txquienes);
+        somo.setTypeface(Nuestrosplanes);
+
+        String fuente2 ="fuentes/Aurella.ttf";
+        this.Aurella =Typeface.createFromAsset(getContext().getAssets(),fuente2);
+
+        estaslisto=(TextView)view.findViewById(R.id.textViews4);
+        estaslisto.setTypeface(Aurella);
         return view;
     }
     public void inter() {

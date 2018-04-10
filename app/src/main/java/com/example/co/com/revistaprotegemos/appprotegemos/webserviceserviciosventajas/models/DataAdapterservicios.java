@@ -67,9 +67,11 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
         public ViewHolder(View view) {
             super(view);
 
-            nombre = (TextView)view.findViewById(R.id.titservc);
+            nombre = (TextView)view.findViewById(R.id.tit);
             desc = (TextView)view.findViewById(R.id.tvdes);
             img=(ImageView)view.findViewById(R.id.fotoopro);
         }
+
+        
     }
 }

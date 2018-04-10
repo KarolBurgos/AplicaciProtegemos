@@ -31,7 +31,7 @@
         android:layout_marginTop="10dp"
         android:gravity="center"
         android:inputType="textMultiLine"
-        android:text="Planes Y Servicios"
-        android:textStyle="italic" />
+        android:text="Planes Protegemos"
+        android:textSize="18sp" />
 
 </FrameLayout>

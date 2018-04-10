@@ -19,6 +19,7 @@ import android.widget.ImageView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos;
 
 
 /**
@@ -102,7 +103,7 @@ public class PrincipalFragment extends Fragment {
                 case 1:
                     return new PlanesFragment();
                 case 2:
-                    return new ServiciosVentajasFragment();
+                    return new RevistaProtegemos();
 
             }
             return null;

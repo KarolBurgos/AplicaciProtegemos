@@ -28,14 +28,18 @@
                 android:src="@drawable/pro" />-->
 
             <!-- TODO: Update blank fragment layout -->
-            <AdapterViewFlipper
-                android:id="@+id/IVF"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="8dp">
 
-            </AdapterViewFlipper>
+                <AdapterViewFlipper
+                    android:id="@+id/IVF"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="8dp">
+
+                </AdapterViewFlipper>
+
+
+
             <!--
                         <WebView
                             android:id="@+id/wv_home"
@@ -44,87 +48,79 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <android.support.v7.widget.CardView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    card_view:cardCornerRadius="10dp"
-                    card_view:cardElevation="10dp"
-                    card_view:cardUseCompatPadding="true">
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="4dp"
+                    app:cardElevation="5dp"
+                    app:cardUseCompatPadding="true"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="0dp">
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
                         <LinearLayout
-                            android:layout_width="124dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/textView39"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                            android:gravity="center"
+                            android:orientation="horizontal">
 
                             <pl.droidsonroids.gif.GifImageView
                                 android:id="@+id/iges1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="113dp"
+                                android:layout_width="113dp"
+                                android:layout_height="match_parent"
                                 android:src="@color/colorAccent" />
+
+                            <pl.droidsonroids.gif.GifImageView
+                                android:layout_width="113dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/picincio" />
+
+                            <pl.droidsonroids.gif.GifImageView
+                                android:id="@+id/iges2"
+                                android:layout_width="113dp"
+                                android:layout_height="match_parent"
+                                android:src="@drawable/bus" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
 
                             <TextView
                                 android:id="@+id/textView22"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Nuestros Planes" />
-
-                            <TextView
-                                android:id="@+id/textView37"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="116dp"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <pl.droidsonroids.gif.GifImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="113dp"
-                                android:src="@drawable/picincio" />
 
                             <TextView
                                 android:id="@+id/textView38"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Quiero Suscribirme" />
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical">
-
-                            <pl.droidsonroids.gif.GifImageView
-                                android:id="@+id/iges2"
-                                android:layout_width="match_parent"
-                                android:layout_height="113dp"
-                                android:src="@drawable/bus" />
 
                             <TextView
                                 android:id="@+id/txquienes"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Quienes Somos" />
-
                         </LinearLayout>
+
                     </LinearLayout>
 
 

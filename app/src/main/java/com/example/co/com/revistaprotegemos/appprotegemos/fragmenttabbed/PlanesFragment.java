@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -50,7 +51,8 @@ public class PlanesFragment extends Fragment {
     private DataAdapter adapter;
     private FragmentActivity myContext;
     private TextView t1;
-
+    private Typeface Ofaly,Color;
+    TextView ti;
 
 
     public PlanesFragment() {
@@ -74,7 +76,11 @@ public class PlanesFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
+        String fuente3 ="fuentes/Abril.otf";
+        this.Ofaly = Typeface.createFromAsset(getContext().getAssets(),fuente3);
 
+        ti=(TextView)view.findViewById(R.id.textView16);
+        ti.setTypeface(Ofaly);
 
 
 

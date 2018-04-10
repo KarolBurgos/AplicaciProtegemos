@@ -210,9 +210,9 @@
 
                         <Button
                             android:id="@+id/close"
-                            android:layout_width="165dp"
+                            android:layout_width="66dp"
                             android:layout_height="wrap_content"
-                            android:text="Close" />
+                            android:text="Ok" />
                     </LinearLayout>
 
                 </LinearLayout>

@@ -3,6 +3,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -43,7 +44,10 @@ public class ServiciosVentajasFragment extends Fragment {
     private boolean cargar;
     private RecyclerView recyclerView;
     private ArrayList<Servicios> data;
+    private ArrayList<Planes> data2;
     private DataAdapterservicios adapter;
+    private DataAdapter adapter2;
+    private FragmentActivity f;
     private Button butonserivicios;
     public ServiciosVentajasFragment() {
         // Required empty public constructor
@@ -91,5 +95,11 @@ public class ServiciosVentajasFragment extends Fragment {
             }
         });
 
+    }
+
+    public String cont(){
+        adapter2=new DataAdapter(data2,getContext(),f);
+        String j= adapter2.it();
+        return j;
     }
 }

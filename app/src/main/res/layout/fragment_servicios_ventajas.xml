@@ -7,12 +7,12 @@
     <!-- TODO: Update blank fragment layout -->
     <android.support.v7.widget.RecyclerView
         android:id='@+id/recy'
-        android:layout_width="365dp"
-        android:layout_height="360dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/txt_titulo"
-        android:layout_marginTop="165dp"
+        android:layout_marginTop="30dp"
         tools:layout_editor_absoluteX="50dp"
         tools:layout_editor_absoluteY="50dp" />
 
@@ -20,17 +20,9 @@
         android:id="@+id/textView16"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
         android:gravity="center"
         android:inputType="textMultiLine"
         android:text="Planes Y Servicios"
-        android:textStyle="italic" />
-
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="Button" />
+        android:textSize="18sp" />
 
 </FrameLayout>
