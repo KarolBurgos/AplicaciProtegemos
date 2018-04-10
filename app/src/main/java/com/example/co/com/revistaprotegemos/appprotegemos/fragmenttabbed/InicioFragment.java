@@ -100,14 +100,16 @@ public class InicioFragment extends Fragment {
 
             recyclerView = (RecyclerView) view.findViewById(R.id.recyclerVieww);
             recyclerView.setHasFixedSize(true);
-            GridLayoutManager gridLayoutManager = new GridLayoutManager(getActivity().getApplicationContext(), 1);
-            recyclerView.setLayoutManager(gridLayoutManager);
+            RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+            recyclerView.setLayoutManager(layoutManager);
             loadJSONn();
 
             recyclerView2 = (RecyclerView) view.findViewById(R.id.recyclerVieew);
             recyclerView2.setHasFixedSize(true);
-            GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity().getApplicationContext(), 2);
-            recyclerView2.setLayoutManager(gridLayoutManager2);
+            /*GridLayoutManager gridLayoutManager2 = new GridLayoutManager(getActivity().getApplicationContext(), 2);
+            recyclerView2.setLayoutManager(gridLayoutManager2);*/
+            RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+            recyclerView2.setLayoutManager(layoutManager2);
             loadJSON();
 
             t1 = (TextView) view.findViewById(R.id.txtvisita);
