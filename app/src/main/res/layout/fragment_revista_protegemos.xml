@@ -30,7 +30,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
@@ -46,7 +45,7 @@
 
                         <ImageView
                             android:id="@+id/imgre"
-                            android:layout_width="147dp"
+                            android:layout_width="160dp"
                             android:layout_height="210dp"
                             android:src="@drawable/bus" />
 
@@ -71,6 +70,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Ediciones Impresas" />
 
                             <TextView
@@ -78,6 +78,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Revista Protegemos - Edicion 1"
                                 android:textStyle="bold" />
 
@@ -93,6 +94,7 @@
                                 android:id="@+id/trbutton1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:layout_weight="1"
                                 android:background="@color/colorPrimary"
                                 android:text="Ver" />
@@ -108,7 +110,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
                 android:layout_marginTop="15dp"
                 android:orientation="vertical">
 
@@ -131,7 +132,7 @@
 
                         <ImageView
                             android:id="@+id/imgrevis"
-                            android:layout_width="147dp"
+                            android:layout_width="160dp"
                             android:layout_height="210dp"
                             android:src="@drawable/bus" />
                     </LinearLayout>
@@ -155,6 +156,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Ediciones Digitales" />
 
                             <TextView
@@ -162,6 +164,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
+                                android:gravity="center"
                                 android:text="Taller Para Papá - Edicion 1"
                                 android:textStyle="bold" />
 
@@ -177,6 +180,7 @@
                                 android:id="@+id/trbutton2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:layout_weight="1"
                                 android:background="@color/colorPrimary"
                                 android:text="Ver" />

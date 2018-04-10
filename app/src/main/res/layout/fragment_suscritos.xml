@@ -67,8 +67,7 @@
                     android:drawableStart="@drawable/ic_action_navigation_arrow_back"
                     android:ems="12"
                     android:gravity="center"
-                    android:hint="No. Contrato"
-                    android:inputType="textPassword" />
+                    android:hint="No. Contrato" />
 
                 <EditText
                     android:id="@+id/contraseña"
