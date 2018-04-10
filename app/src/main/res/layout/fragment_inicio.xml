@@ -189,7 +189,7 @@
                     android:layout_marginTop="20dp"
                     android:gravity="center"
                     android:inputType="textMultiLine"
-                    android:text="Zona de Pautas"
+                    android:text="Zona de Jornadas"
                     android:textColor="@android:color/black"
                     android:textStyle="normal|bold" />
 
