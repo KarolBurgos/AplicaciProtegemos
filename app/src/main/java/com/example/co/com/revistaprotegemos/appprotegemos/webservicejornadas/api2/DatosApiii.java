@@ -11,6 +11,6 @@ import retrofit2.http.GET;
  */
 
 public interface DatosApiii {
-    @GET("/webservice_jornadas/obtener_jornadas.php")
+    @GET("/aplicacionprotegemos/webservice/jornadas/obtener_jornadas.php")
     Call<JSOONResponse> getJSON();
 }

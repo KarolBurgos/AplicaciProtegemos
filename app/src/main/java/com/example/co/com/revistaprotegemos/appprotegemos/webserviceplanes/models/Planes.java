@@ -12,13 +12,17 @@ public class Planes {
     private String descripcion;
     private String img;
 
-    public Planes(int id, String titulo, String descripcion, String img) {
+    public Planes() {
+
+    }
+
+/*    public Planes(int id, String titulo, String descripcion, String img) {
         super();
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.img=img;
         this.id=id;
-    }
+    }*/
 
 
     public String getTitulo() {

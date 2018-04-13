@@ -6,6 +6,8 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosve
 
 public class Servicios {
 
+
+    private int id_servicios;
     private String titulo;
     private String descripcion;
     private String img;
@@ -23,11 +25,12 @@ public class Servicios {
      * @param img
      * @param descripcion
      */
-    public Servicios(String titulo, String descripcion, String img) {
+    public Servicios(String titulo, String descripcion, String img,int id_servicios) {
         super();
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.img = img;
+        this.id_servicios=id_servicios;
     }
 
     public String getTitulo() {
@@ -54,4 +57,11 @@ public class Servicios {
         this.img = img;
     }
 
+    public int getId_servicios() {
+        return id_servicios;
+    }
+
+    public void setId_servicios(int id_servicios) {
+        this.id_servicios = id_servicios;
+    }
 }

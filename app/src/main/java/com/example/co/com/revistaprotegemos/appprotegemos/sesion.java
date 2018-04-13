@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Window;
 import android.widget.TextView;
 
 public class sesion extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class sesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion);
+
    cajabienvenido=(TextView)findViewById(R.id.textView50);
    na=(TextView)findViewById(R.id.name);
    ed=(TextView)findViewById(R.id.edad);

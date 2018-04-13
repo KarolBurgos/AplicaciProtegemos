@@ -10,6 +10,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosven
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 /**
  * Created by ASPIRE VX15 on 10/03/2018.
@@ -21,7 +22,10 @@ public interface DatossApii {
 /*DataAdapter.ViewHolder d=null;
 int getH=d.iniciarsesion();
 int i=1;*/
+ServiciosVentajasFragment s=new ServiciosVentajasFragment();
 
-    @GET("/serviciosventajasf.php?id_planes="+1)
-    Call<JSONResponseServicios> getJSON();
+int n=2;
+
+    @GET("/aplicacionprotegemos/webservice/servicios/serviciosventajasf.php?id_planes=")
+    Call<JSONResponseServicios> getJSON(@Query("id_planes") int limit);
 }

@@ -58,6 +58,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
     private Context context;
     private List<String> countries;
     private FragmentActivity myContext;
+
+    private View view;
+    private ArrayList<Planes> android2;
+    private Context context2;
+    private FragmentActivity myContext2;
     private AdapterView.OnItemClickListener escucha;
 
     public DataAdapter(ArrayList<Planes> android, Context context,FragmentActivity f) {
@@ -86,7 +91,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(viewHolder.img);
+
+
     }
+
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener {
 
@@ -112,6 +121,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
 
             b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
+
 
                     Fragment fragment = null;
 
@@ -149,12 +159,6 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         public void onClick(View view) {
         }
 
-        public String iniciarsesion()
-        {
-            String id_P=id.getText().toString();
-
-            return id_P;
-        }
 
         @Override
         public void onErrorResponse(VolleyError error) {
@@ -185,10 +189,18 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
 
         private void iniciarsesin() {
             //ViewHolder viewHolder2=null;
-            String url = "http://192.168.43.73/sesion/planesseervicios.php?id_planes=";
+            String url = "http://192.168.43.73/sesion/planesseervicios.php?id_planes="+id.getText().toString();
             jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
             rq.add(jrq);
         }
+
+        public int obtenId()
+        {
+/*            String id_P=id.getText().toString();
+            return id_P;*/
+            return 2;
+        }
+
     }
 
     @Override
@@ -196,12 +208,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         return android.size();
     }
 
-public  String it()
+    public  int obtId()
     {
-        String t;
-        View view = null;
-        ViewHolder v= new ViewHolder(view);
-        t = v.iniciarsesion();
+
+        int t = 1;
+
         return t;
     }
 

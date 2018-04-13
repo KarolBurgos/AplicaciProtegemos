@@ -48,7 +48,9 @@ public class PlanesFragment extends Fragment {
     private boolean cargar;
     private RecyclerView recyclerView;
     private ArrayList<Planes> data;
+    private ArrayList<Planes> data2;
     private DataAdapter adapter;
+    private DataAdapter adapter2;
     private FragmentActivity myContext;
     private TextView t1;
     private Typeface Ofaly,Color;
@@ -125,6 +127,13 @@ public class PlanesFragment extends Fragment {
             }
         });
 
+    }
+
+    public int numero()
+    {
+
+        adapter2=new DataAdapter(data2,getContext(),myContext);
+        return adapter2.obtId();
     }
 
 }

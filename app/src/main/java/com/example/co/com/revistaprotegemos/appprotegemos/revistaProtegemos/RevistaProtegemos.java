@@ -41,7 +41,7 @@ public class RevistaProtegemos extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_revista_protegemos, container, false);
         ImageView img = (ImageView)view.findViewById(R.id.imgre);
-        String url="http://192.168.43.73/fotos/Edicion1.png";
+        String url="http://192.168.43.73/aplicacionprotegemos/fotos/Edicion1.png";
         Glide.with(this)
                 .load(url)
                 .centerCrop()
@@ -50,7 +50,7 @@ public class RevistaProtegemos extends Fragment {
                 .into(img);
 
         ImageView img2 = (ImageView)view.findViewById(R.id.imgrevis);
-        String url2="http://192.168.43.73/fotos/t1.png";
+        String url2="http://192.168.43.73/aplicacionprotegemos/fotos/t1.png";
         Glide.with(this)
                 .load(url2)
                 .centerCrop()

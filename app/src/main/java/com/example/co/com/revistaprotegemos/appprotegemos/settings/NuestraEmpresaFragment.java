@@ -79,7 +79,7 @@ public class NuestraEmpresaFragment extends Fragment {
         dvtext.getDocumentLayoutParams().setHyphenator(new Hyphenator(HyphenPattern.PT));
         dvtext.getDocumentLayoutParams().setHyphenated(true);*/
         ImageView img = (ImageView)view.findViewById(R.id.imageView8);
-        String url="http://192.168.43.73/fotos/premia.png";
+        String url="http://192.168.43.73/aplicacionprotegemos/fotos/premia.png";
         Glide.with(this)
                 .load(url)
                 .centerCrop()

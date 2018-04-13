@@ -128,12 +128,12 @@ public class InicioFragment extends Fragment {
         //IVF.setAutoStart(true);
 
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
-        Glide.with(getContext()).load("http://192.168.43.73/fotos/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
+        Glide.with(getContext()).load("http://192.168.43.73/aplicacionprotegemos/fotos/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
 
 
 
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
-        Glide.with(getContext()).load("http://192.168.43.73/fotos/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
+        Glide.with(getContext()).load("http://192.168.43.73/aplicacionprotegemos/fotos/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
         tg1=(TextView)view.findViewById(R.id.textView38);
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
