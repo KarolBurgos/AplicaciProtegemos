@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     MaterialSearchView searchView;
     String[] list;
+    int check = 0;
+    ContactenosFragment fragment_two = null;
     //List<DataItem> lstData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,7 +57,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        list = new String[]{"Clipcodes","Android"};
+        list = new String[]{"Clipcodes", "Android"};
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -115,11 +117,30 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+   /*     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
             super.onBackPressed();
+        }*/
+        switch (check) {
+            case 0:
+                //finish();
+                Fragment fragment = null;
+
+                Class fragmentClass= PrincipalFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                break;
+            case 1:
+                fragment_two.onBackPressed();
+                break;
         }
     }
 
@@ -160,19 +181,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             dialog2.show();
 
         } else if (id == R.id.llamar) {
-            Intent intent = new Intent(Intent.ACTION_CALL);
-            intent.setData(Uri.parse("tel:032-731-3100"));
-            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
+/*            Intent i = new Intent(Intent.ACTION_CALL);
+            i.setData(Uri.parse("tel:032-731-3100"));
+            startActivity(i);*/
 
+            try {
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    
+                }
+                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
+            }catch(Exception e){
+                e.printStackTrace();
             }
-            startActivity(intent);
+
         }
         else if (id == R.id.nuest) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);

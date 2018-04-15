@@ -19,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -66,6 +67,8 @@ public class ContactenosFragment extends Fragment {
     private String correo2, contraseña;
     private FragmentActivity myContext;
     private Session session;
+
+
     public ContactenosFragment() {
         // Required empty public constructor
     }
@@ -169,7 +172,14 @@ public class ContactenosFragment extends Fragment {
             }
         }
     }
-
+    LinearLayout llShowView = null;
+    public void onBackPressed() {
+        if (llShowView.getVisibility() == View.VISIBLE) {
+            llShowView.setVisibility(View.GONE);
+        } else {
+            getActivity().finish();
+        }
+    }
     public class BackgroundWorker extends AsyncTask<String,Void,String>{
 
         ContactenosFragment context;
@@ -230,6 +240,8 @@ public class ContactenosFragment extends Fragment {
         }
 
     }
+
+
 }
 
 

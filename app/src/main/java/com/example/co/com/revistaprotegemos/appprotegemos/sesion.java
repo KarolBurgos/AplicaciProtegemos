@@ -4,15 +4,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
 
 public class sesion extends AppCompatActivity {
-
     public static final String names="names";
     public static final String edad="edad";
     public static final String semestre="semestre";
     public static final String deudas="deudas";
     public static final String user="user";
     TextView cajabienvenido,na,ed,se,de,use;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,5 +40,18 @@ public class sesion extends AppCompatActivity {
    se.setText(se1m);
    de.setText(deu);
    use.setText(us);
+    }
+
+    @Override
+    public void onBackPressed() {
+        /*int count = getFragmentManager().getBackStackEntryCount();
+
+        if (count == 0) {
+            super.onBackPressed();
+            getFragmentManager().popBackStack();
+        } else {
+            getFragmentManager().popBackStack();
+        }
+    }*/
     }
 }
