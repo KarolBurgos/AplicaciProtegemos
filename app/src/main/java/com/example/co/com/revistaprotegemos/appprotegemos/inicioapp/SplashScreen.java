@@ -22,6 +22,7 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_splash_screen);
+
         mProgressBar =(ProgressBar)findViewById(R.id.pro);
         mLoadingText =(TextView)findViewById(R.id.LoadingCompleteTextView);
 

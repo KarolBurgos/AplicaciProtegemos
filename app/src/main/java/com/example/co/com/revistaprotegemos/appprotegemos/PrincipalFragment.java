@@ -3,6 +3,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
@@ -16,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toolbar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
@@ -33,6 +35,7 @@ public class PrincipalFragment extends Fragment {
     private ViewPager viewPager;
     private ViewPagerAdapter adapter;
     private ImageView logo;
+    private Toolbar toolbar;
     private FragmentTabHost tabHost;
     private Button mib;
     public PrincipalFragment() {
@@ -49,6 +52,7 @@ public class PrincipalFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
         View contenedor = (View) container.getParent();
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
+        toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
         appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
         tabs = new TabLayout(getActivity());
         tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
@@ -64,13 +68,35 @@ public class PrincipalFragment extends Fragment {
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
 
+        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#3b5998");
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                iconcolor(tab,"#3b5998");
 
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+                iconcolor(tab,"#E0E0E0");
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
 
         //    ImageView logo= (ImageView)view.findViewById(R.id,i);
         //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
+private void iconcolor(TabLayout.Tab tab, String color)
+{
 
+    tab.getIcon().setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN);
+}
 
     @Override
     public void onDestroyView() {

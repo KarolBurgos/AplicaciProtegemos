@@ -5,6 +5,7 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
@@ -16,10 +17,9 @@
 
     <com.miguelcatalan.materialsearchview.MaterialSearchView
         android:id="@+id/searchview"
-        android:hint="Buscar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
+        android:layout_height="wrap_content"
+        android:hint="Buscar" />
 
 
     <android.support.design.widget.NavigationView
@@ -28,6 +28,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
+
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/degradado"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.inicioapp.SplashScreen">
 
 
@@ -57,7 +57,9 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_margin="10dp"
-            android:layout_marginEnd="15dp" />
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:progressBackgroundTint="@android:color/holo_blue_dark" />
 
         <TextView
             android:id="@+id/LoadingCompleteTextView"
