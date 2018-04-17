@@ -235,7 +235,7 @@ public class InicioFragment extends Fragment {
         quienes_somos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(InicioFragment.super.getContext());
+                /*AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(InicioFragment.super.getContext());
                 View aView2 = getLayoutInflater().inflate(R.layout.fragment_nuestra_empresa, null);
                 uBuilder2.setView(aView2);
                 final AlertDialog dialog2 = uBuilder2.create();
@@ -247,7 +247,16 @@ public class InicioFragment extends Fragment {
                     public void onClick(View view) {
                         dialog2.cancel();
                     }
-                });
+                });*/
+                Fragment fragment = null;
+                Class fragmentClass= NuestraEmpresaFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
             }
         });

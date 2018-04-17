@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/degradado"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesDigitalesFragment">
 
@@ -57,7 +58,9 @@
                                     android:id="@+id/imd1"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd1"
@@ -146,7 +149,9 @@
                                     android:id="@+id/imd2"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd2"
@@ -235,7 +240,9 @@
                                     android:id="@+id/imd3"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd3"
@@ -324,7 +331,9 @@
                                     android:id="@+id/imd4"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd4"
@@ -413,7 +422,9 @@
                                     android:id="@+id/imd5"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd5"
@@ -502,7 +513,9 @@
                                     android:id="@+id/imd6"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txd6"

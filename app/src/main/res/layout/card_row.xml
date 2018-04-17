@@ -98,7 +98,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginEnd="15dp"
-                        android:text="Leer mas" />
+                        android:text="Leer mas"
+                        android:background="@drawable/degradado"
+                        android:layout_marginRight="15dp" />
 
                     <TextView
                         android:id="@+id/textView19"

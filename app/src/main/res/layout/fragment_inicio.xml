@@ -225,6 +225,7 @@
                     android:id="@+id/btonsuscribirme"
                     android:layout_width="151dp"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/register_button"
                     android:text="Suscribirme" />
 
                 <TextView
