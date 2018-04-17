@@ -40,7 +40,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                card_view:cardBackgroundColor="@color/colorAccent"
                 card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">
@@ -48,6 +47,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/degradado"
                     android:orientation="vertical">
 
                     <TextView
@@ -120,6 +120,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             android:orientation="vertical">
 
             <TextView
@@ -139,7 +140,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="225dp"
                 android:orientation="horizontal"
-                card_view:cardBackgroundColor="@color/colorAccent"
                 card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">
@@ -147,6 +147,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@drawable/degradado"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -210,8 +211,9 @@
 
                         <Button
                             android:id="@+id/close"
-                            android:layout_width="66dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:background="@drawable/register_button"
                             android:text="Ok" />
                     </LinearLayout>
 

@@ -93,7 +93,7 @@ public class ServiciosVentajasFragment extends Fragment {
 
     private void loadJSON(int co){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
+                .baseUrl("http://192.168.0.17")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatossApii request = retrofit.create(DatossApii.class);
@@ -118,7 +118,7 @@ public class ServiciosVentajasFragment extends Fragment {
 
     private void loadJSONVentajas(int co){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
+                .baseUrl("http://192.168.0.17")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosVentajas request = retrofit.create(DatosVentajas.class);

@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -62,12 +63,15 @@ public class DataaAdapter extends RecyclerView.Adapter<DataaAdapter.ViewHolder> 
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView tit,descr;
         private ImageView img1;
+
         public ViewHolder(View view) {
             super(view);
 
             tit = (TextView)view.findViewById(R.id.tipoj);
             descr = (TextView)view.findViewById(R.id.describjornada);
             img1 = (ImageView) view.findViewById(R.id.imageView3);
+
+
         }
     }
 }

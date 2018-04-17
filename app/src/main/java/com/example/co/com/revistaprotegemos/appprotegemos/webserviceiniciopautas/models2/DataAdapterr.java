@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopauta
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -78,6 +79,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
         Button b1;
         RequestQueue rq;
         JsonRequest jrq;
+        private Typeface Ofaly,Color;
 
         public ViewHolder(View view) {
             super(view);
@@ -96,6 +98,22 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
                 }
             });
+
+/*            String fuente3 ="fuentes/LouisG.ttf";
+            this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
+
+
+            descr.setTypeface(Ofaly);
+
+            String fuente ="fuentes/LouisI.ttf";
+            this.Color =Typeface.createFromAsset(context.getAssets(),fuente);
+
+            tit.setTypeface(Color);*/
+            String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
+            this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
+
+
+            descr.setTypeface(Ofaly);
         }
 
         @Override
@@ -133,7 +151,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
         private void iniciarsesion() {
             //ViewHolder viewHolder2=null;
-            String url = "http://192.168.43.73/sesion/pautasid.php?id_pauta=" + id.getText().toString();
+            String url = "http://192.168.0.17/sesion/pautasid.php?id_pauta=" + id.getText().toString();
             jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
             rq.add(jrq);
         }

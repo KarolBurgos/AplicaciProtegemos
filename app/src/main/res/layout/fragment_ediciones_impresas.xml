@@ -64,7 +64,9 @@
                                     android:id="@+id/imgrevisss"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/textView40"
@@ -154,7 +156,9 @@
                                     android:id="@+id/imr2"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr2"
@@ -243,7 +247,9 @@
                                     android:id="@+id/imr3"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr3"
@@ -333,7 +339,9 @@
                                     android:id="@+id/imr4"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr4"
@@ -422,7 +430,9 @@
                                     android:id="@+id/imr5"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr5"
@@ -511,7 +521,9 @@
                                     android:id="@+id/imr6"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr6"
@@ -600,7 +612,9 @@
                                     android:id="@+id/imr7"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr7"
@@ -689,7 +703,9 @@
                                     android:id="@+id/imr8"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr9"
@@ -778,7 +794,9 @@
                                     android:id="@+id/imr9"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr10"
@@ -867,7 +885,9 @@
                                     android:id="@+id/imr10"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr11"
@@ -957,7 +977,9 @@
                                     android:id="@+id/imr11"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr12"
@@ -1046,7 +1068,9 @@
                                     android:id="@+id/imr12"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr13"
@@ -1135,7 +1159,9 @@
                                     android:id="@+id/imr13"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr14"
@@ -1224,7 +1250,9 @@
                                     android:id="@+id/imr14"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
-                                    android:src="@drawable/bus" />
+                                    android:layout_marginStart="15dp"
+                                    android:src="@drawable/bus"
+                                    android:layout_marginLeft="15dp" />
 
                                 <TextView
                                     android:id="@+id/txr15"

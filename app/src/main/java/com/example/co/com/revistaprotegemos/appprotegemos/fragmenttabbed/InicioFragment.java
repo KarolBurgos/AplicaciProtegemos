@@ -76,8 +76,8 @@ public class InicioFragment extends Fragment {
     private Button bsuscr;
     private AdapterViewFlipper IVF;
     private String url;
-    private TextView quienes_somos;
-    private TextView tg1,nuestrosplanes,susc,somo,estaslisto;
+    private TextView quienes_somos,visite,encontrara,jornada;
+    private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
     private Typeface Nuestrosplanes,Aurella;
 
     public InicioFragment() {
@@ -128,19 +128,29 @@ public class InicioFragment extends Fragment {
         //IVF.setAutoStart(true);
 
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
-        Glide.with(getContext()).load("http://192.168.43.73/aplicacionprotegemos/fotos/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
+        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
 
 
 
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
-        Glide.with(getContext()).load("http://192.168.43.73/aplicacionprotegemos/fotos/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
+        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
         tg1=(TextView)view.findViewById(R.id.textView38);
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
 
 
-        String fuente1 ="fuentes/Nuestrosplanes.ttf";
+        //String fuente1 ="fuentes/Nuestrosplanes.ttf";
+        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
         this.Nuestrosplanes =Typeface.createFromAsset(getContext().getAssets(),fuente1);
+
+        visite=(TextView)view.findViewById(R.id.textView41);
+        visite.setTypeface(Nuestrosplanes);
+
+        encontrara=(TextView)view.findViewById(R.id.txtvisita);
+        encontrara.setTypeface(Nuestrosplanes);
+
+        jornada=(TextView)view.findViewById(R.id.textVie);
+        jornada.setTypeface(Nuestrosplanes);
 
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
         nuestrosplanes.setTypeface(Nuestrosplanes);
@@ -151,11 +161,14 @@ public class InicioFragment extends Fragment {
         somo=(TextView)view.findViewById(R.id.txquienes);
         somo.setTypeface(Nuestrosplanes);
 
+        pautas=(TextView)view.findViewById(R.id.textView53);
+        pautas.setTypeface(Nuestrosplanes);
+
         String fuente2 ="fuentes/Aurella.ttf";
         this.Aurella =Typeface.createFromAsset(getContext().getAssets(),fuente2);
 
         estaslisto=(TextView)view.findViewById(R.id.textViews4);
-        estaslisto.setTypeface(Aurella);
+        estaslisto.setTypeface(Nuestrosplanes);
         return view;
     }
     public void inter() {
@@ -274,7 +287,7 @@ public class InicioFragment extends Fragment {
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
+                .baseUrl("http://192.168.0.17")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApii request = retrofit.create(DatosApii.class);
@@ -299,7 +312,7 @@ public class InicioFragment extends Fragment {
 
     private void loadJSONn(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
+                .baseUrl("http://192.168.0.17")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApiii request = retrofit.create(DatosApiii.class);

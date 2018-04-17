@@ -36,7 +36,8 @@
         </activity>
         <activity android:name=".insertar" />
         <activity android:name=".WebViewActivity" />
-        <activity android:name=".sesion" />
+        <activity android:name=".sesion"
+            android:label=""/>
         <activity android:name=".PautasLeerActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.

@@ -42,16 +42,5 @@ public class sesion extends AppCompatActivity {
    use.setText(us);
     }
 
-    @Override
-    public void onBackPressed() {
-        /*int count = getFragmentManager().getBackStackEntryCount();
 
-        if (count == 0) {
-            super.onBackPressed();
-            getFragmentManager().popBackStack();
-        } else {
-            getFragmentManager().popBackStack();
-        }
-    }*/
-    }
 }

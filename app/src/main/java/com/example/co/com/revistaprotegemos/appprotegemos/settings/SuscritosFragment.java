@@ -146,7 +146,7 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
 
     private void iniciarsesion()
     {
-        String url="http://192.168.43.73/aplicacionprotegemos/inicio_sesionphp/sesion.php?user="+contrato.getText().toString()+
+        String url="http://192.168.0.17/aplicacionprotegemos/inicio_sesionphp/sesion.php?user="+contrato.getText().toString()+
                 "&pwd="+contraseña.getText().toString();
         jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
