@@ -9,7 +9,7 @@
         android:title="buscar"
         app:showAsAction="always" />
 
-    <item
+<!--    <item
         android:id="@+id/nuest"
         android:orderInCategory="100"
         android:title="Nuestra Empresa"
@@ -18,7 +18,7 @@
         android:id="@+id/contac"
         android:orderInCategory="100"
         android:title="contactenos"
-        app:showAsAction="never" />
+        app:showAsAction="never" />-->
 
     <item
         android:id="@+id/horario"
@@ -32,12 +32,6 @@
         android:title="llamar"
         app:showAsAction="always" />
 
-    <item
-        android:id="@+id/regresar"
-        android:icon="@android:drawable/stat_sys_phone_call"
-        android:orderInCategory="2"
-        android:title="llamar"
-        app:showAsAction="always" />
 
 
 </menu>

@@ -174,14 +174,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             return true;
         }
 */
-        if (id == R.id.contac) {
+    /*    if (id == R.id.contac) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_contactenos, null);
             uBuilder2.setView(aView2);
             final AlertDialog dialog2 = uBuilder2.create();
             dialog2.show();
 
-        } else if (id == R.id.llamar) {
+        }*/  if (id == R.id.llamar) {
 /*            Intent i = new Intent(Intent.ACTION_CALL);
             i.setData(Uri.parse("tel:032-731-3100"));
             startActivity(i);*/
@@ -203,7 +203,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
 
         }
-        else if (id == R.id.nuest) {
+        /*else if (id == R.id.nuest) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_nuestra_empresa, null);
             uBuilder2.setView(aView2);
@@ -217,7 +217,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     dialog2.cancel();
                 }
             });
-        }
+        }*/
         else if (id == R.id.horario) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_horas_atencion, null);

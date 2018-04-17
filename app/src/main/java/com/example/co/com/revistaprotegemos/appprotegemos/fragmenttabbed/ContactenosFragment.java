@@ -83,7 +83,7 @@ public class ContactenosFragment extends Fragment {
         correo = (EditText) view.findViewById(R.id.edcorreoo);
         celular = (EditText) view.findViewById(R.id.edcelularr);
         mensaje = (EditText) view.findViewById(R.id.edmensajee);
-        ubi=(Button)view.findViewById(R.id.buttonubi);
+        //ubi=(Button)view.findViewById(R.id.buttonubi);
         b1=(Button)view.findViewById(R.id.buttenvia);
         correo2="karburgos@umariana.edu.co";
         contraseña="narvaezburgos";
@@ -106,13 +106,13 @@ public class ContactenosFragment extends Fragment {
 
             }
         });
-        ubi.setOnClickListener(new View.OnClickListener() {
+/*        ubi.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 saveInfo();
 
             }
-        });
+        });*/
 
 
     }

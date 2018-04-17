@@ -56,7 +56,7 @@ public class NuestraEmpresaFragment extends Fragment {
         nuestra.setTypeface(Ofaly);
 
         //Parrafos
-        String fuente ="fuentes/April.ttf";
+        String fuente ="fuentes/Dehasta Momentos Regular.otf";
         this.Color =Typeface.createFromAsset(getContext().getAssets(),fuente);
 
         nuestra=(TextView)view.findViewById(R.id.textView9);

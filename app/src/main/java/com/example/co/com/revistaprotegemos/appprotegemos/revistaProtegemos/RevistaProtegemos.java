@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos;
 
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -25,6 +27,8 @@ public class RevistaProtegemos extends Fragment {
 
     private Button b1,b2;
     private FragmentActivity myContext;
+    private TextView t1,ti;
+    private Typeface Ofaly,Color;
     public RevistaProtegemos() {
         // Required empty public constructor
     }
@@ -61,6 +65,11 @@ public class RevistaProtegemos extends Fragment {
     b1=(Button)view.findViewById(R.id.trbutton1);
     b2=(Button)view.findViewById(R.id.trbutton2);
     //b1=(Button)view.findViewById(R.id.trbutton2);
+        String fuente3 ="fuentes/Abril.otf";
+        this.Ofaly = Typeface.createFromAsset(getContext().getAssets(),fuente3);
+
+        ti=(TextView)view.findViewById(R.id.txre);
+        ti.setTypeface(Ofaly);
         return view;
     }
 
