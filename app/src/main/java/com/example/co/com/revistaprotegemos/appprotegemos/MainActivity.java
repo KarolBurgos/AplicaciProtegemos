@@ -35,6 +35,7 @@ import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
@@ -249,9 +250,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentClass=SuscritosFragment.class;
         } else if (id == R.id.nav_planes) {
             //fragmentClass=PrincipalFragment.class;
-            PrincipalFragment.ViewPagerAdapter principalFragment= new PrincipalFragment.ViewPagerAdapter(getSupportFragmentManager());
-            principalFragment.getItem(2);
-
+           /* PrincipalFragment.ViewPagerAdapter principalFragment= new PrincipalFragment.ViewPagerAdapter(getSupportFragmentManager());
+            principalFragment.getItem(2);*/
+            fragmentClass=PlanesFragment.class;
         } else if (id == R.id.nav_susc) {
 
          fragmentClass=SuscribirseFragment.class;
@@ -269,6 +270,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             startActivity(intent);*/
 
             fragmentClass=NuestraEmpresaFragment.class;
+        }
+        else if (id == R.id.revistpro) {
+
+    /*        Intent intent=new Intent(this,insertar.class);
+            startActivity(intent);*/
+
+            fragmentClass=RevistaProtegemos.class;
         }
         else if (id == R.id.ubic) {
 

@@ -88,7 +88,7 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         String fuente2 ="fuentes/Abril.otf";
         this.April =Typeface.createFromAsset(getContext().getAssets(),fuente2);
 
-        String fuente3 ="fuentes/Senior.ttf";
+        String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
         this.Senior =Typeface.createFromAsset(getContext().getAssets(),fuente3);
 
         senior=(TextView)view.findViewById(R.id.senior);
