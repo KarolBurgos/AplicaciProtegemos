@@ -3,8 +3,15 @@
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    android:background="#FF84CFD8"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment">
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/Swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
 
     <!-- TODO: Update blank fragment layout -->
     <!-- TODO: Update blank fragment layout -->
@@ -258,5 +265,5 @@
         </LinearLayout>
     </ScrollView>
 
-
-            </FrameLayout>
+    </android.support.v4.widget.SwipeRefreshLayout>
+</FrameLayout>

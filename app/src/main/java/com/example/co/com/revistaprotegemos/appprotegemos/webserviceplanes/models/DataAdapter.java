@@ -6,6 +6,7 @@ import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -42,6 +43,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.logging.Handler;
 
 import static javax.xml.datatype.DatatypeConstants.DURATION;
 
@@ -54,6 +57,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
     private ImageView imageViewExpand;
     private static final int DURATION = 250;
 
+    SwipeRefreshLayout swipeRefreshLayout;
     private ArrayList<Planes> android;
     private Context context;
     private List<String> countries;
@@ -65,11 +69,12 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
     private FragmentActivity myContext2;
     private AdapterView.OnItemClickListener escucha;
 
-    public DataAdapter(ArrayList<Planes> android, Context context,FragmentActivity f) {
+    public DataAdapter(ArrayList<Planes> android, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
         this.android = android;
         this.context = context;
         this.escucha = escucha;
         this.myContext=f;
+        this.swipeRefreshLayout=swipeRefreshLayout;
     }
 
 
@@ -92,6 +97,12 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(viewHolder.img);
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                refresh();
+            }
+        });
 
     }
 
@@ -220,6 +231,18 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
     {
         this.countries=countries;
         notifyDataSetChanged();
+    }
+
+    private void refresh()
+    {
+        new android.os.Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+/*                android.add(0,android.get(new Random().nextInt(android.size())));*/
+                DataAdapter.this.notifyDataSetChanged();
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        },1000);
     }
 
 /*

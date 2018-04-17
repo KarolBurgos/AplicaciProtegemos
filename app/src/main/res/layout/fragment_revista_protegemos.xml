@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/degradado"
+    android:background="#FF84CFD8"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos">
 
     <!-- TODO: Update blank fragment layout -->
@@ -100,7 +100,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:background="#FF419E84"
+                                android:background="@drawable/degradado"
                                 android:text="Ver" />
                         </LinearLayout>
 
@@ -189,7 +189,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:background="#FF419E84"
+                                android:background="@drawable/degradado"
                                 android:text="Ver" />
                         </LinearLayout>
 

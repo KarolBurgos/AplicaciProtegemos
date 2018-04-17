@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -55,7 +56,7 @@ public class PlanesFragment extends Fragment {
     private TextView t1;
     private Typeface Ofaly,Color;
     TextView ti;
-
+    SwipeRefreshLayout swipeRefreshLayout;
 
     public PlanesFragment() {
         // Required empty public constructor
@@ -72,6 +73,9 @@ public class PlanesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
+        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipeplanes);
+
+
 
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -117,7 +121,7 @@ public class PlanesFragment extends Fragment {
 
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapter(data, getContext(),myContext);
+                adapter = new DataAdapter(data, getContext(),myContext,swipeRefreshLayout);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -132,7 +136,7 @@ public class PlanesFragment extends Fragment {
     public int numero()
     {
 
-        adapter2=new DataAdapter(data2,getContext(),myContext);
+        adapter2=new DataAdapter(data2,getContext(),myContext,swipeRefreshLayout);
         return adapter2.obtId();
     }
 

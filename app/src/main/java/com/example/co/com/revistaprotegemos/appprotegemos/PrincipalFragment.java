@@ -55,24 +55,26 @@ public class PrincipalFragment extends Fragment {
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
         appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
         tabs = new TabLayout(getActivity());
-        tabs.setTabTextColors(Color.parseColor("#FFFFFF"), Color.parseColor("#FFFFFF"));
+        //tabs.setTabTextColors(Color.parseColor("#FF00BAD1"), Color.parseColor("#FF00BAD1"));
         appBar.addView(tabs);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getFragmentManager());
 
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
+        //43
 
-        int icons[] = {R.drawable.ic_icons8_casa_50, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
+        //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
+        int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_tarjetas_bancarias_50, R.drawable.ic_icons8_parte_delantera_de_tarjeta_bancaria_50};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
 
-        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#3b5998");
+        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF103D31");
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                iconcolor(tab,"#3b5998");
+                iconcolor(tab,"#FF103D31");
 
             }
 
@@ -80,7 +82,7 @@ public class PrincipalFragment extends Fragment {
             public void onTabUnselected(TabLayout.Tab tab) {
 
                 iconcolor(tab,"#E0E0E0");
-            }
+        }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {

@@ -182,7 +182,7 @@ public class EdicionesImpresas extends Fragment {
         b13=(Button)view.findViewById(R.id.trb11);
         b14=(Button)view.findViewById(R.id.trb12);
 
-         regresar = (Button) view.findViewById(R.id.regre);
+        /* regresar = (Button) view.findViewById(R.id.regre);*/
 
 
 
@@ -301,7 +301,7 @@ public class EdicionesImpresas extends Fragment {
 
             }
         });
-        regresar.setOnClickListener(new View.OnClickListener() {
+      /*  regresar.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //  Log.e("fdgfdfgfgfgfh--->","SI");
                 //getActivity().finish();
@@ -319,7 +319,7 @@ public class EdicionesImpresas extends Fragment {
 
 
             }
-        });
+        });*/
 
     }
 

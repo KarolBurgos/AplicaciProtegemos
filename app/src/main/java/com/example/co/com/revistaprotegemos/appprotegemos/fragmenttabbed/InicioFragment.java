@@ -10,10 +10,12 @@ import android.graphics.drawable.TransitionDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -35,6 +37,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.gifbitmap.ImageVideoGifDrawableLoadProvider;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.CustomAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesDigitalesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
@@ -80,6 +83,9 @@ public class InicioFragment extends Fragment {
     private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
     private Typeface Nuestrosplanes,Aurella;
 
+    SwipeRefreshLayout swipeRefreshLayout;
+    TextView textView;
+    int number=0;
     public InicioFragment() {
         // Required empty public constructor
     }
@@ -96,7 +102,32 @@ public class InicioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe);
+        //textView=(TextView)view.findViewById(R.id.tvSwipe);
+        //textView.setText("Total number=0");
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                //number++;
+                //textView.setText("Total Number="+number);
+                Fragment fragment = null;
+                Class fragmentClass= PrincipalFragment.class;
+                try{
+                    fragment = (Fragment) fragmentClass.newInstance();
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                },4000);
+            }
+        });
 
             recyclerView = (RecyclerView) view.findViewById(R.id.recyclerVieww);
             recyclerView.setHasFixedSize(true);
