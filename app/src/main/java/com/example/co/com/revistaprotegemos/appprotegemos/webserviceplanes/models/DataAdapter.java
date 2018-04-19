@@ -76,8 +76,6 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         this.myContext=f;
         this.swipeRefreshLayout=swipeRefreshLayout;
     }
-
-
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
@@ -105,10 +103,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         });
 
     }
-
-
-
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener, Response.Listener<JSONObject>, Response.ErrorListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView tit, descr, id, leer;
         public ImageView img;
@@ -123,12 +118,8 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
             tit = (TextView) view.findViewById(R.id.txt2);
             descr = (TextView) view.findViewById(R.id.tv_version);
             id = (TextView) view.findViewById(R.id.idpla);
-            //leer = (TextView) view.findViewById(R.id.leer);
             b1=(Button)view.findViewById(R.id.button2);
             rq = Volley.newRequestQueue(context);
-
-/*            linearLayoutDetails = (ViewGroup) view.findViewById(R.id.linearLayoutDetails);
-            imageViewExpand = (ImageView) view.findViewById(R.id.imageViewExpand);*/
 
             b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
@@ -145,8 +136,6 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
                     FragmentManager fragmentManager = myContext.getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
-
-
                 }
             });
 
@@ -161,64 +150,18 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
 
             titu=(TextView)view.findViewById(R.id.tv_version);
             titu.setTypeface(Color);
-
-
-
         }
 
         @Override
         public void onClick(View view) {
         }
-
-
-        @Override
-        public void onErrorResponse(VolleyError error) {
-            Toast.makeText(context, "No se encontro el usuario" + error.toString(), Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onResponse(JSONObject response) {
-            Servicios servicios = new Servicios();
-            JSONArray jsonArray = response.optJSONArray("datos");
-            JSONObject jsonObject = null;
-
-            try {
-                jsonObject = jsonArray.getJSONObject(0);
-                servicios.setTitulo(jsonObject.optString("titulo"));
-                servicios.setDescripcion(jsonObject.optString("descripcion"));
-                servicios.setImg(jsonObject.optString("img"));
-            } catch (JSONException e) {
-                e.printStackTrace();
-            }
-            Intent intent = new Intent(context, ServiciosLeermas.class);
-            intent.putExtra(ServiciosLeermas.titu, servicios.getTitulo());
-            intent.putExtra(ServiciosLeermas.des, servicios.getDescripcion());
-            intent.putExtra(ServiciosLeermas.im, servicios.getImg());
-
-            context.startActivity(intent);
-        }
-
-        private void iniciarsesin() {
-            //ViewHolder viewHolder2=null;
-            String url = "http://192.168.43.73/sesion/planesseervicios.php?id_planes="+id.getText().toString();
-            jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
-            rq.add(jrq);
-        }
-
         public int obtenId()
         {
 /*            String id_P=id.getText().toString();
             return id_P;*/
             return 2;
         }
-
     }
-
-    @Override
-    public int getItemCount() {
-        return android.size();
-    }
-
     public  int obtId()
     {
 
@@ -226,6 +169,13 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
 
         return t;
     }
+    @Override
+    public int getItemCount() {
+        return android.size();
+    }
+
+
+
 
     public void setcountries(List<String> countries)
     {
@@ -245,27 +195,6 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         },1000);
     }
 
-/*
-    public void toggleDetails(View view) {
-        if (linearLayoutDetails.getVisibility() == View.GONE) {
-            ExpandAndCollapseViewUtil.expand(linearLayoutDetails, DURATION);
-            imageViewExpand.setImageResource(R.mipmap.ic_launcher);
-            rotate(-180.0f);
-        } else {
-            ExpandAndCollapseViewUtil.collapse(linearLayoutDetails, DURATION);
-            imageViewExpand.setImageResource(R.mipmap.ic_launcher);
-            rotate(180.0f);
-        }
-    }
-
-    private void rotate(float angle) {
-        Animation animation = new RotateAnimation(0.0f, angle, Animation.RELATIVE_TO_SELF, 0.5f,
-                Animation.RELATIVE_TO_SELF, 0.5f);
-        animation.setFillAfter(true);
-        animation.setDuration(DURATION);
-        imageViewExpand.startAnimation(animation);
-    }
-*/
 
 }
 

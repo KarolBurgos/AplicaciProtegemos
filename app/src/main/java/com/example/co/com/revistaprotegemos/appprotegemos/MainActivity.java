@@ -17,6 +17,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -39,13 +40,19 @@ import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.Revi
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
+    ArrayList<Pautas> listaPautas;
+    DataAdapterr recyclerAdaptador;
     MaterialSearchView searchView;
     String[] list;
     int check = 0;
@@ -79,17 +86,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
-/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(Intent.ACTION_CALL);
-                intent.setData(Uri.parse("tel:032-731-3100"));
-                startActivity(intent);
-            }
-        });*/
-
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -111,22 +107,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
-        setSearchView();
+       setSearchView();
 
     }
 
 
     @Override
     public void onBackPressed() {
-   /*     DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
-            super.onBackPressed();
-        }*/
         switch (check) {
             case 0:
-                //finish();
                 Fragment fragment = null;
 
                 Class fragmentClass= PrincipalFragment.class;
@@ -147,18 +136,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-/*        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.main, menu);
-        searchView = (SearchView) MenuItemCompat.getActionView(menu.findItem(R.id.search));
-        searchView.setOnQueryTextListener((SearchView.OnQueryTextListener) this);
-        return super.onCreateOptionsMenu(menu);*/
+
         getMenuInflater().inflate(R.menu.main, menu);
         MenuItem item = menu.findItem(R.id.search);
         searchView.setMenuItem(item);
 
-
-        return super.onCreateOptionsMenu(menu);
+        return true;
 
     }
 
@@ -169,23 +152,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-     /*   if (id == R.id.action_settings) {
-            return true;
-        }
-*/
-    /*    if (id == R.id.contac) {
-            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
-            View aView2 = getLayoutInflater().inflate(R.layout.fragment_contactenos, null);
-            uBuilder2.setView(aView2);
-            final AlertDialog dialog2 = uBuilder2.create();
-            dialog2.show();
-
-        }*/  if (id == R.id.llamar) {
-/*            Intent i = new Intent(Intent.ACTION_CALL);
-            i.setData(Uri.parse("tel:032-731-3100"));
-            startActivity(i);*/
-
+            if (id == R.id.llamar)
+            {
             try {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
@@ -195,30 +163,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     //                                          int[] grantResults)
                     // to handle the case where the user grants the permission. See the documentation
                     // for ActivityCompat#requestPermissions for more details.
-                    
+
                 }
                 startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
             }catch(Exception e){
                 e.printStackTrace();
             }
-
-        }
-        /*else if (id == R.id.nuest) {
-            AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
-            View aView2 = getLayoutInflater().inflate(R.layout.fragment_nuestra_empresa, null);
-            uBuilder2.setView(aView2);
-            final AlertDialog dialog2 = uBuilder2.create();
-            dialog2.show();
-            Button close = (Button) aView2.findViewById(R.id.close);
-
-            close.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    dialog2.cancel();
-                }
-            });
-        }*/
-        else if (id == R.id.horario) {
+            }
+              else if (id == R.id.horario) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_horas_atencion, null);
             uBuilder2.setView(aView2);
@@ -249,39 +201,23 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if (id == R.id.suscriptores) {
             fragmentClass=SuscritosFragment.class;
         } else if (id == R.id.nav_planes) {
-            //fragmentClass=PrincipalFragment.class;
-           /* PrincipalFragment.ViewPagerAdapter principalFragment= new PrincipalFragment.ViewPagerAdapter(getSupportFragmentManager());
-            principalFragment.getItem(2);*/
             fragmentClass=PlanesFragment.class;
         } else if (id == R.id.nav_susc) {
 
          fragmentClass=SuscribirseFragment.class;
 
         } else if (id == R.id.nav_cont) {
-
-    /*        Intent intent=new Intent(this,insertar.class);
-            startActivity(intent);*/
-
             fragmentClass=ContactenosFragment.class;
         }
         else if (id == R.id.nav_nuemp) {
-
-    /*        Intent intent=new Intent(this,insertar.class);
-            startActivity(intent);*/
 
             fragmentClass=NuestraEmpresaFragment.class;
         }
         else if (id == R.id.revistpro) {
 
-    /*        Intent intent=new Intent(this,insertar.class);
-            startActivity(intent);*/
-
             fragmentClass=RevistaProtegemos.class;
         }
         else if (id == R.id.ubic) {
-
-    /*        Intent intent=new Intent(this,insertar.class);
-            startActivity(intent);*/
 
             fragmentClass=MapsActivity.class;
         }
@@ -307,13 +243,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     @Override
     public boolean onQueryTextChange(String s) {
-        return false;
+        return  false;
     }
+
 
     public void setSearchView()
     {
         searchView=(MaterialSearchView)findViewById(R.id.searchview);
-        //searchView.setSuggestions(getResources().getStringArray(R.array.query_suggestions));
         searchView.closeSearch();
         searchView.setSuggestions(list);
         searchView.setEllipsize(true);

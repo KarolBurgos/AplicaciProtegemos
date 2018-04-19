@@ -75,8 +75,6 @@ public class PlanesFragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipeplanes);
 
-
-
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -88,16 +86,6 @@ public class PlanesFragment extends Fragment {
         ti=(TextView)view.findViewById(R.id.textView16);
         ti.setTypeface(Ofaly);
 
-
-
-/*        ImageView img = (ImageView)view.findViewById(R.id.fotico1);
-        String url="http://192.168.0.17/fotos/1.png";
-        Glide.with(this)
-                .load(url)
-                .centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(img);*/
         return view;
 
     }

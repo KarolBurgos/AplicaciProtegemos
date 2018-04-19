@@ -87,7 +87,6 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
             tit = (TextView) view.findViewById(R.id.tv_namee);
             descr = (TextView) view.findViewById(R.id.tv_versionn);
             id = (TextView) view.findViewById(R.id.textView52);
-            //leer = (TextView) view.findViewById(R.id.leerpautas);
             b1=(Button)view.findViewById(R.id.button4);
             rq = Volley.newRequestQueue(context);
             view.setOnClickListener((View.OnClickListener) this);
@@ -98,17 +97,6 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
                 }
             });
-
-/*            String fuente3 ="fuentes/LouisG.ttf";
-            this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
-
-
-            descr.setTypeface(Ofaly);
-
-            String fuente ="fuentes/LouisI.ttf";
-            this.Color =Typeface.createFromAsset(context.getAssets(),fuente);
-
-            tit.setTypeface(Color);*/
             String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
             this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
 
@@ -160,5 +148,12 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
     @Override
     public int getItemCount() {
         return android.size();
+    }
+
+    public void setFilter(ArrayList<Pautas> lisaPautas)
+    {
+        this.android=new ArrayList<>();
+        this.android.addAll(lisaPautas);
+        notifyDataSetChanged();
     }
 }

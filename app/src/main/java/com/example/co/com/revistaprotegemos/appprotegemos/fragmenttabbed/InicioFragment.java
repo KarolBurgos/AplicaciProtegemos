@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.graphics.drawable.BitmapDrawable;
@@ -37,8 +38,11 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.load.resource.gifbitmap.ImageVideoGifDrawableLoadProvider;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.CustomAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.MainActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.ValidacionNoHayInternet;
+import com.example.co.com.revistaprotegemos.appprotegemos.inicioapp.SplashScreen;
 import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesDigitalesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
@@ -103,23 +107,31 @@ public class InicioFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe);
-        //textView=(TextView)view.findViewById(R.id.tvSwipe);
-        //textView.setText("Total number=0");
-
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                //number++;
-                //textView.setText("Total Number="+number);
-                Fragment fragment = null;
-                Class fragmentClass= PrincipalFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
+                NetworkInfo activeNetwork = ((ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
+
+                    // Load Webview
+                    Fragment fragment = null;
+                    Class fragmentClass= PrincipalFragment.class;
+                    try{
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+                } else {
+
+                    // Show No internet
+                    Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
+                    startActivity(intent);
+
                 }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
                 new Handler().postDelayed(new Runnable() {
                     @Override
                     public void run() {
@@ -161,16 +173,12 @@ public class InicioFragment extends Fragment {
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
 
-
-
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
         tg1=(TextView)view.findViewById(R.id.textView38);
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
 
-
-        //String fuente1 ="fuentes/Nuestrosplanes.ttf";
         String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
         this.Nuestrosplanes =Typeface.createFromAsset(getContext().getAssets(),fuente1);
 
@@ -205,25 +213,6 @@ public class InicioFragment extends Fragment {
     public void inter() {
 
     }
-
-    public static boolean compruebaConexion(Context context) {
-
-        boolean connected = false;
-
-        ConnectivityManager connec = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-
-        // Recupera todas las redes (tanto móviles como wifi)
-        NetworkInfo[] redes = connec.getAllNetworkInfo();
-
-        for (int i = 0; i < redes.length; i++) {
-            // Si alguna red tiene conexión, se devuelve true
-            if (redes[i].getState() == NetworkInfo.State.CONNECTED) {
-                connected = true;
-            }
-        }
-        return connected;
-    }
-
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -266,19 +255,6 @@ public class InicioFragment extends Fragment {
         quienes_somos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                /*AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(InicioFragment.super.getContext());
-                View aView2 = getLayoutInflater().inflate(R.layout.fragment_nuestra_empresa, null);
-                uBuilder2.setView(aView2);
-                final AlertDialog dialog2 = uBuilder2.create();
-                dialog2.show();
-                Button close = (Button) aView2.findViewById(R.id.close);
-
-                close.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        dialog2.cancel();
-                    }
-                });*/
                 Fragment fragment = null;
                 Class fragmentClass= NuestraEmpresaFragment.class;
                 try{
