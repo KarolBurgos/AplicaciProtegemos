@@ -2,22 +2,14 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
-import android.app.SearchManager;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -30,24 +22,20 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.RadioButton;
 import android.widget.SearchView;
-import android.widget.Toast;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
-import java.net.Socket;
 import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
@@ -204,14 +192,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentClass=PlanesFragment.class;
         } else if (id == R.id.nav_susc) {
 
-         fragmentClass=SuscribirseFragment.class;
+            Intent intent=new Intent (this,SuscribeteActivity.class);
+            startActivity(intent);
 
         } else if (id == R.id.nav_cont) {
             fragmentClass=ContactenosFragment.class;
+
         }
         else if (id == R.id.nav_nuemp) {
 
-            fragmentClass=NuestraEmpresaFragment.class;
+            Intent intent=new Intent (this,NuestraEmpresaActivity.class);
+            startActivity(intent);
         }
         else if (id == R.id.revistpro) {
 

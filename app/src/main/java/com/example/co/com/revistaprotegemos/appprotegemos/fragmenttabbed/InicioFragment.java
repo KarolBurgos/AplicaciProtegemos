@@ -3,11 +3,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
-import android.graphics.drawable.TransitionDrawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -17,35 +13,25 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.bumptech.glide.load.resource.gifbitmap.ImageVideoGifDrawableLoadProvider;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.example.co.com.revistaprotegemos.appprotegemos.CustomAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.MainActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.ValidacionNoHayInternet;
-import com.example.co.com.revistaprotegemos.appprotegemos.inicioapp.SplashScreen;
-import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesDigitalesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscribirseFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.DatosApii;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
@@ -237,15 +223,8 @@ public class InicioFragment extends Fragment {
         bsuscr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Fragment fragment = null;
-                Class fragmentClass= SuscribirseFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                Intent intent=new Intent (getContext(),SuscribeteActivity.class);
+                startActivity(intent);
 
 
             }
@@ -255,15 +234,8 @@ public class InicioFragment extends Fragment {
         quienes_somos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Fragment fragment = null;
-                Class fragmentClass= NuestraEmpresaFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                Intent intent=new Intent (getContext(),NuestraEmpresaActivity.class);
+                startActivity(intent);
 
             }
         });
@@ -271,15 +243,8 @@ public class InicioFragment extends Fragment {
         tg1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Fragment fragment = null;
-                Class fragmentClass= SuscribirseFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                Intent intent=new Intent (getContext(),SuscribeteActivity.class);
+                startActivity(intent);
 
             }
         });

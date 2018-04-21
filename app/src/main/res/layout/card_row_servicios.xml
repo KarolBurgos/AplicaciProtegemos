@@ -50,7 +50,7 @@
                             android:layout_x="200dp"
                             android:layout_y="0dp"
                             android:scaleType="centerCrop"
-                            card_view:srcCompat="@drawable/imgd" />
+                            card_view:srcCompat="@drawable/degradado" />
 
                         <TextView
                             android:id="@+id/tit"

@@ -21,7 +21,7 @@ import android.widget.Toolbar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.RevistaProtegemos;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
 
 
 /**

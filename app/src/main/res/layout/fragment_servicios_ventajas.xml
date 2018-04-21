@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF84CFD8"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.ServiciosVentajasFragment">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment">
 
 
 

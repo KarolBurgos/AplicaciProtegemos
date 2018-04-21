@@ -23,11 +23,9 @@ import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.co.com.revistaprotegemos.appprotegemos.PautasLeerActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.PautasVariables;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.PautasLeerActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.PautasVariables;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.sesion;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -139,7 +137,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
         private void iniciarsesion() {
             //ViewHolder viewHolder2=null;
-            String url = "http://192.168.0.17/sesion/pautasid.php?id_pauta=" + id.getText().toString();
+            String url = "http://172.16.30.102/sesion/pautasid.php?id_pauta=" + id.getText().toString();
             jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
             rq.add(jrq);
         }

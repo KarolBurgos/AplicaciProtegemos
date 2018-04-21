@@ -7,7 +7,7 @@
     android:gravity="center_vertical"
     android:background="@drawable/degradado"
     android:orientation="vertical"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.PautasLeerActivity">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.PautasLeerActivity">
 
     <!--    <TextView
         android:id="@+id/textView51"

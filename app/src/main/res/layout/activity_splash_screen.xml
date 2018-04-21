@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degradado"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.inicioapp.SplashScreen">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.inicioappSplash.SplashScreen">
 
 
     <!--    <pl.droidsonroids.gif.GifImageView

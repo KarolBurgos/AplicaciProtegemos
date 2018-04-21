@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:background="#FF84CFD8"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemos.EdicionesImpresas">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemosEdiciones.EdicionesImpresas">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
@@ -17,13 +17,6 @@
             android:layout_marginTop="20dp"
             android:orientation="vertical">
 
-            <!--            <Button
-                android:id="@+id/regre"
-                android:layout_width="55dp"
-                android:layout_height="wrap_content"
-                android:background="?android:attr/homeAsUpIndicator"
-                android:onClick="salir"
-                tools:ignore="OnClick" />-->
 
             <TextView
                 android:id="@+id/textView24"

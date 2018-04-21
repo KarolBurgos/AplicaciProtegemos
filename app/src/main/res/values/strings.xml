@@ -11,4 +11,48 @@
 
     <string name="mi_mensaje">Encontrara muchos beneficios para usted <b><FONT COLOR="FF378A8A">Click Aqui</FONT></b> para ingresar</string>
     <string name="title_activity_maps">Map</string>
+
+
+    <!-- Ediciones impresas-->
+    <string name="id1">1</string>
+    <string name="titulo1">Revista Protegemos - Edicion 1</string>
+
+    <string name="id2">2</string>
+    <string name="titulo2">Revista Protegemos - Edicion 2</string>
+
+    <string name="id3">3</string>
+    <string name="titulo3">Revista Protegemos - Edicion 3</string>
+
+    <string name="id4">4</string>
+    <string name="titulo4">Revista Protegemos - Edicion 4</string>
+
+    <string name="id5">5</string>
+    <string name="titulo5">Revista Protegemos - Edicion 5</string>
+
+    <string name="id6">6</string>
+    <string name="titulo6">Revista Protegemos - Edicion 6</string>
+
+    <string name="id7">7</string>
+    <string name="titulo7">Revista Protegemos - Edicion 7</string>
+
+    <string name="id8">8</string>
+    <string name="titulo8">Revista Protegemos - Edicion 8</string>
+
+    <string name="id9">9</string>
+    <string name="titulo9">Revista Protegemos - Edicion 9</string>
+
+    <string name="id10">10</string>
+    <string name="titulo10">Revista Protegemos - Edicion 10</string>
+
+    <string name="id11">11</string>
+    <string name="titulo11">Revista Protegemos - Edicion 11</string>
+
+    <string name="id12">12</string>
+    <string name="titulo12">Revista Protegemos - Edicion 12</string>
+
+    <string name="id13">13</string>
+    <string name="titulo13">Revista Protegemos - Edicion 13</string>
+
+    <string name="id14">14</string>
+    <string name="titulo14">Revista Protegemos - Edicion 14</string>
 </resources>

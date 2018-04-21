@@ -1,7 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -11,48 +10,28 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.RotateAnimation;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.ExpandAndCollapseViewUtil;
-import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.ServiciosLeermas;
-import com.example.co.com.revistaprotegemos.appprotegemos.ServiciosVentajasFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.Servicios;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
-import java.util.logging.Handler;
-
-import static javax.xml.datatype.DatatypeConstants.DURATION;
 
 /**
  * Created by ASPIRE VX15 on 21/02/2018.
  */
 
-public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > {
+public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN > {
     private ViewGroup linearLayoutDetails;
     private ImageView imageViewExpand;
     private static final int DURATION = 250;
@@ -68,6 +47,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
     private Context context2;
     private FragmentActivity myContext2;
     private AdapterView.OnItemClickListener escucha;
+    private ServiciosVentajasFragment sv;
 
     public DataAdapter(ArrayList<Planes> android, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
         this.android = android;
@@ -75,16 +55,17 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         this.escucha = escucha;
         this.myContext=f;
         this.swipeRefreshLayout=swipeRefreshLayout;
+        //this.sv = pSv;
     }
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ViewHolderN onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
 
-        return new DataAdapter.ViewHolder(view);
+        return new DataAdapter.ViewHolderN(view);
     }
 
     @Override
-    public void onBindViewHolder(DataAdapter.ViewHolder viewHolder, int i) {
+    public void onBindViewHolder(DataAdapter.ViewHolderN viewHolder, int i) {
         viewHolder.tit.setText(android.get(i).getTitulo());
         viewHolder.descr.setText(android.get(i).getDescripcion());
         viewHolder.id.setText(android.get(i).getidString());
@@ -103,7 +84,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         });
 
     }
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolderN extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView tit, descr, id, leer;
         public ImageView img;
@@ -112,7 +93,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         Button b1;
         private Typeface Ofaly,Color;
         TextView titu;
-        public ViewHolder(View view) {
+        public ViewHolderN(View view) {
             super(view);
             img = (ImageView) view.findViewById(R.id.fotico);
             tit = (TextView) view.findViewById(R.id.txt2);
@@ -159,13 +140,28 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolder > 
         {
 /*            String id_P=id.getText().toString();
             return id_P;*/
-            return 2;
+
+            return 3;
         }
     }
+
+    public int  nuevo() {
+        /*        viewHolder.tit.setText(android.get(i).getTitulo());
+        viewHolder.descr.setText(android.get(i).getDescripcion());*/
+
+            return  1;
+
+
+    }
+    public void cambiarId(int valor)
+    {
+
+    }
+
     public  int obtId()
     {
 
-        int t = 1;
+        int t = 2;
 
         return t;
     }

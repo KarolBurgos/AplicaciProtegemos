@@ -18,7 +18,7 @@ public class WebViewActivity extends AppCompatActivity {
         webView = (WebView) findViewById(R.id.webView);
         webView.setWebViewClient(new WebViewClient());
 
-        webView.loadUrl("https://www.google.com.co/?gfe_rd=cr&dcr=0&ei=YT6pWuuGAqOx8weBm5X4Ag");
+        webView.loadUrl("http://data.axmag.com/data/201605/20160517/U137868_F381778/FLASH/index.html");
 
         }
     }

@@ -1,15 +1,10 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.api;
 
-import android.view.View;
-
-import com.example.co.com.revistaprotegemos.appprotegemos.ServiciosVentajasFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.JSONResponse;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONResponseServicios;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**

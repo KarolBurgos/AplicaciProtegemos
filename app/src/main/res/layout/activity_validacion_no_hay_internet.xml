@@ -7,7 +7,7 @@
     android:background="@drawable/degradado"
     android:gravity="fill_vertical"
     android:orientation="vertical"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.ValidacionNoHayInternet">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet">
 
     <LinearLayout
         android:layout_width="match_parent"

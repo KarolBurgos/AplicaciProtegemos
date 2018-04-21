@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/degradado"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ContactenosFragment">
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
