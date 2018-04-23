@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:ignore="NamespaceTypo"
-    card_view:cardCornerRadius="6dp"
+    android:background="@drawable/borde"
     card_view:cardElevation="10dp"
     card_view:cardUseCompatPadding="true">
 
@@ -24,8 +24,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@drawable/borde"
                 android:gravity="center"
-                android:background="@drawable/degradado"
                 android:orientation="vertical">
 
                 <LinearLayout
@@ -37,14 +37,12 @@
                         android:id="@+id/card1"
                         android:layout_width="match_parent"
                         android:layout_height="250dp"
-                        card_view:cardCornerRadius="6dp"
-                        card_view:cardElevation="10dp"
-                        card_view:cardUseCompatPadding="true">
+                        android:background="@drawable/borde">
 
                         <ImageView
                             android:id="@+id/fotico"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_height="190dp"
                             android:scaleType="centerCrop"
                             card_view:srcCompat="@drawable/bus" />
 
@@ -99,9 +97,9 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="end"
                         android:layout_marginEnd="15dp"
-                        android:text="Leer mas"
+                        android:layout_marginRight="15dp"
                         android:background="@drawable/degradado"
-                        android:layout_marginRight="15dp" />
+                        android:text="Leer mas" />
 
                     <TextView
                         android:id="@+id/textView19"

@@ -5,12 +5,12 @@
     android:id="@+id/card_view"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:layout_marginEnd="15dp"
+    android:layout_marginStart="15dp"
     android:background="?attr/actionModeSplitBackground"
     android:orientation="horizontal"
-    card_view:cardCornerRadius="10dp"
-    card_view:cardElevation="10dp"
-    card_view:cardUseCompatPadding="true"
-    app:ignore="NamespaceTypo">
+    app:ignore="NamespaceTypo"
+    card_view:cardUseCompatPadding="true">
 
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="#55B99D"
+                    android:background="#FFFFFFFF"
                     android:orientation="vertical">
 
                     <TextView

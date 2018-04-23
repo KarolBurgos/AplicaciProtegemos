@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF84CFD8"
+    android:background="@drawable/degradado"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment">
 
     <android.support.v4.widget.SwipeRefreshLayout
@@ -73,7 +73,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/degradado"
+                        android:background="#FFFFFFFF"
                         android:orientation="vertical">
 
                         <LinearLayout
@@ -159,7 +159,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/degradadonuevo"
+                android:layout_marginEnd="7dp"
+                android:layout_marginStart="7dp"
+                android:background="#FFFFFFFF"
                 android:orientation="vertical">
 
                 <TextView
@@ -178,6 +180,20 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:text="@string/mi_mensaje" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="2dp"
+                    android:background="@drawable/register_button"
+                    android:text="Ingresar" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </LinearLayout>
 
             <LinearLayout
@@ -209,8 +225,8 @@
                 android:id='@+id/recyclerVieew'
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="false"
+                android:layout_alignParentStart="false"
                 android:layout_below="@+id/txt_titulo"
                 android:layout_marginTop="5dp"
                 tools:layout_editor_absoluteX="50dp"
@@ -219,7 +235,9 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
+                android:layout_marginEnd="10dp"
+                android:layout_marginStart="10dp"
+                android:background="#FFFFFFFF"
                 android:orientation="vertical">
 
                 <TextView
@@ -231,10 +249,23 @@
 
                 <Button
                     android:id="@+id/btonsuscribirme"
-                    android:layout_width="151dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|center"
+                    android:layout_marginTop="2dp"
                     android:background="@drawable/register_button"
                     android:text="Suscribirme" />
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView53"

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FF84CFD8"
+    android:background="@drawable/degradado"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemosEdiciones.EdicionesImpresas">
 
@@ -36,7 +36,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -129,7 +129,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -221,7 +221,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -314,7 +314,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -406,7 +406,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -498,7 +498,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -590,7 +590,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -682,7 +682,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -774,7 +774,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -866,7 +866,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -959,7 +959,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -1051,7 +1051,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -1143,7 +1143,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
@@ -1235,7 +1235,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/degradado"
+                    android:background="#FFFFFFFF"
                     android:orientation="horizontal">
 
                     <LinearLayout
