@@ -2,6 +2,8 @@ package com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -19,7 +21,18 @@ public class sesion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sesion);
 
-   cajabienvenido=(TextView)findViewById(R.id.textView50);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        //getSupportActionBar().setTitle(null);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
    na=(TextView)findViewById(R.id.name);
    ed=(TextView)findViewById(R.id.edad);
    se=(TextView)findViewById(R.id.seme);
@@ -31,7 +44,6 @@ public class sesion extends AppCompatActivity {
    String deu=getIntent().getStringExtra("deudas");
    String us=getIntent().getStringExtra("user");
 
-   cajabienvenido.setText("Bienvenido"+usuario+deu+"!");
 
    na.setText(usuario);
    ed.setText(ed1);

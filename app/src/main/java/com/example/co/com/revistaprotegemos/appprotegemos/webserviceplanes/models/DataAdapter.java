@@ -57,6 +57,9 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
         this.swipeRefreshLayout=swipeRefreshLayout;
         //this.sv = pSv;
     }
+
+
+
     @Override
     public ViewHolderN onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
@@ -93,8 +96,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
         Button b1;
         private Typeface Ofaly,Color;
         TextView titu;
+        private Context context1;
+        private FragmentActivity myContext1;
         public ViewHolderN(View view) {
             super(view);
+
             img = (ImageView) view.findViewById(R.id.fotico);
             tit = (TextView) view.findViewById(R.id.txt2);
             descr = (TextView) view.findViewById(R.id.tv_version);
@@ -145,10 +151,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
         }
     }
 
-    public int  nuevo() {
+    public int  nuevo(View view,FragmentActivity f,Context context) {
         /*        viewHolder.tit.setText(android.get(i).getTitulo());
         viewHolder.descr.setText(android.get(i).getDescripcion());*/
-
+       /*     ViewHolderN viewHolderN =new ViewHolderN(view,f,context);
+           return  viewHolderN.obtenId();*/
             return  1;
 
 

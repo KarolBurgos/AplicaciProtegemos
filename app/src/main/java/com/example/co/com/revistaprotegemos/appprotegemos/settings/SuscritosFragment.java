@@ -110,7 +110,7 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         }
         else {
             User usuario = new User();
-            Toast.makeText(getContext(), "Se ha encontrado el usuario" + contrato.getText().toString(), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(getContext(), "Se ha encontrado el usuario" + contrato.getText().toString(), Toast.LENGTH_SHORT).show();
             JSONArray jsonArray = response.optJSONArray("datos");
             JSONObject jsonObject = null;
 

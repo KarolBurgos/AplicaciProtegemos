@@ -121,11 +121,11 @@ public class PlanesFragment extends Fragment {
 
     }
 
-    public int numero()
+    public int numero(View view)
     {
 
         adapter2 = new DataAdapter(data2, getContext(), myContext, swipeRefreshLayout);
-        return adapter2.nuevo();
+        return adapter2.nuevo(view,myContext,getContext());
     }
 
 }

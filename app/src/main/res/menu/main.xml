@@ -21,16 +21,23 @@
         app:showAsAction="never" />-->
 
     <item
-        android:id="@+id/horario"
-        android:orderInCategory="100"
-        android:title="Horario de atención"
-        app:showAsAction="never" />
+    android:id="@+id/horario"
+    android:orderInCategory="100"
+    android:title="Horario de atención"
+    app:showAsAction="never" />
+
     <item
+        android:id="@+id/llamar"
+        android:icon="@android:drawable/sym_call_outgoing"
+        android:orderInCategory="100"
+        android:title="Comunicate"
+        app:showAsAction="never" />
+<!--    <item
         android:id="@+id/llamar"
         android:icon="@android:drawable/stat_sys_phone_call"
         android:orderInCategory="2"
         android:title="llamar"
-        app:showAsAction="always" />
+        app:showAsAction="always" />-->
 
 
 

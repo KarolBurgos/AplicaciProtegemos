@@ -78,14 +78,14 @@ public class ServiciosVentajasFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        offset = numero();
+        offset = numero(view);
         loadJSON(offset);
 
         recyclerView3 = (RecyclerView)view.findViewById(R.id.recyventajas);
         recyclerView3.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager3 = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView3.setLayoutManager(layoutManager3);
-        offset2 = numero();
+        offset2 = numero(view);
         loadJSONVentajas(offset2);
         return view;
     }
@@ -145,13 +145,13 @@ public class ServiciosVentajasFragment extends Fragment {
         Toast.makeText(f, ""+valor, Toast.LENGTH_SHORT).show();
     }
 
-    public int numero()
+    public int numero(View view)
     {
 /*        int num=1;
         return num;*/
 
         PlanesFragment pa=new PlanesFragment();
-        int n1= pa.numero();
+        int n1= pa.numero(view);
         return n1;
     }
 

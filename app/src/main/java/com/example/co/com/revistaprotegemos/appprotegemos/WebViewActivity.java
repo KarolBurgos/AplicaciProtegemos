@@ -7,7 +7,7 @@ import android.webkit.WebViewClient;
 
 public class WebViewActivity extends AppCompatActivity {
 
-    private WebView webView;
+    private WebView MWebView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -15,11 +15,16 @@ public class WebViewActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_web_view);
 
-        webView = (WebView) findViewById(R.id.webView);
-        webView.setWebViewClient(new WebViewClient());
+        MWebView = (WebView) findViewById(R.id.webview);
 
-        webView.loadUrl("http://data.axmag.com/data/201605/20160517/U137868_F381778/FLASH/index.html");
+        //cargo un .html que he situado en la carpeta asset/ del proyecto
+        //mWebView.loadUrl("file:///android_asset/ejemploWebview.html");
+        MWebView.getSettings().setJavaScriptEnabled(true);
+        MWebView.loadUrl("http://www.revistaprotegemos.com.co/fisica.html");
 
         }
+
+
+
     }
 
