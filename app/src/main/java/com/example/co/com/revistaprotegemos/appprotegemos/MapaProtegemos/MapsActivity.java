@@ -57,7 +57,7 @@ public class MapsActivity extends Fragment implements OnMapReadyCallback {
         mMap = googleMap;
         LatLng sydney = new LatLng(1.226357,-77.283137);
         mMap.addMarker(new MarkerOptions().position(sydney).title("Protegemos").snippet(""+"").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 7));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 14));
     }
 
     @Override
