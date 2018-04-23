@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.settings;
 
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
@@ -16,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -55,7 +57,8 @@ public class ContactenosFragment extends Fragment {
     private String correo2, contraseña;
     private FragmentActivity myContext;
     private Session session;
-
+    TextView t1,t2,t3,t4;
+    private Typeface letras;
 
     public ContactenosFragment() {
         // Required empty public constructor
@@ -79,6 +82,24 @@ public class ContactenosFragment extends Fragment {
         appBar.removeView(view);
         appBar.setBackgroundColor(Color.parseColor("#FFCE6E98"));
 
+        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
+        this.letras =Typeface.createFromAsset(getContext().getAssets(),fuente1);
+
+        nombre.setTypeface(letras);
+        correo.setTypeface(letras);
+        celular.setTypeface(letras);
+        mensaje.setTypeface(letras);
+        t1=(TextView)view.findViewById(R.id.textView25);
+        t1.setTypeface(letras);
+
+        t2=(TextView)view.findViewById(R.id.textView26);
+        t2.setTypeface(letras);
+
+        t3=(TextView)view.findViewById(R.id.textView4);
+        t3.setTypeface(letras);
+
+        t4=(TextView)view.findViewById(R.id.textView28);
+        t4.setTypeface(letras);
         return view;
     }
 
