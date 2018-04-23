@@ -29,7 +29,7 @@ public class RevistaProtegemos extends Fragment {
 
     private Button b1,b2;
     private FragmentActivity myContext;
-    private TextView t1,ti;
+    private TextView t1,ti,ed1,ed2,edd1,edd2;
     private Typeface Ofaly,Color;
     public RevistaProtegemos() {
         // Required empty public constructor
@@ -67,11 +67,20 @@ public class RevistaProtegemos extends Fragment {
     b1=(Button)view.findViewById(R.id.trbutton1);
     b2=(Button)view.findViewById(R.id.trbutton2);
     //b1=(Button)view.findViewById(R.id.trbutton2);
-        String fuente3 ="fuentes/Abril.otf";
+        String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
         this.Ofaly = Typeface.createFromAsset(getContext().getAssets(),fuente3);
 
         ti=(TextView)view.findViewById(R.id.txre);
+        ed1=(TextView)view.findViewById(R.id.textView37);
+        ed2=(TextView)view.findViewById(R.id.textView39);
+        edd1=(TextView)view.findViewById(R.id.txtrev1);
+        edd2=(TextView)view.findViewById(R.id.txtrevis1);
+
         ti.setTypeface(Ofaly);
+        ed1.setTypeface(Ofaly);
+        ed2.setTypeface(Ofaly);
+        edd1.setTypeface(Ofaly);
+        edd2.setTypeface(Ofaly);
         return view;
     }
 

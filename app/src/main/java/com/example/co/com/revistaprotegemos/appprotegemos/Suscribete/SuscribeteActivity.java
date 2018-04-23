@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.Suscribete;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v4.app.Fragment;
@@ -11,6 +12,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import android.os.Bundle;
@@ -50,6 +52,8 @@ public class SuscribeteActivity extends AppCompatActivity {
     private Button b1;
     private String correo2, contraseña;
     private Session session;
+    TextView t1,t2,t3;
+    private Typeface Nuestrosplanes,Aurella;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +78,26 @@ public class SuscribeteActivity extends AppCompatActivity {
         direccion = (EditText) findViewById(R.id.dire);
         telefono = (EditText) findViewById(R.id.tel);
         correo = (EditText) findViewById(R.id.corre);
+
+        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
+        this.Nuestrosplanes =Typeface.createFromAsset(getAssets(),fuente1);
+
+        t1=(TextView)findViewById(R.id.sus);
+        t1.setTypeface(Nuestrosplanes);
+
+        t2=(TextView)findViewById(R.id.textView4);
+        t2.setTypeface(Nuestrosplanes);
+
+        t3=(TextView)findViewById(R.id.textView2);
+        t3.setTypeface(Nuestrosplanes);
+
+        nombre.setTypeface(Nuestrosplanes);
+        identificacion.setTypeface(Nuestrosplanes);
+        ciudad.setTypeface(Nuestrosplanes);
+        barrio.setTypeface(Nuestrosplanes);
+        direccion.setTypeface(Nuestrosplanes);
+        telefono.setTypeface(Nuestrosplanes);
+        correo.setTypeface(Nuestrosplanes);
 
         b1=(Button)findViewById(R.id.env2);
         correo2="karburgos@umariana.edu.co";
