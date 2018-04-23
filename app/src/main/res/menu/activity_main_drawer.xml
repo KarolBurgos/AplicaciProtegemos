@@ -36,10 +36,7 @@
                 android:id="@+id/nav_cont"
                 android:icon="@drawable/ic_icons8_tel_fono_con_altavoz_filled_50"
                 android:title="Contáctenos" />
-            <item
-                android:id="@+id/nav_nuemp"
-                android:icon="@drawable/ic_icons8_noticias_filled_50"
-                android:title="Nuestra Empresa" />
+
             <item
                 android:id="@+id/ubic"
                 android:icon="@drawable/ic_icons8_mapa_50"

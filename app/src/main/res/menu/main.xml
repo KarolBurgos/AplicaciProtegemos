@@ -27,6 +27,12 @@
     app:showAsAction="never" />
 
     <item
+        android:id="@+id/nues"
+        android:orderInCategory="100"
+        android:title="Nuestra Empresa"
+        app:showAsAction="never" />
+
+    <item
         android:id="@+id/llamar"
         android:icon="@android:drawable/sym_call_outgoing"
         android:orderInCategory="100"

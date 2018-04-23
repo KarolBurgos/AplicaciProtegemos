@@ -158,6 +158,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 e.printStackTrace();
             }
             }
+            else if (id == R.id.nues) {
+
+                Intent intent=new Intent (this,NuestraEmpresaActivity.class);
+                startActivity(intent);
+            }
               else if (id == R.id.horario) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_horas_atencion, null);
@@ -199,11 +204,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentClass=ContactenosFragment.class;
 
         }
-        else if (id == R.id.nav_nuemp) {
 
-            Intent intent=new Intent (this,NuestraEmpresaActivity.class);
-            startActivity(intent);
-        }
         else if (id == R.id.revistpro) {
 
             fragmentClass=RevistaProtegemos.class;
