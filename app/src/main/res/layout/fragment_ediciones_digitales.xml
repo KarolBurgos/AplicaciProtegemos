@@ -29,7 +29,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -61,6 +60,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView
@@ -121,7 +121,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -153,6 +152,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView
@@ -213,7 +213,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -245,6 +244,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView
@@ -305,7 +305,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -337,6 +336,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView
@@ -397,7 +397,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -429,6 +428,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView
@@ -489,7 +489,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                card_view:cardCornerRadius="10dp"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -521,6 +520,7 @@
                                     android:layout_height="180dp"
                                     android:layout_marginStart="15dp"
                                     android:src="@drawable/bus"
+                                    android:background="@drawable/borde"
                                     android:layout_marginLeft="15dp" />
 
                                 <TextView

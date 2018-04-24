@@ -66,7 +66,7 @@ public class InicioFragment extends Fragment {
     private ImageView imagen1,img2;
     private TextView t1,t2;
     private FragmentActivity myContext;
-    private Button bsuscr;
+    private Button bsuscr,btn;
     private AdapterViewFlipper IVF;
     private String url;
     private TextView quienes_somos,visite,encontrara,jornada;
@@ -194,6 +194,8 @@ public class InicioFragment extends Fragment {
 
         estaslisto=(TextView)view.findViewById(R.id.textViews4);
         estaslisto.setTypeface(Nuestrosplanes);
+
+        btn=(Button)view.findViewById(R.id.button5);
         return view;
     }
     public void inter() {
@@ -203,7 +205,8 @@ public class InicioFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        t1.setOnClickListener(new View.OnClickListener() {
+
+        btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Fragment fragment = null;
@@ -215,6 +218,13 @@ public class InicioFragment extends Fragment {
                 }
                 FragmentManager fragmentManager=myContext.getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+            }
+        });
+        t1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+
+
 
 
             }

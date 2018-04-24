@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemosEdic
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -25,6 +27,8 @@ public class EdicionesDigitalesFragment extends Fragment {
 
 
     private Button b1,b2,b3,b4,b5,b6;
+    TextView t1,t2;
+    private Typeface Ofaly,Color;
     public EdicionesDigitalesFragment() {
         // Required empty public constructor
     }
@@ -35,6 +39,11 @@ public class EdicionesDigitalesFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_ediciones_digitales, container, false);
+
+        String fuente ="fuentes/Dehasta Momentos Regular.otf";
+        this.Color = Typeface.createFromAsset(getContext().getAssets(),fuente);
+        t1 = (TextView)view.findViewById(R.id.textView42);
+        t1.setTypeface(Color);
 
         ImageView img = (ImageView)view.findViewById(R.id.imd1);
         String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/EdicionPapa1.png";
@@ -103,11 +112,11 @@ public class EdicionesDigitalesFragment extends Fragment {
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //  Log.e("fdgfdfgfgfgfh--->","SI");
-/*                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent)*/;
-                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
-                startActivity(myIntent);
+                startActivity(intent);
+/*                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
+                startActivity(myIntent);*/
 
             }
         });

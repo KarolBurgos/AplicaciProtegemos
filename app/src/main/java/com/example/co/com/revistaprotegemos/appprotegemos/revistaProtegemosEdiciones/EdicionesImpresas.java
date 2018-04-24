@@ -2,6 +2,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemosEdic
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
@@ -27,6 +29,8 @@ public class EdicionesImpresas extends Fragment {
     private Button b1,b2,b3,b4,b5,b6,b7,b8,b9,b10,b11,b12,b13,b14;
     private FragmentActivity myContext;
     private Button regresar;
+    TextView t1,t2;
+    private Typeface Ofaly,Color;
     public EdicionesImpresas() {
         // Required empty public constructor
     }
@@ -37,7 +41,10 @@ public class EdicionesImpresas extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_ediciones_impresas, container, false);
-
+        String fuente ="fuentes/Dehasta Momentos Regular.otf";
+        this.Color = Typeface.createFromAsset(getContext().getAssets(),fuente);
+        t1 = (TextView)view.findViewById(R.id.textView24);
+        t1.setTypeface(Color);
 
         ImageView img = (ImageView)view.findViewById(R.id.imgrevisss);
         String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion1.png";
@@ -194,11 +201,11 @@ public class EdicionesImpresas extends Fragment {
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //  Log.e("fdgfdfgfgfgfh--->","SI");
-/*                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+               Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent)*/;
-                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
-                startActivity(myIntent);
+                startActivity(intent);
+/*                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
+                startActivity(myIntent);*/
 
             }
         });

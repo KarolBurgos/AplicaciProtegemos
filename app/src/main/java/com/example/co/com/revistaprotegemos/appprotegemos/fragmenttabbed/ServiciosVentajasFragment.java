@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -61,6 +63,8 @@ public class ServiciosVentajasFragment extends Fragment {
     private DataAdapterVentajas adapter3;
     private RecyclerView recyclerView3;
     private int offset2;
+    private Typeface Ofaly,Color;
+    TextView titulo;
     SwipeRefreshLayout swipeRefreshLayout;
 
     public ServiciosVentajasFragment() {
@@ -87,6 +91,11 @@ public class ServiciosVentajasFragment extends Fragment {
         recyclerView3.setLayoutManager(layoutManager3);
         offset2 = numero(view);
         loadJSONVentajas(offset2);
+
+        String fuente ="fuentes/Dehasta Momentos Regular.otf";
+        this.Color = Typeface.createFromAsset(getContext().getAssets(),fuente);
+        titulo = (TextView)view.findViewById(R.id.textView16);
+        titulo.setTypeface(Color);
         return view;
     }
 

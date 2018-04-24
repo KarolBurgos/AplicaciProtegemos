@@ -132,7 +132,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
             titu=(TextView)view.findViewById(R.id.txt2);
             titu.setTypeface(Ofaly);
 
-            String fuente ="fuentes/Nuestrosplanes.ttf";
+            String fuente ="fuentes/Dehasta Momentos Regular.otf";
             this.Color =Typeface.createFromAsset(context.getAssets(),fuente);
 
             titu=(TextView)view.findViewById(R.id.tv_version);

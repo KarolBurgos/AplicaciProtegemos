@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,12 +65,20 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
     public class ViewHolder extends RecyclerView.ViewHolder{
         private TextView nombre,desc,tv_api_level,titulo;
         private  ImageView img;
+
+        private Typeface Ofaly,Color;
         public ViewHolder(View view) {
             super(view);
 
             nombre = (TextView)view.findViewById(R.id.tit);
             desc = (TextView)view.findViewById(R.id.tvdes);
             img=(ImageView)view.findViewById(R.id.fotoopro);
+
+            String fuente ="fuentes/Dehasta Momentos Regular.otf";
+            this.Color = Typeface.createFromAsset(context.getAssets(),fuente);
+
+            nombre.setTypeface(Color);
+            desc.setTypeface(Color);
         }
 
         
