@@ -62,19 +62,21 @@ public class PrincipalFragment extends Fragment {
 
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
-        //43
+        //64
 
         //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
-        int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_tarjetas_bancarias_50, R.drawable.ic_icons8_parte_delantera_de_tarjeta_bancaria_50};
+        int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_signing_the_contract, R.drawable.ic_press_delivery_service};
+        //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
+        //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
 
-        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF103D31");
+        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#3b5998");
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                iconcolor(tab,"#FF103D31");
+                iconcolor(tab,"#3b5998");
 
             }
 
