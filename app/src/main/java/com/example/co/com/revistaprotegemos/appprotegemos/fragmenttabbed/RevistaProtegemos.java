@@ -67,6 +67,13 @@ public class RevistaProtegemos extends Fragment {
     b1=(Button)view.findViewById(R.id.trbutton1);
     b2=(Button)view.findViewById(R.id.trbutton2);
     //b1=(Button)view.findViewById(R.id.trbutton2);
+
+        String fuente ="fuentes/Abril.otf";
+        this.Color = Typeface.createFromAsset(getContext().getAssets(),fuente);
+
+
+
+
         String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
         this.Ofaly = Typeface.createFromAsset(getContext().getAssets(),fuente3);
 
@@ -76,7 +83,7 @@ public class RevistaProtegemos extends Fragment {
         edd1=(TextView)view.findViewById(R.id.txtrev1);
         edd2=(TextView)view.findViewById(R.id.txtrevis1);
 
-        ti.setTypeface(Ofaly);
+        ti.setTypeface(Color);
         ed1.setTypeface(Ofaly);
         ed2.setTypeface(Ofaly);
         edd1.setTypeface(Ofaly);

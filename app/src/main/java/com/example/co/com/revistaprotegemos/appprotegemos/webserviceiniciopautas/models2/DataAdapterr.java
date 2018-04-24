@@ -95,6 +95,12 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
                 }
             });
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    iniciarsesion();
+                }
+            });
             String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
             this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
 

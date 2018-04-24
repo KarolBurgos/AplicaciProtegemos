@@ -20,11 +20,11 @@
                 android:id="@+id/txre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:inputType="textMultiLine"
                 android:text="Revista Protegemos"
-                android:textStyle="bold" />
+                android:textSize="18sp" />
 
 
             <LinearLayout
