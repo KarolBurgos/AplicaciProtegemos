@@ -116,31 +116,31 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
 
             try {
                 jsonObject = jsonArray.getJSONObject(0);
-                usuario.setNames(jsonObject.optString("names"));
-                usuario.setUser(jsonObject.optString("user"));
-                usuario.setPwd(jsonObject.optString("pwd"));
-                usuario.setEdad(jsonObject.optString("edad"));
-                usuario.setSemestre(jsonObject.optString("semestre"));
-                usuario.setDeudas(jsonObject.optString("deudas"));
+                usuario.setCon_cod(jsonObject.optString("con_cod"));
+                usuario.setPer_cc(jsonObject.optString("per_cc"));
+                usuario.setNombre(jsonObject.optString("nombre"));
+                usuario.setTipoPlan(jsonObject.optString("tipoPlan"));
             } catch (JSONException e) {
                 e.printStackTrace();
             }
             Intent intent = new Intent(getContext(), sesion.class);
-            intent.putExtra(sesion.names, usuario.getNames());
-            intent.putExtra(sesion.edad, usuario.getEdad());
-            intent.putExtra(sesion.semestre, usuario.getSemestre());
-            intent.putExtra(sesion.deudas, usuario.getDeudas());
-            intent.putExtra(sesion.user, usuario.getUser());
+            intent.putExtra(sesion.con_cod, usuario.getCon_cod());
+            intent.putExtra(sesion.per_cc, usuario.getPer_cc());
+            intent.putExtra(sesion.nombre, usuario.getNombre());
+            intent.putExtra(sesion.tipoPlan, usuario.getTipoPlan());
 
             startActivity(intent);
+
+            contrato.setText("");
+            contraseña.setText("");
         }
 
     }
 
     private void iniciarsesion()
     {
-        String url="http://192.168.0.17/aplicacionprotegemos/inicio_sesionphp/sesion.php?user="+contrato.getText().toString()+
-                "&pwd="+contraseña.getText().toString();
+        String url="http://192.168.0.17/inicio_sesionphp/sesion.php?con_cod="+contrato.getText().toString()+
+                "&per_cc="+contraseña.getText().toString();
         jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
     }

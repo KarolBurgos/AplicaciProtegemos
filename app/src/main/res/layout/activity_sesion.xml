@@ -55,10 +55,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Nombre" />
+                    android:text="Contrato" />
 
                 <TextView
-                    android:id="@+id/name"
+                    android:id="@+id/con"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -79,10 +79,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Edad" />
+                    android:text="Contraseña" />
 
                 <TextView
-                    android:id="@+id/edad"
+                    android:id="@+id/contras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -104,10 +104,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Semestre" />
+                    android:text="Nombre" />
 
                 <TextView
-                    android:id="@+id/seme"
+                    android:id="@+id/nombr"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -129,10 +129,10 @@
                     android:layout_weight="1"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Usuario" />
+                    android:text="Tipo Plan" />
 
                 <TextView
-                    android:id="@+id/user"
+                    android:id="@+id/tplan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -140,30 +140,6 @@
                     android:padding="10dp"
                     android:text="TextView" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:id="@+id/textView59"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="Deudas" />
-
-                <TextView
-                    android:id="@+id/deu"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:padding="10dp"
-                    android:text="TextView" />
             </LinearLayout>
 
         </LinearLayout>

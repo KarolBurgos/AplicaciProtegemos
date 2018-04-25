@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/degradado"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment">
 
@@ -70,18 +71,27 @@
                     android:gravity="center"
                     android:hint="No. Contrato" />
 
-                <EditText
-                    android:id="@+id/contraseña"
-                    android:layout_width="wrap_content"
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:background="@drawable/rounded_white"
-                    android:drawableLeft="@drawable/ic_action_navigation_arrow_back"
-                    android:drawableStart="@drawable/ic_action_navigation_arrow_back"
-                    android:ems="12"
-                    android:gravity="center"
-                    android:hint="Password"
-                    android:inputType="textPassword" />
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/contraseña"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rounded_white"
+                        android:drawableLeft="@drawable/ic_action_navigation_arrow_back"
+                        android:drawableStart="@drawable/ic_action_navigation_arrow_back"
+                        android:ems="12"
+                        android:gravity="center"
+                        android:hint="Password"
+                        android:inputType="textPassword" />
+
+                </android.support.design.widget.TextInputLayout>
+
 
                 <LinearLayout
                     android:layout_width="wrap_content"

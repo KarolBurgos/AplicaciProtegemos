@@ -5,53 +5,39 @@ package com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion;
  */
 
 public class User {
-    private String names,user,pwd, edad,semestre, deudas;
 
-    public String getNames() {
-        return names;
+    private String nombre,tipoPlan,con_cod,per_cc;
+
+
+    public String getCon_cod() {
+        return con_cod;
     }
 
-    public void setNames(String names) {
-        this.names = names;
+    public void setCon_cod(String con_cod) {
+        this.con_cod = con_cod;
     }
 
-    public String getUser() {
-        return user;
+    public String getPer_cc() {
+        return per_cc;
     }
 
-    public void setUser(String user) {
-        this.user = user;
+    public void setPer_cc(String per_cc) {
+        this.per_cc = per_cc;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getEdad() {
-        return edad;
+    public String getTipoPlan() {
+        return tipoPlan;
     }
 
-    public void setEdad(String edad) {
-        this.edad = edad;
-    }
-
-    public String getSemestre() {
-        return semestre;
-    }
-
-    public void setSemestre(String semestre) {
-        this.semestre = semestre;
-    }
-
-    public String getDeudas() {
-        return deudas;
-    }
-
-    public void setDeudas(String deudas) {
-        this.deudas = deudas;
+    public void setTipoPlan(String tipoPlan) {
+        this.tipoPlan = tipoPlan;
     }
 }
