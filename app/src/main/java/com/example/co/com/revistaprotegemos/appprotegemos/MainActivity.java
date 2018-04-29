@@ -23,9 +23,11 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
@@ -53,10 +55,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        list = new String[]{"Clipcodes", "Android"};
+        list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
+        "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
+        "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
@@ -72,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 FragmentManager fragmentManager = getSupportFragmentManager();
                 fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
             }
-        });
+        });*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -212,6 +216,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         else if (id == R.id.ubic) {
 
             fragmentClass=MapsActivity.class;
+
         }
         try{
             fragment =(Fragment)fragmentClass.newInstance();
@@ -242,18 +247,116 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public void setSearchView()
     {
         searchView=(MaterialSearchView)findViewById(R.id.searchview);
+        Intent intent =getIntent();
+
         searchView.closeSearch();
         searchView.setSuggestions(list);
-        searchView.setEllipsize(true);
+        //searchView.setEllipsize(false);
         searchView.setOnQueryTextListener(new MaterialSearchView.OnQueryTextListener() {
             @Override
+
             public boolean onQueryTextSubmit(String query) {
-                //Toast.makeText(getApplicationContext(),query,Toast.LENGTH_SHORT).show();
+
+                    if(query.equals("planes")||query.equals("planes protegemos")||query.equals("platino")||query.equals("Platino")||query.equals("Plan platino")
+                            ||query.equals("PLAN PLATINO")||query.equals("PLATINO")||query.equals("plan platino")
+                            ||query.equals("vip")||query.equals("Vip")||query.equals("Plan vip")
+                            ||query.equals("PLAN VIP")||query.equals("VIP")||query.equals("plan vip")
+                            ||query.equals("auxilio")||query.equals("Auxilio")
+                            ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan platino")
+                            ||query.equals("familiar")||query.equals("Familiar")||query.equals("Plan familiar")
+                            ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan familiar")
+                            ||query.equals("PLAN UNIPERSONAL")||query.equals("UNIPERSONAL")||query.equals("plan unipersonal")
+                            ||query.equals("unipersonal")||query.equals("Unipersonal")||query.equals("Plan unipersonal")
+                            )
+                    {
+                        Fragment fragment = null;
+
+                        Class fragmentClass = PlanesFragment.class;
+                        try {
+                            fragment = (Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    }
+
+                    else if(query.equals("suscribete")||query.equals("Suscribete"))
+                    {
+                        Intent intent1=new Intent (getApplicationContext(),SuscribeteActivity.class);
+                        startActivity(intent1);
+                    }
+                    else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
+                    {
+                        Intent intent1=new Intent (getApplicationContext(),NuestraEmpresaActivity.class);
+                        startActivity(intent1);
+                    }
+
+
+                    else if(query.equals("suscritos")||query.equals("Suscritos"))
+                    {
+                        Fragment fragment = null;
+
+                        Class fragmentClass = SuscritosFragment.class;
+                        try {
+                            fragment = (Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    }
+                    else if(query.equals("contactenos")||query.equals("Contactenos"))
+                    {
+                        Fragment fragment = null;
+
+                        Class fragmentClass = ContactenosFragment.class;
+                        try {
+                            fragment = (Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    }
+                    else if(query.equals("ubicacion")||query.equals("ubicacion"))
+                    {
+                        Fragment fragment = null;
+
+                        Class fragmentClass = ContactenosFragment.class;
+                        try {
+                            fragment = (Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    }
+
+                    else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
+                            query.equals("Ediciones digitales")|| query.equals("ediciones digitales")||
+                            query.equals("revista protegemos")||query.equals("Taller para papá")||query.equals("Revista Protegemos")||
+                            query.equals("Revista protegemos"))
+                    {
+                        Fragment fragment = null;
+
+                        Class fragmentClass = RevistaProtegemos.class;
+                        try {
+                            fragment = (Fragment) fragmentClass.newInstance();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        FragmentManager fragmentManager = getSupportFragmentManager();
+                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    }
+
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
+
+
                 return false;
             }
         });
@@ -269,6 +372,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
     }
+
+
 
 
 

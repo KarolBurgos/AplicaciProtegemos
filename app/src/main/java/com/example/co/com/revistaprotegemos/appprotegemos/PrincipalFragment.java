@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +23,7 @@ import android.widget.Toolbar;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 
 
 /**
@@ -52,6 +54,7 @@ public class PrincipalFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
         View contenedor = (View) container.getParent();
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
+
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
         appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
         tabs = new TabLayout(getActivity());
@@ -62,21 +65,26 @@ public class PrincipalFragment extends Fragment {
 
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
+
+/*        tabs.setTabGravity(TabLayout.GRAVITY_CENTER);
+        tabs.setTabMode(TabLayout.MODE_SCROLLABLE);*/
         //64
 
         //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
-        int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_signing_the_contract, R.drawable.ic_press_delivery_service};
+        int icons[] = {R.drawable.ic_home_casa, R.drawable.ic_file_in_folder, R.drawable.ic_open_book_black_cover,R.drawable.ic_menu};
         //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
+        tabs.getTabAt(3).setIcon(icons[3]);
 
-        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#3b5998");
+        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                iconcolor(tab,"#3b5998");
+                iconcolor(tab,"#FF00BAD1");
+                //appBar.setBackgroundColor(Color.parseColor("#FF00BAD1"));
 
             }
 
@@ -130,10 +138,13 @@ private void iconcolor(TabLayout.Tab tab, String color)
             switch (position) {
                 case 0:
                     return new InicioFragment();
+
                 case 1:
                     return new PlanesFragment();
                 case 2:
                     return new RevistaProtegemos();
+                case 3:
+                    return new SuscritosFragment();
 
             }
             return null;
@@ -144,7 +155,7 @@ private void iconcolor(TabLayout.Tab tab, String color)
          */
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         /**

@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_vertical"
-    android:background="@drawable/degradado"
     android:orientation="vertical"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.PautasLeerActivity">
 
@@ -39,21 +38,19 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="50dp"
             android:orientation="vertical">
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/imageView4"
                 android:layout_width="wrap_content"
-                android:layout_height="230dp"
-                app:srcCompat="@drawable/bus" />
+                android:layout_height="230dp" />
 
             <com.github.chrisbanes.photoview.PhotoView
                 android:id="@+id/imageView5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/bus" />
+                android:layout_weight="1" />
         </LinearLayout>
     </HorizontalScrollView>
 

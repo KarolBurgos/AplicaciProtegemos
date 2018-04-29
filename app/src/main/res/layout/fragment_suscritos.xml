@@ -4,7 +4,6 @@
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/degradado"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment">
 
     <!-- TODO: Update blank fragment layout -->
@@ -12,7 +11,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
-        android:background="@drawable/degradado"
         android:gravity="center"
         android:orientation="vertical">
 

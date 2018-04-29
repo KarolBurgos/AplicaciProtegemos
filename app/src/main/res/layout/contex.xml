@@ -9,12 +9,23 @@
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <android.support.design.widget.AppBarLayout
+<!--    <android.support.design.widget.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout_editor_absoluteX="0dp"
         android:background="@drawable/degradado"
+        tools:layout_editor_absoluteY="0dp">
+
+
+    </android.support.design.widget.AppBarLayout>-->
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/degradado"
+        android:foregroundGravity="top"
+        tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp">
 
 

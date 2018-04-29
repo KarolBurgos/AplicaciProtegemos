@@ -9,16 +9,16 @@
 
         <item
             android:id="@+id/inicio"
-            android:icon="@drawable/ic_icons8_casa"
+            android:icon="@drawable/ic_website_home_page"
             android:title="Inicio" />
 
         <item
             android:id="@+id/suscriptores"
-            android:icon="@drawable/ic_icons8_contactos_filled_50"
+            android:icon="@drawable/ic_team"
             android:title="Suscritos" />
         <item
             android:id="@+id/revistpro"
-            android:icon="@drawable/ic_icons8_agregar_regla_filled_50"
+            android:icon="@drawable/ic_press_delivery_service"
             android:title="Revista Protegemos" />
         <item
             android:id="@+id/nav_susc"
@@ -26,7 +26,7 @@
             android:title="Suscribete" />
         <item
             android:id="@+id/nav_planes"
-            android:icon="@drawable/ic_icons8_acuerdo_filled_50_1_"
+            android:icon="@drawable/ic_planes"
             android:title="Planes" />
     </group>
 
@@ -34,12 +34,16 @@
         <menu>
             <item
                 android:id="@+id/nav_cont"
-                android:icon="@drawable/ic_icons8_tel_fono_con_altavoz_filled_50"
+                android:icon="@drawable/ic_voice_mail"
                 android:title="Contáctenos" />
-
+<!--
             <item
                 android:id="@+id/ubic"
-                android:icon="@drawable/ic_icons8_mapa_50"
+                android:icon="@drawable/ic_placeholder_filled_point"
+                android:title="Ubicacion" />     -->
+            <item
+                android:id="@+id/ubic"
+                android:icon="@drawable/ic_placeholder_on_map_paper_in_perspective"
                 android:title="Ubicacion" />
 
         </menu>

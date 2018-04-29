@@ -3,7 +3,11 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -42,6 +46,11 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.mod
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.JSOONResponse;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.Jornadas;
 
+import java.io.BufferedInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
 
@@ -144,6 +153,14 @@ public class InicioFragment extends Fragment {
             t1 = (TextView) view.findViewById(R.id.txtvisita);
             t1.setText(getText(R.string.mi_mensaje));
 
+   /*          Bitmap obtener_imagen = get_imagen("http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png");
+             //uImageView.setImageBitmap(obtener_imagen);
+            Drawable d = new BitmapDrawable(getResources(), obtener_imagen);
+            int drawableId = Integer.parseInt(d.toString());*/
+
+
+
+
             int images[] = {R.drawable.premia, R.drawable.drogueria, R.drawable.ips};
             String names[] = {"imagen1", "imagen2", "imagen3"};
 
@@ -200,6 +217,22 @@ public class InicioFragment extends Fragment {
     }
     public void inter() {
 
+    }
+    private Bitmap get_imagen(String url) {
+        Bitmap bm = null;
+        try {
+            URL _url = new URL(url);
+            URLConnection con = _url.openConnection();
+            con.connect();
+            InputStream is = con.getInputStream();
+            BufferedInputStream bis = new BufferedInputStream(is);
+            bm = BitmapFactory.decodeStream(bis);
+            bis.close();
+            is.close();
+        } catch (IOException e) {
+
+        }
+        return bm;
     }
 
     @Override
