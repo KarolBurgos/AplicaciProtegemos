@@ -62,11 +62,16 @@
             android:name=".validacionnohayinternet.ValidacionNoHayInternet"
             android:label="@string/app_name"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
-        <activity android:name=".Suscribete.SuscribeteActivity"
-            android:label=""
-           android:banner="@drawable/degradado" />
-        <activity android:name=".settings.NuestraEmpresaActivity"
-            android:label=""></activity>
+        <activity
+            android:name=".Suscribete.SuscribeteActivity"
+            android:banner="@drawable/degradado"
+            android:label="" />
+        <activity
+            android:name=".settings.NuestraEmpresaActivity"
+            android:label="" />
+        <activity
+            android:name=".ChatProtegemos.ChatProtegemos"
+            android:label="Chat"></activity>
     </application>
 
 </manifest>

@@ -25,6 +25,7 @@ import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.Toast;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
@@ -60,23 +61,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
         setSupportActionBar(toolbar);
 
-       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
             public void onClick(View view) {
-                Fragment fragment = null;
-
-                Class fragmentClass = PrincipalFragment.class;
-                try {
-                    fragment = (Fragment) fragmentClass.newInstance();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager = getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
+                startActivity(intent);
             }
-        });*/
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
