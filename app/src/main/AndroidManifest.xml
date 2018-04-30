@@ -36,7 +36,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".WebViewActivity" />
+        <activity
+            android:name=".WebViewActivity"
+            android:label="" />
         <activity
             android:name=".InicioSesion.sesion"
             android:label="Inicio de sesion" />
@@ -71,7 +73,12 @@
             android:label="" />
         <activity
             android:name=".ChatProtegemos.ChatProtegemos"
-            android:label="Chat"></activity>
+            android:label="Chat" />
+        <activity
+            android:name=".WebViewTwitter"
+            android:label="" />
+        <activity android:name=".WebViewDigitales"
+            android:label=""></activity>
     </application>
 
 </manifest>

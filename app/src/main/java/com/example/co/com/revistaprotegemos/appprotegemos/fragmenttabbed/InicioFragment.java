@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -34,6 +35,8 @@ import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewTwitter;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
@@ -81,7 +84,7 @@ public class InicioFragment extends Fragment {
     private TextView quienes_somos,visite,encontrara,jornada;
     private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
     private Typeface Nuestrosplanes,Aurella;
-
+    private ImageButton facebook,twitter;
     SwipeRefreshLayout swipeRefreshLayout;
     TextView textView;
     int number=0;
@@ -101,6 +104,8 @@ public class InicioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
+        facebook=(ImageButton)view.findViewById(R.id.facebook);
+        twitter=(ImageButton)view.findViewById(R.id.twitter);
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -307,6 +312,20 @@ public class InicioFragment extends Fragment {
             }
         });
 
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
+                startActivity(myIntent);
+            }
+        });
+        twitter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(getContext(), WebViewTwitter.class);
+                startActivity(myIntent);
+            }
+        });
     }
 
     private void loadJSON(){

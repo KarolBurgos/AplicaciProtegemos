@@ -18,6 +18,8 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.WebViewActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewDigitales;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewTwitter;
 
 
 /**
@@ -109,14 +111,15 @@ public class EdicionesDigitalesFragment extends Fragment {
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 //  Log.e("fdgfdfgfgfgfh--->","SI");
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+/*                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-/*                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
-                startActivity(myIntent);*/
+                startActivity(intent);*/
+                Intent myIntent = new Intent(getContext(), WebViewDigitales.class);
+                startActivity(myIntent);
 
             }
         });
@@ -162,5 +165,53 @@ public class EdicionesDigitalesFragment extends Fragment {
 
             }
         });
+    }
+
+    public Button getB1() {
+        return b1;
+    }
+
+    public void setB1(Button b1) {
+        this.b1 = b1;
+    }
+
+    public Button getB2() {
+        return b2;
+    }
+
+    public void setB2(Button b2) {
+        this.b2 = b2;
+    }
+
+    public Button getB3() {
+        return b3;
+    }
+
+    public void setB3(Button b3) {
+        this.b3 = b3;
+    }
+
+    public Button getB4() {
+        return b4;
+    }
+
+    public void setB4(Button b4) {
+        this.b4 = b4;
+    }
+
+    public Button getB5() {
+        return b5;
+    }
+
+    public void setB5(Button b5) {
+        this.b5 = b5;
+    }
+
+    public Button getB6() {
+        return b6;
+    }
+
+    public void setB6(Button b6) {
+        this.b6 = b6;
     }
 }
