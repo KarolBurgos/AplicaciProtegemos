@@ -3,7 +3,6 @@ package com.example.co.com.revistaprotegemos.appprotegemos.revistaProtegemosEdic
 
 import android.content.Intent;
 import android.graphics.Typeface;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -18,7 +17,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.WebViewActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 
 
 /**
@@ -200,131 +199,107 @@ public class EdicionesImpresas extends Fragment {
         super.onActivityCreated(savedInstanceState);
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //  Log.e("fdgfdfgfgfgfh--->","SI");
-               Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-/*                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
-                startActivity(myIntent);*/
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
 
         b2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b3.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443502/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b4.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b5.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
+                startActivity(myIntent);
 
             }
         });
         b6.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
+                startActivity(myIntent);
             }
         });
         b9.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b10.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
-
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
+                startActivity(myIntent);
             }
         });
         b11.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b12.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
         b13.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
-                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intent);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
+                startActivity(myIntent);
 
             }
         });
-      /*  regresar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                //  Log.e("fdgfdfgfgfgfh--->","SI");
-                //getActivity().finish();
-                Fragment fragment = null;
-
-                Class fragmentClass= PrincipalFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=getActivity().getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-
-            }
-        });*/
 
     }
 

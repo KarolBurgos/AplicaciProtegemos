@@ -6,8 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
-import android.graphics.drawable.BitmapDrawable;
-import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -35,8 +33,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.WebViewActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.WebViewTwitter;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
@@ -315,14 +312,16 @@ public class InicioFragment extends Fragment {
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getContext(), WebViewActivity.class);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "www.facebook.com/Grupo-Editorial-Protegemos-1810118702587250/?view_public_for=1810118702587250");
                 startActivity(myIntent);
             }
         });
         twitter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(getContext(), WebViewTwitter.class);
+                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "twitter.com/citas_grupo");
                 startActivity(myIntent);
             }
         });

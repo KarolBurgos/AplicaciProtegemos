@@ -37,9 +37,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".WebViewActivity"
-            android:label="" />
-        <activity
             android:name=".InicioSesion.sesion"
             android:label="Inicio de sesion" />
         <activity
@@ -74,10 +71,7 @@
         <activity
             android:name=".ChatProtegemos.ChatProtegemos"
             android:label="Chat" />
-        <activity
-            android:name=".WebViewTwitter"
-            android:label="" />
-        <activity android:name=".WebViewDigitales"
+        <activity android:name=".WebViewAbrirPaginasUrl"
             android:label=""></activity>
     </application>
 
