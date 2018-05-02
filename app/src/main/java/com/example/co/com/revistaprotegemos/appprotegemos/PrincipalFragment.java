@@ -5,7 +5,9 @@ import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.AppBarLayout;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,10 +16,12 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toolbar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
@@ -40,6 +44,7 @@ public class PrincipalFragment extends Fragment {
     private Toolbar toolbar;
     private FragmentTabHost tabHost;
     private Button mib;
+    private TextView mTextMessage;
     public PrincipalFragment() {
         // Required empty public constructor
     }
@@ -52,12 +57,15 @@ public class PrincipalFragment extends Fragment {
         // Inflate the layout for this fragment
 
         View view = inflater.inflate(R.layout.fragment_principal, container, false);
+
+
         View contenedor = (View) container.getParent();
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
 
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
-        appBar.setBackgroundColor(Color.parseColor("#FFF9FBFB"));
+        appBar.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
         tabs = new TabLayout(getActivity());
+        //tabs.setBackgroundColor(Color.parseColor("#55B99D"));
         //tabs.setTabTextColors(Color.parseColor("#FF00BAD1"), Color.parseColor("#FF00BAD1"));
         appBar.addView(tabs);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
@@ -92,7 +100,7 @@ public class PrincipalFragment extends Fragment {
             public void onTabUnselected(TabLayout.Tab tab) {
 
                 iconcolor(tab,"#E0E0E0");
-        }
+            }
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
@@ -104,11 +112,11 @@ public class PrincipalFragment extends Fragment {
         //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
-private void iconcolor(TabLayout.Tab tab, String color)
-{
+    private void iconcolor(TabLayout.Tab tab, String color)
+    {
 
-    tab.getIcon().setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN);
-}
+        tab.getIcon().setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN);
+    }
 
     @Override
     public void onDestroyView() {
@@ -170,7 +178,7 @@ private void iconcolor(TabLayout.Tab tab, String color)
         @Override
         public CharSequence getPageTitle(int position) {
 
-   return null;
+            return null;
 
         }
         // return tirulotabs[position];
@@ -178,8 +186,4 @@ private void iconcolor(TabLayout.Tab tab, String color)
     }
 
 
-    }
-
-
-
-
+}

@@ -6,10 +6,13 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -23,6 +26,7 @@ import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
@@ -44,24 +48,65 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     ArrayList<Pautas> listaPautas;
     DataAdapterr recyclerAdaptador;
+    private TextView mTextMessage;
     MaterialSearchView searchView;
     String[] list;
     int check = 0;
     ContactenosFragment fragment_two = null;
+
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            FragmentManager fragmentManager =getSupportFragmentManager();
+            FragmentTransaction transaction =fragmentManager.beginTransaction();
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    transaction.replace(R.id.flContentt,new PrincipalFragment()).commit();
+                    return true;
+                case R.id.navigation_dashboard:
+                    Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.llamar:
+                    try {
+                        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                            // TODO: Consider calling
+                            //    ActivityCompat#requestPermissions
+                            // here to request the missing permissions, and then overriding
+                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                            //                                          int[] grantResults)
+                            // to handle the case where the user grants the permission. See the documentation
+                            // for ActivityCompat#requestPermissions for more details.
+
+                        }
+                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
+                    }catch(Exception e){
+                        e.printStackTrace();
+                    }
+                    return true;
+            }
+            return false;
+        }
+    };
     //List<DataItem> lstData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-
+        mTextMessage = (TextView) findViewById(R.id.message);
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
-        "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
-        "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
+                "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
+                "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("MissingPermission")
             @Override
@@ -69,7 +114,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -92,7 +137,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
-       setSearchView();
+        setSearchView();
 
     }
 
@@ -137,8 +182,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-            if (id == R.id.llamar)
-            {
+        if (id == R.id.llamar)
+        {
             try {
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                     // TODO: Consider calling
@@ -154,13 +199,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }catch(Exception e){
                 e.printStackTrace();
             }
-            }
-            else if (id == R.id.nues) {
+        }
+        else if (id == R.id.nues) {
 
-                Intent intent=new Intent (this,NuestraEmpresaActivity.class);
-                startActivity(intent);
-            }
-              else if (id == R.id.horario) {
+            Intent intent=new Intent (this,NuestraEmpresaActivity.class);
+            startActivity(intent);
+        }
+        else if (id == R.id.horario) {
             AlertDialog.Builder uBuilder2 = new AlertDialog.Builder(this);
             View aView2 = getLayoutInflater().inflate(R.layout.fragment_horas_atencion, null);
             uBuilder2.setView(aView2);
@@ -250,98 +295,98 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             public boolean onQueryTextSubmit(String query) {
 
-                    if(query.equals("planes")||query.equals("planes protegemos")||query.equals("platino")||query.equals("Platino")||query.equals("Plan platino")
-                            ||query.equals("PLAN PLATINO")||query.equals("PLATINO")||query.equals("plan platino")
-                            ||query.equals("vip")||query.equals("Vip")||query.equals("Plan vip")
-                            ||query.equals("PLAN VIP")||query.equals("VIP")||query.equals("plan vip")
-                            ||query.equals("auxilio")||query.equals("Auxilio")
-                            ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan platino")
-                            ||query.equals("familiar")||query.equals("Familiar")||query.equals("Plan familiar")
-                            ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan familiar")
-                            ||query.equals("PLAN UNIPERSONAL")||query.equals("UNIPERSONAL")||query.equals("plan unipersonal")
-                            ||query.equals("unipersonal")||query.equals("Unipersonal")||query.equals("Plan unipersonal")
-                            )
-                    {
-                        Fragment fragment = null;
+                if(query.equals("planes")||query.equals("planes protegemos")||query.equals("platino")||query.equals("Platino")||query.equals("Plan platino")
+                        ||query.equals("PLAN PLATINO")||query.equals("PLATINO")||query.equals("plan platino")
+                        ||query.equals("vip")||query.equals("Vip")||query.equals("Plan vip")
+                        ||query.equals("PLAN VIP")||query.equals("VIP")||query.equals("plan vip")
+                        ||query.equals("auxilio")||query.equals("Auxilio")
+                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan platino")
+                        ||query.equals("familiar")||query.equals("Familiar")||query.equals("Plan familiar")
+                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan familiar")
+                        ||query.equals("PLAN UNIPERSONAL")||query.equals("UNIPERSONAL")||query.equals("plan unipersonal")
+                        ||query.equals("unipersonal")||query.equals("Unipersonal")||query.equals("Plan unipersonal")
+                        )
+                {
+                    Fragment fragment = null;
 
-                        Class fragmentClass = PlanesFragment.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    Class fragmentClass = PlanesFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
 
-                    else if(query.equals("suscribete")||query.equals("Suscribete"))
-                    {
-                        Intent intent1=new Intent (getApplicationContext(),SuscribeteActivity.class);
-                        startActivity(intent1);
+                else if(query.equals("suscribete")||query.equals("Suscribete"))
+                {
+                    Intent intent1=new Intent (getApplicationContext(),SuscribeteActivity.class);
+                    startActivity(intent1);
+                }
+                else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
+                {
+                    Intent intent1=new Intent (getApplicationContext(),NuestraEmpresaActivity.class);
+                    startActivity(intent1);
+                }
+
+
+                else if(query.equals("suscritos")||query.equals("Suscritos"))
+                {
+                    Fragment fragment = null;
+
+                    Class fragmentClass = SuscritosFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
-                    {
-                        Intent intent1=new Intent (getApplicationContext(),NuestraEmpresaActivity.class);
-                        startActivity(intent1);
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
+                else if(query.equals("contactenos")||query.equals("Contactenos"))
+                {
+                    Fragment fragment = null;
+
+                    Class fragmentClass = ContactenosFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
+                else if(query.equals("ubicacion")||query.equals("ubicacion"))
+                {
+                    Fragment fragment = null;
 
-
-                    else if(query.equals("suscritos")||query.equals("Suscritos"))
-                    {
-                        Fragment fragment = null;
-
-                        Class fragmentClass = SuscritosFragment.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    Class fragmentClass = ContactenosFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    else if(query.equals("contactenos")||query.equals("Contactenos"))
-                    {
-                        Fragment fragment = null;
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
 
-                        Class fragmentClass = ContactenosFragment.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
+                        query.equals("Ediciones digitales")|| query.equals("ediciones digitales")||
+                        query.equals("revista protegemos")||query.equals("Taller para papá")||query.equals("Revista Protegemos")||
+                        query.equals("Revista protegemos"))
+                {
+                    Fragment fragment = null;
+
+                    Class fragmentClass = RevistaProtegemos.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
                     }
-                    else if(query.equals("ubicacion")||query.equals("ubicacion"))
-                    {
-                        Fragment fragment = null;
-
-                        Class fragmentClass = ContactenosFragment.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-                    }
-
-                    else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
-                            query.equals("Ediciones digitales")|| query.equals("ediciones digitales")||
-                            query.equals("revista protegemos")||query.equals("Taller para papá")||query.equals("Revista Protegemos")||
-                            query.equals("Revista protegemos"))
-                    {
-                        Fragment fragment = null;
-
-                        Class fragmentClass = RevistaProtegemos.class;
-                        try {
-                            fragment = (Fragment) fragmentClass.newInstance();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                        FragmentManager fragmentManager = getSupportFragmentManager();
-                        fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-                    }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
 
                 return true;
             }
