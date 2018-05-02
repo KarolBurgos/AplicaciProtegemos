@@ -55,7 +55,7 @@ public class ChatProtegemos extends AppCompatActivity {
         nombre = (TextView) findViewById(R.id.nombre);
         rvMensajes = (RecyclerView) findViewById(R.id.rvMensajes);
         txtMensaje = (EditText) findViewById(R.id.txtMensaje);
-        btnEnviar = (ImageButton) findViewById(R.id.btnEnviar);
+        btnEnviar = (ImageButton) findViewById(R.id.btnEnvi);
         btnEnviarFoto=(ImageButton)findViewById(R.id.btnEnviarFoto);
         fotoPerfilCadena="";
 
