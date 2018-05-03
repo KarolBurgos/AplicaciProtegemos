@@ -12,8 +12,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;

@@ -8,24 +8,19 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.DatosApi;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.JSONResponse;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.PlanesAdapter;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -50,8 +45,8 @@ public class PlanesFragment extends Fragment {
     private RecyclerView recyclerView;
     private ArrayList<Planes> data;
     private ArrayList<Planes> data2;
-    private DataAdapter adapter;
-    private DataAdapter adapter2;
+    private PlanesAdapter adapter;
+    private PlanesAdapter adapter2;
     private FragmentActivity myContext;
     private TextView t1;
     private Typeface Ofaly,Color;
@@ -109,7 +104,7 @@ public class PlanesFragment extends Fragment {
 
                 JSONResponse jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapter(data, getContext(),myContext,swipeRefreshLayout);
+                adapter = new PlanesAdapter(data, getContext(),myContext,swipeRefreshLayout);
                 recyclerView.setAdapter(adapter);
             }
 
@@ -124,7 +119,7 @@ public class PlanesFragment extends Fragment {
     public int numero(View view)
     {
 
-        adapter2 = new DataAdapter(data2, getContext(), myContext, swipeRefreshLayout);
+        adapter2 = new PlanesAdapter(data2, getContext(), myContext, swipeRefreshLayout);
         return adapter2.nuevo(view,myContext,getContext());
     }
 

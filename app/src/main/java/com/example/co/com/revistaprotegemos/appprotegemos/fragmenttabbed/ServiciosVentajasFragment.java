@@ -17,9 +17,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.DataAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.PlanesAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.api.DatossApii;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.DataAdapterservicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONResponseServicios;
@@ -44,7 +43,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class ServiciosVentajasFragment extends Fragment {
 
-    DataAdapter.ViewHolderN viewHolderN;
+    PlanesAdapter.ViewHolderN viewHolderN;
     private Retrofit retrofit;
     //private DataAdapter planes;
     // private RecyclerView recyclerView;
@@ -54,7 +53,7 @@ public class ServiciosVentajasFragment extends Fragment {
     private ArrayList<Servicios> data;
     private ArrayList<Planes> data2;
     private DataAdapterservicios adapter;
-    private DataAdapter adapter2;
+    private PlanesAdapter adapter2;
     private FragmentActivity f;
     private int offset;
     private Button butonserivicios;

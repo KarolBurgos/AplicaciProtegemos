@@ -20,7 +20,6 @@ import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 
@@ -28,10 +27,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Created by ASPIRE VX15 on 21/02/2018.
+ * Created by ASPIRE VX15 on 2/05/2018.
  */
 
-public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN > {
+public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolderN > {
     private ViewGroup linearLayoutDetails;
     private ImageView imageViewExpand;
     private static final int DURATION = 250;
@@ -49,7 +48,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
     private AdapterView.OnItemClickListener escucha;
     private ServiciosVentajasFragment sv;
 
-    public DataAdapter(ArrayList<Planes> android, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
+    public PlanesAdapter(ArrayList<Planes> android, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
         this.android = android;
         this.context = context;
         this.escucha = escucha;
@@ -64,11 +63,11 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
     public ViewHolderN onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row, viewGroup, false);
 
-        return new DataAdapter.ViewHolderN(view);
+        return new PlanesAdapter.ViewHolderN(view);
     }
 
     @Override
-    public void onBindViewHolder(DataAdapter.ViewHolderN viewHolder, int i) {
+    public void onBindViewHolder(PlanesAdapter.ViewHolderN viewHolder, int i) {
         viewHolder.tit.setText(android.get(i).getTitulo());
         viewHolder.descr.setText(android.get(i).getDescripcion());
         viewHolder.id.setText(android.get(i).getidString());
@@ -85,8 +84,9 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
                 refresh();
             }
         });
-
     }
+
+
     public class ViewHolderN extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         public TextView tit, descr, id, leer;
@@ -156,7 +156,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
         viewHolder.descr.setText(android.get(i).getDescripcion());*/
        /*     ViewHolderN viewHolderN =new ViewHolderN(view,f,context);
            return  viewHolderN.obtenId();*/
-            return  1;
+        return  1;
 
 
     }
@@ -192,7 +192,7 @@ public class DataAdapter  extends RecyclerView.Adapter<DataAdapter.ViewHolderN >
             @Override
             public void run() {
 /*                android.add(0,android.get(new Random().nextInt(android.size())));*/
-                DataAdapter.this.notifyDataSetChanged();
+                PlanesAdapter.this.notifyDataSetChanged();
                 swipeRefreshLayout.setRefreshing(false);
             }
         },1000);
