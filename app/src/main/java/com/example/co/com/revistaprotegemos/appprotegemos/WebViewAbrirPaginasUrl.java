@@ -1,5 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -14,6 +15,11 @@ public class WebViewAbrirPaginasUrl extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web_view_digitales);
+
+        final ProgressDialog progressDialog = new ProgressDialog(this);
+        progressDialog.setIcon(R.mipmap.ic_launcher);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -33,9 +39,9 @@ public class WebViewAbrirPaginasUrl extends AppCompatActivity {
         MWebView.loadUrl("http://" + bundle.getString("nuevo"));*/
         MWebView.setWebViewClient(new WebViewClient()
         {
-            public boolean shouldOverriceUrlLoading(WebView view,String url)
-            {
-                return false;
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                progressDialog.dismiss();
             }
         });
 /*        MWebView.getSettings().setJavaScriptEnabled(true);
