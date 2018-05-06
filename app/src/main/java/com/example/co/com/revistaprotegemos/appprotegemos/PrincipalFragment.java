@@ -79,13 +79,12 @@ public class PrincipalFragment extends Fragment {
         //64
 
         //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
-        int icons[] = {R.drawable.ic_home_casa, R.drawable.ic_file_in_folder, R.drawable.ic_open_book_black_cover,R.drawable.ic_menu};
+        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_open_book_black_cover};
         //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
-        tabs.getTabAt(3).setIcon(icons[3]);
 
         iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -151,9 +150,6 @@ public class PrincipalFragment extends Fragment {
                     return new PlanesFragment();
                 case 2:
                     return new RevistaProtegemos();
-                case 3:
-                    return new PlanesFragment();
-
             }
             return null;
         }
@@ -163,7 +159,7 @@ public class PrincipalFragment extends Fragment {
          */
         @Override
         public int getCount() {
-            return 4;
+            return 3;
         }
 
         /**

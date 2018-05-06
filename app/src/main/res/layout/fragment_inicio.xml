@@ -203,12 +203,13 @@
 
                 <Button
                     android:id="@+id/button5"
+                    style="@android:style/Widget.Button.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="2dp"
-                    android:background="@drawable/register_button"
-                    android:text="Ingresar" />
+                    android:text="Ingresar"
+                    android:textAllCaps="false" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -269,12 +270,13 @@
 
                 <Button
                     android:id="@+id/btonsuscribirme"
+                    style="@android:style/Widget.Button.Small"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|center"
                     android:layout_marginTop="2dp"
-                    android:background="@drawable/register_button"
-                    android:text="Suscribirme" />
+                    android:text="Suscribirme"
+                    android:textAllCaps="false" />
 
                 <TextView
                     android:id="@+id/textView50"

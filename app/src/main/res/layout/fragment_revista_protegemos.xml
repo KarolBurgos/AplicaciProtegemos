@@ -57,7 +57,6 @@
                             android:layout_height="210dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginStart="15dp"
-                            android:background="@drawable/borde"
                             android:src="@drawable/bus" />
 
                     </LinearLayout>
@@ -103,12 +102,13 @@
 
                             <Button
                                 android:id="@+id/trbutton1"
+                                style="@android:style/Widget.Button.Small"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/degradado"
-                                android:text="Ver" />
+                                android:text="Ver"
+                                android:textAllCaps="false" />
                         </LinearLayout>
 
                     </LinearLayout>
@@ -151,7 +151,6 @@
                             android:layout_height="210dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginStart="15dp"
-                            android:background="@drawable/borde"
                             android:src="@drawable/bus" />
                     </LinearLayout>
 
@@ -196,12 +195,13 @@
 
                             <Button
                                 android:id="@+id/trbutton2"
+                                style="@android:style/Widget.Button.Small"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:background="@drawable/degradado"
-                                android:text="Ver" />
+                                android:text="Ver"
+                                android:textAllCaps="false" />
                         </LinearLayout>
 
                     </LinearLayout>

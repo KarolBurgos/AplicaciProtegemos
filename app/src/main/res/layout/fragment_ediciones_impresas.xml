@@ -101,10 +101,11 @@
 
                                     <Button
                                         android:id="@+id/txtbut1"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
+                                        android:layout_height="match_parent"
+
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -194,10 +195,10 @@
 
                                     <Button
                                         android:id="@+id/trb"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -286,10 +287,10 @@
 
                                     <Button
                                         android:id="@+id/trb1"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -379,10 +380,10 @@
 
                                     <Button
                                         android:id="@+id/trb2"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -471,10 +472,10 @@
 
                                     <Button
                                         android:id="@+id/trb3"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -563,10 +564,10 @@
 
                                     <Button
                                         android:id="@+id/trb4"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -655,10 +656,10 @@
 
                                     <Button
                                         android:id="@+id/trb5"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -747,10 +748,10 @@
 
                                     <Button
                                         android:id="@+id/trb6"
+                                        style="@android:style/Widget.Button.Small"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -842,7 +843,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -934,7 +935,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -1027,7 +1028,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -1119,7 +1120,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -1211,7 +1212,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -1303,7 +1304,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:background="@color/colorPrimary"
+                                        style="@android:style/Widget.Button.Small"
                                         android:text="Proximamente" />
                                 </LinearLayout>
 

@@ -103,9 +103,9 @@
 
                         <Button
                             android:id="@+id/buttenvia"
+                            style="@android:style/Widget.Button.Small"
                             android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:background="@drawable/register_button"
                             android:text="Enviar" />
 
                         <TextView

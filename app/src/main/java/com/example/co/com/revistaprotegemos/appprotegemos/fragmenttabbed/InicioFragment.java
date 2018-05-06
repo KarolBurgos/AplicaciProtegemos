@@ -33,6 +33,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.IniciarSesion;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
@@ -304,7 +305,7 @@ public class InicioFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                Fragment fragment = null;
+                /*Fragment fragment = null;
                 Class fragmentClass= SuscritosFragment.class;
                 try{
                     fragment = (Fragment) fragmentClass.newInstance();
@@ -312,7 +313,9 @@ public class InicioFragment extends Fragment {
                     e.printStackTrace();
                 }
                 FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();*/
+                Intent intent=new Intent (getContext(),IniciarSesion.class);
+                startActivity(intent);
 
             }
         });

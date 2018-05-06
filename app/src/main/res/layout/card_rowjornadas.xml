@@ -20,7 +20,6 @@
             android:id="@+id/imageView3"
             android:layout_width="246dp"
             android:layout_height="270dp"
-            android:background="@drawable/borde"
             card_view:srcCompat="@drawable/inicio" />
 
         <TextView
