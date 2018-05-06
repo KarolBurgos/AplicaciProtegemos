@@ -1,10 +1,19 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.*;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Typeface;
+import android.net.Uri;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,30 +28,68 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion.User;
 import com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion.sesion;
+import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-public class IniciarSesion extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener{
+public class IniciarSesion extends AppCompatActivity implements Response.Listener<JSONObject>, Response.ErrorListener {
 
     RequestQueue rq;
     JsonRequest jrq;
     private Spinner spinner;
-    EditText contrato,contraseña;
-    TextView inicio,senior;
+    EditText contrato, contraseña;
+    TextView inicio, senior;
     Button btnconsultar;
     private Typeface Abril;
-    private Typeface April,Senior;
+    private Typeface April, Senior;
 
     String[] items;
-    private boolean isFirstTime=true;
+    private boolean isFirstTime = true;
+
+    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
+            = new BottomNavigationView.OnNavigationItemSelectedListener() {
+
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            switch (item.getItemId()) {
+                case R.id.navigation_home:
+                    finish();
+                    return true;
+                case R.id.navigation_dashboard:
+                    Intent intent = new Intent(getApplicationContext(), ChatProtegemos.class);
+                    startActivity(intent);
+                    return true;
+                case R.id.llamar:
+
+                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+                        return true;
+                    }
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
+
+                    return true;
+            }
+            return false;
+        }
+    };
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_iniciar_sesion);
+
+        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
         setSupportActionBar(toolbar);
@@ -86,6 +133,8 @@ public class IniciarSesion extends AppCompatActivity implements Response.Listene
                 iniciarsesion();
             }
         });
+
+
     }
 
 

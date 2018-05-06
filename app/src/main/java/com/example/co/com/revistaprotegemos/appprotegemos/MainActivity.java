@@ -234,12 +234,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Class fragmentClass=PrincipalFragment.class;
 
         if (id == R.id.suscriptores) {
-            fragmentClass=SuscritosFragment.class;
+            Intent intent=new Intent (this,IniciarSesion.class);
+            startActivity(intent);
         } else if (id == R.id.nav_planes) {
             fragmentClass=PlanesFragment.class;
         } else if (id == R.id.nav_susc) {
 
-            Intent intent=new Intent (this,IniciarSesion.class);
+            Intent intent=new Intent (this,SuscribeteActivity.class);
             startActivity(intent);
 
         } else if (id == R.id.nav_cont) {
