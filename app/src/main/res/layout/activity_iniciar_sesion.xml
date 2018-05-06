@@ -1,15 +1,33 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.IniciarSesion">
 
-    <!-- TODO: Update blank fragment layout -->
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        android:background="#FAF5F4">
+
+        <android.support.v7.widget.Toolbar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize" />
+
+    </android.support.design.widget.AppBarLayout>
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -40,7 +58,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:text="INICIO DE SESION"
+                    android:text="INICIO DE SESIÓN"
                     android:textSize="14sp"
                     android:textStyle="bold"
                     android:typeface="normal" />
@@ -62,8 +80,6 @@
                     android:layout_height="44dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/rounded_white"
-                    android:drawableLeft="@drawable/ic_action_navigation_arrow_back"
-                    android:drawableStart="@drawable/ic_action_navigation_arrow_back"
                     android:ems="12"
                     android:gravity="center"
                     android:hint="No. Contrato" />
@@ -80,8 +96,6 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="15dp"
                         android:background="@drawable/rounded_white"
-                        android:drawableLeft="@drawable/ic_action_navigation_arrow_back"
-                        android:drawableStart="@drawable/ic_action_navigation_arrow_back"
                         android:ems="12"
                         android:gravity="center"
                         android:hint="Password"
@@ -97,7 +111,8 @@
                     android:layout_gravity="center"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/register_buttonsty"
-                    android:text="Iniciar Sesion" />
+                    android:text="Iniciar Sesión"
+                    android:textColor="@color/colorPrimary" />
 
                 <TextView
                     android:id="@+id/textView6"
@@ -111,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="15dp"
                     android:gravity="center_horizontal"
-                    android:text="Señor Suscriptor, para iniciar sesion la contraseña es el numero de cedula del titular del contrato. "
+                    android:text="Señor Suscriptor, para iniciar sesión la contraseña es el número de cedula del titular del contrato. "
                     android:textColor="@color/cardview_dark_background"
                     android:textColorLink="@color/colorPrimaryDark"
                     android:textSize="12sp"
@@ -129,5 +144,4 @@
 
 
     </LinearLayout>
-
-</FrameLayout>
+</LinearLayout>

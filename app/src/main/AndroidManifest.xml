@@ -71,8 +71,10 @@
         <activity
             android:name=".ChatProtegemos.ChatProtegemos"
             android:label="Chat" />
-        <activity android:name=".WebViewAbrirPaginasUrl"
-            android:label=""></activity>
+        <activity
+            android:name=".WebViewAbrirPaginasUrl"
+            android:label="" />
+        <activity android:name=".IniciarSesion" android:label=""></activity>
     </application>
 
 </manifest>

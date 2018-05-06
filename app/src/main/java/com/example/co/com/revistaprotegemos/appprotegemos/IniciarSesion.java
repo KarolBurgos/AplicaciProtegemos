@@ -1,31 +1,24 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.settings;
-
+package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.view.LayoutInflater;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-
-import android.widget.TextView;
-import android.widget.Toast;
-
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.JsonRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion.User;
 import com.example.co.com.revistaprotegemos.appprotegemos.InicioSesion.sesion;
 
@@ -33,11 +26,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
-public class SuscritosFragment extends Fragment implements Response.Listener<JSONObject>,Response.ErrorListener{
+public class IniciarSesion extends AppCompatActivity implements Response.Listener<JSONObject>,Response.ErrorListener{
 
     RequestQueue rq;
     JsonRequest jrq;
@@ -50,63 +39,66 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
 
     String[] items;
     private boolean isFirstTime=true;
-    public SuscritosFragment() {
-        // Required empty public constructor
-    }
-
-
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_suscritos, container, false);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_iniciar_sesion);
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_left_arrow);
+
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        contrato=(EditText)findViewById(R.id.contrato);
+        contraseña=(EditText)findViewById(R.id.contraseña);
+
+        btnconsultar=(Button) findViewById(R.id.iniciar);
+        rq= Volley.newRequestQueue(getApplicationContext());
 
 
-        contrato=(EditText)view.findViewById(R.id.contrato);
-        contraseña=(EditText)view.findViewById(R.id.contraseña);
-
-        btnconsultar=(Button) view.findViewById(R.id.iniciar);
-        rq= Volley.newRequestQueue(getContext());
-
-
-/*        spinner = (Spinner) view.findViewById(R.id.spinner);
-        String []opciones={"Pasto","Neiva"};
-        ArrayAdapter <String>adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, opciones);
-        spinner.setAdapter(adapter);*/
-
-        //Fuentes
         String fuente1 ="fuentes/April.ttf";
-        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente1);
+        this.April =Typeface.createFromAsset(getAssets(),fuente1);
 
-        String fuente2 ="fuentes/Abril.otf";
-        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente2);
+/*        String fuente2 ="fuentes/Abril.otf";
+        this.April =Typeface.createFromAsset(getAssets(),fuente2);*/
 
+        String fuente2 ="fuentes/Ames-Regular.otf";
+        this.April =Typeface.createFromAsset(getAssets(),fuente2);
         String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
-        this.Senior =Typeface.createFromAsset(getContext().getAssets(),fuente3);
+        this.Senior =Typeface.createFromAsset(getAssets(),fuente3);
 
-        senior=(TextView)view.findViewById(R.id.senior);
+        senior=(TextView)findViewById(R.id.senior);
         senior.setTypeface(Senior);
 
-        inicio=(TextView)view.findViewById(R.id.in);
+        inicio=(TextView)findViewById(R.id.in);
         inicio.setTypeface(April);
-        return view;
 
+        btnconsultar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                iniciarsesion();
+            }
+        });
     }
+
 
     @Override
     public void onErrorResponse(VolleyError error) {
-
-            Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
-
-
+        Toast.makeText(getApplicationContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onResponse(JSONObject response) {
-
         if(contrato.equals("")&&contraseña.equals(""))
         {
-            Toast.makeText(getContext(),"Ingrese un usuario",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Ingrese un usuario",Toast.LENGTH_SHORT).show();
         }
         else {
             User usuario = new User();
@@ -123,7 +115,7 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-            Intent intent = new Intent(getContext(), sesion.class);
+            Intent intent = new Intent(getApplicationContext(), sesion.class);
             intent.putExtra(sesion.con_cod, usuario.getCon_cod());
             intent.putExtra(sesion.per_cc, usuario.getPer_cc());
             intent.putExtra(sesion.nombre, usuario.getNombre());
@@ -134,7 +126,6 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
             contrato.setText("");
             contraseña.setText("");
         }
-
     }
 
     private void iniciarsesion()
@@ -144,16 +135,4 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         jrq=new JsonObjectRequest(Request.Method.GET,url,null,this,this);
         rq.add(jrq);
     }
-
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        btnconsultar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                iniciarsesion();
-            }
-        });
-    }
-
 }
