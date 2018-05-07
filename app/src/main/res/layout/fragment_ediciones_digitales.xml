@@ -26,10 +26,10 @@
                 android:text="Ediciones Digitales" />
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:background="@drawable/borde"
+                android:orientation="horizontal"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -59,10 +59,10 @@
                                     android:id="@+id/imd1"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd1"
@@ -71,7 +71,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -102,10 +102,10 @@
 
                                     <Button
                                         android:id="@+id/tbd1"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -119,7 +119,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 card_view:cardElevation="10dp"
@@ -151,10 +151,10 @@
                                     android:id="@+id/imd2"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd2"
@@ -163,7 +163,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -194,10 +194,10 @@
 
                                     <Button
                                         android:id="@+id/tbd2"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -211,7 +211,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 card_view:cardElevation="10dp"
@@ -243,10 +243,10 @@
                                     android:id="@+id/imd3"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd3"
@@ -255,7 +255,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -286,10 +286,10 @@
 
                                     <Button
                                         android:id="@+id/tbd3"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -303,7 +303,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 card_view:cardElevation="10dp"
@@ -335,10 +335,10 @@
                                     android:id="@+id/imd4"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd4"
@@ -347,7 +347,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -378,10 +378,10 @@
 
                                     <Button
                                         android:id="@+id/tbd4"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -395,7 +395,7 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 card_view:cardElevation="10dp"
@@ -427,10 +427,10 @@
                                     android:id="@+id/imd5"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd5"
@@ -439,7 +439,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -470,10 +470,10 @@
 
                                     <Button
                                         android:id="@+id/tbd5"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 
@@ -487,10 +487,10 @@
             </android.support.v7.widget.CardView>
 
             <android.support.v7.widget.CardView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:background="@drawable/borde"
+                android:orientation="horizontal"
                 card_view:cardElevation="10dp"
                 card_view:cardUseCompatPadding="true">>
 
@@ -520,10 +520,10 @@
                                     android:id="@+id/imd6"
                                     android:layout_width="147dp"
                                     android:layout_height="180dp"
+                                    android:layout_marginLeft="15dp"
                                     android:layout_marginStart="15dp"
-                                    android:src="@drawable/bus"
                                     android:background="@drawable/borde"
-                                    android:layout_marginLeft="15dp" />
+                                    android:src="@drawable/bus" />
 
                                 <TextView
                                     android:id="@+id/txd6"
@@ -532,7 +532,7 @@
                             </LinearLayout>
 
                             <LinearLayout
-                                android:layout_width="wrap_content"
+                                android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginRight="15dp"
@@ -563,10 +563,10 @@
 
                                     <Button
                                         android:id="@+id/tbd6"
-                                        android:layout_width="match_parent"
+                                        style="@android:style/Widget.Button.Small"
+                                        android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        style="@android:style/Widget.Button.Small"
                                         android:text="Ver Online" />
                                 </LinearLayout>
 

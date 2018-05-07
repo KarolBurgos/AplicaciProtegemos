@@ -63,7 +63,7 @@ public class PrincipalFragment extends Fragment {
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
 
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
-        appBar.setBackgroundColor(Color.parseColor("#FFFFFFFF"));
+        appBar.setBackgroundColor(Color.parseColor("#FF075E55"));
         tabs = new TabLayout(getActivity());
         //tabs.setBackgroundColor(Color.parseColor("#55B99D"));
         //tabs.setTabTextColors(Color.parseColor("#FF00BAD1"), Color.parseColor("#FF00BAD1"));
@@ -92,6 +92,16 @@ public class PrincipalFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 iconcolor(tab,"#FF00BAD1");
                 //appBar.setBackgroundColor(Color.parseColor("#FF00BAD1"));
+
+                if(tabs.getTabAt(0)!=null)
+                {
+                    appBar.setBackgroundColor(Color.parseColor("#55B99D"));
+
+                }
+                else if(tabs.getTabAt(1)!=null)
+                {
+                    appBar.setBackgroundColor(Color.parseColor("#FF00BAD1"));
+                }
 
             }
 
@@ -144,6 +154,7 @@ public class PrincipalFragment extends Fragment {
 
             switch (position) {
                 case 0:
+
                     return new InicioFragment();
 
                 case 1:
