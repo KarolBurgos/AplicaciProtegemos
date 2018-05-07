@@ -305,7 +305,7 @@ public class InicioFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                /*Fragment fragment = null;
+                Fragment fragment = null;
                 Class fragmentClass= SuscritosFragment.class;
                 try{
                     fragment = (Fragment) fragmentClass.newInstance();
@@ -313,9 +313,8 @@ public class InicioFragment extends Fragment {
                     e.printStackTrace();
                 }
                 FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();*/
-                Intent intent=new Intent (getContext(),IniciarSesion.class);
-                startActivity(intent);
+                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
 
             }
         });

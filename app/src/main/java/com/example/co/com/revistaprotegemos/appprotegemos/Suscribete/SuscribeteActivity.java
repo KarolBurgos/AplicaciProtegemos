@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.Suscribete;
 
 import android.content.Context;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.StrictMode;
@@ -57,6 +58,7 @@ public class SuscribeteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_suscribete);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -110,6 +112,13 @@ public class SuscribeteActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        setContentView(R.layout.activity_suscribete);
     }
 
     public void saveInfo(View v) {

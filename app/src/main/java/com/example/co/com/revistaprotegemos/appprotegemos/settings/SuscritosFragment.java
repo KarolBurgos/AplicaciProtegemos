@@ -2,11 +2,15 @@ package com.example.co.com.revistaprotegemos.appprotegemos.settings;
 
 
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
+import android.view.Surface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -45,6 +49,7 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
     EditText contrato,contraseña;
     TextView inicio,senior;
     Button btnconsultar;
+    private FragmentActivity myContext;
     private Typeface Abril;
     private Typeface April,Senior;
 
@@ -89,6 +94,9 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
 
         inicio=(TextView)view.findViewById(R.id.in);
         inicio.setTypeface(April);
+
+
+
         return view;
 
     }
@@ -99,6 +107,12 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
             Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
 
 
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        getActivity().setContentView(R.layout.fragment_suscritos);
     }
 
     @Override
@@ -154,6 +168,15 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
                 iniciarsesion();
             }
         });
+
+        int rotacion = getActivity().getWindowManager().getDefaultDisplay().getRotation();
+        if (rotacion == Surface.ROTATION_0 || rotacion == Surface.ROTATION_180) {
+            //...hacer lo que quiera con la pantalla vertical
+
+        } else {
+            //...hacer lo que quiera con la pantalla horizontal
+
+        }
     }
 
 }

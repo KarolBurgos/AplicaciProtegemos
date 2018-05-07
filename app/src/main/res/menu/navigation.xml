@@ -5,6 +5,7 @@
     <item
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
+        android:gravity="center"
         android:title="" />
        <!-- android:title="Home"-->
 
@@ -12,6 +13,7 @@
         android:id="@+id/llamar"
         android:icon="@android:drawable/sym_call_outgoing"
         android:orderInCategory="100" app:showAsAction="never"
+        android:gravity="center"
         android:title="" />
         <!--android:title="Comunicate"-->
 
@@ -19,6 +21,7 @@
     <item
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_speech_bubbles"
+        android:gravity="center"
         android:title="" />
         <!--android:title="Chat"-->
 

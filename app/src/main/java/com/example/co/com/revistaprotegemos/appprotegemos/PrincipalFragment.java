@@ -29,6 +29,9 @@ import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesF
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 
+import static android.support.design.widget.TabLayout.MODE_FIXED;
+import static android.support.design.widget.TabLayout.MODE_SCROLLABLE;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -85,6 +88,7 @@ public class PrincipalFragment extends Fragment {
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
+        tabs.setTabGravity(MODE_SCROLLABLE);
 
         iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {

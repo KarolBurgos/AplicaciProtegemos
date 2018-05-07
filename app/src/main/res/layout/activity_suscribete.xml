@@ -7,6 +7,7 @@
     android:orientation="vertical"
     app:navigationIcon="?attr/homeAsUpIndicator"
     android:background="@drawable/degradado"
+    android:configChanges="orientation"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity">
 
     <android.support.design.widget.AppBarLayout

@@ -44,6 +44,7 @@ public class ViewPagerAdapter extends PagerAdapter {
         return view;
     }
 
+
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
         ViewPager vp =(ViewPager) container;
