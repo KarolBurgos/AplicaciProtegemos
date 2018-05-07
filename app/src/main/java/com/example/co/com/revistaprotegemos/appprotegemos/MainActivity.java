@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(intent);
                     return true;
                 case R.id.llamar:
+/*
                     try {
                         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             // TODO: Consider calling
@@ -82,15 +83,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                             // for ActivityCompat#requestPermissions for more details.
 
                         }
-                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
+                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:0327313100")));
                     }catch(Exception e){
                         e.printStackTrace();
                     }
+*/
+                    Intent llamar = new Intent(Intent.ACTION_CALL,Uri.parse("tel:0327313100"));
+                    if(ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
+
+                    {
+                        // TODO: Consider calling
+                        //    ActivityCompat#requestPermissions
+                        // here to request the missing permissions, and then overriding
+                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                        //                                          int[] grantResults)
+                        // to handle the case where the user grants the permission. See the documentation
+                        // for ActivityCompat#requestPermissions for more details.
+
+
+                    }
+                        startActivity(llamar);
+
                     return true;
             }
             return false;
         }
     };
+
+
     //List<DataItem> lstData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
