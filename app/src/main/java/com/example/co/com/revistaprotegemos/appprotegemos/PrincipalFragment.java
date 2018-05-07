@@ -4,8 +4,10 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 import android.annotation.SuppressLint;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.TabLayout;
@@ -13,6 +15,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTabHost;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.view.LayoutInflater;
@@ -91,7 +94,7 @@ public class PrincipalFragment extends Fragment {
         tabs.setTabGravity(MODE_SCROLLABLE);
 
         iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");
-        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+ /*       tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 iconcolor(tab,"#FF00BAD1");
@@ -119,9 +122,47 @@ public class PrincipalFragment extends Fragment {
             public void onTabReselected(TabLayout.Tab tab) {
 
             }
-        });
+        });*/
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorAccent));
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorAccent));
 
-        //    ImageView logo= (ImageView)view.findViewById(R.id,i);
+
+                    iconcolor(tab,"#FF00BAD1");
+                } else if (tab.getPosition() == 1) {
+                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));
+
+                    iconcolor(tab,"#FF00BAD1");
+                } else {
+                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimaryDark));
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimaryDark));
+                    iconcolor(tab,"#FF00BAD1");
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }});
+
+            //    ImageView logo= (ImageView)view.findViewById(R.id,i);
         //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
