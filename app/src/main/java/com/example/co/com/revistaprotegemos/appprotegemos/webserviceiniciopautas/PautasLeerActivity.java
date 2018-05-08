@@ -1,6 +1,9 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas;
 
 import android.graphics.drawable.BitmapDrawable;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +32,7 @@ public class PautasLeerActivity extends AppCompatActivity {
     private float oldDist = 1f;
     private float d = 0f;
     private float newRot = 0f;
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,6 +79,9 @@ public class PautasLeerActivity extends AppCompatActivity {
         layoutParams.bottomMargin = -250;
         layoutParams.rightMargin = -250;
         im1.setLayoutParams(layoutParams);*/
+        getWindow().setStatusBarColor(ContextCompat.getColor(PautasLeerActivity.this,
+                android.R.color.background_dark));
+        toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorNegro));
 
     }
 }

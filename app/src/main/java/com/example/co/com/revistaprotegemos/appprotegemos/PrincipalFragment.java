@@ -18,6 +18,7 @@ import android.support.v4.app.FragmentTabHost;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +26,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
@@ -68,7 +68,7 @@ public class PrincipalFragment extends Fragment {
         View contenedor = (View) container.getParent();
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
 
-        toolbar = (Toolbar) contenedor.findViewById(R.id.toolbar);
+        toolbar = (Toolbar) contenedor.findViewById(R.id.toolbaarr);
         appBar.setBackgroundColor(Color.parseColor("#FF075E55"));
         tabs = new TabLayout(getActivity());
         //tabs.setBackgroundColor(Color.parseColor("#55B99D"));
@@ -132,8 +132,8 @@ public class PrincipalFragment extends Fragment {
                             R.color.colorAccent));
                     getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
                             R.color.colorAccent));
-
-
+//toolbar.setBackgroundColor(ContextCompat.getColor(getContext(),
+                    //R.color.colorAccent));
                     iconcolor(tab,"#FF00BAD1");
                 } else if (tab.getPosition() == 1) {
                     tabs.setBackgroundColor(ContextCompat.getColor(getContext(),

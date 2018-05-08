@@ -120,7 +120,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
         list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
                 "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
                 "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};

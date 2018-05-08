@@ -117,7 +117,7 @@ public class InicioFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
         //Banner protegemos
-        viewPager=(ViewPager)view.findViewById(R.id.viewPager);
+/*        viewPager=(ViewPager)view.findViewById(R.id.viewPager);
         sliderDotspanel =(LinearLayout)view.findViewById(R.id.SliderDots);
         ViewPagerAdapter viewPagerAdapter =new ViewPagerAdapter(getContext());
         viewPager.setAdapter(viewPagerAdapter);
@@ -156,7 +156,7 @@ public class InicioFragment extends Fragment {
         });
 
         Timer timer=new Timer();
-        timer.scheduleAtFixedRate(new MyTimerTask(),2000,4000);
+        timer.scheduleAtFixedRate(new MyTimerTask(),2000,4000);*/
 
         //Fin Banner protegemos
 
@@ -230,10 +230,10 @@ public class InicioFragment extends Fragment {
 
 
         //Bannerconmovimiento
-/*        IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
+        IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
         CustomAdapter custom = new CustomAdapter(myContext.getApplicationContext(), names, images);
         IVF.setAdapter(custom);
-        IVF.setFlipInterval(2000);*/
+        IVF.setFlipInterval(5000);
         //IVF.setAutoStart(true);
 
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
