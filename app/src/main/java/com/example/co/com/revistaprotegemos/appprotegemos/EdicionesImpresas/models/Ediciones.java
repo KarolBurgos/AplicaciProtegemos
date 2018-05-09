@@ -9,9 +9,8 @@ public class Ediciones {
     private int img;
     private String descripcion;
 
-    public Ediciones(String id, int img, String descripcion) {
+    public Ediciones(String id,String descripcion) {
         this.id = id;
-        this.img = img;
         this.descripcion = descripcion;
     }
 

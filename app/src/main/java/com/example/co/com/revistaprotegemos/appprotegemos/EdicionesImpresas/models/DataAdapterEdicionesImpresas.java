@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 
 import java.util.List;
 
@@ -44,7 +45,9 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
         holder.des.setText(ed.getDescripcion());
         holder.img.setImageResource(ed.getImg());
 
-        if(holder.id.equals("1"))
+        final String edi1 = holder.id.getText().toString();
+        int edd1=Integer.parseInt(edi1);
+        if(edd1==1)
         {
             String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion1.png";
             Glide.with(context)
@@ -55,9 +58,53 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .into(holder.img);
             holder.img.setImageResource(ed.getImg());
         }
-        else if(holder.id.equals("2"))
+        else if(edd1==2)
         {
             String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion2.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+            holder.img.setImageResource(ed.getImg());
+        }
+        else if(edd1==3)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion3.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+            holder.img.setImageResource(ed.getImg());
+        }
+        else if(edd1==4)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion4.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+            holder.img.setImageResource(ed.getImg());
+        }
+        else if(edd1==5)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion5.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+            holder.img.setImageResource(ed.getImg());
+        }
+        else if(edd1==6)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion6.png";
             Glide.with(context)
                     .load(url2)
                     .centerCrop()
@@ -82,8 +129,8 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
         Button b1;
         public ViewHolder(View itemView) {
             super(itemView);
-            id = (TextView)itemView.findViewById(R.id.ids);
-            des = (TextView)itemView.findViewById(R.id.descripcions);
+            id = (TextView)itemView.findViewById(R.id.descripcions);
+            des = (TextView)itemView.findViewById(R.id.ids);
             img = (ImageView)itemView.findViewById(R.id.imageView9);
             b1=(Button)itemView.findViewById(R.id.button3);
 
@@ -94,9 +141,9 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     final String edi1 = id.getText().toString();
                     int ed=Integer.parseInt(edi1);
                     if(ed==1) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==2) {
                         Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");

@@ -205,7 +205,7 @@ public class PrincipalFragment extends Fragment {
                 case 1:
                     return new PlanesFragment();
                 case 2:
-                    return new RevistaProtegemos();
+                    return new EdicionesImpresasPrueba();
             }
             return null;
         }

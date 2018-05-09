@@ -46,12 +46,12 @@ public class EdicionesImpresasPrueba extends Fragment {
         listado = (RecyclerView)view.findViewById(R.id.recyediimpre);
         List<Ediciones> equipos = new ArrayList<Ediciones>();
 
-        equipos.add(new Ediciones(getResources().getString(R.string.id1), R.drawable.ediciona, getResources().getString(R.string.titulo1)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id2), R.drawable.edicionb, getResources().getString(R.string.titulo2)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id3), R.drawable.edicionc, getResources().getString(R.string.titulo3)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id4), R.drawable.ediciond, getResources().getString(R.string.titulo4)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id3), R.drawable.ediciona, getResources().getString(R.string.titulo5)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id4), R.drawable.ediciong, getResources().getString(R.string.titulo7)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id3), getResources().getString(R.string.titulo3)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
 /*        equipos.add(new Ediciones(getResources().getString(R.string.id5), R.drawable.edicione, getResources().getString(R.string.titulo5)));
         equipos.add(new Ediciones(getResources().getString(R.string.id6), R.drawable.edicionf, getResources().getString(R.string.titulo6)));
         equipos.add(new Ediciones(getResources().getString(R.string.id7), R.drawable.ediciong, getResources().getString(R.string.titulo7)));
@@ -67,6 +67,8 @@ public class EdicionesImpresasPrueba extends Fragment {
         listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
 
         listado.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        listado.setLayoutManager(layoutManager);
         DataAdapterEdicionesImpresas adapter = new DataAdapterEdicionesImpresas(equipos,myContext);
         listado.setAdapter(adapter);
         return view;
