@@ -12,6 +12,6 @@ import retrofit2.http.Query;
  */
 
 public interface DatosVentajas {
-    @GET("/aplicacionprotegemos/webservice/servicios/ventajaswebservice.php?id_planes=")
+    @GET("/webservice/servicios/ventajaswebservice.php?id_planes=")
     Call<JSONResponseVentajas> getJSON(@Query("id_planes") int limit);
 }

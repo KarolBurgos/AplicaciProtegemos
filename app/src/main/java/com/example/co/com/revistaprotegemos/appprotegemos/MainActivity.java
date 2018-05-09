@@ -24,6 +24,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -52,9 +54,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     MaterialSearchView searchView;
     String[] list;
     int check = 0;
+    FloatingActionButton fab,fab1,fab2;
+    Animation fabOpen,fabClose,rotateForward,rotareBackward;
+    boolean isOpen=false;
     ContactenosFragment fragment_two = null;
 
-
+/*
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -71,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     startActivity(intent);
                     return true;
                 case R.id.llamar:
-/*
+*//*
                     try {
                         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
                             // TODO: Consider calling
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }catch(Exception e){
                         e.printStackTrace();
                     }
-*/
+*//*
                     Intent llamar = new Intent(Intent.ACTION_CALL,Uri.parse("tel:0327313100"));
                     if(ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
 
@@ -108,7 +113,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
             return false;
         }
-    };
+    };*/
 
 
     //List<DataItem> lstData;
@@ -118,8 +123,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         mTextMessage = (TextView) findViewById(R.id.message);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+/*        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
         list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
                 "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
@@ -136,6 +141,43 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });*/
 
+
+        fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab1=(FloatingActionButton)findViewById(R.id.fab1);
+        fab2=(FloatingActionButton)findViewById(R.id.fab2);
+
+        fabOpen = AnimationUtils.loadAnimation(this,R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this,R.anim.fab_close);
+
+        rotateForward = AnimationUtils.loadAnimation(this,R.anim.rotate_forward);
+        rotareBackward = AnimationUtils.loadAnimation(this,R.anim.rotate_backward);
+
+
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                animateFab();
+            }
+        });
+        fab1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                animateFab();
+                Toast.makeText(MainActivity.this,"Camera",Toast.LENGTH_SHORT).show();
+                animateFab();
+            }
+        });
+
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               /* animateFab();*/
+                Toast.makeText(MainActivity.this,"Folder",Toast.LENGTH_SHORT).show();
+                animateFab();
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -160,7 +202,27 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setSearchView();
 
     }
-
+    private void animateFab()
+    {
+        if(isOpen)
+        {
+            fab.startAnimation(rotateForward);
+            fab1.startAnimation(fabClose);
+            fab2.startAnimation(fabClose);
+            fab1.setClickable(false);
+            fab2.setClickable(false);
+            isOpen=false;
+        }
+        else
+        {
+            fab.startAnimation(rotareBackward);
+            fab1.startAnimation(fabOpen);
+            fab2.startAnimation(fabOpen);
+            fab1.setClickable(true);
+            fab2.setClickable(true);
+            isOpen=true;
+        }
+    }
 
     @Override
     public void onBackPressed() {

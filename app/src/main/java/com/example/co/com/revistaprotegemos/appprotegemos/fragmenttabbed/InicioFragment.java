@@ -391,7 +391,7 @@ public class InicioFragment extends Fragment {
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApii request = retrofit.create(DatosApii.class);
@@ -416,7 +416,7 @@ public class InicioFragment extends Fragment {
 
     private void loadJSONn(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApiii request = retrofit.create(DatosApiii.class);

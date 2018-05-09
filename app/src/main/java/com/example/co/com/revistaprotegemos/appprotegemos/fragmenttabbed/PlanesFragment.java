@@ -93,7 +93,7 @@ public class PlanesFragment extends Fragment {
 
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         DatosApi request = retrofit.create(DatosApi.class);

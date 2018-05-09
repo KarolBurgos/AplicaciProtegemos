@@ -21,6 +21,6 @@ ServiciosVentajasFragment s=new ServiciosVentajasFragment();
 
 int n=2;
 
-    @GET("/aplicacionprotegemos/webservice/servicios/serviciosventajasf.php?id_planes=")
+    @GET("/webservice/servicios/serviciosventajasf.php?id_planes=")
     Call<JSONResponseServicios> getJSON(@Query("id_planes") int limit);
 }

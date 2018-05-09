@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  */
 
 public interface DatosApii {
-    @GET("/aplicacionprotegemos/webservice/pautas/obtener_metass.php")
+    @GET("/webservice/pautas/obtener_metass.php")
     Call<JSONResponsee> getJSON();
 }

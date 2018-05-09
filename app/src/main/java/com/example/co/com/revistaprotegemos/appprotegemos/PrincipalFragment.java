@@ -85,7 +85,7 @@ public class PrincipalFragment extends Fragment {
         //64
 
         //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
-        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_open_book_black_cover};
+        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
         //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         tabs.getTabAt(0).setIcon(icons[0]);
