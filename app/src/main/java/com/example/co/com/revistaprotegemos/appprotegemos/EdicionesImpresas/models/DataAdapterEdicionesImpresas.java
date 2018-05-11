@@ -201,6 +201,20 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
 
+            holder.b1.setText("PROXIMAMENTE");
+        }
+
+        else if(edd1==15)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion1.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+
         }
        // holder.img.setImageResource(ed.getImg());
     }
@@ -295,6 +309,9 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                         Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
                         myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
                         context.startActivity(myIntent);
+                    }
+                    else if(ed==15) {
+                        b1.setVisibility(View.GONE);
                     }
 
                 }

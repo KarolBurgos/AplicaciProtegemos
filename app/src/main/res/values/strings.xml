@@ -56,6 +56,9 @@
     <string name="id14">14</string>
     <string name="titulo14">Revista Protegemos - Edicion 14</string>
 
+    <string name="id15">15</string>
+    <string name="titulo15">Ediciones Impresas</string>
+
 
 
     <!-- Ediciones digitales-->
@@ -75,6 +78,9 @@
     <string name="titu5">Manualidades - Edicion 2</string>
 
     <string name="d6">6</string>
-    <string name="titu">Manualidades - Edicion 3</string>
+    <string name="titu6">Manualidades - Edicion 3</string>
+
+    <string name="d7">7</string>
+    <string name="titu7">Ediciones digitales</string>
 
 </resources>

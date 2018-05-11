@@ -49,20 +49,19 @@ public class EdicionesImpresasPrueba extends Fragment {
         listado2 = (RecyclerView)view.findViewById(R.id.recydigitales);
         List<Ediciones> equipos = new ArrayList<Ediciones>();
 
-        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id3), getResources().getString(R.string.titulo3)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id9), getResources().getString(R.string.titulo9)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
         equipos.add(new Ediciones(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
 
         listado.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
         listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
@@ -77,12 +76,13 @@ public class EdicionesImpresasPrueba extends Fragment {
 
         List<Digitales> lista2 = new ArrayList<Digitales>();
 
-        lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
-        lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
-        lista2.add(new Digitales(getResources().getString(R.string.d3), getResources().getString(R.string.titu3)));
-        lista2.add(new Digitales(getResources().getString(R.string.d4), getResources().getString(R.string.titu4)));
+        lista2.add(new Digitales(getResources().getString(R.string.d7), getResources().getString(R.string.titu7)));
+        lista2.add(new Digitales(getResources().getString(R.string.d6), getResources().getString(R.string.titu6)));
         lista2.add(new Digitales(getResources().getString(R.string.d5), getResources().getString(R.string.titu5)));
-        lista2.add(new Digitales(getResources().getString(R.string.d6), getResources().getString(R.string.titu)));
+        lista2.add(new Digitales(getResources().getString(R.string.d4), getResources().getString(R.string.titu4)));
+        lista2.add(new Digitales(getResources().getString(R.string.d3), getResources().getString(R.string.titu3)));
+        lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
+        lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
 
         listado2.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
         listado2.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));

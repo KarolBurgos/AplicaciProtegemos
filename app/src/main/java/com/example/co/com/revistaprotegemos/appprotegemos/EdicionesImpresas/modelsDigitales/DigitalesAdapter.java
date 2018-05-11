@@ -111,7 +111,18 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("PROXIMAMENTE");
+        }
 
+        else if(edd1==7)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/t1.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
         }
     }
 
@@ -171,6 +182,9 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
                         Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
                         myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381781/FLASH/index.html");
                         context.startActivity(myIntent);
+                    }
+                    else if(ed==7) {
+                        b1.setVisibility(View.INVISIBLE);
                     }
 
                 }
