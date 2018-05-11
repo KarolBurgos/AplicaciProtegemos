@@ -43,7 +43,6 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
 
         holder.id.setText(ed.getId());
         holder.des.setText(ed.getDescripcion());
-        holder.img.setImageResource(ed.getImg());
 
         final String edi1 = holder.id.getText().toString();
         int edd1=Integer.parseInt(edi1);
@@ -56,7 +55,6 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
         }
         else if(edd1==2)
         {
@@ -67,7 +65,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
+
         }
         else if(edd1==3)
         {
@@ -78,7 +76,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
+
         }
         else if(edd1==4)
         {
@@ -89,7 +87,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
+
         }
         else if(edd1==5)
         {
@@ -100,7 +98,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
+
         }
         else if(edd1==6)
         {
@@ -111,10 +109,102 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.img.setImageResource(ed.getImg());
+
+        }
+        else if(edd1==7)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion7.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+
+        else if(edd1==8)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion8.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+
+        else if(edd1==9)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion9.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+
+        else if(edd1==10)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion10.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+        else if(edd1==11)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion11.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+        else if(edd1==12)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion12.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+        else if(edd1==13)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion13.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
+        }
+        else if(edd1==14)
+        {
+            String url2="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion14.png";
+            Glide.with(context)
+                    .load(url2)
+                    .centerCrop()
+                    .crossFade()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    .into(holder.img);
+
         }
        // holder.img.setImageResource(ed.getImg());
     }
+
 
     @Override
     public int getItemCount() {
@@ -146,65 +236,65 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                         context.startActivity(myIntent);
                     }
                     else if(ed==2) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
 
                     else if(ed==3) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443502/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443502/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==4) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==5) {
-                        Uri uri = Uri.parse("https://cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==6) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==7) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==8) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==9) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==10) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==11) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==12) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
                     else if(ed==13) {
-                        Uri uri = Uri.parse("http://data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
-                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-                        context.startActivity(intent);
+                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
+                        context.startActivity(myIntent);
                     }
 
                 }

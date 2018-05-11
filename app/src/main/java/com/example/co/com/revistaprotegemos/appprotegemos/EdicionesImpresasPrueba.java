@@ -52,16 +52,14 @@ public class EdicionesImpresasPrueba extends Fragment {
         equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
         equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
         equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
-/*        equipos.add(new Ediciones(getResources().getString(R.string.id5), R.drawable.edicione, getResources().getString(R.string.titulo5)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id6), R.drawable.edicionf, getResources().getString(R.string.titulo6)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id7), R.drawable.ediciong, getResources().getString(R.string.titulo7)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id8), R.drawable.edicionh, getResources().getString(R.string.titulo8)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id9), R.drawable.edicioni, getResources().getString(R.string.titulo9)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id10), R.drawable.edicionj, getResources().getString(R.string.titulo10)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id11), R.drawable.edicionk, getResources().getString(R.string.titulo11)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id12), R.drawable.edicionl, getResources().getString(R.string.titulo12)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id13), R.drawable.edicionm, getResources().getString(R.string.titulo13)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id14), R.drawable.edicionn, getResources().getString(R.string.titulo14)));*/
+        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id9), getResources().getString(R.string.titulo9)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
 
         listado.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
         listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
