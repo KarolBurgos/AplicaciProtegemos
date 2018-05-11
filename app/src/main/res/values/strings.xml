@@ -55,4 +55,26 @@
 
     <string name="id14">14</string>
     <string name="titulo14">Revista Protegemos - Edicion 14</string>
+
+
+
+    <!-- Ediciones digitales-->
+    <string name="d1">1</string>
+    <string name="titu1">Taller Para Papá - Edicion 1</string>
+
+    <string name="d2">2</string>
+    <string name="titu2">Taller Para Papá - Edicion 2</string>
+
+    <string name="d3">3</string>
+    <string name="titu3">Taller Para Papá - Edicion 3</string>
+
+    <string name="d4">4</string>
+    <string name="titu4">Manualidades - Edicion 1</string>
+
+    <string name="d5">5</string>
+    <string name="titu5">Manualidades - Edicion 2</string>
+
+    <string name="d6">6</string>
+    <string name="titu">Manualidades - Edicion 3</string>
+
 </resources>
