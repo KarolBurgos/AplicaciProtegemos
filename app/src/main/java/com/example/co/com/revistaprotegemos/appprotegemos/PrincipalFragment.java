@@ -200,7 +200,7 @@ public class PrincipalFragment extends Fragment {
             switch (position) {
                 case 0:
 
-                    return new InicioFragment();
+                    return new InicioAppFragment();
 
                 case 1:
                     return new PlanesFragment();
