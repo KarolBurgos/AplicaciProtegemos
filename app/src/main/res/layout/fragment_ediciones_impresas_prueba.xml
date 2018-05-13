@@ -5,29 +5,34 @@
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresasPrueba">
 
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
-            android:id='@+id/recyediimpre'
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/txt_titulo"
-            android:layout_marginTop="15dp"
-            tools:layout_editor_absoluteX="50dp"
-            tools:layout_editor_absoluteY="50dp">
+            android:orientation="vertical">
 
-        </android.support.v7.widget.RecyclerView>
+            <android.support.v7.widget.RecyclerView
+                android:id='@+id/recyediimpre'
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/txt_titulo"
+                android:layout_marginTop="15dp"
+                tools:layout_editor_absoluteX="50dp"
+                tools:layout_editor_absoluteY="50dp">
 
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/recydigitales"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            </android.support.v7.widget.RecyclerView>
 
-    </LinearLayout>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recydigitales"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
 
 </FrameLayout>

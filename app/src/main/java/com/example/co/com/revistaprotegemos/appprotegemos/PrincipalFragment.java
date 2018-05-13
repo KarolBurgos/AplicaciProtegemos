@@ -129,9 +129,9 @@ public class PrincipalFragment extends Fragment {
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
                     tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorAccent));
+                            R.color.colorPrimaryDark));
                     getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorAccent));
+                            R.color.colorPrimaryDark));
 //toolbar.setBackgroundColor(ContextCompat.getColor(getContext(),
                     //R.color.colorAccent));
                     iconcolor(tab,"#FF00BAD1");

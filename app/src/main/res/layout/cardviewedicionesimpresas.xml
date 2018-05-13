@@ -5,6 +5,7 @@
     android:id="@+id/card_view"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
     android:background="?attr/actionModeSplitBackground"
     android:orientation="horizontal"
     app:ignore="NamespaceTypo"
@@ -14,7 +15,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/degradado"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -27,8 +27,7 @@
                 android:id="@+id/imageView9"
                 android:layout_width="150dp"
                 android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                card_view:srcCompat="@drawable/bus" />
+                android:scaleType="centerCrop" />
 
             <TextView
                 android:id="@+id/descripcions"
@@ -46,7 +45,6 @@
                 android:layout_height="40dp"
                 android:layout_gravity="bottom"
                 android:background="#8c000000"
-                android:text="hola"
                 android:textColor="#ffe3e3e3"
                 android:textSize="14sp"
                 android:textStyle="bold" />
@@ -68,13 +66,13 @@
             <Button
                 android:id="@+id/button3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="31dp"
                 android:layout_gravity="end"
                 android:layout_marginEnd="15dp"
                 android:layout_marginRight="15dp"
-                android:background="@drawable/degradado"
-                android:textAllCaps="false"
-                android:text="Ver Online" />
+                android:background="@drawable/register_button"
+                android:text="Ver Online"
+                android:textAllCaps="false" />
 
         </LinearLayout>
     </LinearLayout>

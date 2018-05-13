@@ -3,13 +3,16 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.transition.Explode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -63,12 +66,18 @@ public class PlanesFragment extends Fragment {
         super.onAttach(activity);
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipeplanes);
+
+        Explode explode =new Explode();
+        getActivity().getWindow().setExitTransition(explode);
+        getActivity().getWindow().setAllowEnterTransitionOverlap(false);
+
 
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -84,6 +93,8 @@ public class PlanesFragment extends Fragment {
         return view;
 
     }
+
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
