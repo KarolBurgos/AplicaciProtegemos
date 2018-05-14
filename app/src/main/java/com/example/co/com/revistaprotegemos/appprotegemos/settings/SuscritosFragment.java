@@ -79,24 +79,6 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         ArrayAdapter <String>adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, opciones);
         spinner.setAdapter(adapter);*/
 
-        //Fuentes
-        String fuente1 ="fuentes/April.ttf";
-        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente1);
-
-        String fuente2 ="fuentes/Abril.otf";
-        this.April =Typeface.createFromAsset(getContext().getAssets(),fuente2);
-
-        String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
-        this.Senior =Typeface.createFromAsset(getContext().getAssets(),fuente3);
-
-        senior=(TextView)view.findViewById(R.id.senior);
-        senior.setTypeface(Senior);
-
-        inicio=(TextView)view.findViewById(R.id.in);
-        inicio.setTypeface(April);
-
-
-
         return view;
 
     }

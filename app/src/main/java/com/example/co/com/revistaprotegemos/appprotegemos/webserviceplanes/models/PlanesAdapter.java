@@ -126,17 +126,7 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                 }
             });
 
-            String fuente3 ="fuentes/April.ttf";
-            this.Ofaly =Typeface.createFromAsset(context.getAssets(),fuente3);
 
-            titu=(TextView)view.findViewById(R.id.txt2);
-            titu.setTypeface(Ofaly);
-
-            String fuente ="fuentes/Dehasta Momentos Regular.otf";
-            this.Color =Typeface.createFromAsset(context.getAssets(),fuente);
-
-            titu=(TextView)view.findViewById(R.id.tv_version);
-            titu.setTypeface(Color);
         }
 
         @Override

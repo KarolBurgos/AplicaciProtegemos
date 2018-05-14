@@ -101,11 +101,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
                     iniciarsesion();
                 }
             });
-            String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
-            this.Ofaly = Typeface.createFromAsset(context.getAssets(),fuente3);
 
-
-            descr.setTypeface(Ofaly);
         }
 
         @Override

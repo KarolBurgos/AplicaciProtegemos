@@ -82,24 +82,7 @@ public class ContactenosFragment extends Fragment {
         appBar.removeView(view);
         appBar.setBackgroundColor(Color.parseColor("#FFCE6E98"));
 
-        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
-        this.letras =Typeface.createFromAsset(getContext().getAssets(),fuente1);
 
-        nombre.setTypeface(letras);
-        correo.setTypeface(letras);
-        celular.setTypeface(letras);
-        mensaje.setTypeface(letras);
-        t1=(TextView)view.findViewById(R.id.textView25);
-        t1.setTypeface(letras);
-
-        t2=(TextView)view.findViewById(R.id.textView26);
-        t2.setTypeface(letras);
-
-        t3=(TextView)view.findViewById(R.id.textView4);
-        t3.setTypeface(letras);
-
-        t4=(TextView)view.findViewById(R.id.textView28);
-        t4.setTypeface(letras);
         return view;
     }
 

@@ -212,8 +212,6 @@ public class InicioFragment extends Fragment {
             recyclerView2.setLayoutManager(layoutManager2);
             loadJSON();
 
-            t1 = (TextView) view.findViewById(R.id.txtvisita);
-            t1.setText(getText(R.string.mi_mensaje));
 
    /*          Bitmap obtener_imagen = get_imagen("http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png");
              //uImageView.setImageBitmap(obtener_imagen);
@@ -236,46 +234,6 @@ public class InicioFragment extends Fragment {
         IVF.setFlipInterval(5000);*/
         //IVF.setAutoStart(true);
 
-        GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
-        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
-
-        GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
-        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
-        quienes_somos=(TextView)view.findViewById(R.id.txquienes);
-        tg1=(TextView)view.findViewById(R.id.textView38);
-        nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
-
-        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
-        this.Nuestrosplanes =Typeface.createFromAsset(getContext().getAssets(),fuente1);
-
-        visite=(TextView)view.findViewById(R.id.textView41);
-        visite.setTypeface(Nuestrosplanes);
-
-        encontrara=(TextView)view.findViewById(R.id.txtvisita);
-        encontrara.setTypeface(Nuestrosplanes);
-
-        jornada=(TextView)view.findViewById(R.id.textVie);
-        jornada.setTypeface(Nuestrosplanes);
-
-        nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
-        nuestrosplanes.setTypeface(Nuestrosplanes);
-
-        susc=(TextView)view.findViewById(R.id.textView38);
-        susc.setTypeface(Nuestrosplanes);
-
-        somo=(TextView)view.findViewById(R.id.txquienes);
-        somo.setTypeface(Nuestrosplanes);
-
-        pautas=(TextView)view.findViewById(R.id.textView53);
-        pautas.setTypeface(Nuestrosplanes);
-
-        String fuente2 ="fuentes/Aurella.ttf";
-        this.Aurella =Typeface.createFromAsset(getContext().getAssets(),fuente2);
-
-        estaslisto=(TextView)view.findViewById(R.id.textViews4);
-        estaslisto.setTypeface(Nuestrosplanes);
-
-        btn=(Button)view.findViewById(R.id.button5);
         return view;
     }
     public void inter() {
@@ -302,30 +260,7 @@ public class InicioFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
 
-                Fragment fragment = null;
-                Class fragmentClass= SuscritosFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-
-            }
-        });
-        t1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-
-
-
-            }
-        });
 
         bsuscr.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -336,41 +271,6 @@ public class InicioFragment extends Fragment {
 
             }
         });
-
-
-        quienes_somos.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent=new Intent (getContext(),NuestraEmpresaActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        tg1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent=new Intent (getContext(),SuscribeteActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        nuestrosplanes.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Fragment fragment = null;
-                Class fragmentClass= PlanesFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-            }
-        });
-
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
