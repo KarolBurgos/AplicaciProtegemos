@@ -29,7 +29,7 @@
     <item
         android:id="@+id/nues"
         android:orderInCategory="100"
-        android:title="Nuestra Empresa"
+        android:title="Acerca de..."
         app:showAsAction="never" />
 
 

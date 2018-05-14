@@ -52,7 +52,6 @@ public class PlanesFragment extends Fragment {
     private PlanesAdapter adapter2;
     private FragmentActivity myContext;
     private TextView t1;
-    private Typeface Ofaly,Color;
     TextView ti;
     SwipeRefreshLayout swipeRefreshLayout;
 
@@ -84,11 +83,7 @@ public class PlanesFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
-        String fuente3 ="fuentes/Abril.otf";
-        this.Ofaly = Typeface.createFromAsset(getContext().getAssets(),fuente3);
 
-        ti=(TextView)view.findViewById(R.id.textView16);
-        ti.setTypeface(Ofaly);
 
         return view;
 

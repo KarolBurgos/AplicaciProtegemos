@@ -89,8 +89,6 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:background="@color/colorPrimary"
-                            app:cardCornerRadius="4dp"
-                            app:cardElevation="5dp"
                             app:cardUseCompatPadding="true"
                             tools:layout_editor_absoluteX="8dp"
                             tools:layout_editor_absoluteY="0dp">
@@ -163,21 +161,30 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginBottom="50dp"
+                            android:gravity="center|end"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/textView44"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center" />
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
 
-                            <TextView
-                                android:id="@+id/textView45"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center" />
+                                <ImageButton
+                                    android:id="@+id/facebook"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_facebook_letter_logo" />
+
+                                <ImageButton
+                                    android:id="@+id/twitter"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:src="@drawable/ic_twitter" />
+                            </LinearLayout>
 
                         </LinearLayout>
+
                     </LinearLayout>
 
 
@@ -189,37 +196,58 @@
                         android:background="#FFFFFFFF"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView41"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Visite la Zona de Suscriptores"
-                            android:textColor="@android:color/black"
-                            android:textColorHint="@color/colorPrimary"
-                            android:textStyle="bold" />
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txtvisita"
+                            <TextView
+                                android:id="@+id/textView41"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Visite la Zona de Suscriptores"
+                                android:textColor="@android:color/black"
+                                android:textColorHint="@color/colorPrimary"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/txtvisita"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="@string/mi_mensaje" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="@string/mi_mensaje" />
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
 
-                        <Button
-                            android:id="@+id/button5"
-                            style="@android:style/Widget.Button.Small"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="2dp"
-                            android:text="Ingresar"
-                            android:textAllCaps="false" />
+                            <ImageView
+                                android:id="@+id/imageView10"
+                                android:layout_width="228dp"
+                                android:layout_height="100dp"
+                                android:layout_weight="1"
+                                android:src="@drawable/premia" />
+
+                            <Button
+                                android:id="@+id/button5"
+                                style="@android:style/Widget.Button.Small"
+                                android:layout_width="123dp"
+                                android:layout_height="34dp"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="2dp"
+                                android:layout_weight="1"
+                                android:text="Ingresar"
+                                android:textAllCaps="false" />
+                        </LinearLayout>
 
                         <TextView
                             android:id="@+id/textView5"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
+
                     </LinearLayout>
 
                     <LinearLayout
@@ -315,33 +343,6 @@
                             android:layout_marginTop="5dp"
                             tools:layout_editor_absoluteX="50dp"
                             tools:layout_editor_absoluteY="50dp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginBottom="50dp"
-                        android:gravity="center"
-                        android:orientation="vertical">
-
-                        <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                android:id="@+id/facebook"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_facebook_letter_logo" />
-
-                            <ImageButton
-                                android:id="@+id/twitter"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_twitter" />
-                        </LinearLayout>
-
                     </LinearLayout>
 
                     <TextView

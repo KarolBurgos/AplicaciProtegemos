@@ -68,22 +68,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_marginBottom="90dp"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="90dp"
-        android:visibility="invisible"
-        android:src="@drawable/ic_camera" />
+        android:src="@drawable/ic_speech_bubbles"
+        android:visibility="invisible" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_marginBottom="160dp"
         android:layout_marginEnd="@dimen/fab_margin"
         android:layout_marginRight="@dimen/fab_margin"
-        android:layout_marginBottom="160dp"
-        android:visibility="invisible"
-        android:src="@drawable/ic_folder" />
+        android:src="@android:drawable/stat_sys_speakerphone"
+        android:visibility="invisible" />
 
 <!--    <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"

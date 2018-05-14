@@ -1,5 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.Suscribete;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Typeface;
@@ -55,6 +56,7 @@ public class SuscribeteActivity extends AppCompatActivity {
     private Session session;
     TextView t1,t2,t3;
     private Typeface Nuestrosplanes,Aurella;
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -71,7 +73,7 @@ public class SuscribeteActivity extends AppCompatActivity {
                 finish();
             }
         });
-
+        getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
 
         nombre = (EditText) findViewById(R.id.nom);
         identificacion = (EditText) findViewById(R.id.iden);
@@ -81,17 +83,7 @@ public class SuscribeteActivity extends AppCompatActivity {
         telefono = (EditText) findViewById(R.id.tel);
         correo = (EditText) findViewById(R.id.corre);
 
-        String fuente1 ="fuentes/Dehasta Momentos Regular.otf";
-        this.Nuestrosplanes =Typeface.createFromAsset(getAssets(),fuente1);
 
-        t1=(TextView)findViewById(R.id.sus);
-        t1.setTypeface(Nuestrosplanes);
-
-        t2=(TextView)findViewById(R.id.textView4);
-        t2.setTypeface(Nuestrosplanes);
-
-        t3=(TextView)findViewById(R.id.textView2);
-        t3.setTypeface(Nuestrosplanes);
 
         nombre.setTypeface(Nuestrosplanes);
         identificacion.setTypeface(Nuestrosplanes);

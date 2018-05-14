@@ -14,8 +14,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.R;
 
 public class NuestraEmpresaActivity extends AppCompatActivity {
 
-    private Typeface Ofaly,Color;
-    TextView nuestra,mision;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,42 +30,7 @@ public class NuestraEmpresaActivity extends AppCompatActivity {
                 finish();
             }
         });
-        String fuente3 ="fuentes/Abril.otf";
-        this.Ofaly =Typeface.createFromAsset(getAssets(),fuente3);
 
-        nuestra=(TextView)findViewById(R.id.nues);
-        nuestra.setTypeface(Ofaly);
-
-        nuestra=(TextView)findViewById(R.id.textView3);
-        nuestra.setTypeface(Ofaly);
-
-        nuestra=(TextView)findViewById(R.id.textView10);
-        nuestra.setTypeface(Ofaly);
-
-        nuestra=(TextView)findViewById(R.id.textView14);
-        nuestra.setTypeface(Ofaly);
-
-        nuestra=(TextView)findViewById(R.id.textView12);
-        nuestra.setTypeface(Ofaly);
-
-        //Parrafos
-        String fuente ="fuentes/Dehasta Momentos Regular.otf";
-        this.Color =Typeface.createFromAsset(getAssets(),fuente);
-
-        nuestra=(TextView)findViewById(R.id.textView9);
-        nuestra.setTypeface(Color);
-
-        nuestra=(TextView)findViewById(R.id.textView7);
-        nuestra.setTypeface(Color);
-
-        nuestra=(TextView)findViewById(R.id.textView11);
-        nuestra.setTypeface(Color);
-
-        nuestra=(TextView)findViewById(R.id.textView15);
-        nuestra.setTypeface(Color);
-
-        nuestra=(TextView)findViewById(R.id.textView13);
-        nuestra.setTypeface(Color);
 
 
 /*        DocumentView dvtext=(DocumentView)view.findViewById(R.id.dvText);

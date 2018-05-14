@@ -64,10 +64,10 @@
         <activity
             android:name=".Suscribete.SuscribeteActivity"
             android:banner="@drawable/degradado"
-            android:label="" />
+            android:label="Suscribete" />
         <activity
             android:name=".settings.NuestraEmpresaActivity"
-            android:label="" />
+            android:label="Nuestra Empresa" />
         <activity
             android:name=".ChatProtegemos.ChatProtegemos"
             android:label="Chat" />
