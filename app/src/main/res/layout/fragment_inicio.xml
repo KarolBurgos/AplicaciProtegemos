@@ -41,14 +41,14 @@
 
                     <!-- TODO: Update blank fragment layout -->
 
-                    <AdapterViewFlipper
+<!--                    <AdapterViewFlipper
                         android:id="@+id/IVF"
                         android:layout_width="match_parent"
                         android:layout_height="150dp"
                         tools:layout_editor_absoluteX="8dp"
                         tools:layout_editor_absoluteY="8dp">
 
-                    </AdapterViewFlipper>
+                    </AdapterViewFlipper>-->
 
                     <!--            <RelativeLayout
                 android:layout_width="match_parent"

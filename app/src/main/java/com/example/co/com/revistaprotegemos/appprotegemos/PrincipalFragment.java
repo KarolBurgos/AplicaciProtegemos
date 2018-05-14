@@ -249,7 +249,7 @@ public class PrincipalFragment extends Fragment {
                 case 2:
                     return new EdicionesImpresasPrueba();
                 case 3:
-                    return new EdicionesImpresasPrueba();
+                    return new InicioFragment();
             }
             return null;
         }
