@@ -69,7 +69,7 @@ public class PrincipalFragment extends Fragment {
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
 
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbaarr);
-        appBar.setBackgroundColor(Color.parseColor("#FF075E55"));
+        appBar.setBackgroundColor(Color.parseColor("#FFFFFF"));
         tabs = new TabLayout(getActivity());
         //tabs.setBackgroundColor(Color.parseColor("#55B99D"));
         //tabs.setTabTextColors(Color.parseColor("#FF00BAD1"), Color.parseColor("#FF00BAD1"));
@@ -84,16 +84,18 @@ public class PrincipalFragment extends Fragment {
         tabs.setTabMode(TabLayout.MODE_SCROLLABLE);*/
         //64
 
-        //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
+/*        //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
         int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
         //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
         tabs.getTabAt(0).setIcon(icons[0]);
         tabs.getTabAt(1).setIcon(icons[1]);
         tabs.getTabAt(2).setIcon(icons[2]);
-        tabs.setTabGravity(MODE_SCROLLABLE);
+        tabs.setTabGravity(MODE_SCROLLABLE);*/
+        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
+        tabs.getTabAt(3).setIcon(icons[0]);
 
-        iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");
+  /*      iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");*/
  /*       tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -123,7 +125,7 @@ public class PrincipalFragment extends Fragment {
 
             }
         });*/
-        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+/*        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -160,18 +162,57 @@ public class PrincipalFragment extends Fragment {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
 
+            }});*/
+
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                if (tab.getPosition() == 0) {
+/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimaryDark));*/
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));
+//toolbar.setBackgroundColor(ContextCompat.getColor(getContext(),
+                    //R.color.colorAccent));
+
+                } else if (tab.getPosition() == 1) {
+/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));*/
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));
+
+
+                } else {
+/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimaryDark));*/
+                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
+                            R.color.colorPrimary));
+
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }});
 
             //    ImageView logo= (ImageView)view.findViewById(R.id,i);
         //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
-    private void iconcolor(TabLayout.Tab tab, String color)
+    /*private void iconcolor(TabLayout.Tab tab, String color)
     {
 
         tab.getIcon().setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN);
-    }
-
+    }*/
+//app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -185,7 +226,8 @@ public class PrincipalFragment extends Fragment {
 
 
         //String tabtext=getResources().getStringArray(R.array.tabs);
-        String[] tirulotabs = {"Inicio", "Inf", "NUestra"};
+        String[] tirulotabs = {"INICIO", "PLANES", "REVISTAS",""};
+
 
 //String.valueOf(getResources().getDrawable(R.drawable.inicio))
 
@@ -206,6 +248,8 @@ public class PrincipalFragment extends Fragment {
                     return new PlanesFragment();
                 case 2:
                     return new EdicionesImpresasPrueba();
+                case 3:
+                    return new EdicionesImpresasPrueba();
             }
             return null;
         }
@@ -215,7 +259,7 @@ public class PrincipalFragment extends Fragment {
          */
         @Override
         public int getCount() {
-            return 3;
+            return 4;
         }
 
         /**
@@ -230,7 +274,9 @@ public class PrincipalFragment extends Fragment {
         @Override
         public CharSequence getPageTitle(int position) {
 
-            return null;
+
+            return tirulotabs[position];
+            //return null;
 
         }
         // return tirulotabs[position];
