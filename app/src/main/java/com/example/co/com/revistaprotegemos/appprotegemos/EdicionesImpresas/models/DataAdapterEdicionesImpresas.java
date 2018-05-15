@@ -56,6 +56,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
         }
         else if(edd1==2)
         {
@@ -67,6 +68,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==3)
@@ -79,6 +81,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==4)
@@ -91,6 +94,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==5)
@@ -103,6 +107,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==6)
@@ -115,6 +120,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==7)
@@ -127,6 +133,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
 
@@ -140,6 +147,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
 
@@ -153,6 +161,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
 
@@ -166,6 +175,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==11)
@@ -178,6 +188,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==12)
@@ -190,6 +201,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
         }
         else if(edd1==13)
         {
@@ -201,6 +213,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
         else if(edd1==14)
@@ -213,6 +226,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("PROXIMAMENTE");
+            holder.b1.setVisibility(View.VISIBLE);
 
         }
 
@@ -226,6 +240,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
             holder.b1.setText("Ver más");
+            holder.b1.setVisibility(View.INVISIBLE);
 
 
         }
