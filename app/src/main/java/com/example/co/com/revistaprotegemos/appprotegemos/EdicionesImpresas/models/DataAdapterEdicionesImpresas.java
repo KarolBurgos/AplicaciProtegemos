@@ -55,6 +55,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
         }
         else if(edd1==2)
         {
@@ -65,6 +66,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==3)
@@ -76,6 +78,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==4)
@@ -87,6 +90,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==5)
@@ -98,6 +102,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==6)
@@ -109,6 +114,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==7)
@@ -120,6 +126,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
 
@@ -132,6 +139,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
 
@@ -144,6 +152,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
 
@@ -156,6 +165,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==11)
@@ -167,6 +177,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==12)
@@ -178,7 +189,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-
+            holder.b1.setText("Ver Online");
         }
         else if(edd1==13)
         {
@@ -189,6 +200,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
 
         }
         else if(edd1==14)
@@ -200,8 +212,8 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-
             holder.b1.setText("PROXIMAMENTE");
+
         }
 
         else if(edd1==15)
@@ -213,6 +225,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver más");
 
 
         }
@@ -242,81 +255,90 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
             b1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    final String edi1 = id.getText().toString();
-                    int ed=Integer.parseInt(edi1);
-                    if(ed==1) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==2) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
+                    revistasId();
 
-                    else if(ed==3) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443502/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==4) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==5) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==6) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==7) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==8) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==9) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==10) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==11) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==12) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==13) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==15) {
-                        b1.setVisibility(View.GONE);
-                    }
+                }
+            });
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    revistasId();
 
                 }
             });
 
+        }
+
+        public void revistasId()
+        {
+            final String edi1 = id.getText().toString();
+            int ed=Integer.parseInt(edi1);
+            if(ed==1) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443501/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==2) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+
+            else if(ed==3) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443502/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==4) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443498/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==5) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "cdn.flipsnack.com/widget/v2/flipsnackwidget.html?hash=fdnqt6v4i&bgcolor=EEEEEE&t=1501278660");
+                context.startActivity(myIntent);
+            }
+            else if(ed==6) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347338/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==7) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347294/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==8) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150729/U137868_F347341/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==9) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443515/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==10) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201507/20150727/U137868_F347002/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==11) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201705/20170526/U154892_F441324/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==12) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381774/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==13) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443505/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
         }
         @Override
         public void onClick(View view) {

@@ -57,6 +57,8 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver Online");
+            holder.b1.setVisibility(View.VISIBLE);
         }
         else if(edd1==2)
         {
@@ -111,7 +113,7 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
-            holder.b1.setText("PROXIMAMENTE");
+
         }
 
         else if(edd1==7)
@@ -123,6 +125,8 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
                     .crossFade()
                     .diskCacheStrategy(DiskCacheStrategy.ALL)
                     .into(holder.img);
+            holder.b1.setText("Ver más");
+            holder.b1.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -150,45 +154,58 @@ public class DigitalesAdapter extends RecyclerView.Adapter<DigitalesAdapter.View
             b1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    final String edi1 = id.getText().toString();
-                    int ed=Integer.parseInt(edi1);
-                    if(ed==1) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170630/U154892_F446303/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==2) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170630/U154892_F446305/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
 
-                    else if(ed==3) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381778/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==4) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==5) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==6) {
-                        Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
-                        myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381781/FLASH/index.html");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==7) {
-                        b1.setVisibility(View.INVISIBLE);
-                    }
+                seleDigitales();
 
                 }
             });
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                    seleDigitales();
+
+                }
+            });
+        }
+
+        private void seleDigitales()
+        {
+            final String edi1 = id.getText().toString();
+            int ed=Integer.parseInt(edi1);
+            if(ed==1) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170630/U154892_F446303/FLASH/index.html");
+                context.startActivity(myIntent);
+
+            }
+            else if(ed==2) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170630/U154892_F446305/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+
+            else if(ed==3) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381778/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==4) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==5) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201706/20170615/U154892_F443495/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+            else if(ed==6) {
+                Intent myIntent = new Intent(context, WebViewAbrirPaginasUrl.class);
+                myIntent.putExtra("direccion", "data.axmag.com/data/201605/20160517/U137868_F381781/FLASH/index.html");
+                context.startActivity(myIntent);
+            }
+
         }
 
         @Override

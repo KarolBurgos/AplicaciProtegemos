@@ -60,6 +60,7 @@ public class EdicionesImpresasPrueba extends Fragment {
         equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
         equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
         equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id3),getResources().getString(R.string.titulo3)));
         equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
         equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
 

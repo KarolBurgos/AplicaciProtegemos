@@ -1,12 +1,21 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.DividerItemDecoration;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,10 +27,16 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.DataAdapterEdicionesImpresas;
+import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import pl.droidsonroids.gif.GifImageView;
 
@@ -31,11 +46,13 @@ import pl.droidsonroids.gif.GifImageView;
  */
 public class InicioAppFragment extends Fragment {
 
+    private RecyclerView listado,listado2;
     private FragmentActivity myContext;
     private TextView quienes_somos,visite,encontrara,jornada;
     private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
     private ImageButton facebook,twitter;
     private Button bsuscr,btn;
+    SwipeRefreshLayout swipeRefreshLayout;
     public InicioAppFragment() {
         // Required empty public constructor
     }
@@ -67,12 +84,78 @@ public class InicioAppFragment extends Fragment {
         facebook=(ImageButton)view.findViewById(R.id.facebook);
         twitter=(ImageButton)view.findViewById(R.id.twitter);
         btn=(Button)view.findViewById(R.id.button5);
+
+/*        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe3);
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                NetworkInfo activeNetwork = ((ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
+                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
+
+                    // Load Webview
+                    Fragment fragment = null;
+                    Class fragmentClass= PrincipalFragment.class;
+                    try{
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    }catch (Exception e){
+                        e.printStackTrace();
+                    }
+                    FragmentManager fragmentManager=myContext.getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+
+                } else {
+
+                    // Show No internet
+                    Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
+                    startActivity(intent);
+
+                }
+
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        swipeRefreshLayout.setRefreshing(false);
+                    }
+                },4000);
+            }
+        });*/
+
+        listado = (RecyclerView)view.findViewById(R.id.recyini);
+        List<Ediciones> equipos = new ArrayList<Ediciones>();
+
+        equipos.add(new Ediciones(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
+        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
+
+        listado.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
+        listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
+
+        listado.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        listado.setLayoutManager(layoutManager);
+        DataAdapterEdicionesImpresas adapter = new DataAdapterEdicionesImpresas(equipos,myContext);
+        listado.setAdapter(adapter);
         return view;
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+    public void onAttach(Context activity) {
+        myContext=(FragmentActivity) activity;
+        super.onAttach(activity);
+    }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -89,6 +172,7 @@ public class InicioAppFragment extends Fragment {
 
             }
         });
+
         super.onActivityCreated(savedInstanceState);
         quienes_somos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
