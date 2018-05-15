@@ -29,6 +29,8 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.DataAdapterEdicionesImpresas;
 import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
+import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.Digitales;
+import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.DigitalesAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
@@ -121,6 +123,7 @@ public class InicioAppFragment extends Fragment {
         });*/
 
         listado = (RecyclerView)view.findViewById(R.id.recyini);
+        listado2 = (RecyclerView)view.findViewById(R.id.recydig);
         List<Ediciones> equipos = new ArrayList<Ediciones>();
 
         equipos.add(new Ediciones(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
@@ -145,6 +148,28 @@ public class InicioAppFragment extends Fragment {
         listado.setLayoutManager(layoutManager);
         DataAdapterEdicionesImpresas adapter = new DataAdapterEdicionesImpresas(equipos,myContext);
         listado.setAdapter(adapter);
+
+
+
+        List<Digitales> lista2 = new ArrayList<Digitales>();
+
+        lista2.add(new Digitales(getResources().getString(R.string.d7), getResources().getString(R.string.titu7)));
+        lista2.add(new Digitales(getResources().getString(R.string.d6), getResources().getString(R.string.titu6)));
+        lista2.add(new Digitales(getResources().getString(R.string.d5), getResources().getString(R.string.titu5)));
+        lista2.add(new Digitales(getResources().getString(R.string.d4), getResources().getString(R.string.titu4)));
+        lista2.add(new Digitales(getResources().getString(R.string.d3), getResources().getString(R.string.titu3)));
+        lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
+        lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
+
+        listado2.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
+        listado2.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
+
+        listado2.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
+        listado2.setLayoutManager(layoutManager2);
+        DigitalesAdapter adapter2 = new DigitalesAdapter(lista2,myContext);
+        listado2.setAdapter(adapter2);
+
         return view;
     }
 

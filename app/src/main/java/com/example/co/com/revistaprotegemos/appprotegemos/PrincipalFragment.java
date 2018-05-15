@@ -93,7 +93,7 @@ public class PrincipalFragment extends Fragment {
         tabs.getTabAt(2).setIcon(icons[2]);
         tabs.setTabGravity(MODE_SCROLLABLE);*/
         int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
-        tabs.getTabAt(3).setIcon(icons[0]);
+        tabs.getTabAt(0).setIcon(icons[0]);
 
   /*      iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");*/
  /*       tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -226,7 +226,7 @@ public class PrincipalFragment extends Fragment {
 
 
         //String tabtext=getResources().getStringArray(R.array.tabs);
-        String[] tirulotabs = {"INICIO", "PLANES", "REVISTAS",""};
+        String[] tirulotabs = {"", "PLANES", "REVISTAS","ZONAS"};
 
 
 //String.valueOf(getResources().getDrawable(R.drawable.inicio))
