@@ -19,10 +19,13 @@
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary">
 
-            <ImageView
-                android:id="@+id/imageView7"
+
+            <AdapterViewFlipper
+                android:id="@+id/IVF"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" />
+                android:layout_height="match_parent"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="8dp" />
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/toolbar"
@@ -55,6 +58,25 @@
                         android:layout_height="wrap_content"
                         android:gravity="center|end"
                         android:orientation="vertical">
+
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+
+                            <ImageButton
+                                android:id="@+id/facebook"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_facebook_letter_logo" />
+
+                            <ImageButton
+                                android:id="@+id/twitter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_twitter" />
+                        </LinearLayout>
 
                         <android.support.v7.widget.CardView
                             android:id="@+id/card_view"
@@ -133,65 +155,8 @@
                         </android.support.v7.widget.CardView>
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
-                            <ImageButton
-                                android:id="@+id/facebook"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_facebook_letter_logo" />
-
-                            <ImageButton
-                                android:id="@+id/twitter"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/ic_twitter" />
-                        </LinearLayout>
-
-                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginEnd="5dp"
-                            android:layout_marginStart="5dp"
-                            android:orientation="vertical">
-
-                            <android.support.v7.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent">
-
-                                <android.support.v7.widget.RecyclerView
-                                    android:id="@+id/recydig"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
-                            </android.support.v7.widget.CardView>
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginBottom="15dp"
-                            android:layout_marginTop="15dp"
-                            android:orientation="vertical">
-
-                            <android.support.v7.widget.CardView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_marginEnd="5dp"
-                                android:layout_marginStart="5dp">
-
-                                <android.support.v7.widget.RecyclerView
-                                    android:id="@+id/recyini"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent" />
-                            </android.support.v7.widget.CardView>
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
                             android:layout_marginBottom="15dp"
                             android:orientation="vertical">
 
@@ -258,6 +223,7 @@
 
                             </LinearLayout>
                         </LinearLayout>
+
 
                     </LinearLayout>
 

@@ -19,6 +19,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -27,6 +28,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.DataAdapterEdicionesImpresas;
 import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
 import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.Digitales;
@@ -54,6 +56,7 @@ public class InicioAppFragment extends Fragment {
     private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
     private ImageButton facebook,twitter;
     private Button bsuscr,btn;
+    private AdapterViewFlipper IVF;
     SwipeRefreshLayout swipeRefreshLayout;
     public InicioAppFragment() {
         // Required empty public constructor
@@ -66,16 +69,16 @@ public class InicioAppFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_inicio_app, container, false);
 
-        ImageView img = (ImageView)view.findViewById(R.id.imageView7);
+        /*ImageView img = (ImageView)view.findViewById(R.id.imageView7);
         String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png";
         Glide.with(this)
                 .load(url)
                 .centerCrop()
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(img);
+                .into(img);*/
 
-        GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
+       GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
 
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
@@ -85,7 +88,7 @@ public class InicioAppFragment extends Fragment {
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
         facebook=(ImageButton)view.findViewById(R.id.facebook);
         twitter=(ImageButton)view.findViewById(R.id.twitter);
-        btn=(Button)view.findViewById(R.id.button5);
+       /* btn=(Button)view.findViewById(R.id.button5);*/
 
 /*        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe3);
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -122,53 +125,18 @@ public class InicioAppFragment extends Fragment {
             }
         });*/
 
-        listado = (RecyclerView)view.findViewById(R.id.recyini);
-        listado2 = (RecyclerView)view.findViewById(R.id.recydig);
-        List<Ediciones> equipos = new ArrayList<Ediciones>();
-
-        equipos.add(new Ediciones(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
-
-        listado.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
-
-        listado.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        listado.setLayoutManager(layoutManager);
-        DataAdapterEdicionesImpresas adapter = new DataAdapterEdicionesImpresas(equipos,myContext);
-        listado.setAdapter(adapter);
+        int images[] = {R.drawable.bannerminpremia, R.drawable.drogueria, R.drawable.bannermin};
+        String names[] = {"imagen1", "imagen2", "imagen3"};
 
 
 
-        List<Digitales> lista2 = new ArrayList<Digitales>();
 
-        lista2.add(new Digitales(getResources().getString(R.string.d7), getResources().getString(R.string.titu7)));
-        lista2.add(new Digitales(getResources().getString(R.string.d6), getResources().getString(R.string.titu6)));
-        lista2.add(new Digitales(getResources().getString(R.string.d5), getResources().getString(R.string.titu5)));
-        lista2.add(new Digitales(getResources().getString(R.string.d4), getResources().getString(R.string.titu4)));
-        lista2.add(new Digitales(getResources().getString(R.string.d3), getResources().getString(R.string.titu3)));
-        lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
-        lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
-
-        listado2.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listado2.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
-
-        listado2.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        listado2.setLayoutManager(layoutManager2);
-        DigitalesAdapter adapter2 = new DigitalesAdapter(lista2,myContext);
-        listado2.setAdapter(adapter2);
+        //Bannerconmovimiento
+        IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
+        CustomAdapter custom = new CustomAdapter(myContext.getApplicationContext(), names, images);
+        IVF.setAdapter(custom);
+        IVF.setFlipInterval(5000);
+        IVF.setAutoStart(true);
 
         return view;
     }
@@ -181,6 +149,7 @@ public class InicioAppFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+/*
         btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
@@ -197,9 +166,10 @@ public class InicioAppFragment extends Fragment {
 
             }
         });
+*/
 
         super.onActivityCreated(savedInstanceState);
-        quienes_somos.setOnClickListener(new View.OnClickListener() {
+/*        quienes_somos.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
                 Intent intent=new Intent (getContext(),NuestraEmpresaActivity.class);
@@ -230,7 +200,7 @@ public class InicioAppFragment extends Fragment {
                 fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
             }
-        });
+        });*/
 
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -94,8 +94,8 @@ public class SuscribeteActivity extends AppCompatActivity {
         correo.setTypeface(Nuestrosplanes);
 
         b1=(Button)findViewById(R.id.env2);
-        correo2="karburgos@umariana.edu.co";
-        contraseña="narvaezburgos";
+        correo2="protegemossistemas@gmail.com";
+        contraseña="sistemasprotegemos123";
 
         b1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

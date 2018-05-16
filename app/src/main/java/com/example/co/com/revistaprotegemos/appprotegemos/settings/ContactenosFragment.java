@@ -76,8 +76,8 @@ public class ContactenosFragment extends Fragment {
         mensaje = (EditText) view.findViewById(R.id.edmensajee);
         //ubi=(Button)view.findViewById(R.id.buttonubi);
         b1=(Button)view.findViewById(R.id.buttenvia);
-        correo2="karburgos@umariana.edu.co";
-        contraseña="narvaezburgos";
+        correo2="protegemossistemas@gmail.com";
+        contraseña="sistemasprotegemos123";
         appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
         appBar.removeView(view);
         appBar.setBackgroundColor(Color.parseColor("#FFCE6E98"));
