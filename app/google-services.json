@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "1007063783524",
-    "firebase_url": "https://appprotegemos.firebaseio.com",
-    "project_id": "appprotegemos",
-    "storage_bucket": "appprotegemos.appspot.com"
+    "project_number": "49058313582",
+    "firebase_url": "https://appprotegemos-37b0e.firebaseio.com",
+    "project_id": "appprotegemos-37b0e",
+    "storage_bucket": "appprotegemos-37b0e.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1007063783524:android:76df92ca2ca1d6fb",
+        "mobilesdk_app_id": "1:49058313582:android:76df92ca2ca1d6fb",
         "android_client_info": {
           "package_name": "com.example.co.com.revistaprotegemos.appprotegemos"
         }
       },
       "oauth_client": [
         {
-          "client_id": "1007063783524-qlqapvouda8u7fbh5p76dvu8303qa9t7.apps.googleusercontent.com",
+          "client_id": "49058313582-542a8bqmkh31cmp5mrfvtnf9ogfsi6io.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBdnDdgg580bjQRHpOZtJrQD0jKXxoumUo"
+          "current_key": "AIzaSyDuV-xlVCoiwUVGmMGOeAM5zr--KHq4f1Y"
         }
       ],
       "services": {

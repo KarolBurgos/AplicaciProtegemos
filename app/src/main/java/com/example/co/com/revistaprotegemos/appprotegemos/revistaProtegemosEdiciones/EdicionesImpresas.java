@@ -40,10 +40,7 @@ public class EdicionesImpresas extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_ediciones_impresas, container, false);
-        String fuente ="fuentes/Dehasta Momentos Regular.otf";
-        this.Color = Typeface.createFromAsset(getContext().getAssets(),fuente);
-        t1 = (TextView)view.findViewById(R.id.textView24);
-        t1.setTypeface(Color);
+
 
         ImageView img = (ImageView)view.findViewById(R.id.imgrevisss);
         String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/Edicion1.png";
