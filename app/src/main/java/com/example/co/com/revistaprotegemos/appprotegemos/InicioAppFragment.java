@@ -125,7 +125,7 @@ public class InicioAppFragment extends Fragment {
             }
         });*/
 
-        int images[] = {R.drawable.bannerminpremia, R.drawable.drogueria, R.drawable.bannermin};
+        int images[] = {R.drawable.premiamin, R.drawable.drogueria, R.drawable.bannermin};
         String names[] = {"imagen1", "imagen2", "imagen3"};
 
 
