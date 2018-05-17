@@ -74,7 +74,10 @@
         <activity
             android:name=".WebViewAbrirPaginasUrl"
             android:label="" />
-        <activity android:name=".IniciarSesion" android:label=""></activity>
+        <activity
+            android:name=".IniciarSesion"
+            android:label="" />
+        <activity android:name=".ServiciosActivity"></activity>
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -21,6 +22,8 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.ServiciosActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 
 import java.util.ArrayList;
@@ -84,6 +87,7 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                 refresh();
             }
         });
+
     }
 
 
@@ -112,7 +116,7 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                 public void onClick(View v) {
 
 
-                    Fragment fragment = null;
+/*                    Fragment fragment = null;
 
                     Class fragmentClass = ServiciosVentajasFragment.class;
                     try {
@@ -121,7 +125,66 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                         e.printStackTrace();
                     }
                     FragmentManager fragmentManager = myContext.getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();*/
+                    final String edi1 = id.getText().toString();
+                    int ed=Integer.parseInt(edi1);
+                    if(ed==1) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "1");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==2) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "2");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==3) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "3");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==4) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "4");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==5) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "5");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==6) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "6");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==7) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "7");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==8) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "8");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==9) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "9");
+                        context.startActivity(myIntent);
+                    }
+                    else if(ed==10) {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "10");
+                        context.startActivity(myIntent);
+                    }
+                    else
+                    {
+                        Intent myIntent = new Intent(context, ServiciosActivity.class);
+                        myIntent.putExtra("param", "1");
+                        context.startActivity(myIntent);
+
+                    }
 
                 }
             });
