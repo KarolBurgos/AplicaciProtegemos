@@ -1,5 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
+import android.annotation.SuppressLint;
 import android.graphics.Typeface;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
@@ -60,6 +61,7 @@ public class ServiciosActivity extends AppCompatActivity {
     private View view;
     TextView titulo;
     SwipeRefreshLayout swipeRefreshLayout;
+    @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
