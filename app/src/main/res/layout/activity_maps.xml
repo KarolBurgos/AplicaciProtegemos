@@ -4,9 +4,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/degradado"
     tools:context="com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity">
 
+    <TextView
+        android:id="@+id/mensaje_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/mensaje_id2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView" />
 
     <!-- TODO: Update blank fragment layout -->
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
@@ -15,7 +25,7 @@
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="450dp"
         tools:context="com.example.sistemas.karolproyectoandroid.MapsActivity"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="8dp"
@@ -25,5 +35,5 @@
         android:id="@+id/textView44"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Carrera 36 Nº 19-93 Barrio Palermo - Teléfono: 731 3100 - Celular: 315 411 4537" />
+        android:text="Carrera 36 Nº 19-93 Barrio Palermo" />
 </LinearLayout>
