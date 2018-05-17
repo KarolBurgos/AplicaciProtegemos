@@ -19,7 +19,9 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosven
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.DataAdapterservicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONResponseServicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.Servicios;
+import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.api.DatosVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.DataAdapterVentajas;
+import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.JSONResponseVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.Ventajas;
 
 import java.util.ArrayList;
@@ -61,12 +63,10 @@ public class ServiciosActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_servicios);
 
-        recyclerView = (RecyclerView)findViewById(R.id.recy);
+        recyclerView = (RecyclerView)findViewById(R.id.recyy);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-
-
         //getIntent().getExtras().getString("parametro");
         Bundle parametros = this.getIntent().getExtras();
         String datos = parametros.getString("param");
@@ -75,10 +75,29 @@ public class ServiciosActivity extends AppCompatActivity {
         loadJSON(offset);
 
 
-        String fuente ="fuentes/Dehasta Momentos Regular.otf";
-        this.Color = Typeface.createFromAsset(getApplicationContext().getAssets(),fuente);
-        titulo = (TextView)findViewById(R.id.textView16);
-        titulo.setTypeface(Color);
+        recyclerView3 = (RecyclerView)findViewById(R.id.recyventaja);
+        recyclerView3.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager3 = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.VERTICAL,false);
+        recyclerView3.setLayoutManager(layoutManager3);
+        //getIntent().getExtras().getString("parametro");
+        Bundle parametros3 = this.getIntent().getExtras();
+        String datos3 = parametros3.getString("param");
+        int d13= Integer.parseInt(datos3);
+        offset2 = d13;
+        loadJSONVentajas(offset2);
+
+/*        recyclerView3 = (RecyclerView)view.findViewById(R.id.recyventaja);
+        recyclerView3.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager3 = new LinearLayoutManager(getApplicationContext().getApplicationContext());
+        recyclerView3.setLayoutManager(layoutManager3);
+
+        Bundle parametros1 = this.getIntent().getExtras();
+        String datos1 = parametros.getString("param");
+        int d2= Integer.parseInt(datos1);
+        offset2 = d2;
+        loadJSONVentajas(offset2);*/
+
+
     }
 
     private void loadJSON(int co){
@@ -106,13 +125,29 @@ public class ServiciosActivity extends AppCompatActivity {
 
     }
 
-    public int numero(View view)
-    {
-/*        int num=1;
-        return num;*/
+    private void loadJSONVentajas(int co){
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://181.62.161.60")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        DatosVentajas request = retrofit.create(DatosVentajas.class);
+        Call<JSONResponseVentajas> call = request.getJSON(co);
+        call.enqueue(new Callback<JSONResponseVentajas>() {
+            @Override
+            public void onResponse(Call<JSONResponseVentajas> call, Response<JSONResponseVentajas> response) {
 
-        PlanesFragment pa=new PlanesFragment();
-        int n1= pa.numero(view);
-        return n1;
+                JSONResponseVentajas jsonResponse = response.body();
+                data3 = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapter3 = new DataAdapterVentajas(data3,getApplicationContext());
+                recyclerView3.setAdapter(adapter3);
+            }
+
+            @Override
+            public void onFailure(Call<JSONResponseVentajas> call, Throwable t) {
+                Log.d("Error",t.getMessage());
+            }
+        });
+
     }
+
 }

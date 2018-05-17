@@ -116,75 +116,13 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                 public void onClick(View v) {
 
 
-/*                    Fragment fragment = null;
-
-                    Class fragmentClass = ServiciosVentajasFragment.class;
-                    try {
-                        fragment = (Fragment) fragmentClass.newInstance();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    FragmentManager fragmentManager = myContext.getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();*/
                     final String edi1 = id.getText().toString();
                     int ed=Integer.parseInt(edi1);
-                    if(ed==1) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "1");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==2) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "2");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==3) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "3");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==4) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "4");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==5) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "5");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==6) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "6");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==7) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "7");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==8) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "8");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==9) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "9");
-                        context.startActivity(myIntent);
-                    }
-                    else if(ed==10) {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "10");
-                        context.startActivity(myIntent);
-                    }
-                    else
-                    {
-                        Intent myIntent = new Intent(context, ServiciosActivity.class);
-                        myIntent.putExtra("param", "1");
-                        context.startActivity(myIntent);
 
-                    }
+                    Intent myIntent = new Intent(context, ServiciosActivity.class);
+                    myIntent.putExtra("param", edi1);
+                    context.startActivity(myIntent);
+
 
                 }
             });
