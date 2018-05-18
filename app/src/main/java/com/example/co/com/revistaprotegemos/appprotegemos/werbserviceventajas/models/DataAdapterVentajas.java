@@ -18,11 +18,11 @@ import java.util.ArrayList;
 
 public class DataAdapterVentajas extends RecyclerView.Adapter<DataAdapterVentajas.ViewHolder>{
 
-    private ArrayList<Ventajas> android;
+    private ArrayList<Ventajas> ventajas;
     private Context context;
 
-    public DataAdapterVentajas(ArrayList<Ventajas> android, Context context) {
-        this.android = android;
+    public DataAdapterVentajas(ArrayList<Ventajas> ventajas, Context context) {
+        this.ventajas = ventajas;
         this.context = context;
     }
 
@@ -35,19 +35,19 @@ public class DataAdapterVentajas extends RecyclerView.Adapter<DataAdapterVentaja
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.ti.setText(android.get(position).getTitulo());
-        holder.desc.setText(android.get(position).getDescripcion());
+        holder.ti.setText(ventajas.get(position).getTitulo());
+        holder.desc.setText(ventajas.get(position).getDescripcion());
     }
 
     public DataAdapterVentajas(Context context)
     {
         this.context=context;
-        android=new ArrayList<>();
+        ventajas=new ArrayList<>();
     }
 
     @Override
     public int getItemCount() {
-        return android.size();
+        return ventajas.size();
     }
 
 
