@@ -4,7 +4,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopauta
  * Created by ASPIRE VX15 on 27/02/2018.
  */
 
-public class JSONResponsee {
+public class JSONPautas {
     private Pautas[] android;
 
     public Pautas[] getAndroid() {

@@ -1,6 +1,6 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONResponsee;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONPautas;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -11,5 +11,5 @@ import retrofit2.http.GET;
 
 public interface ApiPautas {
     @GET("/webservice/pautas/obtener_metass.php")
-    Call<JSONResponsee> getJSON();
+    Call<JSONPautas> getJSON();
 }

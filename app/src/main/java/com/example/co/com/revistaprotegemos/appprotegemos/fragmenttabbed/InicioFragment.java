@@ -28,7 +28,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.ApiPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONResponsee;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.api2.DatosApiii;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.DataaAdapter;
@@ -179,19 +179,19 @@ public class InicioFragment extends Fragment {
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiPautas request = retrofit.create(ApiPautas.class);
-        Call<JSONResponsee> call = request.getJSON();
-        call.enqueue(new Callback<JSONResponsee>() {
+        Call<JSONPautas> call = request.getJSON();
+        call.enqueue(new Callback<JSONPautas>() {
             @Override
-            public void onResponse(Call<JSONResponsee> call, Response<JSONResponsee> response) {
+            public void onResponse(Call<JSONPautas> call, Response<JSONPautas> response) {
 
-                JSONResponsee jsonResponse = response.body();
+                JSONPautas jsonResponse = response.body();
                 dataPautas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterPautas = new AdapterPautas(dataPautas, getContext());
                 recyclerViewPautas.setAdapter(adapterPautas);
             }
 
             @Override
-            public void onFailure(Call<JSONResponsee> call, Throwable t) {
+            public void onFailure(Call<JSONPautas> call, Throwable t) {
                 Log.d("Error", t.getMessage());
             }
         });
