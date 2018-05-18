@@ -24,14 +24,6 @@ public class PautasLeerActivity extends AppCompatActivity {
     public static final String lugar="lugar";
     TextView t1;
     ImageView im1,im2;
-    float scalediff;
-    private static final int NONE = 0;
-    private static final int DRAG = 1;
-    private static final int ZOOM = 2;
-    private int mode = NONE;
-    private float oldDist = 1f;
-    private float d = 0f;
-    private float newRot = 0f;
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +33,6 @@ public class PautasLeerActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setTitle(null);
 
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,16 +40,13 @@ public class PautasLeerActivity extends AppCompatActivity {
                 finish();
             }
         });
-       // t1=(TextView)findViewById(R.id.textView51);
-/*        getActionBar().hide();
-        getSupportActionBar().hide();*/
+
         im1=(ImageView)findViewById(R.id.imageView4);
         im2=(ImageView)findViewById(R.id.imageView5);
         String usuario=getIntent().getStringExtra("id_imagen");
         String image=getIntent().getStringExtra("imagen");
         String usuario2=getIntent().getStringExtra("lugar");
 
-//t1.setText(""+usuario+usuario2+"");
         Glide.with(this)
                 .load(image)
                 .centerCrop()
@@ -66,19 +54,6 @@ public class PautasLeerActivity extends AppCompatActivity {
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(im1);
 
-/*        Glide.with(this)
-                .load(image)
-                .centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(im2);*/
-        //im1.setImageResource(Integer.parseInt(image));
-/*        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(250, 250);
-        layoutParams.leftMargin = 50;
-        layoutParams.topMargin = 50;
-        layoutParams.bottomMargin = -250;
-        layoutParams.rightMargin = -250;
-        im1.setLayoutParams(layoutParams);*/
         getWindow().setStatusBarColor(ContextCompat.getColor(PautasLeerActivity.this,
                 android.R.color.background_dark));
         toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorNegro));

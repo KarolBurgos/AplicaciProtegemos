@@ -21,7 +21,8 @@
             android:layout_width="100dp"
             android:layout_height="76dp"
             android:onClick="validar"
-            app:srcCompat="@drawable/ic_refresh" />
+            app:srcCompat="@drawable/ic_refresh"
+            tools:ignore="VectorDrawableCompat" />
 
         <TextView
             android:id="@+id/textView61"
