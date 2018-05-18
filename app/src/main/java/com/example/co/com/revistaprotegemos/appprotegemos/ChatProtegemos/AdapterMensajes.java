@@ -36,6 +36,7 @@ public class AdapterMensajes extends RecyclerView.Adapter<HolderMensaje>
         notifyItemInserted(listMensaje.size());
     }
 
+
     @Override
     public HolderMensaje onCreateViewHolder(ViewGroup parent, int viewType) {
         View v= LayoutInflater.from(c).inflate(R.layout.card_view_mensajes,parent,false);
