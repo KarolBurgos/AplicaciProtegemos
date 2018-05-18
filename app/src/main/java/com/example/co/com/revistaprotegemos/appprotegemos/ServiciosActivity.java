@@ -21,7 +21,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosven
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.AdapterServicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONServicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.Servicios;
-import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.api.DatosVentajas;
+import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.api.ApiVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.DataAdapterVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.JSONResponseVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.Ventajas;
@@ -145,7 +145,7 @@ public class ServiciosActivity extends AppCompatActivity {
                 .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        DatosVentajas request = retrofit.create(DatosVentajas.class);
+        ApiVentajas request = retrofit.create(ApiVentajas.class);
         Call<JSONResponseVentajas> call = request.getJSON(co);
         call.enqueue(new Callback<JSONResponseVentajas>() {
             @Override

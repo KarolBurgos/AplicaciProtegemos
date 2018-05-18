@@ -10,7 +10,7 @@ import retrofit2.http.Query;
  * Created by ASPIRE VX15 on 13/04/2018.
  */
 
-public interface DatosVentajas {
+public interface ApiVentajas {
     @GET("/webservice/servicios/ventajaswebservice.php?id_planes=")
     Call<JSONResponseVentajas> getJSON(@Query("id_planes") int limit);
 }
