@@ -68,36 +68,6 @@ public class PrincipalFragment extends Fragment {
         int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse};
         tabs.getTabAt(0).setIcon(icons[0]);
 
-        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));
-
-                } else if (tab.getPosition() == 1) {
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));
-
-
-                } else {
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));
-
-                }
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }});
 
         return view;
     }
