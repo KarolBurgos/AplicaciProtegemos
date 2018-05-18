@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.app.Activity;
@@ -16,6 +16,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.mo
 import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.models.ImpresasAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales.Digitales;
 import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales.DigitalesAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,11 +25,11 @@ import java.util.List;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class EdicionesImpresasPrueba extends Fragment {
+public class FragmentEdicionesRevista extends Fragment {
 
     private FragmentActivity myContext;
     private RecyclerView listadoedimpresas,listadoeddigitales;
-    public EdicionesImpresasPrueba() {
+    public FragmentEdicionesRevista() {
         // Required empty public constructor
     }
 
@@ -64,16 +65,11 @@ public class EdicionesImpresasPrueba extends Fragment {
         impr.add(new Impresas(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
         impr.add(new Impresas(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
 
-        listadoedimpresas.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listadoedimpresas.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
-
         listadoedimpresas.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         listadoedimpresas.setLayoutManager(layoutManager);
         ImpresasAdapter adapter = new ImpresasAdapter(impr,myContext);
         listadoedimpresas.setAdapter(adapter);
-
-
 
         List<Digitales> lista2 = new ArrayList<Digitales>();
 
@@ -85,9 +81,6 @@ public class EdicionesImpresasPrueba extends Fragment {
         lista2.add(new Digitales(getResources().getString(R.string.d3), getResources().getString(R.string.titu3)));
         lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
         lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
-
-        listadoeddigitales.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listadoeddigitales.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
 
         listadoeddigitales.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);

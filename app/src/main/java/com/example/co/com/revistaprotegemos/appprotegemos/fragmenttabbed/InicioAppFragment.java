@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.content.Context;
@@ -20,6 +20,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
+import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 
 import pl.droidsonroids.gif.GifImageView;
 

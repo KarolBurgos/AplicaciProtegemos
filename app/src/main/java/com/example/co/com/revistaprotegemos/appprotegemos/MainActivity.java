@@ -29,6 +29,7 @@ import android.widget.TextView;
 import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
@@ -339,7 +340,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         else if (id == R.id.revistpro) {
 
-            fragmentClass=EdicionesImpresasPrueba.class;
+            fragmentClass=FragmentEdicionesRevista.class;
         }
         else if (id == R.id.ubic) {
 
@@ -468,7 +469,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     Fragment fragment = null;
 
-                    Class fragmentClass = EdicionesImpresasPrueba.class;
+                    Class fragmentClass = FragmentEdicionesRevista.class;
                     try {
                         fragment = (Fragment) fragmentClass.newInstance();
                     } catch (Exception e) {

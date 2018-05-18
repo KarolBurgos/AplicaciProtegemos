@@ -48,7 +48,7 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:context="com.example.co.com.revistaprotegemos.appprotegemos.InicioAppFragment">
+                tools:context="com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioAppFragment">
 
                 <!-- TODO: Update blank fragment layout -->
                 <android.support.design.widget.CoordinatorLayout

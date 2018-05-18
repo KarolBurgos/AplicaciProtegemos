@@ -22,6 +22,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioAppFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 
@@ -237,7 +239,7 @@ public class PrincipalFragment extends Fragment {
                 case 1:
                     return new PlanesFragment();
                 case 2:
-                    return new EdicionesImpresasPrueba();
+                    return new FragmentEdicionesRevista();
                 case 3:
                     return new InicioFragment();
             }
