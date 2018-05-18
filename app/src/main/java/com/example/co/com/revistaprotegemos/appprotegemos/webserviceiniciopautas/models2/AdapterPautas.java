@@ -37,16 +37,16 @@ import java.util.ArrayList;
  * Created by ASPIRE VX15 on 27/02/2018.
  */
 
-public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder > {
+public class AdapterPautas extends RecyclerView.Adapter<AdapterPautas.ViewHolder > {
 
 
-    private ArrayList<Pautas> android;
+    private ArrayList<Pautas> pautas;
     private Context context;
     private FragmentActivity mycontext;
     private AdapterView.OnItemClickListener escucha;
 
-    public DataAdapterr(ArrayList<Pautas> android, Context context) {
-        this.android = android;
+    public AdapterPautas(ArrayList<Pautas> android, Context context) {
+        this.pautas = android;
         this.context = context;
         this.escucha = escucha;
     }
@@ -55,16 +55,16 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_rowpautas, viewGroup, false);
-        return new DataAdapterr.ViewHolder(view);
+        return new AdapterPautas.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(DataAdapterr.ViewHolder viewHolder, int i) {
-        viewHolder.tit.setText(android.get(i).getLugar());
-        viewHolder.descr.setText(android.get(i).getDescripcion());
-        viewHolder.id.setText(android.get(i).getId_zona_pautas());
+    public void onBindViewHolder(AdapterPautas.ViewHolder viewHolder, int i) {
+        viewHolder.tit.setText(pautas.get(i).getLugar());
+        viewHolder.descr.setText(pautas.get(i).getDescripcion());
+        viewHolder.id.setText(pautas.get(i).getId_zona_pautas());
         Glide.with(context)
-                .load(android.get(i).getImg())
+                .load(pautas.get(i).getImg())
                 .centerCrop()
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -91,14 +91,14 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
             b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-                    iniciarsesion();
+                    BuscarPautaId();
 
                 }
             });
             img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    iniciarsesion();
+                    BuscarPautaId();
                 }
             });
 
@@ -110,7 +110,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
         @Override
         public void onErrorResponse(VolleyError error) {
-            Toast.makeText(context, "No se encontro el usuario" + error.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No se encontro la zona de pauta" + error.toString(), Toast.LENGTH_SHORT).show();
         }
 
         @Override
@@ -137,7 +137,7 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
         }
 
-        private void iniciarsesion() {
+        private void BuscarPautaId() {
             //ViewHolder viewHolder2=null;
             String url = "http://181.62.161.60/webservice/pautasid/pautasid.php?id_pauta=" + id.getText().toString();
             jrq = new JsonObjectRequest(Request.Method.GET, url, null, this, this);
@@ -147,13 +147,13 @@ public class DataAdapterr  extends RecyclerView.Adapter<DataAdapterr.ViewHolder 
 
     @Override
     public int getItemCount() {
-        return android.size();
+        return pautas.size();
     }
 
     public void setFilter(ArrayList<Pautas> lisaPautas)
     {
-        this.android=new ArrayList<>();
-        this.android.addAll(lisaPautas);
+        this.pautas=new ArrayList<>();
+        this.pautas.addAll(lisaPautas);
         notifyDataSetChanged();
     }
 }

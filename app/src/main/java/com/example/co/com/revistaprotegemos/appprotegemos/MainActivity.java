@@ -34,7 +34,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFr
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
@@ -43,7 +43,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
     ArrayList<Pautas> listaPautas;
-    DataAdapterr recyclerAdaptador;
+    AdapterPautas recyclerAdaptador;
     private TextView mTextMessage;
     MaterialSearchView searchView;
     String[] list;

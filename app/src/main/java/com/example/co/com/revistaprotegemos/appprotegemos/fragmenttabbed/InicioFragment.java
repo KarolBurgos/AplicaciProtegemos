@@ -3,9 +3,6 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
-import android.graphics.Typeface;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
@@ -14,8 +11,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -23,27 +18,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.IniciarSesion;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.ViewPagerAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.DatosApii;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONResponsee;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.api2.DatosApiii;
@@ -51,17 +35,9 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.mod
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.JSOONResponse;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.Jornadas;
 
-import java.io.BufferedInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.URL;
-import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Timer;
-import java.util.TimerTask;
 
-import pl.droidsonroids.gif.GifImageView;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -79,7 +55,7 @@ public class InicioFragment extends Fragment {
     private RecyclerView recyclerViewJornadas;
     private ArrayList<Pautas> dataPautas;
     private ArrayList<Jornadas> dataJornadas;
-    private DataAdapterr adapterPautas;
+    private AdapterPautas adapterPautas;
     private DataaAdapter adapterJornadas;
     private FragmentActivity myContext;
     private Button bsuscr, btn;
@@ -210,7 +186,7 @@ public class InicioFragment extends Fragment {
 
                 JSONResponsee jsonResponse = response.body();
                 dataPautas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapterPautas = new DataAdapterr(dataPautas, getContext());
+                adapterPautas = new AdapterPautas(dataPautas, getContext());
                 recyclerViewPautas.setAdapter(adapterPautas);
             }
 
