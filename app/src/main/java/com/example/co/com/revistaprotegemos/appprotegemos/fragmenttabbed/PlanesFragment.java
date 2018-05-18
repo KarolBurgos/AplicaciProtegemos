@@ -42,8 +42,8 @@ public class PlanesFragment extends Fragment {
 
 
     private RecyclerView recyclerView;
-    private ArrayList<Planes> data;
-    private PlanesAdapter adapter;
+    private ArrayList<Planes> dataPlanes;
+    private PlanesAdapter adapterPlanes;
     private FragmentActivity myContext;
     SwipeRefreshLayout swipeRefreshLayout;
 
@@ -65,24 +65,15 @@ public class PlanesFragment extends Fragment {
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipeplanes);
 
-        Explode explode =new Explode();
-        getActivity().getWindow().setExitTransition(explode);
-        getActivity().getWindow().setAllowEnterTransitionOverlap(false);
-
-
         //Carga el listado de planes de protegemos
-        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView)view.findViewById(R.id.recyclerViewPlanes);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         loadJSON();
-
-
         return view;
 
     }
-
-
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -103,9 +94,9 @@ public class PlanesFragment extends Fragment {
             public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
 
                 JSONResponse jsonResponse = response.body();
-                data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new PlanesAdapter(data, getContext(),myContext,swipeRefreshLayout);
-                recyclerView.setAdapter(adapter);
+                dataPlanes = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapterPlanes = new PlanesAdapter(dataPlanes, getContext(),myContext,swipeRefreshLayout);
+                recyclerView.setAdapter(adapterPlanes);
             }
 
             @Override
