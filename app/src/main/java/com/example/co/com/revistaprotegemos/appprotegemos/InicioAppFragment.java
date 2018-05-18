@@ -136,7 +136,7 @@ public class InicioAppFragment extends Fragment {
         CustomAdapter custom = new CustomAdapter(myContext.getApplicationContext(), names, images);
         IVF.setAdapter(custom);
         IVF.setFlipInterval(5000);
-        IVF.setAutoStart(true);
+        //IVF.setAutoStart(true);
 
         return view;
     }
