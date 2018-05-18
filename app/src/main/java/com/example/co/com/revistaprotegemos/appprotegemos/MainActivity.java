@@ -344,7 +344,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         }
         else if (id == R.id.ubic) {
 
-            fragmentClass=MapsActivity.class;
+            Intent intent=new Intent (this,MapsActivity.class);
+            startActivity(intent);
 
         }
         try{

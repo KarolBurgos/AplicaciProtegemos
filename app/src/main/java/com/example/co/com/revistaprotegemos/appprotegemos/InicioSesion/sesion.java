@@ -13,7 +13,7 @@ public class sesion extends AppCompatActivity {
     public static final String per_cc="per_cc";
     public static final String nombre="nombre";
     public static final String tipoPlan="tipoPlan";
-    TextView cajabienvenido,na,ed,se,de,use;
+    TextView na,ed,se,de,use;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
