@@ -47,11 +47,8 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
     JsonRequest jrq;
     private Spinner spinner;
     EditText contrato,contraseña;
-    TextView inicio,senior;
     Button btnconsultar;
     private FragmentActivity myContext;
-    private Typeface Abril;
-    private Typeface April,Senior;
 
     String[] items;
     private boolean isFirstTime=true;
@@ -73,12 +70,6 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         btnconsultar=(Button) view.findViewById(R.id.iniciar);
         rq= Volley.newRequestQueue(getContext());
 
-
-/*        spinner = (Spinner) view.findViewById(R.id.spinner);
-        String []opciones={"Pasto","Neiva"};
-        ArrayAdapter <String>adapter = new ArrayAdapter<String>(getContext(),android.R.layout.simple_spinner_item, opciones);
-        spinner.setAdapter(adapter);*/
-
         return view;
 
     }
@@ -87,8 +78,6 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
     public void onErrorResponse(VolleyError error) {
 
             Toast.makeText(getContext(),"No se encontro el usuario"+error.toString(),Toast.LENGTH_SHORT).show();
-
-
     }
 
     @Override
@@ -106,7 +95,6 @@ public class SuscritosFragment extends Fragment implements Response.Listener<JSO
         }
         else {
             User usuario = new User();
-            //Toast.makeText(getContext(), "Se ha encontrado el usuario" + contrato.getText().toString(), Toast.LENGTH_SHORT).show();
             JSONArray jsonArray = response.optJSONArray("datos");
             JSONObject jsonObject = null;
 

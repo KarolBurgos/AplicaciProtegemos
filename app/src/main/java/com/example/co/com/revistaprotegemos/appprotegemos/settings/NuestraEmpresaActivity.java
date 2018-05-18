@@ -22,8 +22,6 @@ public class NuestraEmpresaActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setTitle(null);
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,11 +29,6 @@ public class NuestraEmpresaActivity extends AppCompatActivity {
             }
         });
 
-
-
-/*        DocumentView dvtext=(DocumentView)view.findViewById(R.id.dvText);
-        dvtext.getDocumentLayoutParams().setHyphenator(new Hyphenator(HyphenPattern.PT));
-        dvtext.getDocumentLayoutParams().setHyphenated(true);*/
         ImageView img = (ImageView)findViewById(R.id.imageView8);
         String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png";
         Glide.with(this)

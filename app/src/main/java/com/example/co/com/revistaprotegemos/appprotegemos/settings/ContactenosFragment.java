@@ -98,15 +98,6 @@ public class ContactenosFragment extends Fragment {
 
             }
         });
-/*        ubi.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                saveInfo();
-
-            }
-        });*/
-
-
     }
 
     public void saveInfo() {
