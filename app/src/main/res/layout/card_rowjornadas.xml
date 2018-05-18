@@ -19,8 +19,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="246dp"
-            android:layout_height="270dp"
-            card_view:srcCompat="@drawable/inicio" />
+            android:layout_height="270dp" />
 
         <TextView
             android:id="@+id/tipoj"

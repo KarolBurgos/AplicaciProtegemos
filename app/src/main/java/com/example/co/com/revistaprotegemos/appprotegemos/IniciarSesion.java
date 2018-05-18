@@ -51,38 +51,6 @@ public class IniciarSesion extends AppCompatActivity implements Response.Listene
     String[] items;
     private boolean isFirstTime = true;
 
-  /*  private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    finish();
-                    return true;
-                case R.id.navigation_dashboard:
-                    Intent intent = new Intent(getApplicationContext(), ChatProtegemos.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.llamar:
-
-                    if (ActivityCompat.checkSelfPermission(getApplicationContext(), android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                        // TODO: Consider calling
-                        //    ActivityCompat#requestPermissions
-                        // here to request the missing permissions, and then overriding
-                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                        //                                          int[] grantResults)
-                        // to handle the case where the user grants the permission. See the documentation
-                        // for ActivityCompat#requestPermissions for more details.
-                        return true;
-                    }
-                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
-
-                    return true;
-            }
-            return false;
-        }
-    };*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -108,24 +76,6 @@ public class IniciarSesion extends AppCompatActivity implements Response.Listene
 
         btnconsultar=(Button) findViewById(R.id.iniciar);
         rq= Volley.newRequestQueue(getApplicationContext());
-
-
-        String fuente1 ="fuentes/April.ttf";
-        this.April =Typeface.createFromAsset(getAssets(),fuente1);
-
-/*        String fuente2 ="fuentes/Abril.otf";
-        this.April =Typeface.createFromAsset(getAssets(),fuente2);*/
-
-        String fuente2 ="fuentes/Ames-Regular.otf";
-        this.April =Typeface.createFromAsset(getAssets(),fuente2);
-        String fuente3 ="fuentes/Dehasta Momentos Regular.otf";
-        this.Senior =Typeface.createFromAsset(getAssets(),fuente3);
-
-        senior=(TextView)findViewById(R.id.senior);
-        senior.setTypeface(Senior);
-
-        inicio=(TextView)findViewById(R.id.in);
-        inicio.setTypeface(April);
 
         btnconsultar.setOnClickListener(new View.OnClickListener() {
             @Override
