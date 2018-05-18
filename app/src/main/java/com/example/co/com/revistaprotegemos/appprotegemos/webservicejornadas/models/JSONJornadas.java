@@ -6,7 +6,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas
  * Created by ASPIRE VX15 on 5/03/2018.
  */
 
-public class JSOONResponse {
+public class JSONJornadas {
     private Jornadas[] android;
 
     public Jornadas[] getAndroid() {

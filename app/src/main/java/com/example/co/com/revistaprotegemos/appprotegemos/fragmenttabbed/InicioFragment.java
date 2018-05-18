@@ -30,9 +30,9 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
-import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.api2.DatosApiii;
-import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.DataaAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.JSOONResponse;
+import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.api2.ApiJornadas;
+import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.JornadasAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.JSONJornadas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webservicejornadas.models.Jornadas;
 
 import java.util.ArrayList;
@@ -56,7 +56,7 @@ public class InicioFragment extends Fragment {
     private ArrayList<Pautas> dataPautas;
     private ArrayList<Jornadas> dataJornadas;
     private AdapterPautas adapterPautas;
-    private DataaAdapter adapterJornadas;
+    private JornadasAdapter adapterJornadas;
     private FragmentActivity myContext;
     private Button bsuscr, btn;
     //Botones de facebook y twitter
@@ -204,20 +204,20 @@ public class InicioFragment extends Fragment {
                 .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        DatosApiii request = retrofit.create(DatosApiii.class);
-        Call<JSOONResponse> call = request.getJSON();
-        call.enqueue(new Callback<JSOONResponse>() {
+        ApiJornadas request = retrofit.create(ApiJornadas.class);
+        Call<JSONJornadas> call = request.getJSON();
+        call.enqueue(new Callback<JSONJornadas>() {
             @Override
-            public void onResponse(Call<JSOONResponse> call, Response<JSOONResponse> response) {
+            public void onResponse(Call<JSONJornadas> call, Response<JSONJornadas> response) {
 
-                JSOONResponse jsonResponse = response.body();
+                JSONJornadas jsonResponse = response.body();
                 dataJornadas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapterJornadas = new DataaAdapter(dataJornadas, getContext());
+                adapterJornadas = new JornadasAdapter(dataJornadas, getContext());
                 recyclerViewJornadas.setAdapter(adapterJornadas);
             }
 
             @Override
-            public void onFailure(Call<JSOONResponse> call, Throwable t) {
+            public void onFailure(Call<JSONJornadas> call, Throwable t) {
                 Log.d("Error", t.getMessage());
             }
         });
