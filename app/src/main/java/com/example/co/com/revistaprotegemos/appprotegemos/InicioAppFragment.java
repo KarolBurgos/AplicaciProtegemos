@@ -1,20 +1,13 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.widget.DividerItemDecoration;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,25 +15,11 @@ import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
 import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.DataAdapterEdicionesImpresas;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.Digitales;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.DigitalesAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import pl.droidsonroids.gif.GifImageView;
 

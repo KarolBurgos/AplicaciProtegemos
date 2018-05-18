@@ -14,11 +14,16 @@ import com.example.co.com.revistaprotegemos.appprotegemos.R;
  * Created by ASPIRE VX15 on 13/03/2018.
  */
 
-public class CustomAdapter extends BaseAdapter {
+public class CustomAdapter extends BaseAdapter
+{
+    //Variables
     Context context;
     int[] images;
     String[] names;
     LayoutInflater inflter;
+
+
+    //Esta clase permite agregar imagenes al banner para realizar una transicion
 
     public CustomAdapter(Context applicationcontext, String[] names, int[] Images) {
         this.context = applicationcontext;

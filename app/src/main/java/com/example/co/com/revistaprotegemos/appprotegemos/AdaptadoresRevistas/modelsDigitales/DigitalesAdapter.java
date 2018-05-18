@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales;
+package com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,7 +12,6 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 

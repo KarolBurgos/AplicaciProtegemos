@@ -30,6 +30,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class ChatProtegemos extends AppCompatActivity {
 
+    //Clase que contiene a los atributos del chat
     private CircleImageView fotoPerfil;
     private TextView nombre;
     private RecyclerView rvMensajes;

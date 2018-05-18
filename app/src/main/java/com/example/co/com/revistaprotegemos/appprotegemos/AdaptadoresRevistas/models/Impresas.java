@@ -1,15 +1,16 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models;
+package com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.models;
 
 /**
- * Created by ASPIRE VX15 on 20/04/2018.
+ * Created by ASPIRE VX15 on 17/05/2018.
  */
 
-public class Ediciones {
+public class Impresas {
+
     private String id;
     private int img;
     private String descripcion;
 
-    public Ediciones(String id,String descripcion) {
+    public Impresas(String id,String descripcion) {
         this.id = id;
         this.descripcion = descripcion;
     }

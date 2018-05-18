@@ -22,6 +22,7 @@ public class AdapterMensajes extends RecyclerView.Adapter<HolderMensaje>
 
 {
 
+    //Adaptador de mensajes para el chat en tiempo real
     List<MensajeRecibir> listMensaje = new ArrayList<>();
     private Context c;
 

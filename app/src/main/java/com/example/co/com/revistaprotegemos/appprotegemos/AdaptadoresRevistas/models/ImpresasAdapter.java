@@ -1,8 +1,7 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models;
+package com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.models;
 
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -22,28 +21,29 @@ import java.util.List;
  * Created by ASPIRE VX15 on 20/04/2018.
  */
 
-public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapterEdicionesImpresas.ViewHolder>{
-    List<Ediciones> edicio;
+public class ImpresasAdapter extends RecyclerView.Adapter<ImpresasAdapter.ViewHolder>{
+    List<Impresas> edicioImpresas;
     private Context context;
 
-    public DataAdapterEdicionesImpresas(List<Ediciones> edicio, Context context) {
-        this.edicio = edicio;
+    public ImpresasAdapter(List<Impresas> edicio, Context context) {
+        this.edicioImpresas = edicio;
         this.context = context;
     }
 
     @Override
-    public DataAdapterEdicionesImpresas.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ImpresasAdapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardviewedicionesimpresas, parent, false);
-        return new DataAdapterEdicionesImpresas.ViewHolder(view);
+        return new ImpresasAdapter.ViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(DataAdapterEdicionesImpresas.ViewHolder holder, int i) {
-        Ediciones ed = edicio.get(i);
+    public void onBindViewHolder(ImpresasAdapter.ViewHolder holder, int i) {
+        Impresas ed = edicioImpresas.get(i);
 
         holder.id.setText(ed.getId());
         holder.des.setText(ed.getDescripcion());
 
+        //Se agregan las imagenes a las revistas de ediciones impresas
         final String edi1 = holder.id.getText().toString();
         int edd1=Integer.parseInt(edi1);
         if(edd1==1)
@@ -250,7 +250,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
 
     @Override
     public int getItemCount() {
-        return edicio.size();
+        return edicioImpresas.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
@@ -286,6 +286,7 @@ public class DataAdapterEdicionesImpresas extends RecyclerView.Adapter<DataAdapt
 
         public void revistasId()
         {
+            //Permite ingresar en la aplicacion movil a la revista dependiendo de su id
             final String edi1 = id.getText().toString();
             int ed=Integer.parseInt(edi1);
             if(ed==1) {

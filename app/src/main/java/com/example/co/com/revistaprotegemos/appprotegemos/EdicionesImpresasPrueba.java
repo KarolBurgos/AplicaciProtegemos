@@ -12,11 +12,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.bumptech.glide.Glide;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.DataAdapterEdicionesImpresas;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.models.Ediciones;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.Digitales;
-import com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales.DigitalesAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.models.Impresas;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.models.ImpresasAdapter;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales.Digitales;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales.DigitalesAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +27,7 @@ import java.util.List;
 public class EdicionesImpresasPrueba extends Fragment {
 
     private FragmentActivity myContext;
-    private RecyclerView listado,listado2;
+    private RecyclerView listadoedimpresas,listadoeddigitales;
     public EdicionesImpresasPrueba() {
         // Required empty public constructor
     }
@@ -45,38 +44,40 @@ public class EdicionesImpresasPrueba extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_ediciones_impresas_prueba, container, false);
 
-        listado = (RecyclerView)view.findViewById(R.id.recyediimpre);
-        listado2 = (RecyclerView)view.findViewById(R.id.recydigitales);
-        List<Ediciones> equipos = new ArrayList<Ediciones>();
+        listadoedimpresas = (RecyclerView)view.findViewById(R.id.recyediimpre);
+        listadoeddigitales = (RecyclerView)view.findViewById(R.id.recydigitales);
+        List<Impresas> impr = new ArrayList<Impresas>();
 
-        equipos.add(new Ediciones(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id3),getResources().getString(R.string.titulo3)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
-        equipos.add(new Ediciones(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
+        //LISTADO DE REVISTAS IMPRESAS
+        impr.add(new Impresas(getResources().getString(R.string.id15), getResources().getString(R.string.titulo15)));
+        impr.add(new Impresas(getResources().getString(R.string.id14),getResources().getString(R.string.titulo14)));
+        impr.add(new Impresas(getResources().getString(R.string.id13), getResources().getString(R.string.titulo13)));
+        impr.add(new Impresas(getResources().getString(R.string.id12), getResources().getString(R.string.titulo12)));
+        impr.add(new Impresas(getResources().getString(R.string.id11), getResources().getString(R.string.titulo11)));
+        impr.add(new Impresas(getResources().getString(R.string.id10), getResources().getString(R.string.titulo10)));
+        impr.add(new Impresas(getResources().getString(R.string.id8),getResources().getString(R.string.titulo8)));
+        impr.add(new Impresas(getResources().getString(R.string.id7), getResources().getString(R.string.titulo7)));
+        impr.add(new Impresas(getResources().getString(R.string.id6), getResources().getString(R.string.titulo6)));
+        impr.add(new Impresas(getResources().getString(R.string.id5), getResources().getString(R.string.titulo5)));
+        impr.add(new Impresas(getResources().getString(R.string.id4), getResources().getString(R.string.titulo4)));
+        impr.add(new Impresas(getResources().getString(R.string.id3),getResources().getString(R.string.titulo3)));
+        impr.add(new Impresas(getResources().getString(R.string.id2),getResources().getString(R.string.titulo2)));
+        impr.add(new Impresas(getResources().getString(R.string.id1), getResources().getString(R.string.titulo1)));
 
-        listado.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listado.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
+        listadoedimpresas.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
+        listadoedimpresas.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
 
-        listado.setHasFixedSize(true);
+        listadoedimpresas.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        listado.setLayoutManager(layoutManager);
-        DataAdapterEdicionesImpresas adapter = new DataAdapterEdicionesImpresas(equipos,myContext);
-        listado.setAdapter(adapter);
+        listadoedimpresas.setLayoutManager(layoutManager);
+        ImpresasAdapter adapter = new ImpresasAdapter(impr,myContext);
+        listadoedimpresas.setAdapter(adapter);
 
 
 
         List<Digitales> lista2 = new ArrayList<Digitales>();
 
+        //LISTADO DE REVISTAS DIGITALES
         lista2.add(new Digitales(getResources().getString(R.string.d7), getResources().getString(R.string.titu7)));
         lista2.add(new Digitales(getResources().getString(R.string.d6), getResources().getString(R.string.titu6)));
         lista2.add(new Digitales(getResources().getString(R.string.d5), getResources().getString(R.string.titu5)));
@@ -85,14 +86,14 @@ public class EdicionesImpresasPrueba extends Fragment {
         lista2.add(new Digitales(getResources().getString(R.string.d2),getResources().getString(R.string.titu2)));
         lista2.add(new Digitales(getResources().getString(R.string.d1), getResources().getString(R.string.titu1)));
 
-        listado2.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
-        listado2.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
+        listadoeddigitales.setLayoutManager(new LinearLayoutManager(myContext,LinearLayoutManager.VERTICAL,false));
+        listadoeddigitales.addItemDecoration(new DividerItemDecoration(myContext,DividerItemDecoration.VERTICAL));
 
-        listado2.setHasFixedSize(true);
+        listadoeddigitales.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
-        listado2.setLayoutManager(layoutManager2);
+        listadoeddigitales.setLayoutManager(layoutManager2);
         DigitalesAdapter adapter2 = new DigitalesAdapter(lista2,myContext);
-        listado2.setAdapter(adapter2);
+        listadoeddigitales.setAdapter(adapter2);
         return view;
     }
 

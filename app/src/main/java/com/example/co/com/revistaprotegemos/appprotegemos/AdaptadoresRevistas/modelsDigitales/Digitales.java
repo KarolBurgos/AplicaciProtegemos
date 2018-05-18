@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos.EdicionesImpresas.modelsDigitales;
+package com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.modelsDigitales;
 
 /**
  * Created by ASPIRE VX15 on 11/05/2018.
