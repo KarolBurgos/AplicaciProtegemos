@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes;
 
 import android.annotation.SuppressLint;
 import android.graphics.Typeface;
@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.PlanesAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.api.ApiServicios;
@@ -37,29 +38,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiciosActivity extends AppCompatActivity {
 
-    PlanesAdapter.ViewHolderN viewHolderN;
-    private Retrofit retrofit;
-    //private DataAdapter planes;
-    // private RecyclerView recyclerView;
+
     private int ofset;
-    private boolean cargar;
     private RecyclerView recyclerView;
-    private ArrayList<Servicios> data;
-    private ArrayList<Planes> data2;
-    private AdapterServicios adapter;
-    private PlanesAdapter adapter2;
-    private FragmentActivity f;
+    private ArrayList<Servicios> dataServicios;
+    private AdapterServicios adapterServicios;
     private int offset;
-    private Button butonserivicios;
-    private FragmentActivity myContext;
-    private ArrayList<Ventajas> data3;
-    private DataAdapterVentajas adapter3;
+    private ArrayList<Ventajas> dataVentajas;
+    private DataAdapterVentajas adapterVentajas;
     private RecyclerView recyclerView3;
     private int offset2;
-    private Typeface Ofaly,Color;
-    private View view;
-    TextView titulo;
-    SwipeRefreshLayout swipeRefreshLayout;
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,8 +57,6 @@ public class ServiciosActivity extends AppCompatActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //getSupportActionBar().setTitle(null);
-
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +69,7 @@ public class ServiciosActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false);
         recyclerView.setLayoutManager(layoutManager);
-        //getIntent().getExtras().getString("parametro");
+
         Bundle parametros = this.getIntent().getExtras();
         String datos = parametros.getString("param");
         int d1= Integer.parseInt(datos);
@@ -101,17 +88,6 @@ public class ServiciosActivity extends AppCompatActivity {
         offset2 = d13;
         loadJSONVentajas(offset2);
 
-/*        recyclerView3 = (RecyclerView)view.findViewById(R.id.recyventaja);
-        recyclerView3.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager3 = new LinearLayoutManager(getApplicationContext().getApplicationContext());
-        recyclerView3.setLayoutManager(layoutManager3);
-
-        Bundle parametros1 = this.getIntent().getExtras();
-        String datos1 = parametros.getString("param");
-        int d2= Integer.parseInt(datos1);
-        offset2 = d2;
-        loadJSONVentajas(offset2);*/
-
 
     }
 
@@ -127,9 +103,9 @@ public class ServiciosActivity extends AppCompatActivity {
             public void onResponse(Call<JSONServicios> call, Response<JSONServicios> response) {
 
                 JSONServicios jsonResponse = response.body();
-                data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new AdapterServicios(data,getApplicationContext());
-                recyclerView.setAdapter(adapter);
+                dataServicios = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapterServicios = new AdapterServicios(dataServicios,getApplicationContext());
+                recyclerView.setAdapter(adapterServicios);
             }
 
             @Override
@@ -152,9 +128,9 @@ public class ServiciosActivity extends AppCompatActivity {
             public void onResponse(Call<JSONResponseVentajas> call, Response<JSONResponseVentajas> response) {
 
                 JSONResponseVentajas jsonResponse = response.body();
-                data3 = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter3 = new DataAdapterVentajas(data3,getApplicationContext());
-                recyclerView3.setAdapter(adapter3);
+                dataVentajas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapterVentajas = new DataAdapterVentajas(dataVentajas,getApplicationContext());
+                recyclerView3.setAdapter(adapterVentajas);
             }
 
             @Override
