@@ -53,32 +53,10 @@ public class SplashScreen extends AppCompatActivity {
             }
         }).start();
 
-
-
-
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-               /* NetworkInfo activeNetwork = ((ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-
-                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting() ) {
-
-                    // Load Webview
-                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
-
-                } else {
-
-                    // Show No internet
-                    startActivity(new Intent(SplashScreen.this, ValidacionNoHayInternet.class));
-
-                }
-                finish();*/
-    /*            Intent intent =new Intent(SplashScreen.this,MainActivity.class);
-                startActivity(intent);
-
-                finish();*/
-
-                ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
+                   ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
                         .getSystemService(Context.CONNECTIVITY_SERVICE);
                 NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
                 if (null != activeNetwork) {
@@ -93,9 +71,6 @@ public class SplashScreen extends AppCompatActivity {
             }
         },2000);
 
-        //estaConectado();
     }
-
-
 
 }
