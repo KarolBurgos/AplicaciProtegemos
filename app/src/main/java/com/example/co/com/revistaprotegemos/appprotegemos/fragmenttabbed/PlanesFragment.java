@@ -40,19 +40,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class PlanesFragment extends Fragment {
 
-    private Retrofit retrofit;
-    //private DataAdapter planes;
-   // private RecyclerView recyclerView;
-    private int ofset;
-    private boolean cargar;
+
     private RecyclerView recyclerView;
     private ArrayList<Planes> data;
-    private ArrayList<Planes> data2;
     private PlanesAdapter adapter;
-    private PlanesAdapter adapter2;
     private FragmentActivity myContext;
-    private TextView t1;
-    TextView ti;
     SwipeRefreshLayout swipeRefreshLayout;
 
     public PlanesFragment() {
@@ -78,6 +70,7 @@ public class PlanesFragment extends Fragment {
         getActivity().getWindow().setAllowEnterTransitionOverlap(false);
 
 
+        //Carga el listado de planes de protegemos
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
@@ -97,6 +90,7 @@ public class PlanesFragment extends Fragment {
 
     }
 
+    //Metodo para conecta el JSON con la interface api
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://181.62.161.60")
@@ -120,13 +114,6 @@ public class PlanesFragment extends Fragment {
             }
         });
 
-    }
-
-    public int numero(View view)
-    {
-
-        adapter2 = new PlanesAdapter(data2, getContext(), myContext, swipeRefreshLayout);
-        return adapter2.nuevo(view,myContext,getContext());
     }
 
 }

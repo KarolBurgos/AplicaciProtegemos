@@ -75,12 +75,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class InicioFragment extends Fragment {
 
     //Banner protegemos
-    ViewPager viewPager;
-    LinearLayout sliderDotspanel;
-    private int dotscount;
-    //B
-
-    private ImageView[] dots;
     private RecyclerView recyclerViewPautas;
     private RecyclerView recyclerViewJornadas;
     private ArrayList<Pautas> dataPautas;

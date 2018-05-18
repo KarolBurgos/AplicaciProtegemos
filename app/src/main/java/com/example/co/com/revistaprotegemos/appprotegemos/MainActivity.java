@@ -1,18 +1,14 @@
 package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -29,12 +25,10 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ServiciosVentajasFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
