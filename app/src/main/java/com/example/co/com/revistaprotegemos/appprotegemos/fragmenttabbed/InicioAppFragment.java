@@ -31,14 +31,14 @@ import pl.droidsonroids.gif.GifImageView;
  */
 public class InicioAppFragment extends Fragment {
 
-    private RecyclerView listado,listado2;
+
     private FragmentActivity myContext;
-    private TextView quienes_somos,visite,encontrara,jornada;
-    private TextView tg1,nuestrosplanes,susc,somo,estaslisto,pautas;
+    private TextView quienes_somos;
+    private TextView tg1,nuestrosplanes;
     private ImageButton facebook,twitter;
     private Button bsuscr,btn;
     private AdapterViewFlipper IVF;
-    SwipeRefreshLayout swipeRefreshLayout;
+
     public InicioAppFragment() {
         // Required empty public constructor
     }
@@ -50,68 +50,20 @@ public class InicioAppFragment extends Fragment {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_inicio_app, container, false);
 
-        /*ImageView img = (ImageView)view.findViewById(R.id.imageView7);
-        String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png";
-        Glide.with(this)
-                .load(url)
-                .centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(img);*/
-
-       GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
+        GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
 
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
+
         quienes_somos=(TextView)view.findViewById(R.id.txquienes);
         tg1=(TextView)view.findViewById(R.id.textView38);
         nuestrosplanes=(TextView)view.findViewById(R.id.textView22);
         facebook=(ImageButton)view.findViewById(R.id.facebook);
         twitter=(ImageButton)view.findViewById(R.id.twitter);
-       /* btn=(Button)view.findViewById(R.id.button5);*/
-
-/*        swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipe3);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                NetworkInfo activeNetwork = ((ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
-
-                    // Load Webview
-                    Fragment fragment = null;
-                    Class fragmentClass= PrincipalFragment.class;
-                    try{
-                        fragment = (Fragment) fragmentClass.newInstance();
-                    }catch (Exception e){
-                        e.printStackTrace();
-                    }
-                    FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-                } else {
-
-                    // Show No internet
-                    Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
-                    startActivity(intent);
-
-                }
-
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                },4000);
-            }
-        });*/
 
         int images[] = {R.drawable.premiamin, R.drawable.drogueria, R.drawable.bannermin};
         String names[] = {"imagen1", "imagen2", "imagen3"};
-
-
-
 
         //Bannerconmovimiento
         IVF = (AdapterViewFlipper) view.findViewById(R.id.IVF);
@@ -131,58 +83,8 @@ public class InicioAppFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-/*
-        btn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Fragment fragment = null;
-                Class fragmentClass= SuscritosFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-
-            }
-        });
-*/
 
         super.onActivityCreated(savedInstanceState);
-/*        quienes_somos.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent=new Intent (getContext(),NuestraEmpresaActivity.class);
-                startActivity(intent);
-
-            }
-        });
-
-        tg1.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Intent intent=new Intent (getContext(),SuscribeteActivity.class);
-                startActivity(intent);
-
-            }
-        });
-        nuestrosplanes.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-
-                Fragment fragment = null;
-                Class fragmentClass= PlanesFragment.class;
-                try{
-                    fragment = (Fragment) fragmentClass.newInstance();
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                FragmentManager fragmentManager=myContext.getSupportFragmentManager();
-                fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
-
-            }
-        });*/
 
         facebook.setOnClickListener(new View.OnClickListener() {
             @Override
