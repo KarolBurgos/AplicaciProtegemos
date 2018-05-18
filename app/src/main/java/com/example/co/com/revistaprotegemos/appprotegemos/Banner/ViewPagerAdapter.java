@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.Banner;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
 
 /**
  * Created by ASPIRE VX15 on 3/05/2018.

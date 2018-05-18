@@ -24,7 +24,7 @@ import android.widget.ImageButton;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.WebViewAbrirPaginasUrl;
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.ApiPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;

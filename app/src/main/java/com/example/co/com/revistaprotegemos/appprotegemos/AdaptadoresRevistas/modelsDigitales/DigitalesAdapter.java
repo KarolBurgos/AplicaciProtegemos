@@ -13,7 +13,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.WebViewAbrirPaginasUrl;
 
 import java.util.List;
 

@@ -72,7 +72,7 @@
             android:name=".ChatProtegemos.ChatProtegemos"
             android:label="Chat" />
         <activity
-            android:name=".WebViewAbrirPaginasUrl"
+            android:name=".AdaptadoresRevistas.WebViewAbrirPaginasUrl"
             android:label="" />
         <activity
             android:name=".IniciarSesion"

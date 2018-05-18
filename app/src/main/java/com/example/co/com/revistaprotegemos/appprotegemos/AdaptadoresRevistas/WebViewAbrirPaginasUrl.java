@@ -1,4 +1,4 @@
-package com.example.co.com.revistaprotegemos.appprotegemos;
+package com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas;
 
 import android.app.ProgressDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -8,9 +8,11 @@ import android.view.View;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
+import com.example.co.com.revistaprotegemos.appprotegemos.R;
+
 public class WebViewAbrirPaginasUrl extends AppCompatActivity {
     private WebView MWebView;
-    private int id;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +37,7 @@ public class WebViewAbrirPaginasUrl extends AppCompatActivity {
         MWebView.getSettings().setJavaScriptEnabled(true);
         MWebView.getSettings().setBuiltInZoomControls(true);
         Bundle bundle = getIntent().getExtras();
-        MWebView.loadUrl("http://" + bundle.getString("direccion"));/*
-        MWebView.loadUrl("http://" + bundle.getString("nuevo"));*/
+        MWebView.loadUrl("http://" + bundle.getString("direccion"));
         MWebView.setWebViewClient(new WebViewClient()
         {
             @Override
@@ -44,12 +45,5 @@ public class WebViewAbrirPaginasUrl extends AppCompatActivity {
                 progressDialog.dismiss();
             }
         });
-/*        MWebView.getSettings().setJavaScriptEnabled(true);
-        MWebView.getSettings().setBuiltInZoomControls(true);
-        MWebView.loadUrl("http://data.axmag.com/data/201706/20170630/U154892_F446303/FLASH/index.html");
-
-
-
-*/
     }
 }
