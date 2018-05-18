@@ -34,15 +34,10 @@ import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesF
 public class PrincipalFragment extends Fragment {
 
     private AppBarLayout appBar;
-    FragmentManager fragMan;
     private TabLayout tabs;
     private ViewPager viewPager;
-    private ViewPagerAdapter adapter;
     private ImageView logo;
     private Toolbar toolbar;
-    private FragmentTabHost tabHost;
-    private Button mib;
-    private TextView mTextMessage;
     public PrincipalFragment() {
         // Required empty public constructor
     }
@@ -63,8 +58,6 @@ public class PrincipalFragment extends Fragment {
         toolbar = (Toolbar) contenedor.findViewById(R.id.toolbaarr);
         appBar.setBackgroundColor(Color.parseColor("#FFFFFF"));
         tabs = new TabLayout(getActivity());
-        //tabs.setBackgroundColor(Color.parseColor("#55B99D"));
-        //tabs.setTabTextColors(Color.parseColor("#FF00BAD1"), Color.parseColor("#FF00BAD1"));
         appBar.addView(tabs);
         viewPager = (ViewPager) view.findViewById(R.id.pager);
         ViewPagerAdapter pagerAdapter = new ViewPagerAdapter(getFragmentManager());
@@ -72,112 +65,23 @@ public class PrincipalFragment extends Fragment {
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
 
-/*        tabs.setTabGravity(TabLayout.GRAVITY_CENTER);
-        tabs.setTabMode(TabLayout.MODE_SCROLLABLE);*/
-        //64
-
-/*        //int icons[] = {R.drawable.ic_icons8_cas, R.drawable.ic_icons8_acuerdo_50, R.drawable.ic_icons8_agregar_regla_50};
-        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
-        //int icons[] = {R.drawable.ic_home_icon_silhouette, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
-        //int icons[] = {R.drawable.ic_house, R.drawable.ic_website, R.drawable.ic_folded_newspaper};
+        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse};
         tabs.getTabAt(0).setIcon(icons[0]);
-        tabs.getTabAt(1).setIcon(icons[1]);
-        tabs.getTabAt(2).setIcon(icons[2]);
-        tabs.setTabGravity(MODE_SCROLLABLE);*/
-        int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse, R.drawable.ic_periodico};
-        tabs.getTabAt(0).setIcon(icons[0]);
-
-  /*      iconcolor(tabs.getTabAt(tabs.getSelectedTabPosition()),"#FF00BAD1");*/
- /*       tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                iconcolor(tab,"#FF00BAD1");
-                //appBar.setBackgroundColor(Color.parseColor("#FF00BAD1"));
-
-                if(tabs.getTabAt(0)!=null)
-                {
-                    appBar.setBackgroundColor(Color.parseColor("#55B99D"));
-
-                }
-                else if(tabs.getTabAt(1)!=null)
-                {
-                    appBar.setBackgroundColor(Color.parseColor("#FF00BAD1"));
-                }
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-                iconcolor(tab,"#E0E0E0");
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });*/
-/*        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                if (tab.getPosition() == 0) {
-                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));
-//toolbar.setBackgroundColor(ContextCompat.getColor(getContext(),
-                    //R.color.colorAccent));
-                    iconcolor(tab,"#FF00BAD1");
-                } else if (tab.getPosition() == 1) {
-                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));
-
-                    iconcolor(tab,"#FF00BAD1");
-                } else {
-                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));
-                    getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));
-                    iconcolor(tab,"#FF00BAD1");
-                }
-
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }});*/
 
         tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 0) {
-/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));*/
                     getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
                             R.color.colorPrimary));
-//toolbar.setBackgroundColor(ContextCompat.getColor(getContext(),
-                    //R.color.colorAccent));
 
                 } else if (tab.getPosition() == 1) {
-/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimary));*/
                     getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
                             R.color.colorPrimary));
 
 
                 } else {
-/*                    tabs.setBackgroundColor(ContextCompat.getColor(getContext(),
-                            R.color.colorPrimaryDark));*/
                     getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
                             R.color.colorPrimary));
 
@@ -195,16 +99,9 @@ public class PrincipalFragment extends Fragment {
 
             }});
 
-            //    ImageView logo= (ImageView)view.findViewById(R.id,i);
-        //  logo.setImageResource(R.drawable.inicio);
         return view;
     }
-    /*private void iconcolor(TabLayout.Tab tab, String color)
-    {
 
-        tab.getIcon().setColorFilter(Color.parseColor(color), PorterDuff.Mode.SRC_IN);
-    }*/
-//app:tabTextAppearance="@style/MyTabLayoutTextAppearance"
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -217,11 +114,7 @@ public class PrincipalFragment extends Fragment {
         }
 
 
-        //String tabtext=getResources().getStringArray(R.array.tabs);
         String[] tirulotabs = {"", "PLANES", "REVISTAS","ZONAS"};
-
-
-//String.valueOf(getResources().getDrawable(R.drawable.inicio))
 
         /**
          * Return the Fragment associated with a specified position.
@@ -268,10 +161,8 @@ public class PrincipalFragment extends Fragment {
 
 
             return tirulotabs[position];
-            //return null;
 
         }
-        // return tirulotabs[position];
 
     }
 
