@@ -6,10 +6,10 @@ import retrofit2.Call;
 import retrofit2.http.GET;
 
 /**
- * Created by ASPIRE VX15 on 27/02/2018.
+ * Created by ASPIRE VX15 on 18/05/2018.
  */
 
-public interface DatosApii {
+public interface ApiPautas {
     @GET("/webservice/pautas/obtener_metass.php")
     Call<JSONResponsee> getJSON();
 }

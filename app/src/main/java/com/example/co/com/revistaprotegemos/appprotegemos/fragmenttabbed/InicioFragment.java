@@ -26,7 +26,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.WebViewAbrirPaginasUrl;
 import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.DatosApii;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.api2.ApiPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.JSONResponsee;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
@@ -178,7 +178,7 @@ public class InicioFragment extends Fragment {
                 .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        DatosApii request = retrofit.create(DatosApii.class);
+        ApiPautas request = retrofit.create(ApiPautas.class);
         Call<JSONResponsee> call = request.getJSON();
         call.enqueue(new Callback<JSONResponsee>() {
             @Override
