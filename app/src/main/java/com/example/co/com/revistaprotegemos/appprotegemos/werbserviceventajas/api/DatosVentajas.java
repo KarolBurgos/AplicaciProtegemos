@@ -1,6 +1,5 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.api;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONResponseServicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.JSONResponseVentajas;
 
 import retrofit2.Call;

@@ -20,44 +20,42 @@ import java.util.ArrayList;
  * Created by ASPIRE VX15 on 10/03/2018.
  */
 
-public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservicios.ViewHolder>{
-    private ArrayList<Servicios> android;
+public class AdapterServicios extends RecyclerView.Adapter<AdapterServicios.ViewHolder>{
+    private ArrayList<Servicios> servicios;
     private Context context;
-    private ImageLoader imageLoader;
-    private ImageView img2;
-    public DataAdapterservicios(ArrayList<Servicios> android, Context context) {
-        this.android = android;
+    public AdapterServicios(ArrayList<Servicios> servicios, Context context) {
+        this.servicios = servicios;
         this.context = context;
     }
 
     @Override
-    public DataAdapterservicios.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public AdapterServicios.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.card_row_servicios, viewGroup, false);
-        return new DataAdapterservicios.ViewHolder(view);
+        return new AdapterServicios.ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.nombre.setText(android.get(position).getTitulo());
-        holder.desc.setText(android.get(position).getDescripcion());
+        holder.nombre.setText(servicios.get(position).getTitulo());
+        holder.desc.setText(servicios.get(position).getDescripcion());
         Glide.with(context)
-                .load(android.get(position).getImg())
+                .load(servicios.get(position).getImg())
                 .centerCrop()
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .into(holder.img);
     }
 
-    public DataAdapterservicios(Context context)
+    public AdapterServicios(Context context)
     {
         this.context=context;
-        android=new ArrayList<>();
+        servicios=new ArrayList<>();
     }
 
 
     @Override
     public int getItemCount() {
-        return android.size();
+        return servicios.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder{
@@ -72,11 +70,6 @@ public class DataAdapterservicios extends RecyclerView.Adapter<DataAdapterservic
             desc = (TextView)view.findViewById(R.id.tvdes);
             img=(ImageView)view.findViewById(R.id.fotoopro);
 
-            String fuente ="fuentes/Dehasta Momentos Regular.otf";
-            this.Color = Typeface.createFromAsset(context.getAssets(),fuente);
-
-            nombre.setTypeface(Color);
-            desc.setTypeface(Color);
         }
 
         

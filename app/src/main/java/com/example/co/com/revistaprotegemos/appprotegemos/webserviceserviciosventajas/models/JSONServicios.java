@@ -6,7 +6,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.model
  * Created by ASPIRE VX15 on 10/03/2018.
  */
 
-public class JSONResponseServicios {
+public class JSONServicios {
     private Servicios[] android;
 
     public Servicios[] getAndroid() {

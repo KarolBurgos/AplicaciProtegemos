@@ -15,12 +15,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.PlanesAdapter;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.api.DatossApii;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.DataAdapterservicios;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONResponseServicios;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.api.ApiServicios;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.AdapterServicios;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.JSONServicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceserviciosventajas.models.Servicios;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.api.DatosVentajas;
 import com.example.co.com.revistaprotegemos.appprotegemos.werbserviceventajas.models.DataAdapterVentajas;
@@ -47,7 +46,7 @@ public class ServiciosActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private ArrayList<Servicios> data;
     private ArrayList<Planes> data2;
-    private DataAdapterservicios adapter;
+    private AdapterServicios adapter;
     private PlanesAdapter adapter2;
     private FragmentActivity f;
     private int offset;
@@ -121,20 +120,20 @@ public class ServiciosActivity extends AppCompatActivity {
                 .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        DatossApii request = retrofit.create(DatossApii.class);
-        Call<JSONResponseServicios> call = request.getJSON(co);
-        call.enqueue(new Callback<JSONResponseServicios>() {
+        ApiServicios request = retrofit.create(ApiServicios.class);
+        Call<JSONServicios> call = request.getJSON(co);
+        call.enqueue(new Callback<JSONServicios>() {
             @Override
-            public void onResponse(Call<JSONResponseServicios> call, Response<JSONResponseServicios> response) {
+            public void onResponse(Call<JSONServicios> call, Response<JSONServicios> response) {
 
-                JSONResponseServicios jsonResponse = response.body();
+                JSONServicios jsonResponse = response.body();
                 data = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapter = new DataAdapterservicios(data,getApplicationContext());
+                adapter = new AdapterServicios(data,getApplicationContext());
                 recyclerView.setAdapter(adapter);
             }
 
             @Override
-            public void onFailure(Call<JSONResponseServicios> call, Throwable t) {
+            public void onFailure(Call<JSONServicios> call, Throwable t) {
                 Log.d("Error",t.getMessage());
             }
         });
