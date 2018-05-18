@@ -31,7 +31,6 @@ import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsAct
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.RevistaProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.DataAdapterr;
@@ -340,7 +339,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         else if (id == R.id.revistpro) {
 
-            fragmentClass=RevistaProtegemos.class;
+            fragmentClass=EdicionesImpresasPrueba.class;
         }
         else if (id == R.id.ubic) {
 
@@ -469,7 +468,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     Fragment fragment = null;
 
-                    Class fragmentClass = RevistaProtegemos.class;
+                    Class fragmentClass = EdicionesImpresasPrueba.class;
                     try {
                         fragment = (Fragment) fragmentClass.newInstance();
                     } catch (Exception e) {
