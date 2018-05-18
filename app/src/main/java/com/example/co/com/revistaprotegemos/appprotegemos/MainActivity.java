@@ -42,8 +42,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
-    ArrayList<Pautas> listaPautas;
-    AdapterPautas recyclerAdaptador;
     private TextView mTextMessage;
     MaterialSearchView searchView;
     String[] list;
@@ -53,87 +51,17 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     boolean isOpen=false;
     ContactenosFragment fragment_two = null;
 
-/*
-    private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-            = new BottomNavigationView.OnNavigationItemSelectedListener() {
-
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            FragmentManager fragmentManager =getSupportFragmentManager();
-            FragmentTransaction transaction =fragmentManager.beginTransaction();
-            switch (item.getItemId()) {
-                case R.id.navigation_home:
-                    transaction.replace(R.id.flContentt,new PrincipalFragment()).commit();
-                    return true;
-                case R.id.navigation_dashboard:
-                    Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
-                    startActivity(intent);
-                    return true;
-                case R.id.llamar:
-*//*
-                    try {
-                        if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                            // TODO: Consider calling
-                            //    ActivityCompat#requestPermissions
-                            // here to request the missing permissions, and then overriding
-                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                            //                                          int[] grantResults)
-                            // to handle the case where the user grants the permission. See the documentation
-                            // for ActivityCompat#requestPermissions for more details.
-
-                        }
-                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:0327313100")));
-                    }catch(Exception e){
-                        e.printStackTrace();
-                    }
-*//*
-                    Intent llamar = new Intent(Intent.ACTION_CALL,Uri.parse("tel:0327313100"));
-                    if(ActivityCompat.checkSelfPermission(MainActivity.this,Manifest.permission.CALL_PHONE)!= PackageManager.PERMISSION_GRANTED)
-
-                    {
-                        // TODO: Consider calling
-                        //    ActivityCompat#requestPermissions
-                        // here to request the missing permissions, and then overriding
-                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                        //                                          int[] grantResults)
-                        // to handle the case where the user grants the permission. See the documentation
-                        // for ActivityCompat#requestPermissions for more details.
-
-
-                    }
-                        startActivity(llamar);
-
-                    return true;
-            }
-            return false;
-        }
-    };*/
-
-
-    //List<DataItem> lstData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         mTextMessage = (TextView) findViewById(R.id.message);
-/*        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);*/
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
         list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
                 "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
                 "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
         setSupportActionBar(toolbar);
-
-/*        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @SuppressLint("MissingPermission")
-            @Override
-            public void onClick(View view) {
-                Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
-                startActivity(intent);
-            }
-        });*/
 
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
