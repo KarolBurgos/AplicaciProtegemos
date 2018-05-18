@@ -30,12 +30,10 @@ import java.util.List;
  */
 
 public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolderN > {
-    private ViewGroup linearLayoutDetails;
-    private ImageView imageViewExpand;
-    private static final int DURATION = 250;
+
 
     SwipeRefreshLayout swipeRefreshLayout;
-    private ArrayList<Planes> android;
+    private ArrayList<Planes> planes;
     private Context context;
     private List<String> countries;
     private FragmentActivity myContext;
@@ -46,13 +44,11 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
     private FragmentActivity myContext2;
     private AdapterView.OnItemClickListener escucha;
 
-    public PlanesAdapter(ArrayList<Planes> android, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
-        this.android = android;
+    public PlanesAdapter(ArrayList<Planes> planes, Context context,FragmentActivity f,SwipeRefreshLayout swipeRefreshLayout) {
+        this.planes = planes;
         this.context = context;
-        this.escucha = escucha;
         this.myContext=f;
         this.swipeRefreshLayout=swipeRefreshLayout;
-        //this.sv = pSv;
     }
 
 
@@ -66,11 +62,11 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
 
     @Override
     public void onBindViewHolder(PlanesAdapter.ViewHolderN viewHolder, int i) {
-        viewHolder.tit.setText(android.get(i).getTitulo());
-        viewHolder.descr.setText(android.get(i).getDescripcion());
-        viewHolder.id.setText(android.get(i).getidString());
+        viewHolder.tit.setText(planes.get(i).getTitulo());
+        viewHolder.descr.setText(planes.get(i).getDescripcion());
+        viewHolder.id.setText(planes.get(i).getidString());
         Glide.with(context)
-                .load(android.get(i).getImg())
+                .load(planes.get(i).getImg())
                 .centerCrop()
                 .crossFade()
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
@@ -84,7 +80,6 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
         });
 
     }
-
 
     public class ViewHolderN extends RecyclerView.ViewHolder implements View.OnClickListener {
 
@@ -110,7 +105,6 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
             b1.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
 
-
                     final String edi1 = id.getText().toString();
                     int ed=Integer.parseInt(edi1);
 
@@ -118,49 +112,20 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                     myIntent.putExtra("param", edi1);
                     context.startActivity(myIntent);
 
-
                 }
             });
-
 
         }
 
         @Override
         public void onClick(View view) {
         }
-        public int obtenId()
-        {
-/*            String id_P=id.getText().toString();
-            return id_P;*/
-
-            return 3;
-        }
     }
 
-    public int  nuevo(View view,FragmentActivity f,Context context) {
-        /*        viewHolder.tit.setText(android.get(i).getTitulo());
-        viewHolder.descr.setText(android.get(i).getDescripcion());*/
-       /*     ViewHolderN viewHolderN =new ViewHolderN(view,f,context);
-           return  viewHolderN.obtenId();*/
-        return  1;
 
-
-    }
-    public void cambiarId(int valor)
-    {
-
-    }
-
-    public  int obtId()
-    {
-
-        int t = 2;
-
-        return t;
-    }
     @Override
     public int getItemCount() {
-        return android.size();
+        return planes.size();
     }
 
 

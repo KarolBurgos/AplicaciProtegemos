@@ -4,7 +4,7 @@ package com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.mode
  * Created by ASPIRE VX15 on 21/02/2018.
  */
 
-public class JSONResponse {
+public class JSONPlanes {
     private Planes[] android;
 
   public Planes[] getAndroid() {

@@ -2,7 +2,6 @@ package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
 import android.content.Context;
-import android.graphics.Typeface;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,16 +11,14 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.transition.Explode;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.DatosApi;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.JSONResponse;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.ApiPlanes;
+import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.JSONPlanes;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.PlanesAdapter;
 
@@ -87,20 +84,20 @@ public class PlanesFragment extends Fragment {
                 .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        DatosApi request = retrofit.create(DatosApi.class);
-        Call<JSONResponse> call = request.getJSON();
-        call.enqueue(new Callback<JSONResponse>() {
+        ApiPlanes request = retrofit.create(ApiPlanes.class);
+        Call<JSONPlanes> call = request.getJSON();
+        call.enqueue(new Callback<JSONPlanes>() {
             @Override
-            public void onResponse(Call<JSONResponse> call, Response<JSONResponse> response) {
+            public void onResponse(Call<JSONPlanes> call, Response<JSONPlanes> response) {
 
-                JSONResponse jsonResponse = response.body();
+                JSONPlanes jsonResponse = response.body();
                 dataPlanes = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterPlanes = new PlanesAdapter(dataPlanes, getContext(),myContext,swipeRefreshLayout);
                 recyclerView.setAdapter(adapterPlanes);
             }
 
             @Override
-            public void onFailure(Call<JSONResponse> call, Throwable t) {
+            public void onFailure(Call<JSONPlanes> call, Throwable t) {
                 Log.d("Error",t.getMessage());
             }
         });
