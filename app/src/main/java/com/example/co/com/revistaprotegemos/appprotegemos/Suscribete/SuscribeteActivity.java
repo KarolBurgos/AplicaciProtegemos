@@ -54,7 +54,6 @@ public class SuscribeteActivity extends AppCompatActivity {
     private Button b1;
     private String correo2, contraseña;
     private Session session;
-    TextView t1,t2,t3;
     private Typeface Nuestrosplanes,Aurella;
     @SuppressLint("NewApi")
     @Override
