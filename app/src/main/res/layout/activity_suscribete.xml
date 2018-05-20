@@ -180,12 +180,14 @@
                     <Button
                         android:id="@+id/env2"
                         style="@android:style/Widget.Button.Small"
-                        android:layout_width="wrap_content"
+                        android:layout_width="105dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_weight="1"
+                        android:background="#FF62B7C2"
                         android:gravity="center_vertical|center"
-                        android:text="Enviar solicitud" />
+                        android:text="Enviar solicitud"
+                        android:textColor="@color/colorNegro" />
                 </LinearLayout>
 
                 <LinearLayout
