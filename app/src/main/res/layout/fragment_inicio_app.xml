@@ -36,6 +36,11 @@
     </android.support.design.widget.AppBarLayout>
 
 
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/Swipe"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp">
 
         <android.support.v4.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -120,32 +125,30 @@
                                     android:layout_height="wrap_content"
                                     android:orientation="horizontal">
 
-                                    <TextView
-                                        android:id="@+id/textView22"
+                                    <Button
+                                        android:id="@+id/btnplanes"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:text="Nuestros Planes"
-                                        android:textStyle="bold" />
+                                        android:text="Nuestros planes"
+                                        android:textSize="10sp" />
 
-                                    <TextView
-                                        android:id="@+id/textView38"
+                                    <Button
+                                        android:id="@+id/btnsus"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:text="Quiero Suscribirme"
-                                        android:textStyle="bold" />
+                                        android:text="Quiero suscribirme"
+                                        android:textSize="10sp" />
 
-                                    <TextView
-                                        android:id="@+id/txquienes"
+                                    <Button
+                                        android:id="@+id/btnquien"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:layout_weight="1"
-                                        android:gravity="center"
-                                        android:text="Quienes Somos"
-                                        android:textStyle="bold" />
+                                        android:text="Quienes somos"
+                                        android:textSize="10sp" />
+
                                 </LinearLayout>
 
                             </LinearLayout>
@@ -167,37 +170,11 @@
                                 android:orientation="vertical">
 
                                 <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="match_parent"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:id="@+id/textView41"
-                                        android:layout_width="match_parent"
-                                        android:layout_height="wrap_content"
-                                        android:gravity="center"
-                                        android:text="Visite la Zona de Suscriptores"
-                                        android:textColor="@android:color/black"
-                                        android:textColorHint="@color/colorPrimary"
-                                        android:textStyle="bold" />
-
-                                </LinearLayout>
-
-                                <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:orientation="horizontal">
+                                    android:orientation="vertical">
 
-                                    <Button
-                                        android:id="@+id/button5"
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:layout_weight="1"
-                                        android:background="@drawable/register_buttonsty"
-                                        android:text="Ingresar"
-                                        android:textAllCaps="false" />
                                 </LinearLayout>
 
                                 <TextView
@@ -225,4 +202,5 @@
 
 
         </android.support.v4.widget.NestedScrollView>
+    </android.support.v4.widget.SwipeRefreshLayout>
 </android.support.design.widget.CoordinatorLayout>
