@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.MainActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -66,8 +67,18 @@ public class SplashScreen extends AppCompatActivity {
                         startActivity(new Intent(SplashScreen.this, MainActivity.class));
                 }
                 else
-                    startActivity(new Intent(SplashScreen.this, ValidacionNoHayInternet.class));
 
+                    //startActivity(new Intent(SplashScreen.this, ValidacionNoHayInternet.class));
+                {
+
+                    // Show No internet
+                    /*Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
+                    startActivity(intent);*/
+                    Toast toast = Toast.makeText(getApplicationContext(), "No se puede actualizar, Conecte Internet", Toast.LENGTH_SHORT);
+                    toast.show();
+                    startActivity(new Intent(SplashScreen.this, MainActivity.class));
+
+                }
             }
         },2000);
 

@@ -21,6 +21,7 @@ import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
@@ -108,8 +109,10 @@ public class InicioAppFragment extends Fragment {
                 } else {
 
                     // Show No internet
-                    Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
-                    startActivity(intent);
+                    /*Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
+                    startActivity(intent);*/
+                    Toast toast = Toast.makeText(getContext(), "No se puede actualizar, Conecte Internet", Toast.LENGTH_SHORT);
+                    toast.show();
 
                 }
 
