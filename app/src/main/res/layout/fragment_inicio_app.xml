@@ -123,31 +123,45 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
-                                    android:orientation="horizontal">
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
 
                                     <Button
                                         android:id="@+id/btnplanes"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_marginStart="10dp"
                                         android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
                                         android:text="Nuestros planes"
-                                        android:textSize="10sp" />
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
 
                                     <Button
                                         android:id="@+id/btnsus"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
                                         android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
                                         android:text="Quiero suscribirme"
-                                        android:textSize="10sp" />
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
 
                                     <Button
                                         android:id="@+id/btnquien"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
                                         android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
                                         android:text="Quienes somos"
-                                        android:textSize="10sp" />
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
 
                                 </LinearLayout>
 
