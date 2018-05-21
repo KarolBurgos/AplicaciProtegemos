@@ -106,8 +106,8 @@
                             style="@android:style/Widget.Button.Small"
                             android:layout_width="wrap_content"
                             android:layout_height="36dp"
-                            android:background="#FF62B7C2"
                             android:text="Enviar"
+                            android:background="@drawable/register_buttonsty"
                             android:textColor="@color/colorNegro" />
 
                         <TextView
