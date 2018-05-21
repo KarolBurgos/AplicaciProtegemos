@@ -24,7 +24,7 @@
 
     </android.support.design.widget.AppBarLayout>
     <!-- TODO: Update blank fragment layout -->
-    <LinearLayout
+<!--    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="20dp"
@@ -48,7 +48,7 @@
                     android:inputType="textMultiLine"
                     android:text="Planes Y Servicios"
                     android:textSize="18sp" />
-
+&lt;!&ndash;
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/recyy"
                     android:layout_width="match_parent"
@@ -58,7 +58,7 @@
                     android:layout_below="@+id/txt_titulo"
                     android:layout_marginTop="15dp"
                     tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="50dp" />
+                    tools:layout_editor_absoluteY="50dp" />&ndash;&gt;
 
                 <android.support.v7.widget.RecyclerView
                     android:id='@+id/recyventaja'
@@ -81,5 +81,107 @@
             </LinearLayout>
         </ScrollView>
 
-    </LinearLayout>
+    </LinearLayout>-->
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <!-- TODO: Update blank fragment layout -->
+        <!-- TODO: Update blank fragment layout -->
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textVie"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:gravity="center"
+                        android:inputType="textMultiLine"
+                        android:text="Servicios"
+                        android:textColor="@android:color/black"
+                        android:textStyle="normal|bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id='@+id/recyy'
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_below="@+id/txt_titulo"
+                        android:layout_marginTop="2dp"
+                        tools:layout_editor_absoluteX="50dp"
+                        tools:layout_editor_absoluteY="50dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginStart="10dp"
+                    android:background="#FFFFFFFF"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView53"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:text="Ventajas"
+                        android:textColor="@android:color/black"
+                        android:textStyle="bold" />
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id='@+id/recyventaja'
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentLeft="false"
+                        android:layout_alignParentStart="false"
+                        android:layout_below="@+id/txt_titulo"
+                        android:layout_marginTop="5dp"
+                        tools:layout_editor_absoluteX="50dp"
+                        tools:layout_editor_absoluteY="50dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViews45"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+        </android.support.v4.widget.NestedScrollView>
+
+
+    </android.support.design.widget.CoordinatorLayout>
 </LinearLayout>

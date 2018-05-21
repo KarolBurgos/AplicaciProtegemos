@@ -85,44 +85,11 @@ public class InicioFragment extends Fragment {
         facebook = (ImageButton) view.findViewById(R.id.facebook);
         twitter = (ImageButton) view.findViewById(R.id.twitter);
 
-        //Permite actualizar la pagina
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.Swipe);
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                NetworkInfo activeNetwork = ((ConnectivityManager) getActivity().getSystemService(Context.CONNECTIVITY_SERVICE)).getActiveNetworkInfo();
-                if (activeNetwork != null && activeNetwork.isConnectedOrConnecting()) {
 
-                    // Load Webview
-                    Fragment fragment = null;
-                    Class fragmentClass = PrincipalFragment.class;
-                    try {
-                        fragment = (Fragment) fragmentClass.newInstance();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    FragmentManager fragmentManager = myContext.getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
 
-                } else {
-
-                    // Show No internet
-                    Intent intent = new Intent(getActivity().getApplication(), ValidacionNoHayInternet.class);
-                    startActivity(intent);
-
-                }
-
-                new Handler().postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        swipeRefreshLayout.setRefreshing(false);
-                    }
-                }, 4000);
-            }
-        });
 
         //Listado de pautas
-/*        recyclerViewPautas = (RecyclerView) view.findViewById(R.id.recyclerVieww);
+        recyclerViewPautas = (RecyclerView) view.findViewById(R.id.recyclerVieww);
         recyclerViewPautas.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewPautas.setLayoutManager(layoutManager);
@@ -133,7 +100,7 @@ public class InicioFragment extends Fragment {
         recyclerViewJornadas.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewJornadas.setLayoutManager(layoutManager2);
-        loadJSONJornadas();*/
+        loadJSONJornadas();
         bsuscr = (Button) view.findViewById(R.id.btonsuscribirme);
 
         return view;
@@ -175,7 +142,7 @@ public class InicioFragment extends Fragment {
     //Metodo para cargar las jPautas , llamand a la interfaz api y al adaptador
     private void loadJSONPautas() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiPautas request = retrofit.create(ApiPautas.class);
@@ -201,7 +168,7 @@ public class InicioFragment extends Fragment {
     //Metodo para cargar Jornadas
     private void loadJSONJornadas() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiJornadas request = retrofit.create(ApiJornadas.class);

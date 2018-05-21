@@ -81,7 +81,7 @@ public class PlanesFragment extends Fragment {
     //Metodo para conecta el JSON con la interface api
     private void loadJSON(){
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.0.17")
+                .baseUrl("http://181.62.161.60")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ApiPlanes request = retrofit.create(ApiPlanes.class);

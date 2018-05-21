@@ -184,7 +184,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
                         android:layout_weight="1"
-                        android:background="#FF62B7C2"
+                        android:background="#FFBFD8DB"
                         android:gravity="center_vertical|center"
                         android:text="Enviar solicitud"
                         android:textColor="@color/colorNegro" />

@@ -62,12 +62,7 @@ public class DataAdapterVentajas extends RecyclerView.Adapter<DataAdapterVentaja
             ti = (TextView)view.findViewById(R.id.titulo1);
             desc = (TextView)view.findViewById(R.id.descripcion);
 
-            String fuente ="fuentes/Dehasta Momentos Regular.otf";
-            this.Color = Typeface.createFromAsset(context.getAssets(),fuente);
 
-            ti.setTypeface(Color);
-
-            desc.setTypeface(Color);
         }
     }
 }

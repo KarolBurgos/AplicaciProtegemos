@@ -32,6 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"></android.support.v7.widget.Toolbar>
 
+
         </android.support.design.widget.CollapsingToolbarLayout>
     </android.support.design.widget.AppBarLayout>
 
@@ -47,6 +48,11 @@
             android:layout_height="match_parent"
             app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
+
+
+
+
+
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,13 +62,22 @@
                 <android.support.design.widget.CoordinatorLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
+                    <ScrollView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center|end"
                         android:orientation="vertical">
 
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -109,10 +124,11 @@
                                         android:layout_width="113dp"
                                         android:layout_height="120dp" />
 
-                                    <pl.droidsonroids.gif.GifImageView
-                                        android:layout_width="113dp"
+                                    <ImageView
+                                        android:id="@+id/imageView7"
+                                        android:layout_width="117dp"
                                         android:layout_height="120dp"
-                                        android:src="@drawable/picincio" />
+                                        android:background="@drawable/gastroimg" />
 
                                     <pl.droidsonroids.gif.GifImageView
                                         android:id="@+id/iges2"
@@ -170,6 +186,29 @@
 
                         </android.support.v7.widget.CardView>
 
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rec"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="false"
+                            android:layout_alignParentStart="false"
+                            android:layout_below="@+id/txt_titulo"
+                            tools:layout_editor_absoluteX="50dp"
+                            tools:layout_editor_absoluteY="50dp" >
+
+                        </android.support.v7.widget.RecyclerView>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/recedr"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentLeft="false"
+                            android:layout_alignParentStart="false"
+                            android:layout_below="@+id/txt_titulo"
+                            android:layout_marginTop="5dp"
+                            tools:layout_editor_absoluteX="50dp"
+                            tools:layout_editor_absoluteY="50dp" />
+
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -204,11 +243,14 @@
                                     android:gravity="center"
                                     android:text="Carrera 36 Nº 19-93 Barrio Palermo - Teléfono: 731 3100 - Celular: 315 411 4537" />
 
+
+
                             </LinearLayout>
                         </LinearLayout>
 
-
                     </LinearLayout>
+                    </ScrollView>
+
 
                 </android.support.design.widget.CoordinatorLayout>
 

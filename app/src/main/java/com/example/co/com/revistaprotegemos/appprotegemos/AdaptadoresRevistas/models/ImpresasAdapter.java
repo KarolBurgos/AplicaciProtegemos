@@ -244,7 +244,7 @@ public class ImpresasAdapter extends RecyclerView.Adapter<ImpresasAdapter.ViewHo
 
 
         }
-       // holder.img.setImageResource(ed.getImg());
+        // holder.img.setImageResource(ed.getImg());
     }
 
 

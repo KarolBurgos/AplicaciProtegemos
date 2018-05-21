@@ -187,20 +187,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.addPolyline(new PolylineOptions().add(
 
                     sydney,
-                    new LatLng(1.226357,-77.2831371),
-                   /* new LatLng(1.2159169, -77.2863711),*/
+/*                    new LatLng(1.226357,-77.2831371),
+                   *//* new LatLng(1.2159169, -77.2863711),*//*
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0030),
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0020),
                     new LatLng(loc.getLatitude()-0.0010,loc.getLongitude()),
                     //new LatLng(1.2211775, -77.2818178),
- /*
+ *//*
                     new LatLng(1.223914, -77.28420840000001),
                     new LatLng(1.2115655, -77.27668670000003),
-                    new LatLng(loc.getLatitude()-0.001, loc.getLongitude()-77.2837399-0.001),*/
+                    new LatLng(loc.getLatitude()-0.001, loc.getLongitude()-77.2837399-0.001),*//*
                     new LatLng(loc.getLatitude()-0.0005,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000010,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000005,loc.getLongitude()),
-                    new LatLng(loc.getLatitude()-0.000001,loc.getLongitude()),
+                    new LatLng(loc.getLatitude()-0.000001,loc.getLongitude()),*/
                     new LatLng(loc.getLatitude(),loc.getLongitude())
             )
                     .width(10)

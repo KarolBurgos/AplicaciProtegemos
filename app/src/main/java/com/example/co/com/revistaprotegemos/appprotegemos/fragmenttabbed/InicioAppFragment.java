@@ -14,28 +14,45 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.widget.SwipeRefreshLayout;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterViewFlipper;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.APIImpresasPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.AdapterImpresasPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.ImpresasPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.JSOnImpresasPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.APIDigitalesPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.AdapterDigitalesPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.DigitalesPrueba;
+import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.JSONDigitalesPrueba;
 import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadoresRevistas.WebViewAbrirPaginasUrl;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.validacionnohayinternet.ValidacionNoHayInternet;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.PautasLeerActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.models.Planes;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 import pl.droidsonroids.gif.GifImageView;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 /**
@@ -43,6 +60,13 @@ import pl.droidsonroids.gif.GifImageView;
  */
 public class InicioAppFragment extends Fragment {
 
+    private RecyclerView recyclerViewImp;
+    private ArrayList<ImpresasPrueba> dataImprP;
+    private AdapterImpresasPrueba adapterImp;
+
+    private RecyclerView recyclerView;
+    private ArrayList<DigitalesPrueba> dataDig;
+    private AdapterDigitalesPrueba adapterDig;
 
     private FragmentActivity myContext;
     private TextView quienes_somos;
@@ -67,10 +91,19 @@ public class InicioAppFragment extends Fragment {
         getActivity().getWindow().setStatusBarColor(ContextCompat.getColor(getContext(),
                 R.color.colorPrimaryDark));
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
-        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/tarjetas.gif").into(new GlideDrawableImageViewTarget(givImageView));
+        Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/Imagenes_mauricio/Gastro_mayo-01.jpg").into(new GlideDrawableImageViewTarget(givImageView));
 
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
+
+        ImageView im1=view.findViewById(R.id.imageView7);
+
+        Glide.with(this)
+                .load("http://www.revistaprotegemos.com.co/imagenesaplicativo/Imagenes_mauricio/Miniatura_gastro.jpg")
+                .centerCrop()
+                .crossFade()
+                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                .into(im1);
 
         btnQuienes=(Button)view.findViewById(R.id.btnquien);
         btnnuestrplanes=(Button)view.findViewById(R.id.btnplanes);
@@ -124,6 +157,20 @@ public class InicioAppFragment extends Fragment {
                 }, 4000);
             }
         });
+
+/*        recyclerViewImp = (RecyclerView)view.findViewById(R.id.rec);
+        recyclerViewImp.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL, false);
+        recyclerViewImp.setLayoutManager(layoutManager);
+        loadJSONImpresas();
+
+
+        recyclerView = (RecyclerView) view.findViewById(R.id.recedr);
+        recyclerView.setHasFixedSize(true);
+        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager2);
+        loadJSONDigitales();*/
+
         return view;
     }
 
@@ -182,6 +229,55 @@ public class InicioAppFragment extends Fragment {
             public void onClick(View view) {
                 Intent intent=new Intent (getContext(),SuscribeteActivity.class);
                 startActivity(intent);
+            }
+        });
+    }
+
+
+    private void loadJSONImpresas() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.43.73")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        APIImpresasPrueba request = retrofit.create(APIImpresasPrueba.class);
+        Call<JSOnImpresasPrueba> call = request.getJSON();
+        call.enqueue(new Callback<JSOnImpresasPrueba>() {
+            @Override
+            public void onResponse(Call<JSOnImpresasPrueba> call, Response<JSOnImpresasPrueba> response) {
+
+                JSOnImpresasPrueba jsonResponse = response.body();
+                dataImprP = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapterImp = new AdapterImpresasPrueba(dataImprP, getContext());
+                recyclerViewImp.setAdapter(adapterImp);
+            }
+
+            @Override
+            public void onFailure(Call<JSOnImpresasPrueba> call, Throwable t) {
+                Log.d("Error", t.getMessage());
+            }
+        });
+    }
+
+    private void loadJSONDigitales() {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl("http://192.168.43.73")
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        APIDigitalesPrueba request = retrofit.create(APIDigitalesPrueba.class);
+        Call<JSONDigitalesPrueba> call = request.getJSON();
+        call.enqueue(new Callback<JSONDigitalesPrueba>() {
+            @Override
+            public void onResponse(Call<JSONDigitalesPrueba> call, Response<JSONDigitalesPrueba> response) {
+
+                JSONDigitalesPrueba jsonResponse = response.body();
+                dataDig = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
+                adapterDig = new AdapterDigitalesPrueba(dataDig, getContext());
+                recyclerView.setAdapter(adapterDig);
+            }
+
+            @Override
+            public void onFailure(Call<JSONDigitalesPrueba> call, Throwable t) {
+                Log.d("Error", t.getMessage());
             }
         });
     }
