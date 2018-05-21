@@ -116,29 +116,35 @@
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
                                     android:gravity="center"
                                     android:orientation="horizontal">
 
                                     <pl.droidsonroids.gif.GifImageView
                                         android:id="@+id/iges1"
-                                        android:layout_width="113dp"
+                                        android:layout_width="117dp"
                                         android:layout_height="120dp" />
 
-                                    <ImageView
+                                    <pl.droidsonroids.gif.GifImageView
                                         android:id="@+id/imageView7"
-                                        android:layout_width="117dp"
+                                        android:layout_width="121dp"
                                         android:layout_height="120dp"
-                                        android:background="@drawable/gastroimg" />
+                                        android:layout_marginEnd="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:src="@drawable/picincio" />
 
                                     <pl.droidsonroids.gif.GifImageView
                                         android:id="@+id/iges2"
-                                        android:layout_width="113dp"
-                                        android:layout_height="120dp" />
+                                        android:layout_width="115dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginEnd="5dp" />
                                 </LinearLayout>
 
                                 <LinearLayout
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
                                     android:orientation="horizontal"
                                     android:paddingBottom="5dp">
 
@@ -146,6 +152,7 @@
                                         android:id="@+id/btnplanes"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
                                         android:layout_marginEnd="10dp"
                                         android:layout_marginStart="10dp"
                                         android:layout_weight="1"
