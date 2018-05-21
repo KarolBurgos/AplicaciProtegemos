@@ -1,6 +1,7 @@
 package com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed;
 
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
@@ -83,7 +84,10 @@ public class InicioFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
 
-
+        final ProgressDialog progressDialog = new ProgressDialog(getContext());
+        progressDialog.setIcon(R.mipmap.ic_launcher);
+        progressDialog.setMessage("Cargando...");
+        progressDialog.show();
 
 
 
@@ -93,6 +97,9 @@ public class InicioFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewPautas.setLayoutManager(layoutManager);
         loadJSONPautas();
+        progressDialog.dismiss();
+
+
 
         //Listado de jornadas
         recyclerViewJornadas = (RecyclerView) view.findViewById(R.id.recyclerVieew);
@@ -100,6 +107,7 @@ public class InicioFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewJornadas.setLayoutManager(layoutManager2);
         loadJSONJornadas();
+        progressDialog.dismiss();
         bsuscr = (Button) view.findViewById(R.id.btonsuscribirme);
 
         return view;

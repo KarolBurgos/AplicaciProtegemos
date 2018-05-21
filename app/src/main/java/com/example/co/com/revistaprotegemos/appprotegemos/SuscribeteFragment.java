@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +51,13 @@ public class SuscribeteFragment extends Fragment {
     private Button b1;
     private String correo2, contraseña;
     private Session session;
+    private FragmentActivity myContext;
 
+
+    public void onAttach(Context activity) {
+        myContext=(FragmentActivity) activity;
+        super.onAttach(activity);
+    }
     public SuscribeteFragment() {
         // Required empty public constructor
     }
@@ -61,15 +68,16 @@ public class SuscribeteFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_suscribete, container, false);
-        nombre = (EditText) view.findViewById(R.id.nom);
-        identificacion = (EditText) view.findViewById(R.id.iden);
-        ciudad = (EditText) view.findViewById(R.id.ciu);
-        barrio = (EditText) view.findViewById(R.id.bar);
-        direccion = (EditText) view.findViewById(R.id.dire);
-        telefono = (EditText) view.findViewById(R.id.tel);
-        correo = (EditText) view.findViewById(R.id.corre);
+        View contenedor = (View) container.getParent();
+        nombre = (EditText) view.findViewById(R.id.nomS);
+        identificacion = (EditText) view.findViewById(R.id.idenS);
+        ciudad = (EditText) view.findViewById(R.id.ciuS);
+        barrio = (EditText) view.findViewById(R.id.barS);
+        direccion = (EditText) view.findViewById(R.id.direS);
+        telefono = (EditText) view.findViewById(R.id.telS);
+        correo = (EditText) view.findViewById(R.id.correS);
 
-        b1=(Button)view.findViewById(R.id.env2);
+        b1=(Button)view.findViewById(R.id.env2S);
         correo2="protegemossistemas@gmail.com";
         contraseña="sistemasprotegemos123";
 

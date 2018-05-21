@@ -4,12 +4,15 @@ import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -97,20 +100,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
                /* animateFab();*/
-                try {
-                    if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                        // TODO: Consider calling
-                        //    ActivityCompat#requestPermissions
-                        // here to request the missing permissions, and then overriding
-                        //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                        //                                          int[] grantResults)
-                        // to handle the case where the user grants the permission. See the documentation
-                        // for ActivityCompat#requestPermissions for more details.
+                int permissionCheck = ContextCompat.checkSelfPermission(
+                        getApplicationContext(), Manifest.permission.CALL_PHONE);
+                if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                    Log.i("Mensaje", "No se tiene permiso para realizar llamadas telefónicas.");
+                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 225);
+                } else {
+                    Log.i("Mensaje", "Se tiene permiso para realizar llamadas!");
+                }
 
+                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                    if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                        // Se tiene permiso
+                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:0327313100")));
+                    }else{
+                        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CODE_ASK_PERMISSIONS);
+                        return;
                     }
-                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:0327313100")));
-                }catch(Exception e){
-                    e.printStackTrace();
+                }else{
+                    // No se necesita requerir permiso OS menos a 6.0.
                 }
                 animateFab();
             }
@@ -194,6 +202,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
     }
 
+    final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
+
+
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -203,20 +215,25 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.llamar)
         {
-            try {
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    // TODO: Consider calling
-                    //    ActivityCompat#requestPermissions
-                    // here to request the missing permissions, and then overriding
-                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                    //                                          int[] grantResults)
-                    // to handle the case where the user grants the permission. See the documentation
-                    // for ActivityCompat#requestPermissions for more details.
+            int permissionCheck = ContextCompat.checkSelfPermission(
+                    this, Manifest.permission.CALL_PHONE);
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                Log.i("Mensaje", "No se tiene permiso para realizar llamadas telefónicas.");
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 225);
+            } else {
+                Log.i("Mensaje", "Se tiene permiso para realizar llamadas!");
+            }
 
+            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    // Se tiene permiso
+                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
+                }else{
+                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CODE_ASK_PERMISSIONS);
+                    return true;
                 }
-                startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
-            }catch(Exception e){
-                e.printStackTrace();
+            }else{
+                // No se necesita requerir permiso OS menos a 6.0.
             }
         }
         else if (id == R.id.nues) {
