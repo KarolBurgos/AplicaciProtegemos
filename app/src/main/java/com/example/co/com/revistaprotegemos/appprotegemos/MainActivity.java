@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
@@ -28,6 +29,7 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
@@ -123,6 +125,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 animateFab();
             }
         });
+
+
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -447,7 +451,21 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case REQUEST_CODE_ASK_PERMISSIONS:
+                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                    // El usuario acepto los permisos.
+                    Toast.makeText(this, "Gracias, aceptaste los permisos requeridos para el correcto funcionamiento de esta aplicación.", Toast.LENGTH_SHORT).show();
+                }else{
+                    // Permiso denegado.
+                    Toast.makeText(this, "No se aceptó permisos", Toast.LENGTH_SHORT).show();
+                }
+            default:
+                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        }
+    }
 
 
 
