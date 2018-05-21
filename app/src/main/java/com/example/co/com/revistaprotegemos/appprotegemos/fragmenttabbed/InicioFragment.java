@@ -82,8 +82,7 @@ public class InicioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
-        facebook = (ImageButton) view.findViewById(R.id.facebook);
-        twitter = (ImageButton) view.findViewById(R.id.twitter);
+
 
 
 
@@ -121,22 +120,7 @@ public class InicioFragment extends Fragment {
 
             }
         });
-        facebook.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
-                myIntent.putExtra("direccion", "www.facebook.com/Grupo-Editorial-Protegemos-1810118702587250/?view_public_for=1810118702587250");
-                startActivity(myIntent);
-            }
-        });
-        twitter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(getContext(), WebViewAbrirPaginasUrl.class);
-                myIntent.putExtra("direccion", "twitter.com/citas_grupo");
-                startActivity(myIntent);
-            }
-        });
+
     }
 
     //Metodo para cargar las jPautas , llamand a la interfaz api y al adaptador
