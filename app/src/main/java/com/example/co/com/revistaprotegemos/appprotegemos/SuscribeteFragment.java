@@ -3,10 +3,12 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.support.annotation.Nullable;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AlertDialog;
@@ -15,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
@@ -46,45 +49,46 @@ import javax.mail.internet.MimeMessage;
  */
 public class SuscribeteFragment extends Fragment {
 
+    private AppBarLayout appBar;
+
     private EditText nombre,identificacion,ciudad,barrio,direccion,telefono,correo;
-    private String nomb,iden,ciud,barr,direc,telef,correoo;
-    private Button b1;
+    private String nomb,iden,ciud,barr,dirr,tele,corr;
+    private Button b1, ubi;
     private String correo2, contraseña;
-    private Session session;
     private FragmentActivity myContext;
+    private Session session;
+    TextView t1, t2, t3, t4;
 
-
-    public void onAttach(Context activity) {
-        myContext=(FragmentActivity) activity;
-        super.onAttach(activity);
-    }
     public SuscribeteFragment() {
         // Required empty public constructor
     }
 
 
-    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View view= inflater.inflate(R.layout.fragment_suscribete, container, false);
+        View view = inflater.inflate(R.layout.fragment_suscribete, container, false);
         View contenedor = (View) container.getParent();
-        nombre = (EditText) view.findViewById(R.id.nomS);
-        identificacion = (EditText) view.findViewById(R.id.idenS);
-        ciudad = (EditText) view.findViewById(R.id.ciuS);
-        barrio = (EditText) view.findViewById(R.id.barS);
-        direccion = (EditText) view.findViewById(R.id.direS);
-        telefono = (EditText) view.findViewById(R.id.telS);
-        correo = (EditText) view.findViewById(R.id.correS);
+        nombre = (EditText) view.findViewById(R.id.edno);
+        identificacion=(EditText)view.findViewById(R.id.ide);
+        ciudad =(EditText)view.findViewById(R.id.ci);
+        barrio = (EditText)view.findViewById(R.id.barr);
+        direccion= (EditText)view.findViewById(R.id.di);
+        telefono = (EditText)view.findViewById(R.id.telef);
+        correo = (EditText) view.findViewById(R.id.edco);
 
-        b1=(Button)view.findViewById(R.id.env2S);
-        correo2="protegemossistemas@gmail.com";
-        contraseña="sistemasprotegemos123";
-
+        //ubi=(Button)view.findViewById(R.id.buttonubi);
+        b1 = (Button) view.findViewById(R.id.buttenviasus);
+        correo2 = "protegemossistemas@gmail.com";
+        contraseña = "sistemasprotegemos123";
+        appBar = (AppBarLayout) contenedor.findViewById(R.id.appbar);
+        appBar.removeView(view);
+        appBar.setBackgroundColor(Color.parseColor("#FFCE6E98"));
 
 
         return view;
     }
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -99,33 +103,23 @@ public class SuscribeteFragment extends Fragment {
         });
     }
 
-
-
     public void saveInfo() {
         nomb = nombre.getText().toString();
-        iden = identificacion.getText().toString();
-        ciud = ciudad.getText().toString();
-        barr = barrio.getText().toString();
-        direc = direccion.getText().toString();
-        telef = telefono.getText().toString();
-        correoo = correo.getText().toString();
-
-        if(nomb.equals("")&&iden.equals("")&&ciud.equals("")&&barr.equals("")&&direc.equals("")&&telef.equals("")&&correoo.equals(""))
-        {
-            Toast toast1 =Toast.makeText(getContext().getApplicationContext(),"Completar campos vacios", Toast.LENGTH_SHORT);
+        iden=identificacion.getText().toString();
+        ciud =ciudad.getText().toString();
+        barr=barrio.getText().toString();
+        tele=telefono.getText().toString();
+        corr=correo.getText().toString();
+        if (nomb.equals("") && iden.equals("") && ciud.equals("") && barr.equals("") && tele.equals("") && corr.equals("")) {
+            Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Completar campos vacios", Toast.LENGTH_SHORT);
             toast1.show();
         }
-        if(nomb.equals("")||iden.equals("")||ciud.equals("")||barr.equals("")||direc.equals("")||telef.equals("")||correoo.equals(""))
-        {
-            Toast toast1 =Toast.makeText(getActivity().getApplicationContext(),"Completar campos vacios", Toast.LENGTH_SHORT);
+        if (nomb.equals("") && iden.equals("") && ciud.equals("") && barr.equals("") && tele.equals("") && corr.equals("")) {
+            Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Completar campos vacios", Toast.LENGTH_SHORT);
             toast1.show();
-        }
-        else {
+        } else {
 
             String type = "registro";
-            BackgroundWorker backgroundTask = new BackgroundWorker(this);
-            backgroundTask.execute(type, nomb, iden, ciud, barr, direc, telef, correoo);
-
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Properties properties = new Properties();
@@ -148,11 +142,8 @@ public class SuscribeteFragment extends Fragment {
                     Message message = new MimeMessage(session);
                     message.setFrom(new InternetAddress(correo2));
                     message.setSubject("Protegemos");
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(correoo));
-                    message.setContent("Nombre: " + nombre.getText().toString() + "\n" + "Identificacion:  " + identificacion.getText().toString() +
-                            "\n" + "Ciudad:  " + ciudad.getText().toString() + "\n" + "Barrio:  " +
-                            barrio.getText().toString() + "\n" + "Direccion:  " + direccion.getText().toString() +
-                            "\n" + "Telefono:  " + telefono.getText().toString() + "\n" + "Correo:  " + correo.getText().toString(), "text/html; charset=utf-8");
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(corr));
+                    message.setContent("Nombre: " + nombre.getText().toString() + "\n" + "Correo:  " + correo.getText().toString() + "\n" + "Identificacion:  " + identificacion.getText().toString() + "\n" + "Ciudad:  " + ciudad.getText().toString()+ "Barrio:  " + barrio.getText().toString()+ "Telefono:  " + telefono.getText().toString(), "text/html; charset=utf-8");
                     Transport.send(message);
                     Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Registrado", Toast.LENGTH_SHORT);
                     toast1.show();
@@ -162,70 +153,5 @@ public class SuscribeteFragment extends Fragment {
                 e.printStackTrace();
             }
         }
-
-    }
-
-    public class BackgroundWorker extends AsyncTask<String,Void,String> {
-
-
-        SuscribeteFragment context;
-
-        AlertDialog alertDialog;
-        BackgroundWorker(SuscribeteFragment ctx)
-        {
-            context=ctx;
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            String type=params[0];
-            String regis_url="192.168.0.17/aplicacionprotegemos/registrosuscribirse.php";
-            if(type.equals("registro"))
-            {
-                try{
-                    String nombr=params[1];
-                    String corre=params[2];
-                    String celul=params[3];
-                    String msg=params[4];
-                    URL url= new URL(regis_url);
-                    HttpURLConnection httpURLConnection =(HttpURLConnection)url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoOutput(true);
-                    httpURLConnection.setDoInput(true);
-                    OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                    String post_data= URLEncoder.encode("nombre","UTF-8")+"="+URLEncoder.encode(nombr,"UTF-8")+"&"
-                            +URLEncoder.encode("correo","UTF-8")+"="+URLEncoder.encode(corre,"UTF-8")+"&"
-                            + URLEncoder.encode("celular","UTF-8")+"="+URLEncoder.encode(celul,"UTF-8")+"&"
-                            + URLEncoder.encode("mensaje","UTF-8")+"="+URLEncoder.encode(msg,"UTF-8");
-                    bufferedWriter.write(post_data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    outputStream.close();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
-                    String result="";
-                    String line="";
-                    while ((line=bufferedReader.readLine())!=null)
-                    {
-                        result +=line;
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return result;
-
-                }
-                catch (MalformedURLException e)
-                {
-                    e.printStackTrace();
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
-
-
     }
 }

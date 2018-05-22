@@ -1,209 +1,215 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.SuscribeteFragment">
+    android:background="#FFFFFFFF"
+    tools:context="com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        app:layout_behavior="android.support.design.widget.AppBarLayout$ScrollingViewBehavior">
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            tools:context="com.example.karolb.protegemosapp.contactenosFragment">
 
+
+            <!-- TODO: Update blank fragment layout -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
-
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
 
                     android:background="#FFFFFFFF"
+                    android:gravity="center"
                     android:orientation="vertical">
+
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginEnd="15dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginTop="20dp"
+                        android:layout_marginTop="30dp"
                         android:gravity="center"
                         android:orientation="vertical">
 
-                        <LinearLayout
+                        <TextView
+                            android:id="@+id/textView25"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginTop="15dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:gravity="center"
-                            android:orientation="vertical">
+                            android:text="Suscribete"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
 
-                            <TextView
-                                android:id="@+id/textView25"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="center"
-                                android:text="Suscribete"
-                                android:textSize="24sp"
-                                android:textStyle="bold" />
+                        <TextView
+                            android:id="@+id/textView26"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Queremos hacerte las cosas fáciles, déjanos tus datos y un asesor se comunicará contigo." />
 
-                            <TextView
-                                android:id="@+id/textView2"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:autoSizeMinTextSize="?android:attr/secondaryContentAlpha"
-                                android:elegantTextHeight="false"
-                                android:gravity="center"
-                                android:text="Queremos hacerte las cosas fáciles, déjanos tus datos y un asesor se comunicará contigo."
-                                android:textSize="14sp" />
-
-                        </LinearLayout>
+                        <EditText
+                            android:id="@+id/edno"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:ems="10"
+                            android:gravity="center"
+                            android:hint="Nombre"
+                            android:inputType="textPersonName" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
+                            android:orientation="horizontal">
 
                             <EditText
-                                android:id="@+id/nomS"
+                                android:id="@+id/ide"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:layout_weight="1"
-                                android:autoLink="none|web|email|phone|map|all"
                                 android:ems="10"
-                                android:fadingEdge="horizontal"
                                 android:gravity="center"
-                                android:hint="Nombre"
-                                android:inputType="textPersonName"
-                                android:scrollbars="none"
-                                android:textSize="18sp" />
+                                android:hint="Identificación"
+                                android:inputType="textPersonName" />
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/idenS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Identificación"
-                                    android:inputType="textPersonName" />
-
-                                <EditText
-                                    android:id="@+id/ciuS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Ciudad"
-                                    android:inputType="textPersonName" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/barS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Barrio"
-                                    android:inputType="textPersonName" />
-
-                                <EditText
-                                    android:id="@+id/direS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Dirección"
-                                    android:inputType="textPersonName" />
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:orientation="horizontal">
-
-                                <EditText
-                                    android:id="@+id/telS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Telefono"
-                                    android:inputType="textPersonName" />
-
-                                <EditText
-                                    android:id="@+id/correS"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_weight="1"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:hint="Correo Electronico"
-                                    android:inputType="textPersonName" />
-                            </LinearLayout>
-
-
-                            <TextView
-                                android:id="@+id/textView4"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center"
-                                android:text="Al enviar esta solicitud, acepto la politica de privacidad y manejo de datos de Protegemos G.C." />
-
-                            <Button
-                                android:id="@+id/env2S"
-                                style="@android:style/Widget.Button.Small"
-                                android:layout_width="105dp"
+                            <EditText
+                                android:id="@+id/ci"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginTop="15dp"
                                 android:layout_weight="1"
-                                android:background="@drawable/register_buttonsty"
-                                android:gravity="center_vertical|center"
-                                android:text="Enviar solicitud"
-                                android:textColor="@color/colorNegro" />
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Ciudad"
+                                android:inputType="textPersonName" />
+
                         </LinearLayout>
 
                         <LinearLayout
-                            android:layout_width="307dp"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:orientation="vertical">
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
+                            <EditText
+                                android:id="@+id/barr"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Barrio"
+                                android:inputType="textPersonName" />
 
-                            <TextView
-                                android:id="@+id/textView49"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content" />
+                            <EditText
+                                android:id="@+id/di"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Dirección"
+                                android:inputType="textPersonName" />
                         </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/telef"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Telefono"
+                                android:inputType="textPersonName" />
+
+                            <EditText
+                                android:id="@+id/edco"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:hint="Correo"
+                                android:inputType="textPersonName" />
+                        </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/textView4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Al enviar esta solicitud, acepto la politica de privacidad y manejo de datos de Protegemos G.C." />
+
+                        <Button
+                            android:id="@+id/buttenviasus"
+                            style="@android:style/Widget.Button.Small"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:background="@drawable/register_buttonsty"
+                            android:text="Enviar"
+                            android:textColor="@color/colorNegro" />
+
+                        <TextView
+                            android:id="@+id/textView28"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center" />
+
+                        <!--                        <Button
+                            android:id="@+id/buttonubi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Button" />-->
+
+                        <!--                        <Button
+                            android:id="@+id/close"
+                            android:layout_width="wrap_content"
+                            android:layout_height="37dp"
+                            android:background="@drawable/register_button"
+                            android:text="Ubicación" />-->
+
+                        <TextView
+                            android:id="@+id/textView36"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" />
+
                     </LinearLayout>
+
+
+                    <TextView
+                        android:id="@+id/textView47"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/textView48"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
 
                 </LinearLayout>
 
             </ScrollView>
+
         </FrameLayout>
+
     </android.support.v4.widget.NestedScrollView>
 
 </LinearLayout>

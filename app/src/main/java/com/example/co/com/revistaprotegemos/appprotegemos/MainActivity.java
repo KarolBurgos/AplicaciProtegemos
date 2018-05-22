@@ -265,26 +265,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         if (id == R.id.llamar)
         {
-            int permissionCheck = ContextCompat.checkSelfPermission(
-                    this, Manifest.permission.CALL_PHONE);
-            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                Log.i("Mensaje", "No se tiene permiso para realizar llamadas telefónicas.");
-                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.CALL_PHONE}, 225);
-            } else {
-                Log.i("Mensaje", "Se tiene permiso para realizar llamadas!");
-            }
 
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                    // Se tiene permiso
-                    startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + 0327313100)));
-                }else{
-                    ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CODE_ASK_PERMISSIONS);
-                    return true;
-                }
-            }else{
-                // No se necesita requerir permiso OS menos a 6.0.
-            }
         }
         else if (id == R.id.nues) {
 
