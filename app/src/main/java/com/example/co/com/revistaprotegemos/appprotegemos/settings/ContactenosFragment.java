@@ -87,7 +87,7 @@ public class ContactenosFragment extends Fragment {
     }
 
 
-    @Override
+   @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
@@ -118,9 +118,6 @@ public class ContactenosFragment extends Fragment {
         else {
 
             String type = "registro";
-            BackgroundWorker backgroundTask = new BackgroundWorker(this);
-            backgroundTask.execute(type, nomb, corre, celu, mens);
-
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);
             Properties properties = new Properties();
@@ -155,74 +152,9 @@ public class ContactenosFragment extends Fragment {
             }
         }
     }
-    LinearLayout llShowView = null;
-    public void onBackPressed() {
-        if (llShowView.getVisibility() == View.VISIBLE) {
-            llShowView.setVisibility(View.GONE);
-        } else {
-            getActivity().finish();
-        }
-    }
-    public class BackgroundWorker extends AsyncTask<String,Void,String>{
 
-        ContactenosFragment context;
-        AlertDialog alertDialog;
-        BackgroundWorker(ContactenosFragment ctx)
-        {
-            context=ctx;
-        }
-        @Override
-        protected String doInBackground(String... params) {
-            String type=params[0];
-            String regis_url="192.168.0.17/registro.php";
-            if(type.equals("registro"))
-            {
-                try{
-                    String nombr=params[1];
-                    String corre=params[2];
-                    String celul=params[3];
-                    String msg=params[4];
-                    URL url= new URL(regis_url);
-                    HttpURLConnection httpURLConnection =(HttpURLConnection)url.openConnection();
-                    httpURLConnection.setRequestMethod("POST");
-                    httpURLConnection.setDoOutput(true);
-                    httpURLConnection.setDoInput(true);
-                    OutputStream outputStream = httpURLConnection.getOutputStream();
-                    BufferedWriter bufferedWriter= new BufferedWriter(new OutputStreamWriter(outputStream,"UTF-8"));
-                    String post_data= URLEncoder.encode("nombre","UTF-8")+"="+URLEncoder.encode(nombr,"UTF-8")+"&"
-                            +URLEncoder.encode("correo","UTF-8")+"="+URLEncoder.encode(corre,"UTF-8")+"&"
-                            + URLEncoder.encode("celular","UTF-8")+"="+URLEncoder.encode(celul,"UTF-8")+"&"
-                            + URLEncoder.encode("mensaje","UTF-8")+"="+URLEncoder.encode(msg,"UTF-8");
-                    bufferedWriter.write(post_data);
-                    bufferedWriter.flush();
-                    bufferedWriter.close();
-                    outputStream.close();
-                    InputStream inputStream = httpURLConnection.getInputStream();
-                    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream,"iso-8859-1"));
-                    String result="";
-                    String line="";
-                    while ((line=bufferedReader.readLine())!=null)
-                    {
-                        result +=line;
-                    }
-                    bufferedReader.close();
-                    inputStream.close();
-                    httpURLConnection.disconnect();
-                    return result;
 
-                }
-                catch (MalformedURLException e)
-                {
-                    e.printStackTrace();
-                } catch (IOException e)
-                {
-                    e.printStackTrace();
-                }
-            }
-            return null;
-        }
 
-    }
 
 
 }

@@ -50,10 +50,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     private TextView mTextMessage;
     MaterialSearchView searchView;
     String[] list;
+    private final static int PHONE_CALL_CODE = 100;
     int check = 0;
-    FloatingActionButton fab,fab1,fab2;
-    Animation fabOpen,fabClose,rotateForward,rotareBackward;
-    boolean isOpen=false;
+    FloatingActionButton fab, fab1, fab2;
+    Animation fabOpen, fabClose, rotateForward, rotareBackward;
+    boolean isOpen = false;
     ContactenosFragment fragment_two = null;
 
     @Override
@@ -63,28 +64,26 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
         mTextMessage = (TextView) findViewById(R.id.message);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
-        list = new String[]{"Clipcodes", "Android","Plan platino","Plan vip","Plan auxilio","Plan familiar","Plan unipersonal",
-                "Revista protegemos","revista protegemos","Taller para papá","Suscribete","nuestra empresas","contactenos","suscritos",
-                "ubicacion","Ediciones impresas","Ediciones digitales","Ubicacion"};
+        list = new String[]{"Clipcodes", "Android", "Plan platino", "Plan vip", "Plan auxilio", "Plan familiar", "Plan unipersonal",
+                "Revista protegemos", "revista protegemos", "Taller para papá", "Suscribete", "nuestra empresas", "contactenos", "suscritos",
+                "ubicacion", "Ediciones impresas", "Ediciones digitales", "Ubicacion"};
         setSupportActionBar(toolbar);
 
 
         fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab1=(FloatingActionButton)findViewById(R.id.fab1);
-        fab2=(FloatingActionButton)findViewById(R.id.fab2);
+        fab1 = (FloatingActionButton) findViewById(R.id.fab1);
+        fab2 = (FloatingActionButton) findViewById(R.id.fab2);
 
-        fabOpen = AnimationUtils.loadAnimation(this,R.anim.fab_open);
-        fabClose = AnimationUtils.loadAnimation(this,R.anim.fab_close);
+        fabOpen = AnimationUtils.loadAnimation(this, R.anim.fab_open);
+        fabClose = AnimationUtils.loadAnimation(this, R.anim.fab_close);
 
-        rotateForward = AnimationUtils.loadAnimation(this,R.anim.rotate_forward);
-        rotareBackward = AnimationUtils.loadAnimation(this,R.anim.rotate_backward);
-
+        rotateForward = AnimationUtils.loadAnimation(this, R.anim.rotate_forward);
+        rotareBackward = AnimationUtils.loadAnimation(this, R.anim.rotate_backward);
 
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view)
-            {
+            public void onClick(View view) {
                 animateFab();
             }
         });
@@ -92,7 +91,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View view) {
 //                animateFab();
-                Intent intent=new Intent (getApplicationContext(),ChatProtegemos.class);
+                Intent intent = new Intent(getApplicationContext(), ChatProtegemos.class);
                 startActivity(intent);
                 animateFab();
             }
@@ -101,31 +100,35 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         fab2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               /* animateFab();*/
-                int permissionCheck = ContextCompat.checkSelfPermission(
-                        getApplicationContext(), Manifest.permission.CALL_PHONE);
-                if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
-                    Log.i("Mensaje", "No se tiene permiso para realizar llamadas telefónicas.");
-                    ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.CALL_PHONE}, 225);
-                } else {
-                    Log.i("Mensaje", "Se tiene permiso para realizar llamadas!");
+
+                String phoneNumber = "0327313100";
+                if (phoneNumber != null) {
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                        requestPermissions(new String[]{Manifest.permission.CALL_PHONE}, PHONE_CALL_CODE);
+
+                    } else {
+                        OlderVersions(phoneNumber);
+                    }
                 }
 
-                if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                    if (ContextCompat.checkSelfPermission(getBaseContext(), Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                        // Se tiene permiso
-                        startActivity(new Intent(Intent.ACTION_CALL, Uri.parse("tel:0327313100")));
-                    }else{
-                        ActivityCompat.requestPermissions(MainActivity.this,new String[]{Manifest.permission.CALL_PHONE}, REQUEST_CODE_ASK_PERMISSIONS);
-                        return;
-                    }
-                }else{
-                    // No se necesita requerir permiso OS menos a 6.0.
-                }
                 animateFab();
             }
-        });
 
+            private void OlderVersions(String phoneNumber) {
+                Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+                if (CheckPermission(Manifest.permission.CALL_PHONE)) {
+
+                    if (ActivityCompat.checkSelfPermission(MainActivity.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+                        return;
+                    }
+                    startActivity(intentCall);
+                } else {
+                    Toast.makeText(MainActivity.this, "Acceso denegado", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        });
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -150,6 +153,49 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         setSearchView();
 
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+
+        switch (requestCode) {
+            case PHONE_CALL_CODE:
+
+                String permission = permissions[0];
+                int result = grantResults[0];
+                if (permission.equals(Manifest.permission.CALL_PHONE)) {
+                    //Comprobar si ha sido aceptado o edngada la petiion de permisons
+                    if (result == PackageManager.PERMISSION_GRANTED) {
+                        Toast.makeText(this, "Gracias, aceptaste los permisos requeridos para el correcto funcionamiento de esta aplicación.", Toast.LENGTH_SHORT).show();
+                        String phoneNumber = "0327313100";
+                        Intent intentCall = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneNumber));
+                        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+
+                            return;
+                        }
+                        startActivity(intentCall);
+                        //Acepto el permiso
+                    }
+                    else{
+                        //No acepto el permiso
+                        Toast.makeText(this, "No se aceptó permisos", Toast.LENGTH_SHORT).show();
+                    }
+                }
+                break;
+
+                default:
+                    super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+                    break;
+
+        }
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+    }
+
+    private boolean CheckPermission(String permission)
+    {
+        int result = this.checkCallingOrSelfPermission(permission);
+        return result ==PackageManager.PERMISSION_GRANTED;
     }
     private void animateFab()
     {
@@ -190,7 +236,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 break;
             case 1:
-                fragment_two.onBackPressed();
+                //fragment_two.onBackPressed();
                 break;
         }
     }
@@ -451,21 +497,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
     }
 
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if(grantResults[0] == PackageManager.PERMISSION_GRANTED){
-                    // El usuario acepto los permisos.
-                    Toast.makeText(this, "Gracias, aceptaste los permisos requeridos para el correcto funcionamiento de esta aplicación.", Toast.LENGTH_SHORT).show();
-                }else{
-                    // Permiso denegado.
-                    Toast.makeText(this, "No se aceptó permisos", Toast.LENGTH_SHORT).show();
-                }
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        }
-    }
+
 
 
 
