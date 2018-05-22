@@ -11,9 +11,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -33,17 +31,13 @@ import android.widget.Toast;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatProtegemos;
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
-import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteActivity;
+import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.SuscritosFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.AdapterPautas;
-import com.example.co.com.revistaprotegemos.appprotegemos.webserviceiniciopautas.models2.Pautas;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
-
-import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, SearchView.OnQueryTextListener {
 
@@ -388,8 +382,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
                 else if(query.equals("suscribete")||query.equals("Suscribete"))
                 {
-                    Intent intent1=new Intent (getApplicationContext(),SuscribeteActivity.class);
-                    startActivity(intent1);
+                    Fragment fragment = null;
+
+                    Class fragmentClass = SuscribeteFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
                 else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
                 {
