@@ -57,7 +57,7 @@ public class PautasLeerActivity extends AppCompatActivity {
 
         getWindow().setStatusBarColor(ContextCompat.getColor(PautasLeerActivity.this,
                 android.R.color.background_dark));
-        toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorPrimary));
+        toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorNeg));
 
     }
 }
