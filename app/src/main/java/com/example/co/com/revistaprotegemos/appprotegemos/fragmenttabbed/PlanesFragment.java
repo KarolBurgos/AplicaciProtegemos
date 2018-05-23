@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.webserviceplanes.api.ApiPlanes;
@@ -42,6 +43,7 @@ public class PlanesFragment extends Fragment {
     private ArrayList<Planes> dataPlanes;
     private PlanesAdapter adapterPlanes;
     private FragmentActivity myContext;
+    ProgressBar mProgressBar;
     SwipeRefreshLayout swipeRefreshLayout;
 
     public PlanesFragment() {
@@ -61,7 +63,8 @@ public class PlanesFragment extends Fragment {
         // Inflate the layout for this fragment
        View view = inflater.inflate(R.layout.fragment_planes, container, false);
         swipeRefreshLayout=(SwipeRefreshLayout)view.findViewById(R.id.Swipeplanes);
-
+        mProgressBar = (ProgressBar)view.findViewById(R.id.progressBar2);
+        mProgressBar.setVisibility(View.VISIBLE);
         //Carga el listado de planes de protegemos
         recyclerView = (RecyclerView)view.findViewById(R.id.recyclerViewPlanes);
         recyclerView.setHasFixedSize(true);
@@ -94,6 +97,7 @@ public class PlanesFragment extends Fragment {
                 dataPlanes = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterPlanes = new PlanesAdapter(dataPlanes, getContext(),myContext,swipeRefreshLayout);
                 recyclerView.setAdapter(adapterPlanes);
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override

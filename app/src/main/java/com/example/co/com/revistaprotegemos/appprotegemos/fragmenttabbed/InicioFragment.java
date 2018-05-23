@@ -18,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteFragment;
@@ -55,6 +56,7 @@ public class InicioFragment extends Fragment {
     private FragmentActivity myContext;
     private Button bsuscr, btn;
     //Botones de facebook y twitter
+    ProgressBar mProgressBar;
     private ImageButton facebook, twitter;
 
     //Atributo para actualizar la pagina
@@ -77,21 +79,14 @@ public class InicioFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_inicio, container, false);
 
-
-        final ProgressDialog progressDialog = new ProgressDialog(getContext());
-        progressDialog.setIcon(R.mipmap.ic_launcher);
-        progressDialog.setMessage("Cargando...");
-        progressDialog.show();
-
-
-
+        mProgressBar = (ProgressBar)view.findViewById(R.id.progressBar2);
+        mProgressBar.setVisibility(View.VISIBLE);
         //Listado de pautas
         recyclerViewPautas = (RecyclerView) view.findViewById(R.id.recyclerVieww);
         recyclerViewPautas.setHasFixedSize(true);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewPautas.setLayoutManager(layoutManager);
         loadJSONPautas();
-        progressDialog.dismiss();
 
 
 
@@ -101,7 +96,6 @@ public class InicioFragment extends Fragment {
         RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
         recyclerViewJornadas.setLayoutManager(layoutManager2);
         loadJSONJornadas();
-        progressDialog.dismiss();
         bsuscr = (Button) view.findViewById(R.id.btonsuscribirme);
 
         return view;
@@ -149,6 +143,7 @@ public class InicioFragment extends Fragment {
                 dataPautas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterPautas = new AdapterPautas(dataPautas, getContext());
                 recyclerViewPautas.setAdapter(adapterPautas);
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -175,6 +170,7 @@ public class InicioFragment extends Fragment {
                 dataJornadas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterJornadas = new JornadasAdapter(dataJornadas, getContext());
                 recyclerViewJornadas.setAdapter(adapterJornadas);
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override
