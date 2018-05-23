@@ -65,6 +65,9 @@ public class PrincipalFragment extends Fragment {
         viewPager.setAdapter(pagerAdapter);
         tabs.setupWithViewPager(viewPager);
 
+        tabs.setTabGravity(TabLayout.GRAVITY_CENTER);
+        tabs.setTabMode(TabLayout.MODE_FIXED);
+
         int icons[] = {R.drawable.ic_iconhouse, R.drawable.ic_iconhouse};
         tabs.getTabAt(0).setIcon(icons[0]);
 
