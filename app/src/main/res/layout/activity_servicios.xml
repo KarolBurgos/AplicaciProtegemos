@@ -24,71 +24,20 @@
 
     </android.support.design.widget.AppBarLayout>
     <!-- TODO: Update blank fragment layout -->
-<!--    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical">
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginBottom="50dp">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView16"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:inputType="textMultiLine"
-                    android:text="Planes Y Servicios"
-                    android:textSize="18sp" />
-&lt;!&ndash;
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/recyy"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/txt_titulo"
-                    android:layout_marginTop="15dp"
-                    tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="50dp" />&ndash;&gt;
-
-                <android.support.v7.widget.RecyclerView
-                    android:id='@+id/recyventaja'
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/txt_titulo"
-                    android:layout_marginTop="30dp"
-                    tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="50dp">
-
-                </android.support.v7.widget.RecyclerView>
-
-                <TextView
-                    android:id="@+id/textView8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="" />
-            </LinearLayout>
-        </ScrollView>
-
-    </LinearLayout>-->
 
     <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
 
-
+        <ProgressBar
+            android:id="@+id/progressBar2"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:progressDrawable="@drawable/circular_progress_view" />
 
 
         <!-- TODO: Update blank fragment layout -->

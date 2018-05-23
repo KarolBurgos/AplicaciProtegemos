@@ -11,6 +11,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -56,7 +57,7 @@ public class PautasLeerActivity extends AppCompatActivity {
 
         getWindow().setStatusBarColor(ContextCompat.getColor(PautasLeerActivity.this,
                 android.R.color.background_dark));
-        toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorNegro));
+        toolbar.setBackgroundColor(ContextCompat.getColor(PautasLeerActivity.this,R.color.colorPrimary));
 
     }
 }

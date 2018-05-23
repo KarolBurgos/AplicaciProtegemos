@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -48,6 +49,7 @@ public class ServiciosActivity extends AppCompatActivity {
     private DataAdapterVentajas adapterVentajas;
     private RecyclerView recyclerView3;
     private int offset2;
+    ProgressBar mProgressBar;
 
     @SuppressLint("NewApi")
     @Override
@@ -64,6 +66,9 @@ public class ServiciosActivity extends AppCompatActivity {
             }
         });
         getWindow().setStatusBarColor(ContextCompat.getColor(getApplicationContext(), R.color.colorPrimary));
+
+        mProgressBar = (ProgressBar)findViewById(R.id.progressBar2);
+        mProgressBar.setVisibility(View.VISIBLE);
 
         recyclerView = (RecyclerView)findViewById(R.id.recyy);
         recyclerView.setHasFixedSize(true);
@@ -106,6 +111,7 @@ public class ServiciosActivity extends AppCompatActivity {
                 dataServicios = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterServicios = new AdapterServicios(dataServicios,getApplicationContext());
                 recyclerView.setAdapter(adapterServicios);
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override
@@ -131,6 +137,7 @@ public class ServiciosActivity extends AppCompatActivity {
                 dataVentajas = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
                 adapterVentajas = new DataAdapterVentajas(dataVentajas,getApplicationContext());
                 recyclerView3.setAdapter(adapterVentajas);
+                mProgressBar.setVisibility(View.GONE);
             }
 
             @Override
