@@ -51,6 +51,7 @@ public class ServiciosActivity extends AppCompatActivity {
     private int offset2;
     ProgressBar mProgressBar;
 
+
     @SuppressLint("NewApi")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
