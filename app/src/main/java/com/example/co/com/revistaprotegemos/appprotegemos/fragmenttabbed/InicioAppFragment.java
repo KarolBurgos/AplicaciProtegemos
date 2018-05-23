@@ -92,8 +92,10 @@ public class InicioAppFragment extends Fragment {
         GifImageView givImageView = (GifImageView) view.findViewById(R.id.iges1);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/Imagenes_mauricio/Gastro_mayo-01.jpg").into(new GlideDrawableImageViewTarget(givImageView));
 
+/*
         GifImageView givImageView3 = (GifImageView) view.findViewById(R.id.iges2);
         Glide.with(getContext()).load("http://www.revistaprotegemos.com.co/imagenesaplicativo/logos.gif").into(new GlideDrawableImageViewTarget(givImageView3));
+*/
 
         ImageView im1=view.findViewById(R.id.imageView7);
 
