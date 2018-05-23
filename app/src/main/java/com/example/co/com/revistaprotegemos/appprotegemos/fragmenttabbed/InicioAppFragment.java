@@ -112,7 +112,7 @@ public class InicioAppFragment extends Fragment {
         facebook=(ImageButton)view.findViewById(R.id.facebook);
         twitter=(ImageButton)view.findViewById(R.id.twitter);
 
-        int images[] = {R.drawable.premiamin, R.drawable.drogueria, R.drawable.bannermin};
+        int images[] = {R.drawable.premiamin, R.drawable.drogueria, R.drawable.imagensusicribete};
         String names[] = {"imagen1", "imagen2", "imagen3"};
 
         //Bannerconmovimiento

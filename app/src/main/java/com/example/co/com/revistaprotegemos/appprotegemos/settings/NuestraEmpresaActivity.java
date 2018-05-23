@@ -30,12 +30,6 @@ public class NuestraEmpresaActivity extends AppCompatActivity {
         });
 
         ImageView img = (ImageView)findViewById(R.id.imageView8);
-        String url="http://www.revistaprotegemos.com.co/imagenesaplicativo/premia.png";
-        Glide.with(this)
-                .load(url)
-                .centerCrop()
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(img);
+
     }
 }
