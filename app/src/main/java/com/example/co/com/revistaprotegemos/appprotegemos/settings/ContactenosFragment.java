@@ -140,10 +140,10 @@ public class ContactenosFragment extends Fragment {
                     Message message = new MimeMessage(session);
                     message.setFrom(new InternetAddress(correo2));
                     message.setSubject("Protegemos");
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("admin@protegemosgc.co"));
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("karburgos@umariana.edu.co"));
                     message.setContent("Nombre: " + nombre.getText().toString() + "\n" + "Correo:  " + correo.getText().toString() + "\n" + "Celular:  " + celular.getText().toString() + "\n" + "Mensaje:  " + mensaje.getText().toString(), "text/html; charset=utf-8");
                     Transport.send(message);
-                    Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Registrado", Toast.LENGTH_SHORT);
+                    Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Correo Enviado", Toast.LENGTH_SHORT);
                     toast1.show();
 
                 }
