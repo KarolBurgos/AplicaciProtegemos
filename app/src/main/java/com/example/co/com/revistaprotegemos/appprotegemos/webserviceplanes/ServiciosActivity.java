@@ -59,6 +59,7 @@ public class ServiciosActivity extends AppCompatActivity {
         setContentView(R.layout.activity_servicios);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        TextView textView =(TextView)findViewById(R.id.textVie);
         setSupportActionBar(toolbar);
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,6 +82,28 @@ public class ServiciosActivity extends AppCompatActivity {
         int d1= Integer.parseInt(datos);
         offset = d1;
         loadJSON(offset);
+
+        if(d1==1)
+        {
+            textView.setText("Plan Platino");
+        }
+        else if(d1==2)
+        {
+            textView.setText("Plan V.I.P");
+        }
+        else if(d1==3)
+        {
+            textView.setText("Plan Auxilio Economico por Fallecimiento");
+        }
+        else if(d1==4)
+        {
+            textView.setText("Plan Familiar");
+        }
+        else if(d1==5)
+        {
+            textView.setText("Plan Unipersonal");
+        }
+
 
 
         recyclerView3 = (RecyclerView)findViewById(R.id.recyventaja);

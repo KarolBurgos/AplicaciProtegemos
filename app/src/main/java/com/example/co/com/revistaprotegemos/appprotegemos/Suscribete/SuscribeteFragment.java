@@ -127,7 +127,7 @@ public class SuscribeteFragment extends Fragment {
                     Message message = new MimeMessage(session);
                     message.setFrom(new InternetAddress(correo2));
                     message.setSubject("Protegemos");
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(corr));
+                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse("karburgos@umariana.edu.co"));
                     message.setContent("Nombre: " + nombre.getText().toString() + "\n" + "Correo:  " + correo.getText().toString() + "\n" + "Identificacion:  " + identificacion.getText().toString() + "\n" + "Ciudad:  " + ciudad.getText().toString()+ "Barrio:  " + barrio.getText().toString()+ "Telefono:  " + telefono.getText().toString(), "text/html; charset=utf-8");
                     Transport.send(message);
                     Toast toast1 = Toast.makeText(getActivity().getApplicationContext(), "Registrado", Toast.LENGTH_SHORT);

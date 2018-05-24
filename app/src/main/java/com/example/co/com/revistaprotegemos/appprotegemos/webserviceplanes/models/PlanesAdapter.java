@@ -115,6 +115,7 @@ public class PlanesAdapter  extends RecyclerView.Adapter<PlanesAdapter.ViewHolde
                 }
             });
 
+
         }
 
         @Override

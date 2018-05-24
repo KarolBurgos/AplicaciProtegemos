@@ -177,7 +177,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
             mMap.addPolyline(new PolylineOptions().add(
 
-                    sydney,
+/*                    sydney,
                     new LatLng(1.226357,-77.2831371),
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0030),
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0020),
@@ -186,13 +186,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     new LatLng(loc.getLatitude()-0.000010,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000005,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000001,loc.getLongitude()),
-                    new LatLng(loc.getLatitude(),loc.getLongitude())
+                    new LatLng(loc.getLatitude(),loc.getLongitude())*/
             )
                     .width(10)
                     .color(Color.RED));
-
-
             this.mainActivity.setLocation(loc);
+
         }
 
         @Override
