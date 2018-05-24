@@ -29,14 +29,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.target.GlideDrawableImageViewTarget;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.APIImpresasPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.AdapterImpresasPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.ImpresasPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsDigitales.JSOnImpresasPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.APIDigitalesPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.AdapterDigitalesPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.DigitalesPrueba;
-import com.example.co.com.revistaprotegemos.appprotegemos.AdaptadorRevistaPrueba.modelsImpresas.JSONDigitalesPrueba;
+
 import com.example.co.com.revistaprotegemos.appprotegemos.Banner.CustomAdapter;
 import com.example.co.com.revistaprotegemos.appprotegemos.PrincipalFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.R;
@@ -59,13 +52,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
  */
 public class InicioAppFragment extends Fragment {
 
-    private RecyclerView recyclerViewImp;
-    private ArrayList<ImpresasPrueba> dataImprP;
-    private AdapterImpresasPrueba adapterImp;
-
-    private RecyclerView recyclerView;
-    private ArrayList<DigitalesPrueba> dataDig;
-    private AdapterDigitalesPrueba adapterDig;
 
     private FragmentActivity myContext;
     private TextView quienes_somos;
@@ -159,18 +145,7 @@ public class InicioAppFragment extends Fragment {
             }
         });
 
-/*        recyclerViewImp = (RecyclerView)view.findViewById(R.id.rec);
-        recyclerViewImp.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL, false);
-        recyclerViewImp.setLayoutManager(layoutManager);
-        loadJSONImpresas();
 
-
-        recyclerView = (RecyclerView) view.findViewById(R.id.recedr);
-        recyclerView.setHasFixedSize(true);
-        RecyclerView.LayoutManager layoutManager2 = new LinearLayoutManager(getActivity().getApplicationContext(),LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager2);
-        loadJSONDigitales();*/
 
         return view;
     }
@@ -243,51 +218,4 @@ public class InicioAppFragment extends Fragment {
     }
 
 
-    private void loadJSONImpresas() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        APIImpresasPrueba request = retrofit.create(APIImpresasPrueba.class);
-        Call<JSOnImpresasPrueba> call = request.getJSON();
-        call.enqueue(new Callback<JSOnImpresasPrueba>() {
-            @Override
-            public void onResponse(Call<JSOnImpresasPrueba> call, Response<JSOnImpresasPrueba> response) {
-
-                JSOnImpresasPrueba jsonResponse = response.body();
-                dataImprP = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapterImp = new AdapterImpresasPrueba(dataImprP, getContext());
-                recyclerViewImp.setAdapter(adapterImp);
-            }
-
-            @Override
-            public void onFailure(Call<JSOnImpresasPrueba> call, Throwable t) {
-                Log.d("Error", t.getMessage());
-            }
-        });
-    }
-
-    private void loadJSONDigitales() {
-        Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.43.73")
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-        APIDigitalesPrueba request = retrofit.create(APIDigitalesPrueba.class);
-        Call<JSONDigitalesPrueba> call = request.getJSON();
-        call.enqueue(new Callback<JSONDigitalesPrueba>() {
-            @Override
-            public void onResponse(Call<JSONDigitalesPrueba> call, Response<JSONDigitalesPrueba> response) {
-
-                JSONDigitalesPrueba jsonResponse = response.body();
-                dataDig = new ArrayList<>(Arrays.asList(jsonResponse.getAndroid()));
-                adapterDig = new AdapterDigitalesPrueba(dataDig, getContext());
-                recyclerView.setAdapter(adapterDig);
-            }
-
-            @Override
-            public void onFailure(Call<JSONDigitalesPrueba> call, Throwable t) {
-                Log.d("Error", t.getMessage());
-            }
-        });
-    }
 }

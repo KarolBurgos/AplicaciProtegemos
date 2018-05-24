@@ -136,9 +136,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             }
         }
     }
-
-
-
     /* Aqui empieza la Clase Localizacion */
     public class Localizacion implements LocationListener {
         MapsActivity mainActivity;
@@ -165,7 +162,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
 
             LatLng sydney = new LatLng(1.226357,-77.283137);
-            mMap.addMarker(new MarkerOptions().position(sydney).title(""));
+            mMap.addMarker(new MarkerOptions().position(sydney).title("Revista protegemos").snippet("Carrera 36 Nº 19-93 Barrio Palermo"));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
 
 
@@ -175,12 +172,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney2, 15));
             if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
-                //    ActivityCompat#requestPermissions
-                // here to request the missing permissions, and then overriding
-                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-                //                                          int[] grantResults)
-                // to handle the case where the user grants the permission. See the documentation
-                // for ActivityCompat#requestPermissions for more details.
                 return;
             }
             mMap.setMyLocationEnabled(true);
@@ -191,11 +182,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0030),
                     new LatLng(loc.getLatitude()-0.0020,loc.getLongitude()-0.0020),
                     new LatLng(loc.getLatitude()-0.0010,loc.getLongitude()),
-                    //new LatLng(1.2211775, -77.2818178),
- /*
-                    new LatLng(1.223914, -77.28420840000001),
-                    new LatLng(1.2115655, -77.27668670000003),
-                    new LatLng(loc.getLatitude()-0.001, loc.getLongitude()-77.2837399-0.001),*/
                     new LatLng(loc.getLatitude()-0.0005,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000010,loc.getLongitude()),
                     new LatLng(loc.getLatitude()-0.000005,loc.getLongitude()),
@@ -205,19 +191,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     .width(10)
                     .color(Color.RED));
 
-
-/*            LatLng sydney = new LatLng(loc.getLatitude(),loc.getLongitude());
-            mMap.addMarker(new MarkerOptions().position(sydney).title("Mi Ubicacion").snippet("").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_CYAN)));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 14));
-
-            LatLng sydney2 = new LatLng(1.226357,-77.283137);
-            mMap.addMarker(new MarkerOptions().position(sydney2).title("Protegemos").snippet("Carrera 36 Nº 19-93 Barrio Palermo").icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney2, 14));
-
-            Polyline line = mMap.addPolyline(new PolylineOptions()
-                    .add(sydney, sydney2)
-                    .width(5)
-                    .color(Color.RED));*/
 
             this.mainActivity.setLocation(loc);
         }

@@ -5,203 +5,216 @@
     android:layout_height="match_parent">
 
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/Swipe"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-            <LinearLayout
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/Swipe"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center|end"
-                android:orientation="vertical">
+                android:layout_height="match_parent">
 
 
-                <AdapterViewFlipper
-                    android:id="@+id/IVF"
+                <ScrollView
                     android:layout_width="match_parent"
-                    android:layout_height="200dp"
-                    android:background="@color/colorPrimary"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="8dp" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
-
-                    <ImageButton
-                        android:id="@+id/facebook"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_facebook_letter_logo" />
-
-                    <ImageButton
-                        android:id="@+id/twitter"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/ic_twitter" />
-                </LinearLayout>
-
-                <android.support.v7.widget.CardView
-                    android:id="@+id/card_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:background="@color/colorPrimary"
-                    app:cardUseCompatPadding="true"
-                    tools:layout_editor_absoluteX="8dp"
-                    tools:layout_editor_absoluteY="0dp">
+                    android:layout_height="wrap_content">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FFFFFFFF"
+                        android:gravity="center|end"
                         android:orientation="vertical">
 
-                        <LinearLayout
+
+                        <AdapterViewFlipper
+                            android:id="@+id/IVF"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <pl.droidsonroids.gif.GifImageView
-                                android:id="@+id/iges1"
-                                android:layout_width="117dp"
-                                android:layout_height="120dp" />
-
-                            <pl.droidsonroids.gif.GifImageView
-                                android:id="@+id/iges2"
-                                android:layout_width="115dp"
-                                android:layout_height="120dp"
-                                android:layout_marginEnd="5dp"
-                                android:layout_marginRight="5dp"
-                                android:background="@drawable/logos" />
-
-                            <pl.droidsonroids.gif.GifImageView
-                                android:id="@+id/imageView7"
-                                android:layout_width="121dp"
-                                android:layout_height="120dp"
-                                android:layout_marginEnd="2dp"
-                                android:layout_marginStart="2dp"
-                                android:src="@drawable/picincio" />
-
-
-                        </LinearLayout>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="5dp"
-                            android:gravity="center"
-                            android:orientation="horizontal"
-                            android:paddingBottom="5dp">
-
-                            <Button
-                                android:id="@+id/btnplanes"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_marginEnd="10dp"
-                                android:layout_marginStart="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/register_buttonsty"
-                                android:text="Nuestros planes"
-                                android:textAllCaps="false"
-                                android:textSize="12sp"
-                                tools:ignore="RtlCompat" />
-
-                            <Button
-                                android:id="@+id/btnsus"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/register_buttonsty"
-                                android:text="Quiero suscribirme"
-                                android:textAllCaps="false"
-                                android:textSize="12sp"
-                                tools:ignore="RtlCompat" />
-
-                            <Button
-                                android:id="@+id/btnquien"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginEnd="10dp"
-                                android:layout_weight="1"
-                                android:background="@drawable/register_buttonsty"
-                                android:text="Quienes somos"
-                                android:textAllCaps="false"
-                                android:textSize="12sp"
-                                tools:ignore="RtlCompat" />
-
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-
-                </android.support.v7.widget.CardView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="5dp"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:background="#FFFFFFFF"
-                        android:orientation="vertical">
+                            android:layout_height="200dp"
+                            android:background="@color/colorPrimary"
+                            tools:layout_editor_absoluteX="8dp"
+                            tools:layout_editor_absoluteY="8dp" />
 
                         <LinearLayout
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:orientation="vertical">
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
 
+                            <ImageButton
+                                android:id="@+id/facebook"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_facebook_letter_logo" />
+
+                            <ImageButton
+                                android:id="@+id/twitter"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:src="@drawable/ic_twitter" />
                         </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/textView5"
+                        <android.support.v7.widget.CardView
+                            android:id="@+id/card_view"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:background="@color/colorPrimary"
+                            app:cardUseCompatPadding="true"
+                            tools:layout_editor_absoluteX="8dp"
+                            tools:layout_editor_absoluteY="0dp">
 
-                        <TextView
-                            android:id="@+id/textView17"
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#FFFFFFFF"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:gravity="center"
+                                    android:orientation="horizontal">
+
+                                    <pl.droidsonroids.gif.GifImageView
+                                        android:id="@+id/iges1"
+                                        android:layout_width="117dp"
+                                        android:layout_height="120dp" />
+
+                                    <pl.droidsonroids.gif.GifImageView
+                                        android:id="@+id/iges2"
+                                        android:layout_width="115dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginEnd="5dp"
+                                        android:layout_marginRight="5dp"
+                                        android:background="@drawable/logos" />
+
+                                    <pl.droidsonroids.gif.GifImageView
+                                        android:id="@+id/imageView7"
+                                        android:layout_width="121dp"
+                                        android:layout_height="120dp"
+                                        android:layout_marginEnd="2dp"
+                                        android:layout_marginStart="2dp"
+                                        android:src="@drawable/picincio" />
+
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="5dp"
+                                    android:gravity="center"
+                                    android:orientation="horizontal"
+                                    android:paddingBottom="5dp">
+
+                                    <Button
+                                        android:id="@+id/btnplanes"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_gravity="center"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_marginStart="10dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
+                                        android:text="Nuestros planes"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
+
+                                    <Button
+                                        android:id="@+id/btnsus"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
+                                        android:text="Quiero suscribirme"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
+
+                                    <Button
+                                        android:id="@+id/btnquien"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginEnd="10dp"
+                                        android:layout_weight="1"
+                                        android:background="@drawable/register_buttonsty"
+                                        android:text="Quienes somos"
+                                        android:textAllCaps="false"
+                                        android:textSize="12sp"
+                                        tools:ignore="RtlCompat" />
+
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+
+                        </android.support.v7.widget.CardView>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Carrera 36 Nº 19-93 Barrio Palermo" />
+                            android:layout_height="match_parent"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginTop="5dp"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView22"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Teléfono: 731 3100" />
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#FFFFFFFF"
+                                android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/textView24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Celular: 315 411 4537" />
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:orientation="vertical">
 
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/textView5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content" />
+
+                                <TextView
+                                    android:id="@+id/textView17"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Carrera 36 Nº 19-93 Barrio Palermo" />
+
+                                <TextView
+                                    android:id="@+id/textView22"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Teléfono: 731 3100" />
+
+                                <TextView
+                                    android:id="@+id/textView24"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:gravity="center"
+                                    android:text="Celular: 315 411 4537" />
+
+
+                            </LinearLayout>
+                        </LinearLayout>
 
                     </LinearLayout>
-                </LinearLayout>
-
-            </LinearLayout>
-        </ScrollView>
+                </ScrollView>
 
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+            </android.support.v4.widget.SwipeRefreshLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
 </FrameLayout>
