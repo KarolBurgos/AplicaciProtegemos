@@ -65,7 +65,7 @@
                         <EditText
                             android:id="@+id/edno"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="1"
                             android:ems="10"
                             android:gravity="center"
@@ -73,9 +73,10 @@
                             android:inputType="textPersonName" />
 
                         <LinearLayout
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:orientation="horizontal">
+
 
                             <EditText
                                 android:id="@+id/ide"
@@ -94,7 +95,7 @@
                                 android:layout_weight="1"
                                 android:ems="10"
                                 android:gravity="center"
-                                android:hint="Ciudad"
+                                android:hint="ciudad"
                                 android:inputType="textPersonName" />
 
                         </LinearLayout>
