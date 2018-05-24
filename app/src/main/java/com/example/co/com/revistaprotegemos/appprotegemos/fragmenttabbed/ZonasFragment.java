@@ -44,7 +44,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class InicioFragment extends Fragment {
+public class ZonasFragment extends Fragment {
 
     //Banner protegemos
     private RecyclerView recyclerViewPautas;
@@ -63,7 +63,7 @@ public class InicioFragment extends Fragment {
     SwipeRefreshLayout swipeRefreshLayout;
 
 
-    public InicioFragment() {
+    public ZonasFragment() {
         // Required empty public constructor
     }
 

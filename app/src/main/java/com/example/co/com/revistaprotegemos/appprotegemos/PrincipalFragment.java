@@ -3,28 +3,22 @@ package com.example.co.com.revistaprotegemos.appprotegemos;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTabHost;
-import android.support.v4.content.ContextCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioAppFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ZonasFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 
 
@@ -107,7 +101,7 @@ public class PrincipalFragment extends Fragment {
                 case 2:
                     return new FragmentEdicionesRevista();
                 case 3:
-                    return new InicioFragment();
+                    return new ZonasFragment();
             }
             return null;
         }

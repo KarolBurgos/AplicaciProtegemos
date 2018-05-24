@@ -33,8 +33,7 @@ import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatPro
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioAppFragment;
-import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.ZonasFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
@@ -454,7 +453,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     Fragment fragment = null;
 
-                    Class fragmentClass = InicioFragment.class;
+                    Class fragmentClass = ZonasFragment.class;
                     try {
                         fragment = (Fragment) fragmentClass.newInstance();
                     } catch (Exception e) {
@@ -571,7 +570,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 {
                     Fragment fragment = null;
 
-                    Class fragmentClass = InicioFragment.class;
+                    Class fragmentClass = ZonasFragment.class;
                     try {
                         fragment = (Fragment) fragmentClass.newInstance();
                     } catch (Exception e) {
