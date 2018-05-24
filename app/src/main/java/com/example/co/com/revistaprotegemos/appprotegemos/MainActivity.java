@@ -33,6 +33,8 @@ import com.example.co.com.revistaprotegemos.appprotegemos.ChatProtegemos.ChatPro
 import com.example.co.com.revistaprotegemos.appprotegemos.MapaProtegemos.MapsActivity;
 import com.example.co.com.revistaprotegemos.appprotegemos.Suscribete.SuscribeteFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.FragmentEdicionesRevista;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioAppFragment;
+import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.InicioFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.ContactenosFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.fragmenttabbed.PlanesFragment;
 import com.example.co.com.revistaprotegemos.appprotegemos.settings.NuestraEmpresaActivity;
@@ -60,7 +62,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
         list = new String[]{"Clipcodes", "Android", "Plan platino", "Plan vip", "Plan auxilio", "Plan familiar", "Plan unipersonal",
                 "Revista protegemos", "revista protegemos", "Taller para papá", "Suscribete", "nuestra empresas", "contactenos", "suscritos",
-                "ubicacion", "Ediciones impresas", "Ediciones digitales", "Ubicacion"};
+                "ubicacion", "Ediciones impresas", "Ediciones digitales", "Ubicacion","Zona de pautas","Zona de jornadas"};
         setSupportActionBar(toolbar);
 
 
@@ -428,16 +430,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 else if(query.equals("ubicacion")||query.equals("ubicacion"))
                 {
-                    Fragment fragment = null;
-
-                    Class fragmentClass = ContactenosFragment.class;
-                    try {
-                        fragment = (Fragment) fragmentClass.newInstance();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    Intent intent=new Intent (getApplicationContext(),MapsActivity.class);
+                    startActivity(intent);
                 }
 
                 else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
@@ -455,6 +449,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
+                else if(query.equals("Zona de pautas")||query.equals("Zona de jornadas"))
+                {
+                    Fragment fragment = null;
+
+                    Class fragmentClass = InicioFragment.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
+
+                else {
+                    Intent intent=new Intent (getApplicationContext(),ValidacionBusquedasActivity.class);
+                    startActivity(intent);
                 }
 
                 return true;
@@ -534,16 +546,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 }
                 else if(query.equals("ubicacion")||query.equals("ubicacion"))
                 {
-                    Fragment fragment = null;
-
-                    Class fragmentClass = ContactenosFragment.class;
-                    try {
-                        fragment = (Fragment) fragmentClass.newInstance();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                    FragmentManager fragmentManager = getSupportFragmentManager();
-                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                    Intent intent=new Intent (getApplicationContext(),MapsActivity.class);
+                    startActivity(intent);
                 }
 
                 else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
@@ -554,6 +558,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     Fragment fragment = null;
 
                     Class fragmentClass = FragmentEdicionesRevista.class;
+                    try {
+                        fragment = (Fragment) fragmentClass.newInstance();
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    FragmentManager fragmentManager = getSupportFragmentManager();
+                    fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
+                }
+
+                else if(query.equals("Zona de pautas")||query.equals("Zona de jornadas"))
+                {
+                    Fragment fragment = null;
+
+                    Class fragmentClass = InicioFragment.class;
                     try {
                         fragment = (Fragment) fragmentClass.newInstance();
                     } catch (Exception e) {
