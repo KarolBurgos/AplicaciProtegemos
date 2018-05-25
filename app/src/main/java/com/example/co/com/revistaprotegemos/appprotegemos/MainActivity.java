@@ -61,7 +61,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbaarr);
         list = new String[]{"Clipcodes", "Android", "Plan platino", "Plan vip", "Plan auxilio", "Plan familiar", "Plan unipersonal",
                 "Revista protegemos", "revista protegemos", "Taller para papá", "Suscribete", "nuestra empresas", "contactenos", "suscritos",
-                "ubicacion", "Ediciones impresas", "Ediciones digitales", "Ubicacion","Zona de pautas","Zona de jornadas"};
+                "ubicacion", "Ediciones impresas", "Ediciones digitales", "Ubicacion","Zona de pautas","Zona de jornadas",
+                "jornadas","pautas","digitales","impresas","clinica bellatriz","Ana Maria","cardioquirurgica"};
         setSupportActionBar(toolbar);
 
 
@@ -357,16 +358,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             public boolean onQueryTextSubmit(String query) {
 
-                if(query.equals("planes")||query.equals("planes protegemos")||query.equals("platino")||query.equals("Platino")||query.equals("Plan platino")
-                        ||query.equals("PLAN PLATINO")||query.equals("PLATINO")||query.equals("plan platino")
-                        ||query.equals("vip")||query.equals("Vip")||query.equals("Plan vip")
-                        ||query.equals("PLAN VIP")||query.equals("VIP")||query.equals("plan vip")
-                        ||query.equals("auxilio")||query.equals("Auxilio")
-                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan platino")
-                        ||query.equals("familiar")||query.equals("Familiar")||query.equals("Plan familiar")
-                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan familiar")
-                        ||query.equals("PLAN UNIPERSONAL")||query.equals("UNIPERSONAL")||query.equals("plan unipersonal")
-                        ||query.equals("unipersonal")||query.equals("Unipersonal")||query.equals("Plan unipersonal")
+                if(query.equalsIgnoreCase("planes")||query.equals("planes protegemos")||
+                        query.equalsIgnoreCase("platino")||
+                        query.equalsIgnoreCase("Plan platino")
+                        ||query.equalsIgnoreCase("PLATINO")
+                        ||query.equalsIgnoreCase("vip")||query.equalsIgnoreCase("Plan vip")
+                        ||query.equalsIgnoreCase("PLAN VIP")||query.equals("VIP")
+                        ||query.equalsIgnoreCase("auxilio")
+                        ||query.equalsIgnoreCase("PLAN FAMILIAR")||query.equalsIgnoreCase("FAMILIAR")
+                        ||query.equalsIgnoreCase("PLAN UNIPERSONAL")||query.equalsIgnoreCase("UNIPERSONAL")
+                        ||query.equalsIgnoreCase("unipersonal")||query.contentEquals("Plan unipersonal")
                         )
                 {
                     Fragment fragment = null;
@@ -381,7 +382,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
 
-                else if(query.equals("suscribete")||query.equals("Suscribete"))
+                else if(query.equalsIgnoreCase("suscribete"))
                 {
                     Fragment fragment = null;
 
@@ -394,14 +395,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
+                else if(query.equalsIgnoreCase("nuestra empresa"))
                 {
                     Intent intent1=new Intent (getApplicationContext(),NuestraEmpresaActivity.class);
                     startActivity(intent1);
                 }
 
 
-                else if(query.equals("suscritos")||query.equals("Suscritos"))
+                else if(query.equalsIgnoreCase("suscritos"))
                 {
                     Fragment fragment = null;
 
@@ -414,7 +415,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("contactenos")||query.equals("Contactenos"))
+                else if(query.equalsIgnoreCase("contactenos"))
                 {
                     Fragment fragment = null;
 
@@ -427,16 +428,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("ubicacion")||query.equals("ubicacion"))
+                else if(query.equalsIgnoreCase("ubicacion"))
                 {
                     Intent intent=new Intent (getApplicationContext(),MapsActivity.class);
                     startActivity(intent);
                 }
 
-                else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
-                        query.equals("Ediciones digitales")|| query.equals("ediciones digitales")||
-                        query.equals("revista protegemos")||query.equals("Taller para papá")||query.equals("Revista Protegemos")||
-                        query.equals("Revista protegemos"))
+                else if(query.equalsIgnoreCase("Ediciones impresas")||
+                        query.equalsIgnoreCase("Ediciones digitales")||
+                        query.equalsIgnoreCase("revista protegemos")||query.equalsIgnoreCase("Taller para papá"))
                 {
                     Fragment fragment = null;
 
@@ -449,7 +449,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("Zona de pautas")||query.equals("Zona de jornadas"))
+                else if(query.equalsIgnoreCase("Zona de pautas"))
                 {
                     Fragment fragment = null;
 
@@ -473,16 +473,16 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
             @Override
             public boolean onQueryTextChange(String query) {
-                if(query.equals("planes")||query.equals("planes protegemos")||query.equals("platino")||query.equals("Platino")||query.equals("Plan platino")
-                        ||query.equals("PLAN PLATINO")||query.equals("PLATINO")||query.equals("plan platino")
-                        ||query.equals("vip")||query.equals("Vip")||query.equals("Plan vip")
-                        ||query.equals("PLAN VIP")||query.equals("VIP")||query.equals("plan vip")
-                        ||query.equals("auxilio")||query.equals("Auxilio")
-                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan platino")
-                        ||query.equals("familiar")||query.equals("Familiar")||query.equals("Plan familiar")
-                        ||query.equals("PLAN FAMILIAR")||query.equals("FAMILIAR")||query.equals("plan familiar")
-                        ||query.equals("PLAN UNIPERSONAL")||query.equals("UNIPERSONAL")||query.equals("plan unipersonal")
-                        ||query.equals("unipersonal")||query.equals("Unipersonal")||query.equals("Plan unipersonal")
+                if(query.equalsIgnoreCase("planes")||query.equals("planes protegemos")||
+                        query.equalsIgnoreCase("platino")||
+                        query.equalsIgnoreCase("Plan platino")
+                        ||query.equalsIgnoreCase("PLATINO")
+                        ||query.equalsIgnoreCase("vip")||query.equalsIgnoreCase("Plan vip")
+                        ||query.equalsIgnoreCase("PLAN VIP")||query.equals("VIP")
+                        ||query.equalsIgnoreCase("auxilio")
+                        ||query.equalsIgnoreCase("PLAN FAMILIAR")||query.equalsIgnoreCase("FAMILIAR")
+                        ||query.equalsIgnoreCase("PLAN UNIPERSONAL")||query.equalsIgnoreCase("UNIPERSONAL")
+                        ||query.equalsIgnoreCase("unipersonal")||query.contentEquals("Plan unipersonal")
                         )
                 {
                     Fragment fragment = null;
@@ -497,7 +497,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
 
-                else if(query.equals("suscribete")||query.equals("Suscribete"))
+                else if(query.equalsIgnoreCase("suscribete"))
                 {
                     Fragment fragment = null;
 
@@ -510,14 +510,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("nuestra empresa")||query.equals("Nuestra empresa"))
+                else if(query.equalsIgnoreCase("nuestra empresa"))
                 {
                     Intent intent1=new Intent (getApplicationContext(),NuestraEmpresaActivity.class);
                     startActivity(intent1);
                 }
 
 
-                else if(query.equals("suscritos")||query.equals("Suscritos"))
+                else if(query.equalsIgnoreCase("suscritos"))
                 {
                     Fragment fragment = null;
 
@@ -530,7 +530,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("contactenos")||query.equals("Contactenos"))
+                else if(query.equalsIgnoreCase("contactenos"))
                 {
                     Fragment fragment = null;
 
@@ -543,16 +543,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-                else if(query.equals("ubicacion")||query.equals("ubicacion"))
+                else if(query.equalsIgnoreCase("ubicacion"))
                 {
                     Intent intent=new Intent (getApplicationContext(),MapsActivity.class);
                     startActivity(intent);
                 }
 
-                else if(query.equals("Ediciones impresas")||query.equals("ediciones impresas")||
-                        query.equals("Ediciones digitales")|| query.equals("ediciones digitales")||
-                        query.equals("revista protegemos")||query.equals("Taller para papá")||query.equals("Revista Protegemos")||
-                        query.equals("Revista protegemos"))
+                else if(query.equalsIgnoreCase("Ediciones impresas")||
+                        query.equalsIgnoreCase("Ediciones digitales")||
+                        query.equalsIgnoreCase("revista protegemos")||query.equalsIgnoreCase("Taller para papá"))
                 {
                     Fragment fragment = null;
 
@@ -565,8 +564,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     FragmentManager fragmentManager = getSupportFragmentManager();
                     fragmentManager.beginTransaction().replace(R.id.flContentt, fragment).commit();
                 }
-
-                else if(query.equals("Zona de pautas")||query.equals("Zona de jornadas"))
+                else if(query.contains("Zona de pautas")||query.contains("Zona de jornadas")||query.contains("pautas")||query.contains("jornadas"))
                 {
                     Fragment fragment = null;
 
